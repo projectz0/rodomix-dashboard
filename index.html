@@ -4,13 +4,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Grupo Rodomix — Análise Executiva DRE 2026</title>
-<link rel="manifest" href="manifest.json"/>
-<meta name="theme-color" content="#141210"/>
-<link rel="icon" href="icons/icon-192.png"/>
-<link rel="apple-touch-icon" href="icons/icon-192.png"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
@@ -307,6 +300,13 @@ body{margin:0;padding:0;}
   @page{size:landscape;margin:10mm;}
 }
 </style>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#141210"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
 </head>
 <body>
 
@@ -1361,7 +1361,7 @@ const AJA = {
   recBruta:  [502615,476069,576737,575913,444447,365937],
   recLiq:    [400228,378775,440998,433525,328780,274345],
   margem:    [137003,135220,152054,145371,98933,62532],
-  saldo:     [-110089,-51584,-73743,-58217,-46801,-69556],
+  saldo:     [-110089,-51584,-73743,-58217,-46801,-70786],
   cmvOTR:    [0,0,0,0,0,0],
   cmvCarga:  [52.65,51.44,50.28,49.56,51.88,57.74],
   cmvTotal:  [52.37,51.15,50.05,49.64,51.58,57.57],
@@ -1369,19 +1369,19 @@ const AJA = {
   recLiqWF:  [400228,378775,440998,433525,328780,274345],
   cmvWF:     [-263196,-243524,-288629,-285877,-229265,-210674],
   margemWF:  [137003,135220,152054,145371,98933,62532],
-  despComWF: [-49126,-48267,-51590,-61942,-55751,-44181],
+  despComWF: [-49126,-48267,-51590,-61942,-55751,-45411],
   despAdmWF: [-86446,-89279,-84706,-93899,-74783,-76326],
-  resOpWF:   [1430,-2326,15758,-10470,-31602,-57975],
-  ebitdaVals:[1430,-2326,15758,-10470,-31602,-57975],
-  ebitdaPct: [0.28,-0.49,2.73,-1.82,-7.11,-15.84],
+  resOpWF:   [1430,-2326,15758,-10470,-31602,-59206],
+  ebitdaVals:[1430,-2326,15758,-10470,-31602,-59206],
+  ebitdaPct: [0.28,-0.49,2.73,-1.82,-7.11,-16.18],
   fixData: {
-    '-1': { vals:[505439,310857,58053,0], total:874349, gap:409990, label:'Somatório Jan–Jun' },
+    '-1': { vals:[505439,312087,58053,0], total:875579, gap:411220, label:'Somatório Jan–Jun' },
      '0': { vals:[86446,49126,19482,0], total:155054, gap:110089, label:'Janeiro' },
      '1': { vals:[89279,48267,22745,0], total:160291, gap:51584, label:'Fevereiro' },
      '2': { vals:[84706,51590,3612,0], total:139908, gap:73743, label:'Março' },
      '3': { vals:[93899,61942,4592,0], total:160433, gap:58217, label:'Abril' },
      '4': { vals:[74783,55751,4355,0], total:134889, gap:46801, label:'Maio' },
-     '5': { vals:[76326,44181,3267,0], total:123774, gap:69556, label:'Junho' },
+     '5': { vals:[76326,45411,3267,0], total:125004, gap:70786, label:'Junho' },
   },
   comments: {
     8: {'Jan':'PÓ DE RASPA - 2.400,00', 'Fev':'PÓ DE RASPA - 2.400,00', 'Mar':'PÓ DE RASPA - 640,00\nVENDA DE PROD - 950,00', 'Abr':'PÓ DE RASPA = 600,00\nPNEUS E PRODU = 6.100,00\nSERVIÇOS E OUTROS - 1.490,00', 'Jun':'PNEUS - 3.800,00'},
@@ -1441,12 +1441,12 @@ const AJA = {
     {neg:true,  label:'  Custo Venda de Produto', v:[-30,-30,-315,-2277,-582,-1140]},
     {bold:true,  label:'Margem de Contribuição', v:[137003,135220,152054,145371,98933,62532], highlight:'green'},
     {g:true,  label:'DESPESAS', v:[null,null,null,null,null,null]},
-    {neg:true,bold:true,  label:'Despesas Comerciais', v:[-49126,-48267,-51590,-61942,-55751,-44181]},
+    {neg:true,bold:true,  label:'Despesas Comerciais', v:[-49126,-48267,-51590,-61942,-55751,-45411]},
     {neg:true,  label:'  Combustíveis', v:[-18524,-20192,-16090,-25127,-30260,-21661]},
     {neg:true,  label:'  Comissão de Vendedores', v:[-14362,-12817,-15939,-16086,-12310,-10333]},
     {neg:true,  label:'  Despesas com Viagens Com.', v:[-3290,-2900,-3160,-4400,-3713,-2090], rowNum:82},
     {neg:true,  label:'  Despesas com Veículos', v:[-4594,-4734,-3893,-7984,-1184,-2228], rowNum:83},
-    {neg:true,  label:'  FGTS Comercial', v:[-577,-595,-633,-559,-559,615]},
+    {neg:true,  label:'  FGTS Comercial', v:[-577,-595,-633,-559,-559,-615]},
     {neg:true,  label:'  Férias Comercial', v:[0,0,-3385,0,0,0], rowNum:86},
     {neg:true,  label:'  Salários Comercial', v:[-7043,-6355,-7574,-6990,-6990,-7689]},
     {neg:true,  label:'  Vale Transporte Com.', v:[-735,-675,-915,-795,-735,-795]},
@@ -1488,12 +1488,12 @@ const AJA = {
     {neg:true,  label:'  Tarifas DO IT', v:[-228,-237,-238,-301,-234,-194]},
     {neg:true,  label:'  Telefonia', v:[-107,-153,-162,-170,-140,-132]},
     {neg:true,  label:'  Vale Transporte Adm.', v:[-513,-552,-712,-632,-582,-688]},
-    {bold:true,  label:'Resultado Operacional (EBITDA)', v:[1430,-2326,15758,-10470,-31602,-57975], highlight:'red'},
+    {bold:true,  label:'Resultado Operacional (EBITDA)', v:[1430,-2326,15758,-10470,-31602,-59206], highlight:'red'},
     {g:true,  label:'ABAIXO DO EBITDA', v:[null,null,null,null,null,null]},
     {neg:true,  label:'  Investimentos', v:[-19482,-22745,-3612,-4592,-4355,-3267], rowNum:173},
     {neg:true,  label:'  Retiradas', v:[-89316,-23763,-25608,-40351,-10845,-8314], rowNum:174},
     {neg:true,  label:'  Simples Nacional Parcelamento', v:[-2722,-2750,-60282,-2803,0,0], rowNum:175},
-    {bold:true,  label:'Saldo Final', v:[-110089,-51584,-73743,-58217,-46801,-69556], highlight:'red'},
+    {bold:true,  label:'Saldo Final', v:[-110089,-51584,-73743,-58217,-46801,-70786], highlight:'red'},
   ],
   insights: {
     '0': {
@@ -1549,12 +1549,12 @@ const AJA = {
       title: 'Análise · AJA · Visão Geral Jan–Jun',
       insights: [
         {tag:'r', text:'Receita bruta caiu 36,5% entre abril (R$575.913) e junho (R$365.937) — a queda mais acentuada do semestre, revertendo o pico de março/abril'},
-        {tag:'r', text:'EBITDA negativo em 4 dos 6 meses — só janeiro (+R$1.430) e março (+R$15.758) ficaram positivos; abril, maio e junho somam -R$100.047 de EBITDA'},
+        {tag:'r', text:'EBITDA negativo em 4 dos 6 meses — só janeiro (+R$1.430) e março (+R$15.758) ficaram positivos; abril, maio e junho somam -R$101.278 de EBITDA'},
         {tag:'r', text:'CMV Carga subiu de 49,6% (abril) para 57,7% (junho) — pior índice do semestre, mesmo com a receita em queda'},
         {tag:'a', text:'Despesas Administrativas não acompanharam a queda de receita: variam entre R$74.783 e R$93.899 nos 3 últimos meses, mesmo com a receita caindo quase pela metade'},
         {tag:'a', text:'3 novas consultorias administrativas (A S Advocacia, Asense Consultoria, Assessoria Perfil Gestão) entraram a partir de maio, somando R$1.551 em maio e R$3.742 em junho'},
         {tag:'g', text:'Margem de contribuição segue positiva em todos os meses, mas caiu de 25,2% (abril) para 17,1% (junho)'},
-        {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$409.990 no semestre'},
+        {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$411.220 no semestre'},
       ],
       recs: [
         {t:'Rever o dimensionamento das despesas administrativas fixas para o novo patamar de receita.', d:'A receita caiu de R$575.913 para R$365.937 entre abril e junho (-36,5%), mas as Despesas Administrativas ficaram praticamente estáveis em R$74,8k–93,9k/mês. A estrutura fixa está desproporcional à receita atual.'},
@@ -1595,12 +1595,12 @@ const AJA = {
     '5': {
       title: 'Análise · AJA · Junho',
       insights: [
-        {tag:'r', text:'Pior EBITDA do semestre: -R$57.975 (-15,84%) — terceiro mês seguido de deterioração'},
+        {tag:'r', text:'Pior EBITDA do semestre: -R$59.206 (-16,18%) — terceiro mês seguido de deterioração'},
         {tag:'r', text:'Receita bruta de R$365.937 é a menor do semestre — queda acumulada de 36,5% desde o pico de abril'},
         {tag:'r', text:'CMV Carga de 57,7% — o maior índice do semestre, pressionando a margem de contribuição para 17,1% (a menor do ano)'},
         {tag:'a', text:'As 3 novas consultorias administrativas mais que dobraram frente a maio: R$3.742 em junho vs R$1.551 em maio'},
-        {tag:'a', text:'FGTS Comercial de junho aparece como crédito de +R$615 (estorno), não como despesa — movimento pontual que não se repete nos demais meses'},
-        {tag:'g', text:'Despesas Comerciais caíram para R$44.181, o menor valor do semestre — redução compatível com a queda de receita'},
+        {tag:'a', text:'FGTS Comercial de junho estava lançado com sinal invertido na planilha (+R$615,11 em vez de -R$615,11) — já corrigido na planilha-fonte e no dashboard'},
+        {tag:'g', text:'Despesas Comerciais caíram para R$45.411, o menor valor do semestre — redução compatível com a queda de receita'},
       ],
       recs: [
         {t:'Tratar junho como o ponto mais crítico do semestre para decisão imediata.', d:'Com receita no menor patamar e CMV no maior percentual do ano, a margem de contribuição de 17,1% não cobre a estrutura fixa atual — o mês exige ação de curto prazo, não apenas monitoramento.'},
