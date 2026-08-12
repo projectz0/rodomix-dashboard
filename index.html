@@ -1360,28 +1360,28 @@ const AJA = {
   meses: ['Jan','Fev','Mar','Abr','Mai','Jun'],
   recBruta:  [502615,476069,576737,575913,444447,365937],
   recLiq:    [400228,378775,440998,433525,328780,274345],
-  margem:    [137003,135220,152054,145371,98933,62532],
-  saldo:     [-110089,-51584,-73743,-58217,-46801,-70786],
+  margem:    [137003,141826,156562,142573,96357,60139],
+  saldo:     [-110089,-44978,-69234,-61015,-49377,-73179],
   cmvOTR:    [0,0,0,0,0,0],
-  cmvCarga:  [52.65,51.44,50.28,49.56,51.88,57.74],
-  cmvTotal:  [52.37,51.15,50.05,49.64,51.58,57.57],
-  margemPct: [27.26,28.40,26.36,25.24,22.26,17.09],
+  cmvCarga:  [52.65,50.05,49.50,50.05,52.47,58.39],
+  cmvTotal:  [52.37,49.77,49.26,50.12,52.16,58.22],
+  margemPct: [27.26,29.79,27.15,24.76,21.68,16.43],
   recLiqWF:  [400228,378775,440998,433525,328780,274345],
-  cmvWF:     [-263196,-243524,-288629,-285877,-229265,-210674],
-  margemWF:  [137003,135220,152054,145371,98933,62532],
+  cmvWF:     [-263196,-236919,-284120,-288675,-231840,-213066],
+  margemWF:  [137003,141826,156562,142573,96357,60139],
   despComWF: [-49126,-48267,-51590,-61942,-55751,-45411],
   despAdmWF: [-86446,-89279,-84706,-93899,-74783,-76326],
-  resOpWF:   [1430,-2326,15758,-10470,-31602,-59206],
-  ebitdaVals:[1430,-2326,15758,-10470,-31602,-59206],
-  ebitdaPct: [0.28,-0.49,2.73,-1.82,-7.11,-16.18],
+  resOpWF:   [1430,4279,20267,-13268,-34177,-61598],
+  ebitdaVals:[1430,4279,20267,-13268,-34177,-61598],
+  ebitdaPct: [0.28,0.90,3.51,-2.30,-7.69,-16.83],
   fixData: {
-    '-1': { vals:[505439,312087,58053,0], total:875579, gap:411220, label:'Somatório Jan–Jun' },
+    '-1': { vals:[505439,312087,58053,0], total:875579, gap:407872, label:'Somatório Jan–Jun' },
      '0': { vals:[86446,49126,19482,0], total:155054, gap:110089, label:'Janeiro' },
-     '1': { vals:[89279,48267,22745,0], total:160291, gap:51584, label:'Fevereiro' },
-     '2': { vals:[84706,51590,3612,0], total:139908, gap:73743, label:'Março' },
-     '3': { vals:[93899,61942,4592,0], total:160433, gap:58217, label:'Abril' },
-     '4': { vals:[74783,55751,4355,0], total:134889, gap:46801, label:'Maio' },
-     '5': { vals:[76326,45411,3267,0], total:125004, gap:70786, label:'Junho' },
+     '1': { vals:[89279,48267,22745,0], total:160291, gap:44978, label:'Fevereiro' },
+     '2': { vals:[84706,51590,3612,0], total:139908, gap:69234, label:'Março' },
+     '3': { vals:[93899,61942,4592,0], total:160433, gap:61015, label:'Abril' },
+     '4': { vals:[74783,55751,4355,0], total:134889, gap:49377, label:'Maio' },
+     '5': { vals:[76326,45411,3267,0], total:125004, gap:73179, label:'Junho' },
   },
   comments: {
     8: {'Jan':'PÓ DE RASPA - 2.400,00', 'Fev':'PÓ DE RASPA - 2.400,00', 'Mar':'PÓ DE RASPA - 640,00\nVENDA DE PROD - 950,00', 'Abr':'PÓ DE RASPA = 600,00\nPNEUS E PRODU = 6.100,00\nSERVIÇOS E OUTROS - 1.490,00', 'Jun':'PNEUS - 3.800,00'},
@@ -1425,10 +1425,10 @@ const AJA = {
     {neg:true,  label:'  ICMS Antecipação Parcial', v:[-41,-38,-20753,-29383,-23472,-12825]},
     {bold:true,  label:'Receita de Vendas Líquida', v:[400228,378775,440998,433525,328780,274345], highlight:'blue'},
     {g:true,  label:'CMV', v:[null,null,null,null,null,null]},
-    {neg:true,bold:true,  label:'CMV Carga Total', v:[-263196,-243524,-288629,-285877,-229265,-210674]},
+    {neg:true,bold:true,  label:'CMV Carga Total', v:[-263196,-236919,-284120,-288675,-231840,-213066]},
     {neg:true,  label:'  Banda', v:[-175880,-164024,-200224,-201212,-146131,-126314], rowNum:50},
     {neg:true,  label:'  Manchão', v:[-3270,-2400,-4846,-4235,-3212,-4176], rowNum:51},
-    {neg:true,  label:'  Materiais Secundários', v:[-24644,-30065,-32883,-29100,-29661,-21894], rowNum:52},
+    {neg:true,  label:'  Materiais Secundários', v:[-24644,-23459,-28374,-29100,-29661,-21894], rowNum:52},
     {neg:true,  label:'  Bônus de Produção', v:[-3705,-3418,-3904,-3450,-2604,-3705]},
     {neg:true,  label:'  Energia', v:[-15249,-342,-5072,-11874,-12311,-13590], rowNum:59},
     {neg:true,  label:'  Fretes', v:[-387,-296,-437,-499,-334,-975]},
@@ -1439,7 +1439,7 @@ const AJA = {
     {neg:true,  label:'  Rescisões', v:[0,-5242,-8998,0,0,-2640], rowNum:69},
     {neg:true,  label:'  Vale Transporte CMV', v:[-2849,-2377,-2993,-2798,-2576,-2393]},
     {neg:true,  label:'  Custo Venda de Produto', v:[-30,-30,-315,-2277,-582,-1140]},
-    {bold:true,  label:'Margem de Contribuição', v:[137003,135220,152054,145371,98933,62532], highlight:'green'},
+    {bold:true,  label:'Margem de Contribuição', v:[137003,141826,156562,142573,96357,60139], highlight:'green'},
     {g:true,  label:'DESPESAS', v:[null,null,null,null,null,null]},
     {neg:true,bold:true,  label:'Despesas Comerciais', v:[-49126,-48267,-51590,-61942,-55751,-45411]},
     {neg:true,  label:'  Combustíveis', v:[-18524,-20192,-16090,-25127,-30260,-21661]},
@@ -1488,12 +1488,12 @@ const AJA = {
     {neg:true,  label:'  Tarifas DO IT', v:[-228,-237,-238,-301,-234,-194]},
     {neg:true,  label:'  Telefonia', v:[-107,-153,-162,-170,-140,-132]},
     {neg:true,  label:'  Vale Transporte Adm.', v:[-513,-552,-712,-632,-582,-688]},
-    {bold:true,  label:'Resultado Operacional (EBITDA)', v:[1430,-2326,15758,-10470,-31602,-59206], highlight:'red'},
+    {bold:true,  label:'Resultado Operacional (EBITDA)', v:[1430,4279,20267,-13268,-34177,-61598], highlight:'red'},
     {g:true,  label:'ABAIXO DO EBITDA', v:[null,null,null,null,null,null]},
     {neg:true,  label:'  Investimentos', v:[-19482,-22745,-3612,-4592,-4355,-3267], rowNum:173},
     {neg:true,  label:'  Retiradas', v:[-89316,-23763,-25608,-40351,-10845,-8314], rowNum:174},
     {neg:true,  label:'  Simples Nacional Parcelamento', v:[-2722,-2750,-60282,-2803,0,0], rowNum:175},
-    {bold:true,  label:'Saldo Final', v:[-110089,-51584,-73743,-58217,-46801,-70786], highlight:'red'},
+    {bold:true,  label:'Saldo Final', v:[-110089,-44978,-69234,-61015,-49377,-73179], highlight:'red'},
   ],
   insights: {
     '0': {
@@ -1514,75 +1514,76 @@ const AJA = {
     '1': {
       title: 'Análise · AJA · Fevereiro',
       insights: [
-        {tag:'r', text:'EBITDA de −R$2.326 (−0,49%) — pior resultado operacional até fevereiro'},
+        {tag:'g', text:'EBITDA positivo de +R$4.279 (+0,90%) — melhor resultado operacional até fevereiro, superando os +R$1.430 de janeiro'},
         {tag:'r', text:'Receita bruta de R$476.069 — menor até fevereiro, queda de −5,3% vs. janeiro'},
+        {tag:'g', text:'Margem de contribuição de 29,79% — melhor até fevereiro'},
+        {tag:'g', text:'CMV Carga caiu para 50,05% (vs. 52,65% em janeiro) — trajetória de melhora no período'},
         {tag:'g', text:'Energia de R$342 confirmada como devolução de crédito — não representa consumo real do mês'},
         {tag:'a', text:'Rescisões de R$5.242 — custo não recorrente que onera o CMV'},
         {tag:'a', text:'Serviços de Terceiros fev R$6.063: Ecotono R$988, Cuarelli R$1,5k, Fábio da Cruz R$800, Guincho R$2,6k, NIT R$175. Serviços documentados nos comentários.'},
-        {tag:'g', text:'Margem de contribuição de 28,4% — melhor até fevereiro, eficiência produtiva destacada'},
-        {tag:'g', text:'CMV Carga caiu para 51,44% (vs. 52,65% em janeiro) — trajetória de melhora no período'},
       ],
       recs: [
         {t:'Esclarecer o lançamento de Energia de fevereiro.', d:'R$342 vs. R$17.110 em janeiro — diferença de 98%. Se for parcelamento, o valor real do mês está subestimado e vai aparecer concentrado em outro mês.'},
         {t:'Serviços de Terceiros de fevereiro justificados nos comentários.', d:'R$6.063 = Guincho R$2,6k + Cuarelli R$1,5k + Fábio da Cruz R$800 + Ecotono + NIT. Guincho é pontual; demais são recorrentes de manutenção ambiental e infraestrutura.'},
-        {t:'Recuperar receita para acima de R$500k em março.', d:'Fevereiro ficou abaixo de R$500k e o EBITDA ficou negativo. A unidade precisa de pelo menos R$520k para equilibrar operacionalmente.'},
+        {t:'Não relaxar mesmo com EBITDA positivo — receita segue abaixo do patamar de janeiro.', d:'O resultado operacional positivo de fevereiro (R$4.279) veio com receita 5,3% menor que janeiro. Se a receita não se recuperar, a folga de fevereiro não se sustenta nos meses seguintes.'},
       ]
     },
     '2': {
       title: 'Análise · AJA · Março',
       insights: [
         {tag:'g', text:'Melhor receita bruta até março: R$576.737 — crescimento de +21% vs. fevereiro'},
-        {tag:'g', text:'Melhor EBITDA até março: +R$15.758 (+2,7%) — resultado operacional expressivo'},
-        {tag:'r', text:'Saldo final de −R$73.743 — Simples Nacional Parcelamento de R$60.282 consome quase todo o EBITDA'},
+        {tag:'g', text:'Melhor EBITDA até março: +R$20.267 (+3,51%) — resultado operacional expressivo, o melhor do trimestre'},
+        {tag:'r', text:'Saldo final de −R$69.234 — Simples Nacional Parcelamento de R$60.282 consome quase todo o EBITDA'},
         {tag:'r', text:'ICMS Antecipação de R$20.753 em março vs. ~R$40 nos meses anteriores — impacto relevante nos impostos'},
-        {tag:'a', text:'Materiais Secundários de R$32.883 — confirmado com a gerente'},
+        {tag:'a', text:'Materiais Secundários de R$28.374 — o maior valor do trimestre nessa linha, já validado com a gerência'},
         {tag:'a', text:'Manchão de R$4.846 — confirmado com a gerente'},
         {tag:'a', text:'Rescisões de R$8.998 — custo não recorrente, verificar se o turnover continua'},
       ],
       recs: [
         {t:'Endereçar o Simples Nacional urgentemente.', d:'R$60,3k em um único mês de parcelamento é insustentável. Avaliar renegociação do parcelamento para reduzir o impacto mensal no caixa.'},
         {t:'Entender o salto do ICMS em março.', d:'De R$40 para R$20.753 em um mês. Verificar se é antecipação normal de compras ou lançamento acumulado.'},
-        {t:'Manter a receita acima de R$550k.', d:'Março com R$576k gerou EBITDA positivo. Esse é o patamar mínimo para a unidade operar com folga operacional.'},
+        {t:'Manter a receita acima de R$550k.', d:'Março com R$577k gerou o melhor EBITDA do trimestre. Esse é o patamar mínimo para a unidade operar com folga operacional.'},
       ]
     },
     '-1': {
       title: 'Análise · AJA · Visão Geral Jan–Jun',
       insights: [
+        {tag:'r', text:'Inflexão clara entre março e abril: EBITDA positivo nos 3 primeiros meses (Jan +R$1.430, Fev +R$4.279, Mar +R$20.267) e negativo nos 3 últimos (Abr -R$13.268, Mai -R$34.177, Jun -R$61.598)'},
         {tag:'r', text:'Receita bruta caiu 36,5% entre abril (R$575.913) e junho (R$365.937) — a queda mais acentuada do semestre, revertendo o pico de março/abril'},
-        {tag:'r', text:'EBITDA negativo em 4 dos 6 meses — só janeiro (+R$1.430) e março (+R$15.758) ficaram positivos; abril, maio e junho somam -R$101.278 de EBITDA'},
-        {tag:'r', text:'CMV Carga subiu de 49,6% (abril) para 57,7% (junho) — pior índice do semestre, mesmo com a receita em queda'},
+        {tag:'r', text:'CMV Carga subiu de 50,05% (abril) para 58,39% (junho) — pior índice do semestre, mesmo com a receita em queda'},
         {tag:'a', text:'Despesas Administrativas não acompanharam a queda de receita: variam entre R$74.783 e R$93.899 nos 3 últimos meses, mesmo com a receita caindo quase pela metade'},
         {tag:'a', text:'3 novas consultorias administrativas (A S Advocacia, Asense Consultoria, Assessoria Perfil Gestão) entraram a partir de maio, somando R$1.551 em maio e R$3.742 em junho'},
-        {tag:'g', text:'Margem de contribuição segue positiva em todos os meses, mas caiu de 25,2% (abril) para 17,1% (junho)'},
-        {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$411.220 no semestre'},
+        {tag:'g', text:'Margem de contribuição segue positiva em todos os meses, mas caiu de 24,76% (abril) para 16,43% (junho)'},
+        {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$407.872 no semestre'},
       ],
       recs: [
+        {t:'Investigar o que mudou entre março e abril — a virada é abrupta demais para ser só sazonalidade.', d:'O EBITDA vai de +R$20.267 em março para -R$13.268 em abril, e a receita cai de R$576.737 para R$444.447 já em maio. Vale isolar se é queda de demanda, perda de cliente relevante, ou efeito de precificação.'},
         {t:'Rever o dimensionamento das despesas administrativas fixas para o novo patamar de receita.', d:'A receita caiu de R$575.913 para R$365.937 entre abril e junho (-36,5%), mas as Despesas Administrativas ficaram praticamente estáveis em R$74,8k–93,9k/mês. A estrutura fixa está desproporcional à receita atual.'},
-        {t:'Avaliar a capacidade produtiva instalada frente à demanda de maio e junho.', d:'O CMV Carga subiu de 49,6% para 57,7% mesmo com queda de volume — sinal de que custos fixos de produção (energia, manutenção, salários) não estão acompanhando a redução de receita, um efeito de alavancagem operacional negativa.'},
+        {t:'Avaliar a capacidade produtiva instalada frente à demanda de maio e junho.', d:'O CMV Carga subiu de 50,05% para 58,39% mesmo com queda de volume — sinal de que custos fixos de produção (energia, manutenção, salários) não estão acompanhando a redução de receita, um efeito de alavancagem operacional negativa.'},
         {t:'Consolidar as 3 novas consultorias administrativas em um único contrato, se possível.', d:'A S Advocacia, Asense Consultoria e Assessoria Perfil Gestão juntas dobraram de R$1.551 (maio) para R$3.742 (junho). Negociar em bloco pode reduzir o custo total dessas assessorias.'},
-        {t:'Rever o patamar de retiradas em meses de EBITDA negativo.', d:'Em abril, R$40.351 de retiradas com EBITDA já negativo em -R$10.470 ampliou o déficit do mês para -R$58.217 — quase 6x o resultado operacional negativo.'},
+        {t:'Rever o patamar de retiradas em meses de EBITDA negativo.', d:'Em abril, R$40.351 de retiradas com EBITDA já negativo em -R$13.268 ampliou o déficit do mês para -R$61.015.'},
       ]
     },
     '3': {
       title: 'Análise · AJA · Abril',
       insights: [
-        {tag:'r', text:'EBITDA negativo de -R$10.470 (-1,82%) — mesmo com margem de contribuição de 25,2%, o resultado operacional já veio negativo'},
+        {tag:'r', text:'EBITDA negativo de -R$13.268 (-2,30%) — mesmo com margem de contribuição de 24,76%, o resultado operacional já veio negativo, revertendo os 3 meses positivos anteriores'},
         {tag:'r', text:'Despesas Administrativas de R$93.899 — a maior desde janeiro, puxada por um Processo Trabalhista pontual de R$6.907 somado ao Rateio CSC de R$19.265'},
-        {tag:'a', text:'Receita bruta de R$575.913 fica atrás apenas do pico de março (R$576.737) — a maior desde janeiro, mas não converteu em EBITDA positivo'},
-        {tag:'a', text:'Retiradas de R$40.351 — a maior desde janeiro (R$89.316) — ampliam o saldo final negativo para -R$58.217'},
-        {tag:'g', text:'CMV Carga de 49,6% — o melhor índice de eficiência produtiva desde janeiro'},
+        {tag:'a', text:'Receita bruta de R$575.913 — segunda maior desde janeiro, atrás apenas do pico de março (R$576.737), mas não converteu em EBITDA positivo'},
+        {tag:'a', text:'Retiradas de R$40.351 — abaixo do pico de R$89.316 em janeiro, mas ampliam o saldo final negativo para -R$61.015 num mês de EBITDA já negativo'},
+        {tag:'a', text:'CMV Carga de 50,05% — praticamente no mesmo patamar do melhor índice do ano (49,50% em março)'},
       ],
       recs: [
-        {t:'Separar custos pontuais de custos recorrentes na leitura do EBITDA de abril.', d:'O Processo Trabalhista de R$6.907 é não recorrente; mesmo sem ele, o EBITDA ainda seria negativo em cerca de -R$3.563, mostrando que a operação de abril não se sustentava mesmo isolando o evento pontual.'},
-        {t:'Rever o patamar de retiradas em meses de EBITDA negativo.', d:'R$40.351 de retiradas com EBITDA já negativo em -R$10.470 amplia o déficit para -R$58.217. Alinhar retiradas à geração de caixa operacional do mês, não à expectativa de receita.'},
+        {t:'Separar custos pontuais de custos recorrentes na leitura do EBITDA de abril.', d:'O Processo Trabalhista de R$6.907 é não recorrente; mesmo sem ele, o EBITDA ainda seria negativo em cerca de -R$6.361, mostrando que a operação de abril não se sustentava mesmo isolando o evento pontual.'},
+        {t:'Rever o patamar de retiradas em meses de EBITDA negativo.', d:'R$40.351 de retiradas com EBITDA já negativo em -R$13.268 amplia o déficit para -R$61.015. Alinhar retiradas à geração de caixa operacional do mês, não à expectativa de receita.'},
       ]
     },
     '4': {
       title: 'Análise · AJA · Maio',
       insights: [
         {tag:'r', text:'Receita bruta caiu para R$444.447 (-22,8% vs abril) — a maior queda percentual mês a mês desde janeiro'},
-        {tag:'r', text:'EBITDA de -R$31.602 (-7,11%) — piora acentuada frente a abril, mesmo com Despesas Administrativas menores (R$74.783 vs R$93.899)'},
-        {tag:'a', text:'CMV Carga subiu para 51,9% — a queda de receita não veio acompanhada de redução proporcional no custo de produção'},
+        {tag:'r', text:'EBITDA de -R$34.177 (-7,69%) — piora acentuada frente a abril (-R$13.268), mesmo com Despesas Administrativas menores (R$74.783 vs R$93.899)'},
+        {tag:'a', text:'CMV Carga subiu para 52,47% — a queda de receita não veio acompanhada de redução proporcional no custo de produção'},
         {tag:'a', text:'3 novas consultorias administrativas começaram em maio: A S Advocacia (R$589), Asense Consultoria (R$349) e Assessoria Perfil Gestão (R$613) — R$1.551 somados'},
         {tag:'a', text:'IPTU de R$1.505 aparece pela primeira vez no semestre — item novo na estrutura de custos administrativos'},
         {tag:'g', text:'Despesas Administrativas caíram para R$74.783, o menor valor desde janeiro — mas insuficiente para compensar a queda de receita'},
@@ -1595,9 +1596,9 @@ const AJA = {
     '5': {
       title: 'Análise · AJA · Junho',
       insights: [
-        {tag:'r', text:'Pior EBITDA do semestre: -R$59.206 (-16,18%) — terceiro mês seguido de deterioração'},
+        {tag:'r', text:'Pior EBITDA do semestre: -R$61.598 (-16,83%) — terceiro mês seguido de deterioração'},
         {tag:'r', text:'Receita bruta de R$365.937 é a menor do semestre — queda acumulada de 36,5% desde o pico de abril'},
-        {tag:'r', text:'CMV Carga de 57,7% — o maior índice do semestre, pressionando a margem de contribuição para 17,1% (a menor do ano)'},
+        {tag:'r', text:'CMV Carga de 58,39% — o maior índice do semestre, pressionando a margem de contribuição para 16,43% (a menor do ano)'},
         {tag:'a', text:'As 3 novas consultorias administrativas mais que dobraram frente a maio: R$3.742 em junho vs R$1.551 em maio'},
         {tag:'g', text:'Despesas Comerciais caíram para R$45.411, o menor valor do semestre — redução compatível com a queda de receita'},
       ],
@@ -2895,8 +2896,8 @@ const GAMMA_URLS = {
 const GAMMA_URLS_MES = {
   aja: {
     0: 'https://gamma.app/docs/054y43tzzr51b04', // Janeiro
-    1: 'https://gamma.app/docs/on2twff2ksk5lh6', // Fevereiro
-    2: 'https://gamma.app/docs/x5qn0n4x5jp0ypz', // Março
+    1: 'https://gamma.app/docs/0npopwcowtnrh7s', // Fevereiro (recriado - EBITDA corrigido)
+    2: 'https://gamma.app/docs/m5dqiwkbpeh3jkq', // Março (recriado - Materiais Secundários corrigido)
     3: 'https://gamma.app/docs/mtt8ow3wizng1ak', // Abril
     4: 'https://gamma.app/docs/ng2r7g887bf0ctz', // Maio
     // 5 (Junho) — pendente: material secundário e manchões ainda aguardando confirmação
