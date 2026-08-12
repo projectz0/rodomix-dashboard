@@ -370,7 +370,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260812140228"/>
+  <meta name="app-build" content="20260812143518"/>
 </head>
 <body>
 
@@ -3184,12 +3184,26 @@ function toggleGammaApres() {
   frameWrap.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
+var apresFrameHomeParent = null;
+var apresFrameHomeNext = null;
+
+function restoreApresFrameHome() {
+  var frameWrap = document.getElementById('apresFrameWrap');
+  if (!frameWrap || !apresFrameHomeParent) return;
+  if (apresFrameHomeNext && apresFrameHomeNext.parentNode === apresFrameHomeParent) {
+    apresFrameHomeParent.insertBefore(frameWrap, apresFrameHomeNext);
+  } else {
+    apresFrameHomeParent.appendChild(frameWrap);
+  }
+}
+
 function closeApresFrame() {
   var frameWrap = document.getElementById('apresFrameWrap');
   var iframe = document.getElementById('apresFrame');
   var btn = document.getElementById('btnApresToggle');
   var wrap = document.getElementById('apresWrap');
   if (!frameWrap) return;
+  if (frameWrap.classList.contains('expanded')) restoreApresFrameHome();
   frameWrap.classList.remove('open');
   frameWrap.classList.remove('expanded');
   document.body.style.overflow = '';
@@ -3204,9 +3218,21 @@ function toggleApresFullscreen() {
   var frameWrap = document.getElementById('apresFrameWrap');
   var fsBtn = document.getElementById('btnApresFullscreenToggle');
   if (!frameWrap) return;
-  var expanded = frameWrap.classList.toggle('expanded');
-  document.body.style.overflow = expanded ? 'hidden' : '';
-  if (fsBtn) fsBtn.innerHTML = expanded ? '&#10005; Sair da tela cheia' : '&#9974; Tela cheia';
+  var expanding = !frameWrap.classList.contains('expanded');
+  if (expanding) {
+    // Move o quadro pra fora do container da aba (que tem z-index próprio e prende
+    // o overlay dentro do seu contexto de empilhamento, deixando o topbar por cima).
+    apresFrameHomeParent = frameWrap.parentNode;
+    apresFrameHomeNext = frameWrap.nextSibling;
+    document.body.appendChild(frameWrap);
+    frameWrap.classList.add('expanded');
+    document.body.style.overflow = 'hidden';
+  } else {
+    frameWrap.classList.remove('expanded');
+    document.body.style.overflow = '';
+    restoreApresFrameHome();
+  }
+  if (fsBtn) fsBtn.innerHTML = expanding ? '&#10005; Sair da tela cheia' : '&#9974; Tela cheia';
 }
 
 function abrirGammaApresNovaAba() {
