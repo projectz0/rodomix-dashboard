@@ -229,9 +229,32 @@ body{margin:0;padding:0;}
 .apres-wrap.wide{max-width:min(1200px,96vw);}
 .apres-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--text);margin-bottom:8px;}
 .apres-sub{color:var(--text3);font-size:14.5px;margin-bottom:36px;}
-.apres-wrap .empresa-bar{justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:0;}
-.apres-wrap .ebtn{font-size:13.5px;padding:11px 26px;}
-.apres-wrap .mbtn{font-size:13.5px;padding:10px 24px;}
+.apres-field-label{font-size:11.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;text-align:left;}
+.apres-dropdown{position:relative;text-align:left;}
+.apres-dropdown-trigger{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;border:1.5px solid var(--border2);border-radius:12px;
+  background:#fff;cursor:pointer;transition:border-color .15s;
+  font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--text2);
+}
+.apres-dropdown-trigger:hover{border-color:var(--blue);}
+.apres-dropdown.open .apres-dropdown-trigger{border-color:var(--blue);background:#f0f6fd;color:var(--blue);border-radius:12px 12px 0 0;}
+.apres-dropdown-arrow{font-size:11px;color:var(--text3);transition:transform .15s;}
+.apres-dropdown.open .apres-dropdown-arrow{color:var(--blue);transform:rotate(180deg);}
+.apres-dropdown-list{
+  display:none;position:absolute;left:0;right:0;top:100%;z-index:20;
+  background:#fff;border:1.5px solid var(--blue);border-top:1px solid rgba(0,0,0,.08);
+  border-radius:0 0 12px 12px;box-shadow:0 8px 20px rgba(0,0,0,.1);
+  max-height:280px;overflow-y:auto;
+}
+.apres-dropdown.open .apres-dropdown-list{display:block;}
+.apres-dropdown-item{
+  padding:12px 18px;font-size:13.5px;font-weight:600;color:var(--text2);cursor:pointer;
+  border-top:1px solid rgba(0,0,0,.06);transition:background .1s;
+}
+.apres-dropdown-item:first-child{border-top:none;}
+.apres-dropdown-item:hover{background:#f7f6f3;}
+.apres-dropdown-item.active{color:var(--blue);background:#f0f6fd;}
 
 .apres-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px;}
 .btn-abrir-gamma{
@@ -511,18 +534,24 @@ body{margin:0;padding:0;}
       <div class="apres-wrap" id="apresWrap">
         <div class="apres-title">Apresentação Executiva</div>
         <div class="apres-sub">Selecione a empresa e o período</div>
-        <div class="filter-label" style="margin-bottom:8px;">Empresa</div>
-        <div class="empresa-bar" id="apres-empresa-bar">
-          <button class="ebtn active" onclick="selectApresEmpresa(this,'aja')">AJA</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'amc')">AMC / Rodoeste</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'can')">Candeias</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'csc')">CSC</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'esm')">ESM / AMJU</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'ja')">J.A</button>
-          <button class="ebtn" onclick="selectApresEmpresa(this,'rdx')">Rodomix</button>
+
+        <div class="apres-field-label">Selecione a empresa</div>
+        <div class="apres-dropdown" id="apresEmpresaDropdown">
+          <button class="apres-dropdown-trigger" id="apresEmpresaTrigger" onclick="toggleApresDropdown('empresa')" type="button">
+            <span id="apresEmpresaLabel">AJA</span>
+            <span class="apres-dropdown-arrow">&#9660;</span>
+          </button>
+          <div class="apres-dropdown-list" id="apresEmpresaList"></div>
         </div>
-        <div class="filter-label" style="margin-bottom:8px;margin-top:16px;">Período</div>
-        <div id="apres-mes-bar" class="mes-bar"></div>
+
+        <div class="apres-field-label" style="margin-top:26px;">Selecione o mês</div>
+        <div class="apres-dropdown" id="apresMesDropdown">
+          <button class="apres-dropdown-trigger" id="apresMesTrigger" onclick="toggleApresDropdown('mes')" type="button">
+            <span id="apresMesLabel">Selecione</span>
+            <span class="apres-dropdown-arrow">&#9660;</span>
+          </button>
+          <div class="apres-dropdown-list" id="apresMesList"></div>
+        </div>
 
         <div class="apres-actions">
           <button class="btn-abrir-gamma" id="btnApresToggle" onclick="toggleGammaApres()">&#9654; Ver Apresentação</button>
@@ -2982,7 +3011,7 @@ function switchTab(tab) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
   document.querySelectorAll('.bottom-nav-item').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
   if (tab === 'dre') { buildDreMesBar(); empresa = dreEmpresa; renderDRE(dreSel); }
-  if (tab === 'apresentacao') { buildApresMesBar(); }
+  if (tab === 'apresentacao') { buildApresEmpresaList(); buildApresMesBar(); }
   updateTopbar(tab);
   window.scrollTo(0, 0);
   if (window.innerWidth <= 768) {
@@ -3013,13 +3042,65 @@ function temTodosMesesGamma(emp) {
   return !!(GAMMA_URLS_MES[emp] && d.meses.every(function(m,i){ return !!GAMMA_URLS_MES[emp][i]; }));
 }
 
-function selectApresEmpresa(btn, emp) {
-  apresEmpresa = emp;
-  apresMes = temTodosMesesGamma(emp) ? 0 : -1;
-  document.querySelectorAll('#apres-empresa-bar .ebtn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  closeApresFrame();
-  buildApresMesBar();
+var APRES_EMPRESAS = [
+  {key:'aja', label:'AJA'},
+  {key:'amc', label:'AMC / Rodoeste'},
+  {key:'can', label:'Candeias'},
+  {key:'csc', label:'CSC'},
+  {key:'esm', label:'ESM / AMJU'},
+  {key:'ja',  label:'J.A'},
+  {key:'rdx', label:'Rodomix'}
+];
+
+function toggleApresDropdown(which) {
+  var id = which === 'empresa' ? 'apresEmpresaDropdown' : 'apresMesDropdown';
+  var other = which === 'empresa' ? 'apresMesDropdown' : 'apresEmpresaDropdown';
+  var el = document.getElementById(id);
+  var otherEl = document.getElementById(other);
+  if (!el) return;
+  var willOpen = !el.classList.contains('open');
+  if (otherEl) otherEl.classList.remove('open');
+  el.classList.toggle('open', willOpen);
+}
+
+function closeAllApresDropdowns() {
+  var e1 = document.getElementById('apresEmpresaDropdown');
+  var e2 = document.getElementById('apresMesDropdown');
+  if (e1) e1.classList.remove('open');
+  if (e2) e2.classList.remove('open');
+}
+
+document.addEventListener('click', function(ev) {
+  var e1 = document.getElementById('apresEmpresaDropdown');
+  var e2 = document.getElementById('apresMesDropdown');
+  if (e1 && !e1.contains(ev.target)) e1.classList.remove('open');
+  if (e2 && !e2.contains(ev.target)) e2.classList.remove('open');
+});
+
+function buildApresEmpresaList() {
+  var list = document.getElementById('apresEmpresaList');
+  var label = document.getElementById('apresEmpresaLabel');
+  if (!list) return;
+  list.innerHTML = '';
+  APRES_EMPRESAS.forEach(function(item) {
+    var el = document.createElement('div');
+    el.className = 'apres-dropdown-item' + (item.key === apresEmpresa ? ' active' : '');
+    el.textContent = item.label;
+    el.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      apresEmpresa = item.key;
+      apresMes = temTodosMesesGamma(item.key) ? 0 : -1;
+      if (label) label.textContent = item.label;
+      closeAllApresDropdowns();
+      closeApresFrame();
+      buildApresMesBar();
+    });
+    list.appendChild(el);
+  });
+  if (label) {
+    var cur = APRES_EMPRESAS.find(function(i){ return i.key === apresEmpresa; });
+    label.textContent = cur ? cur.label : 'Selecione';
+  }
 }
 
 function buildApresMesBar() {
@@ -3027,9 +3108,10 @@ function buildApresMesBar() {
   empresa = apresEmpresa;
   var d = D();
   empresa = prevEmpresa;
-  var bar = document.getElementById('apres-mes-bar');
-  if (!bar) return;
-  bar.innerHTML = '';
+  var list = document.getElementById('apresMesList');
+  var label = document.getElementById('apresMesLabel');
+  if (!list) return;
+  list.innerHTML = '';
   var completa = temTodosMesesGamma(apresEmpresa);
   if (completa && apresMes === -1) apresMes = 0;
   var itens = completa ? [] : [{label:'Visão Geral', m:-1}];
@@ -3037,18 +3119,21 @@ function buildApresMesBar() {
     d.meses.map((m,i) => ({label:m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m, m:i}))
   );
   itens.forEach(function(item) {
-    var btn = document.createElement('button');
-    btn.className = 'mbtn' + (item.m === apresMes ? ' active' : '');
-    btn.textContent = item.label;
-    btn.addEventListener('click', function() {
+    var el = document.createElement('div');
+    el.className = 'apres-dropdown-item' + (item.m === apresMes ? ' active' : '');
+    el.textContent = item.label;
+    el.addEventListener('click', function(ev) {
+      ev.stopPropagation();
       apresMes = item.m;
-      document.querySelectorAll('#apres-mes-bar .mbtn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (label) label.textContent = item.label;
+      closeAllApresDropdowns();
       closeApresFrame();
       atualizarApresNote();
     });
-    bar.appendChild(btn);
+    list.appendChild(el);
   });
+  var curItem = itens.find(function(i){ return i.m === apresMes; });
+  if (label) label.textContent = curItem ? curItem.label : 'Selecione';
   atualizarApresNote();
 }
 
@@ -3151,6 +3236,7 @@ function buildDreMesBar() {
 updateHeader();
 buildFilterBar();
 renderAll();
+buildApresEmpresaList();
 buildApresMesBar();
 
 function syncSidebarBrand() {
