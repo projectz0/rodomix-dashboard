@@ -233,14 +233,6 @@ body{margin:0;padding:0;}
 .apres-wrap .ebtn{font-size:13.5px;padding:11px 26px;}
 .apres-wrap .mbtn{font-size:13.5px;padding:10px 24px;}
 
-.apres-resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;padding-top:32px;border-top:1px solid rgba(0,0,0,.08);}
-.apres-resumo-label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:14px;}
-.apres-resumo-item{background:#f7f6f3;border-radius:14px;padding:24px 10px;}
-.apres-resumo-val{font-family:'Syne',sans-serif;font-size:clamp(17px,2.1vw,26px);font-weight:800;color:var(--text2);letter-spacing:-.02em;white-space:nowrap;}
-.apres-resumo-val.pos{color:var(--green);}
-.apres-resumo-val.neg{color:var(--red);}
-.apres-resumo-sub{grid-column:1/-1;font-size:11.5px;color:var(--text3);margin-top:4px;}
-
 .apres-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px;}
 .btn-abrir-gamma{
   display:inline-flex;align-items:center;gap:10px;
@@ -297,10 +289,6 @@ body{margin:0;padding:0;}
   .apres-wrap{margin:16px;padding:28px 18px;}
   .apres-wrap.wide{max-width:none;margin:16px;}
   .apres-title{font-size:22px;}
-  .apres-resumo{grid-template-columns:1fr 1fr;gap:12px;margin-top:26px;padding-top:22px;}
-  .apres-resumo-item{padding:16px 6px;}
-  .apres-resumo-val{font-size:clamp(15px,4.8vw,20px);}
-  .apres-resumo-item:nth-child(3){grid-column:1/-1;}
   .apres-actions{flex-direction:column;margin-top:26px;}
   .apres-actions button{width:100%;justify-content:center;}
   .apres-frame-wrap{margin-left:-16px;margin-right:-16px;}
@@ -535,8 +523,6 @@ body{margin:0;padding:0;}
         </div>
         <div class="filter-label" style="margin-bottom:8px;margin-top:16px;">Período</div>
         <div id="apres-mes-bar" class="mes-bar"></div>
-
-        <div class="apres-resumo" id="apresResumo"></div>
 
         <div class="apres-actions">
           <button class="btn-abrir-gamma" id="btnApresToggle" onclick="toggleGammaApres()">&#9654; Ver Apresentação</button>
@@ -3060,12 +3046,10 @@ function buildApresMesBar() {
       btn.classList.add('active');
       closeApresFrame();
       atualizarApresNote();
-      atualizarApresResumo();
     });
     bar.appendChild(btn);
   });
   atualizarApresNote();
-  atualizarApresResumo();
 }
 
 function atualizarApresNote() {
@@ -3075,30 +3059,6 @@ function atualizarApresNote() {
   note.textContent = temMes
     ? 'Análise individual do mês selecionado'
     : 'Visão geral do período (esta empresa ainda não tem análises mensais individualizadas)';
-}
-
-function atualizarApresResumo() {
-  var box = document.getElementById('apresResumo');
-  if (!box) return;
-  var prevEmpresa = empresa;
-  empresa = apresEmpresa;
-  var d = D();
-  empresa = prevEmpresa;
-  function soma(arr) { return arr.reduce(function(a,b){ return a+b; }, 0); }
-  var rec, ebitda, saldo, subLabel;
-  if (apresMes === -1) {
-    rec = soma(d.recBruta); ebitda = soma(d.ebitdaVals); saldo = soma(d.saldo);
-    subLabel = 'Acumulado do período';
-  } else {
-    rec = d.recBruta[apresMes]; ebitda = d.ebitdaVals[apresMes]; saldo = d.saldo[apresMes];
-    subLabel = d.meses[apresMes] ? '' : '';
-  }
-  function cls(v) { return v >= 0 ? 'pos' : 'neg'; }
-  box.innerHTML =
-    '<div class="apres-resumo-item"><div class="apres-resumo-label">Receita bruta</div><div class="apres-resumo-val">' + fmtFull(rec) + '</div></div>' +
-    '<div class="apres-resumo-item"><div class="apres-resumo-label">EBITDA</div><div class="apres-resumo-val ' + cls(ebitda) + '">' + fmtFull(ebitda) + '</div></div>' +
-    '<div class="apres-resumo-item"><div class="apres-resumo-label">Saldo final</div><div class="apres-resumo-val ' + cls(saldo) + '">' + fmtFull(saldo) + '</div></div>' +
-    (subLabel ? '<div class="apres-resumo-sub">' + subLabel + '</div>' : '');
 }
 
 function gammaEmbedUrl(url) {
