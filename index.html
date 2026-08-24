@@ -247,7 +247,7 @@ body{margin:0;padding:0;}
   display:none;position:absolute;left:0;right:0;top:100%;z-index:300;
   background:#fff;border:1.5px solid var(--blue);border-top:1px solid rgba(0,0,0,.08);
   border-radius:0 0 12px 12px;box-shadow:0 8px 20px rgba(0,0,0,.1);
-  max-height:280px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  max-height:280px;overflow-y:auto;overscroll-behavior:contain;
 }
 .apres-dropdown.open .apres-dropdown-list{display:block;}
 .apres-dropdown-item{
@@ -315,8 +315,9 @@ body{margin:0;padding:0;}
   }
   .hamburger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;}
   .bottom-nav{
-    display:flex;position:fixed;bottom:0;left:0;right:0;
+    display:flex;position:fixed;bottom:0;left:0;right:0;width:100%;max-width:100vw;
     background:#fff;border-top:1px solid var(--border);z-index:200;
+    transform:translateZ(0);-webkit-transform:translateZ(0);
   }
   .bottom-nav-item{
     flex:1;display:flex;flex-direction:column;align-items:center;
@@ -373,7 +374,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260824154454"/>
+  <meta name="app-build" content="20260824155232"/>
 </head>
 <body>
 
@@ -617,7 +618,7 @@ body{margin:0;padding:0;}
       </div>
       <div class="card" style="padding-bottom:12px;">
     <div class="card-title" style="margin-bottom:12px;" id="dreSubTitle">Demonstrativo de Resultados do Exercício · Linha a Linha</div>
-    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <div style="overflow-x:auto;">
     <table id="dreTable" style="width:100%;border-collapse:collapse;font-size:12.5px;">
       <thead id="dreHead"></thead>
       <tbody id="dreBody"></tbody>
