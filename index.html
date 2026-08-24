@@ -370,7 +370,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260824141713"/>
+  <meta name="app-build" content="20260824143906"/>
 </head>
 <body>
 
@@ -1199,14 +1199,12 @@ const AMC = {
         {tag:'r', text:'CMV Total de 53,01% é o pior do período até aqui — CMV OTR sozinho chegou a 67,04%, também o pior até aqui'},
         {tag:'r', text:'EBITDA de −R$94.359 (−23,56%) é o pior resultado operacional do período até aqui'},
         {tag:'r', text:'Saldo final de −R$142.342 é o pior do período até aqui — pior até que janeiro'},
-        {tag:'a', text:'Combustíveis saltou para R$36.549 — quase o dobro da média dos outros meses (~R$18-19k), sem justificativa nos comentários da planilha'},
-        {tag:'a', text:'Investimento de R$47.983 concentrado no Hidrolaser (R$41.125) — verificar se é parcela de um investimento maior'},
+        {tag:'a', text:'Combustíveis em R$36.549 — quase o dobro da média dos outros meses (~R$18-19k)'},
+        {tag:'a', text:'Investimento de R$47.983 concentrado no Hidrolaser (R$41.125)'},
         {tag:'a', text:'Despesas comerciais no maior valor do período até aqui: R$73.589, puxadas pelo pico de combustíveis'},
       ],
       recs: [
-        {t:'Investigar o pico de Combustíveis com urgência.', d:'R$36.549 em abril vs. ~R$18-19k nos demais meses. Não há justificativa nos comentários da planilha — confirmar se é lançamento correto, reajuste de preço ou erro de rateio.'},
         {t:'Entender a causa do CMV OTR disparar para 67%.', d:'É o pior resultado do segmento no período até aqui, bem acima da média (~55%). Mapear se foi custo pontual de matéria-prima ou mix de produção.'},
-        {t:'Confirmar a natureza do investimento no Hidrolaser (R$41,1k).', d:'É o maior item isolado do mês. Entender se é parcela única ou parcelamento de um equipamento maior, e o retorno esperado.'},
         {t:'Tratar abril como ponto fora da curva, não como tendência.', d:'A combinação de CMV alto + combustível alto + investimento grande raramente se repete no mesmo mês. Confirmar em maio se os indicadores voltam ao padrão histórico.'},
       ]
     },
@@ -1216,12 +1214,11 @@ const AMC = {
         {tag:'g', text:'Forte recuperação da receita bruta: R$581.661 (+45,2% vs. abril), 2º melhor resultado do período até aqui, atrás só de março'},
         {tag:'g', text:'CMV Carga caiu para 47,13% (−8pp vs. abril) — recuperação relevante de eficiência no segmento'},
         {tag:'g', text:'EBITDA de −R$15.727 (−2,70%) — forte melhora vs. abril, o 2º melhor resultado operacional do período até aqui'},
-        {tag:'a', text:'Investimento de R$74.606 é o maior do período até aqui — obra do Truck Center (pedreiro, frete, pisos, mineração) somada a um novo lançamento do Hidrolaser (R$41.125)'},
+        {tag:'a', text:'Investimento de R$74.606 é o maior do período até aqui — obra do Truck Center (pedreiro, frete, pisos, mineração) somada a um lançamento do Hidrolaser (R$41.125)'},
         {tag:'a', text:'Despesas administrativas em R$115.819 — maior valor do período até aqui, puxadas por Taxas Diversas (R$7.594) e Despesas com Viagens Adm. (R$4.255)'},
         {tag:'a', text:'Saldo final ainda negativo em −R$90.333, mesmo com EBITDA quase equilibrado — o investimento do Truck Center consome o resultado operacional'},
       ],
       recs: [
-        {t:'Confirmar se o novo lançamento do Hidrolaser em maio é duplicidade.', d:'O mesmo valor (R$41.125) já apareceu em abril. Verificar com o financeiro se é uma segunda parcela legítima ou lançamento repetido por engano.'},
         {t:'Acompanhar o cronograma da obra do Truck Center.', d:'R$24,8k em maio (pedreiro + frete + pisos + mineração) fazem parte de um investimento maior. Mapear o cronograma completo para prever o impacto nos próximos meses.'},
         {t:'Sustentar a recuperação do CMV Carga.', d:'47,13% é o melhor resultado do segmento desde março. Identificar o que mudou em relação a abril e formalizar como prática.'},
         {t:'Revisar as Taxas Diversas de R$7,6k.', d:'Valor bem acima do padrão mensal (~R$1-3k). Confirmar a natureza dos lançamentos (associações, DAJE) e se são recorrentes.'},
@@ -3077,8 +3074,8 @@ const GAMMA_URLS_MES = {
     0: 'https://gamma.app/docs/mi70u2cniwyba2q', // Janeiro
     1: 'https://gamma.app/docs/f3d66v3coicqcp9', // Fevereiro
     2: 'https://gamma.app/docs/9wphrmb5cm4ydrs', // Março (corrigido — saldo final positivo)
-    3: 'https://gamma.app/docs/p95iobpnohcv4vr', // Abril
-    4: 'https://gamma.app/docs/hfic7jrw3r26mk9', // Maio
+    3: 'https://gamma.app/docs/sf8se8itadqvg7h', // Abril (recriado - removida linguagem de investigação/duplicidade)
+    4: 'https://gamma.app/docs/nbsysq16yvx8817', // Maio (recriado - removida linguagem de investigação/duplicidade)
     5: 'https://gamma.app/docs/3ztpzcf5rib0m53'  // Junho
   }
 };
