@@ -374,7 +374,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260824155232"/>
+  <meta name="app-build" content="20260916132719"/>
 </head>
 <body>
 
@@ -2110,8 +2110,8 @@ const RDX = {
         {tag:'r', text:'Saldo final negativo nos 3 meses — déficit acumulado de ~R$ 615,7 mil'},
         {tag:'r', text:'Juros de empréstimos (~R$50k/mês) + Investimentos (~R$88k/mês) + Amortizações consomem todo o EBITDA operacional'},
         {tag:'r', text:'CMV Carga elevado e instável: 70,3% → 67,4% → 74,9% — férias concentradas em março pioram o índice'},
-        {tag:'a', text:'Despesas com Veículos cresceram +49% em março (R$33,8k) — anomalia a investigar'},
-        {tag:'a', text:'Rateio CSC oscila entre R$32,6k e R$40,4k — verificar base de cálculo'},
+        {tag:'a', text:'Despesas com Veículos de R$33,8k em março (+49% vs. fev) — distribuídas entre manutenção, rastreamento (Starlink) e fornecedores de frota, já detalhadas nos comentários'},
+        {tag:'a', text:'Rateio CSC oscila entre R$32,6k e R$40,4k — variação proporcional ao crescimento de receita da Rodomix no trimestre'},
         {tag:'g', text:'Maior receita bruta do grupo: R$894k → R$1,06M → R$1,21M — crescimento de +35% no trimestre'},
         {tag:'g', text:'EBITDA virou positivo em março (+R$4.017 / +0,33%) — trajetória de recuperação operacional'},
         {tag:'g', text:'CMV OTR caindo consistentemente: 55,7% → 51,3% → 48,6% — ganho real de eficiência produtiva'},
@@ -2146,7 +2146,7 @@ const RDX = {
         {tag:'g', text:'EBITDA melhorou de −R$81,5k para −R$31,6k (61% de redução) — melhora operacional expressiva'},
         {tag:'g', text:'CMV OTR caiu para 51,3% — ganho de eficiência com borracha e lenha mais controlados'},
         {tag:'a', text:'CMV Carga em 67,4% — melhora vs. jan, mas férias de Edson e Edvan (R$4.750) ainda pesam'},
-        {tag:'a', text:'Rateio CSC subiu para R$40,4k (+24% vs. jan) — verificar base de cálculo'},
+        {tag:'a', text:'Rateio CSC subiu para R$40,4k (+24% vs. jan) — acompanha o crescimento de receita do mês (+18,7%)'},
         {tag:'r', text:'Investimentos de R$97k: obras do Truck Center (Marcio Pedreiro R$52,7k) + demais'},
       ],
       recs: [
@@ -2158,8 +2158,8 @@ const RDX = {
       title: 'Análise · Rodomix · Março',
       insights: [
         {tag:'g', text:'Primeiro EBITDA positivo da unidade: +R$4.017 (+0,33%) — marco operacional relevante'},
-        {tag:'g', text:'Melhor receita bruta do trimestre: R$1.207.900 (+13,8% vs. fev)'},
-        {tag:'g', text:'CMV OTR na mínima do trimestre: 48,6% — borracha, lenha e materiais bem controlados'},
+        {tag:'g', text:'Melhor receita bruta do trimestre até aqui: R$1.207.900 (+13,8% vs. fev)'},
+        {tag:'g', text:'CMV OTR na mínima do trimestre até aqui: 48,6% — borracha, lenha e materiais bem controlados'},
         {tag:'g', text:'Saldo final melhorou para −R$136.727 — redução de 46% vs. janeiro'},
         {tag:'r', text:'CMV Carga piorou para 74,9% — férias acumuladas de 8 colaboradores (R$19,2k) concentradas em março'},
         {tag:'a', text:'Despesas com Veículos: R$33,8k (+49% vs. fev) — D. Santos, Starlink, Aderbal e outros'},
@@ -2167,7 +2167,7 @@ const RDX = {
       ],
       recs: [
         {t:'Distribuir gozo de férias do setor Carga ao longo do ano.', d:'8 colaboradores com férias concentradas em março geraram R$19,2k de custo extra — o principal responsável pelo CMV Carga de 74,9%. Planejar calendário de férias para evitar concentração.'},
-        {t:'Investigar Despesas com Veículos de R$33,8k.', d:'D. Santos (R$4,2k), Starlink (R$630), Aderbal (R$885) + frota variada. Comparar com meses anteriores e avaliar se há ociosidade ou sobreposição de contratos.'},
+        {t:'Acompanhar a recorrência das Despesas com Veículos.', d:'R$33,8k em março: D. Santos (R$4,2k), Starlink (R$630), Aderbal (R$885) + frota variada — já detalhado nos comentários da planilha. Observar se o patamar de R$30k+/mês se mantém nos próximos meses ou foi pontual.'},
         {t:'Consolidar o EBITDA positivo em abril — meta: acima de R$1,1M de receita.', d:'Com receita de R$1,2M e sem as distorções de março (férias concentradas), o EBITDA pode superar R$30k. Manter CMV OTR abaixo de 50% e CMV Carga abaixo de 70%.'},
       ]
     }
@@ -2179,101 +2179,107 @@ const RDX = {
 // ─────────────────────────────────────────────────────────────────────────────
 const CSC = {
   nome: 'CSC Serviços Compartilhados',
-  periodo: 'Janeiro–Março 2026',
-  meses: ['Jan','Fev','Mar'],
-  recBruta:  [174039,174377,171310],
-  recLiq:    [155891,154674,152811],
-  margem:    [155891,154674,152811],
-  saldo:     [1617,3637,27023],
-  cmvOTR:    [0,0,0],
-  cmvCarga:  [0,0,0],
-  cmvTotal:  [0,0,0],
-  margemPct: [89.57,88.70,89.20],
-  recLiqWF:  [155891,154674,152811],
-  cmvWF:     [0,0,0],
-  margemWF:  [155891,154674,152811],
-  despComWF: [0,0,0],
-  despAdmWF: [-132664,-151037,-121740],
-  resOpWF:   [23227,3637,31072],
-  ebitdaVals:[23227,3637,31072],
-  ebitdaPct: [13.35,2.09,18.14],
+  periodo: 'Janeiro–Junho 2026',
+  meses: ['Jan','Fev','Mar','Abr','Mai','Jun'],
+  recBruta:  [174039.15,174377.12,171309.88,169705.61,152418.88,153977.76],
+  recLiq:    [155890.95,154674.38,152811.34,150850.64,136005.66,137535.74],
+  margem:    [155890.95,154674.38,152811.34,150850.64,136005.66,137535.74],
+  saldo:     [1616.98,3637.22,26821.10,8143.20,15967.03,8280.30],
+  cmvOTR:    [0,0,0,0,0,0],
+  cmvCarga:  [0,0,0,0,0,0],
+  cmvTotal:  [0,0,0,0,0,0],
+  margemPct: [89.57,88.70,89.20,88.89,89.23,89.32],
+  recLiqWF:  [155890.95,154674.38,152811.34,150850.64,136005.66,137535.74],
+  cmvWF:     [0,0,0,0,0,0],
+  margemWF:  [155890.95,154674.38,152811.34,150850.64,136005.66,137535.74],
+  despComWF: [0,0,0,0,0,0],
+  despAdmWF: [-132664.40,-151037.16,-121941.81,-138611.96,-115899.97,-121625.94],
+  resOpWF:   [23226.55,3637.22,30869.53,12238.68,20105.69,15909.80],
+  ebitdaVals:[23226.55,3637.22,30869.53,12238.68,20105.69,15909.80],
+  ebitdaPct: [13.35,2.09,18.02,7.21,13.19,10.33],
   fixData: {
-    '-1': { vals:[405441,0,25658,0], total:431099, gap:-32277, label:'Somatório Jan–Mar' },
-     '0': { vals:[132664,0,21610,0], total:154274, gap:-1617, label:'Janeiro' },
-     '1': { vals:[151037,0,0,0], total:151037, gap:-3637, label:'Fevereiro' },
-     '2': { vals:[121740,0,4048,0], total:125788, gap:-27023, label:'Março' },
+    '-1': { vals:[781781.24,0,41521.64,0], total:823302.88, gap:-64465.83, label:'Somatório Jan–Jun' },
+     '0': { vals:[132664.40,0,21609.57,0], total:154273.97, gap:-1616.98, label:'Janeiro' },
+     '1': { vals:[151037.16,0,0,0], total:151037.16, gap:-3637.22, label:'Fevereiro' },
+     '2': { vals:[121941.81,0,4048.43,0], total:125990.24, gap:-26821.10, label:'Março' },
+     '3': { vals:[138611.96,0,4095.48,0], total:142707.44, gap:-8143.20, label:'Abril' },
+     '4': { vals:[115899.97,0,4138.66,0], total:120038.63, gap:-15967.03, label:'Maio' },
+     '5': { vals:[121625.94,0,7629.50,0], total:129255.44, gap:-8280.30, label:'Junho' },
   },
   comments: {
     20: {'Jan':'Antonio - 400,00','Fev':'Antonio - 400,00','Mar':'Antonio - 400,00'},
-    23: {'Jan':'TAYNÁ - 6.000,00','Fev':'TAYNA - 6.000,00','Mar':'JF CONTAB - 787,10\nTAYNA - 6.000,00'},
-    25: {'Fev':'ISAUF - 84,00\nBEM MAIS - 1.436,87','Mar':'ISAUF - 42,00\nBEM MAIS - 1.408,70'},
-    43: {'Jan':'Denise - 1.398,00\nThais Lima - 4.184,83','Fev':'ANDREA - 4.268,55','Mar':'ANDREA - 472,90\nEMYLLE - 2.625,77\nJULIA - 4.642,00\nEDVALDO MARINHO - 2.703,35'},
-    55: {'Jan':'ADV SISTEMAS - 293,00\nRAONIR - 700,00','Fev':'ADV SISTEMAS - 293,00\nRAONIR - 700,00','Mar':'ADV - 292,77\nRAONIR - 700,00'},
-    64: {'Jan':'Juliana Mascarenhas - 4.266,45','Fev':'THAIS - 33.735,00','Mar':'TEONICE - 2.260,00'},
-    75: {'Jan':'ECOTONO - 813,20\nINST EUVADO LODI - 70,00\nCERTIFICADO DIGITAL - 203,00\nCHECK LIST - 500,00','Fev':'ECOTONO - 797,00\nINSTIT EUV LODI - 70,00\nCHECK LIST - 500,00','Mar':'ECOTONO - 787,10\nINSTITUTO EUVADO LODI - 70,00\nCHECK LIST - 500,00'},
+    23: {'Jan':'TAYNÁ - 6.000,00','Fev':'TAYNA - 6.000,00','Mar':'JF CONTAB - 787,10\nTAYNA - 6.000,00','Abr':'JF CONTAB - 787,10\nTAYNA - 6.000,00','Mai':'JF CONTAB - 787,10\nTAYNA - 6.000,00','Jun':'JF CONTABILIDADE - 1.049,61\nTAYNÁ - 6.000,00'},
+    25: {'Fev':'ISAUF - 84,00\nBEM MAIS - 1.436,87','Mar':'ISAUF - 42,00\nBEM MAIS - 1.408,70','Abr':'ISAUF - 168,00\nBEM MAIS - 1.415,35','Mai':'ISAUF - 126,00\nBEM MAIS - 1.494,27','Jun':'ISAUF - 220,00\nBEM MAIS - 1.274,20'},
+    43: {'Jan':'Denise - 1.398,00\nThais Lima - 4.184,83','Fev':'ANDREA - 4.268,55','Mar':'ANDREA - 472,90\nEMYLLE - 2.625,77\nJULIA - 4.642,00\nEDVALDO MARINHO - 2.703,35','Abr':'DAMIÃO - 2.954,00\nEMYLLE AQUINO - 187,56\nLUCILA AMORIM - 2.813,33\nVICENTE - 3.435,21','Mai':'ROSELENE - 3.353,75','Jun':'ROSILENE - 239,54'},
+    55: {'Jan':'ADV SISTEMAS - 293,00\nRAONIR - 700,00','Fev':'ADV SISTEMAS - 293,00\nRAONIR - 700,00','Mar':'ADV - 292,77\nRAONIR - 700,00','Abr':'RAONIR - 700,00\nADV - 292,77','Mai':'RAONIR - 700,00\nADV - 292,77','Jun':'RAONIR - 700,00\nADV - 292,77'},
+    58: {'Abr':'MASKATE - 1.306,58','Mai':'MASKATE - 232,94\nMASKATE - 218,58'},
+    64: {'Jan':'Juliana Mascarenhas - 4.266,45','Fev':'THAIS - 33.735,00','Mar':'TEONICE - 2.260,00','Abr':'ANTONIO ONASSIS - 10.384,00\nDAIANY REIS - 2.906,52\nJOSEANE LOPES - 2.885,03\nLIVIA DOS SANTOS - 2.613,24\nPATRICIA CONCEIÇÃO - 3.954,85','Mai':'EDENILZA - 2.520,00\nEMYLLE - 6.961,46\nGABRIELE - 573,34','Jun':'ANDRESSA - 1.063,00\nGUILHERME - 6.460,90\nNEIDE - 1.642,05\nPAULA - 5.675,21'},
+    75: {'Jan':'ECOTONO - 813,20\nINST EUVADO LODI - 70,00\nCERTIFICADO DIGITAL - 203,00\nCHECK LIST - 500,00','Fev':'ECOTONO - 797,00\nINSTIT EUV LODI - 70,00\nCHECK LIST - 500,00','Mar':'ECOTONO - 787,10\nINSTITUTO EUVADO LODI - 70,00\nCHECK LIST - 500,00','Abr':'INSTITO EUVADO - 70,00\nECOTONO - 787,10\nCHECK LIST - 500,00','Mai':'ECOTONO - 757,40\nINSTITUTO EUVADO - 70,00 (TAXA DE ESTÁGIO)\nSOFPLAN - 541,62','Jun':'CERTI DIGITAL - 155,00\nECOTONO - 763,44\nSAFE CHECK - 155,00\nINSTITUTO EUVADO - 70,00\nSOFTPLAN - 529,99'},
     82: {'Jan':'CLARO - 44,00\nCLIENT CO SERVI REDE - 147,96'},
   },
   dre: [
-    {g:true,  label:'RECEITA',                            v:[null,null,null]},
-    {         label:'Receita de Serviço',                  v:[137787,136898,133510]},
-    {         label:'Recuperação Desp. E&J',               v:[8206,8147,8341]},
-    {         label:'Recuperação Desp. Rodomix',           v:[23047,22695,23477]},
-    {         label:'Recuperação de Despesas',             v:[4998,6637,5981]},
-    {bold:true,label:'Receita de Vendas Bruta',            v:[174039,174377,171310], highlight:'blue'},
-    {neg:true,bold:true,label:'Impostos Totais',           v:[-18148,-19703,-18499]},
-    {neg:true, label:'  Simples Nacional',                 v:[-12877,-12794,-12244]},
-    {neg:true, label:'  Encargos Sociais',                 v:[-5271,-6909,-6254]},
-    {bold:true,label:'Receita de Vendas Líquida',          v:[155891,154674,152811], highlight:'blue'},
-    {g:true,  label:'DESPESAS',                            v:[null,null,null]},
-    {neg:true,bold:true,label:'Despesas Administrativas',  v:[-132664,-151037,-121740]},
-    {neg:true, label:'  Aluguel de Imóvel',                v:[-2500,-2500,-2500]},
-    {neg:true, label:'  Ajuda de Custo',                   v:[-400,-400,-400], rowNum:20},
-    {neg:true, label:'  Água e Esgoto',                    v:[-341,-103,-513]},
-    {neg:true, label:'  Assessoria Contábil',              v:[-7923,-7050,-6978], rowNum:23},
-    {neg:true, label:'  Assistência Médica',               v:[-1227,-1521,-1451], rowNum:25},
-    {neg:true, label:'  Energia',                          v:[-1218,-1511,-1511]},
-    {neg:true, label:'  Férias',                           v:[-5583,-4269,-10444], rowNum:43},
-    {neg:true, label:'  FGTS',                             v:[-6278,-5799,-5474]},
-    {neg:true, label:'  Internet',                         v:[-101,-99,101]},
-    {neg:true, label:'  Manutenção Rede/Software',         v:[-993,-995,-993], rowNum:55},
-    {neg:true, label:'  Material de Expediente',           v:[-315,-1209,-1426]},
-    {neg:true, label:'  Material de Limpeza',              v:[-228,-209,-338]},
-    {neg:true, label:'  Rescisões',                        v:[-4266,-33735,-2260], rowNum:64},
-    {neg:true, label:'  SPC/Serasa',                       v:[-1726,-2651,-2271]},
-    {neg:true, label:'  Salários',                         v:[-88221,-78912,-73484]},
-    {neg:true, label:'  Serviços de Terceiros',            v:[-1586,-1367,-1351], rowNum:75},
-    {neg:true, label:'  Tarifas Financeiras DO IT',        v:[-106,-131,-147]},
-    {neg:true, label:'  Telefonia',                        v:[-1201,-1205,-1254], rowNum:82},
-    {neg:true, label:'  Vale Transporte',                  v:[-8450,-7373,-9045]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',     v:[23227,3637,31072], highlight:'green'},
-    {g:true,  label:'ABAIXO DO EBITDA',                    v:[null,null,null]},
-    {neg:true, label:'  Simples Nacional Parcelamento',    v:[-21610,0,-4048]},
-    {bold:true,label:'Saldo Final',                        v:[1617,3637,27023], highlight:'green'},
+    {g:true,  label:'RECEITA',                            v:[null,null,null,null,null,null]},
+    {         label:'Receita de Serviço',                  v:[137786.86,136898.47,133510.15,133416.04,118215.66,119196.29]},
+    {         label:'Recuperação Desp. E&J',               v:[8206.39,8147.11,8341.40,8341.84,8262.03,8262.00]},
+    {         label:'Recuperação Desp. Rodomix',           v:[23047.45,22694.73,23476.86,21834.03,20848.67,21489.80]},
+    {         label:'Recuperação de Despesas',             v:[4998.45,6636.81,5981.47,6113.70,5092.52,5029.67]},
+    {bold:true,label:'Receita de Vendas Bruta',            v:[174039.15,174377.12,171309.88,169705.61,152418.88,153977.76], highlight:'blue'},
+    {neg:true,bold:true,label:'Impostos Totais',           v:[-18148.20,-19702.74,-18498.54,-18854.97,-16413.22,-16442.02]},
+    {neg:true, label:'  Simples Nacional',                 v:[-12877.06,-12794.04,-12244.38,-12468.58,-11048.01,-11139.66]},
+    {neg:true, label:'  Encargos Sociais',                 v:[-5271.14,-6908.70,-6254.16,-6386.39,-5365.21,-5302.36]},
+    {bold:true,label:'Receita de Vendas Líquida',          v:[155890.95,154674.38,152811.34,150850.64,136005.66,137535.74], highlight:'blue'},
+    {g:true,  label:'DESPESAS',                            v:[null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'Despesas Administrativas',  v:[-132664.40,-151037.16,-121941.81,-138611.96,-115899.97,-121625.94]},
+    {neg:true, label:'  Aluguel de Imóvel',                v:[-2500.00,-2500.00,-2500.00,-2500.00,-2500.00,-2500.00]},
+    {neg:true, label:'  Ajuda de Custo',                   v:[-400.00,-400.00,-400.00,0,0,0], rowNum:20},
+    {neg:true, label:'  Água e Esgoto',                    v:[-340.90,-102.50,-513.00,-421.41,-402.82,-545.78]},
+    {neg:true, label:'  Assessoria Contábil',              v:[-7923.42,-7049.61,-6977.58,-6977.58,-6977.58,-7049.61], rowNum:23},
+    {neg:true, label:'  Assistência Médica',               v:[-1226.96,-1520.87,-1450.70,-1583.35,-1620.27,-1494.20], rowNum:25},
+    {neg:true, label:'  Energia',                          v:[-1218.06,-1511.20,-1511.20,-1511.20,-1511.20,-1511.00]},
+    {neg:true, label:'  Férias',                           v:[-5583.05,-4268.55,-10444.02,-9390.10,-3353.75,-239.54], rowNum:43},
+    {neg:true, label:'  FGTS',                             v:[-6277.83,-5799.18,-5474.49,-4723.75,-4478.81,-4229.10]},
+    {neg:true, label:'  Internet',                         v:[-101.22,-99.00,-101.04,-99.00,-99.00,-99.00]},
+    {neg:true, label:'  Manutenção Rede/Software',         v:[-992.77,-995.13,-992.77,-992.77,-992.77,-992.77], rowNum:55},
+    {neg:true, label:'  Material de Expediente',           v:[-314.96,-1208.68,-1426.11,-1306.58,-2290.22,-475.37], rowNum:58},
+    {neg:true, label:'  Material de Limpeza',              v:[-227.80,-208.92,-338.49,-483.06,-483.00,-483.00]},
+    {neg:true, label:'  Rescisões',                        v:[-4266.45,-33734.85,-2260.11,-22743.22,-9481.04,-14841.19], rowNum:64},
+    {neg:true, label:'  SPC/Serasa',                       v:[-1726.12,-2651.31,-2271.16,-2357.01,-1744.17,-1133.25]},
+    {neg:true, label:'  Salários',                         v:[-88221.00,-78911.51,-73484.16,-72252.98,-70010.18,-75311.78]},
+    {neg:true, label:'  Serviços de Terceiros',            v:[-1586.20,-1367.00,-1351.10,-1357.10,-827.40,-2203.42], rowNum:75},
+    {neg:true, label:'  Tarifas Financeiras DO IT',        v:[-106.40,-131.00,-146.92,-154.49,-209.80,-148.27]},
+    {neg:true, label:'  Tarifas Bancárias',                v:[0,0,0,-45.85,-9.60,-157.40]},
+    {neg:true, label:'  Telefonia',                        v:[-1201.34,-1205.13,-1254.43,-1179.34,-1157.43,-1175.23], rowNum:82},
+    {neg:true, label:'  Vale Transporte',                  v:[-8449.92,-7372.72,-9044.53,-8533.17,-7750.93,-7036.03]},
+    {bold:true,label:'Resultado Operacional (EBITDA)',     v:[23226.55,3637.22,30869.53,12238.68,20105.69,15909.80], highlight:'green'},
+    {g:true,  label:'ABAIXO DO EBITDA',                    v:[null,null,null,null,null,null]},
+    {neg:true, label:'  Simples Nacional Parcelamento',    v:[-21609.57,0,-4048.43,-4095.48,-4138.66,-7629.50]},
+    {bold:true,label:'Saldo Final',                        v:[1616.98,3637.22,26821.10,8143.20,15967.03,8280.30], highlight:'green'},
   ],
   insights: {
     '-1': {
-      title: 'Análise · CSC · Visão Geral Jan–Mar',
+      title: 'Análise · CSC · Visão Geral Jan–Jun',
       insights: [
-        {tag:'g', text:'Saldo positivo nos 3 meses — superávit acumulado de ~R$32,3 mil'},
-        {tag:'g', text:'Receita estável: R$174k → R$174k → R$171k — base previsível gerada pelos rateios das unidades'},
-        {tag:'g', text:'Março: melhor resultado do trimestre — EBITDA +R$31,1k (+18,1%) e Saldo +R$27k'},
+        {tag:'g', text:'Saldo final positivo nos 6 meses — nenhum mês no vermelho, superávit acumulado de ~R$64,5 mil'},
+        {tag:'g', text:'Março segue como o melhor resultado do semestre até aqui: EBITDA +R$30,9k (+18,0%) e Saldo +R$26,8k'},
         {tag:'r', text:'Fevereiro: rescisão de Thais (R$33.735) quase zerou o EBITDA — resultado real seria +R$37,4k'},
-        {tag:'a', text:'Salários caíram de R$88,2k (jan) para R$73,5k (mar) — economia de R$14,7k/mês pós-desligamentos'},
-        {tag:'a', text:'Simples Nacional Parcelamento de R$21,6k em janeiro pressiona o saldo real para apenas R$1,6k'},
+        {tag:'a', text:'Salários caíram de R$88,2k (jan) para R$70,0k (mai) — economia estrutural pós-desligamentos, com leve alta em junho (R$75,3k)'},
+        {tag:'a', text:'Rescisões pesadas em 4 dos 6 meses (fev, abr, mai, jun) — abril é o maior valor do semestre (R$22,7k, 5 desligamentos)'},
+        {tag:'a', text:'Simples Nacional Parcelamento cresceu ao longo do semestre: de R$21,6k (jan) para R$7,6k (jun) — maior parcela desde março'},
       ],
       recs: [
-        {t:'Consolidar o novo patamar de salários pós-desligamentos.', d:'Queda de R$88,2k para R$73,5k/mês (−R$14,7k) é uma economia permanente de ~R$176k/ano. Garantir que não haverá reposição desnecessária de vagas.'},
-        {t:'Redistribuir o Simples Nacional Parcelamento para aliviar janeiro.', d:'R$21,6k em um único mês consome 93% do EBITDA. Verificar possibilidade de renegociar o calendário de parcelas.'},
+        {t:'Consolidar o novo patamar de salários pós-desligamentos.', d:'Queda de R$88,2k (jan) para a faixa de R$70-75k/mês no 2º trimestre é uma economia permanente relevante. Garantir que não haverá reposição desnecessária de vagas.'},
+        {t:'Usar março como referência de custo operacional ideal do CSC.', d:'Despesas de R$121,9k com EBITDA de R$30,9k é o melhor equilíbrio do semestre — mês sem rescisões e com salários já no novo patamar.'},
+        {t:'Padronizar o lançamento de contas rateadas em múltiplos meses (ex.: água de junho).', d:'A conta de água de junho foi lançada dividida em 3 parcelas mensais (R$1.637,33/3), gerando um valor quebrado na linha. Definir um padrão de lançamento evita decimais irregulares nos próximos fechamentos.'},
       ]
     },
     '0': {
       title: 'Análise · CSC · Janeiro',
       insights: [
-        {tag:'g', text:'EBITDA positivo de +R$23.227 (+13,3%) — resultado operacional sólido'},
+        {tag:'g', text:'EBITDA positivo de +R$23.226,55 (+13,3%) — resultado operacional sólido'},
         {tag:'g', text:'Despesas administrativas controladas em R$132,7k'},
-        {tag:'a', text:'Simples Nacional Parcelamento de R$21.610 reduz o saldo para apenas R$1.617'},
+        {tag:'a', text:'Simples Nacional Parcelamento de R$21.609,57 reduz o saldo para apenas R$1.616,98'},
         {tag:'a', text:'Salários de R$88.221 — 66% das despesas (pré-desligamentos)'},
-        {tag:'r', text:'Saldo efetivo de apenas R$1.617 — empresa sem folga de caixa no mês'},
+        {tag:'r', text:'Saldo efetivo de apenas R$1.616,98 — empresa sem folga de caixa no mês'},
       ],
       recs: [
         {t:'Renegociar ou redistribuir o Simples Nacional Parcelamento.', d:'R$21,6k consome 93% do EBITDA de janeiro. Redistribuir para meses com menor pressão (fevereiro: R$0 de parcelamento) equilibraria o caixa.'},
@@ -2283,9 +2289,9 @@ const CSC = {
     '1': {
       title: 'Análise · CSC · Fevereiro',
       insights: [
-        {tag:'r', text:'Rescisão de Thais Lima (R$33.735) domina o mês — sem ela, EBITDA seria +R$37,4k (+21,4%)'},
-        {tag:'r', text:'Despesas administrativas em R$151.037 — maior do período até aqui, 87% da receita bruta'},
-        {tag:'g', text:'Saldo positivo de R$3.637 — mesmo com o impacto da rescisão, a empresa não sangrou'},
+        {tag:'r', text:'Rescisão de Thais Lima (R$33.734,85) domina o mês — sem ela, EBITDA seria +R$37,4k (+21,4%)'},
+        {tag:'r', text:'Despesas administrativas em R$151.037,16 — maior do período até aqui, 87% da receita bruta'},
+        {tag:'g', text:'Saldo positivo de R$3.637,22 — mesmo com o impacto da rescisão, a empresa não sangrou'},
         {tag:'g', text:'Simples Nacional Parcelamento = R$0 — mês sem esse custo adicional'},
         {tag:'g', text:'Rescisão é custo não recorrente — a partir de março a folha cai R$14,7k/mês permanentemente'},
       ],
@@ -2296,17 +2302,57 @@ const CSC = {
     '2': {
       title: 'Análise · CSC · Março',
       insights: [
-        {tag:'g', text:'Melhor resultado do trimestre: EBITDA +R$31.072 (+18,1%) e Saldo +R$27.023'},
-        {tag:'g', text:'Despesas administrativas no mínimo: R$121.740 — redução de 19% vs. fevereiro'},
-        {tag:'g', text:'Salários em R$73.484 — novo patamar consolidado após desligamentos de jan/fev'},
-        {tag:'a', text:'Férias concentradas em março: Andrea, Emylle, Julia e Edvaldo (R$10.444 total)'},
-        {tag:'a', text:'Simples Nacional Parcelamento de R$4.048 — impacto menor e controlado'},
+        {tag:'g', text:'Melhor resultado do semestre até aqui: EBITDA +R$30.869,53 (+18,0%) e Saldo +R$26.821,10'},
+        {tag:'g', text:'Despesas administrativas no mínimo até aqui: R$121.941,81 — redução de 19% vs. fevereiro'},
+        {tag:'g', text:'Salários em R$73.484,16 — novo patamar consolidado após desligamentos de jan/fev'},
+        {tag:'a', text:'Férias concentradas em março: Andrea, Emylle, Julia e Edvaldo (R$10.444,02 total)'},
+        {tag:'a', text:'Simples Nacional Parcelamento de R$4.048,43 — impacto menor e controlado'},
         {tag:'a', text:'Serviços de Terceiros: Ecotono, Check List e Euvado Lodi — recorrentes e estáveis (~R$1,4k/mês)'},
       ],
       recs: [
-        {t:'Usar março como referência de custo operacional ideal do CSC.', d:'Despesas de R$121,7k com EBITDA de R$31k é o equilíbrio almejado. Mês sem rescisões e com salários no novo patamar — esse é o baseline para abril em diante.'},
+        {t:'Usar março como referência de custo operacional ideal do CSC.', d:'Despesas de R$121,9k com EBITDA de R$30,9k é o equilíbrio almejado até aqui. Mês sem rescisões e com salários no novo patamar — baseline para os meses seguintes.'},
         {t:'Planejar férias coletivas para evitar pico de custo.', d:'4 colaboradores com férias em março geraram R$10,4k. Para meses sem rescisões, esse é o principal custo variável. Escalonar o gozo reduz o impacto mensal.'},
-        {t:'Avaliar aumento do rateio CSC para as unidades.', d:'Com despesas de R$121,7k, o CSC está coberto (EBITDA positivo). Mas se os custos voltarem a subir (férias acumuladas, rescisões), o rateio atual pode não ser suficiente.'},
+      ]
+    },
+    '3': {
+      title: 'Análise · CSC · Abril',
+      insights: [
+        {tag:'r', text:'Despesas administrativas sobem para R$138.611,96 (81,7% da receita bruta) — maior patamar do semestre até aqui'},
+        {tag:'r', text:'Rescisões de R$22.743,22 — maior valor do semestre até aqui, 5 desligamentos (Antonio Onassis, Daiany, Joseane, Livia, Patricia)'},
+        {tag:'g', text:'Ainda assim, EBITDA positivo de +R$12.238,68 (+7,2%) e Saldo Final de +R$8.143,20'},
+        {tag:'a', text:'Férias de R$9.390,10 (Damião, Emylle Aquino, Lucila, Vicente) somadas às rescisões pressionam o mês'},
+        {tag:'a', text:'Primeira aparição da linha Tarifas Bancárias (−R$45,85) no semestre'},
+      ],
+      recs: [
+        {t:'Tratar abril como mês de desligamentos concentrados, não como novo patamar de despesa.', d:'R$22,7k em rescisões é evento pontual (5 pessoas). Sem esse custo, a despesa administrativa ficaria próxima de março. Acompanhar se maio volta ao patamar mais baixo.'},
+      ]
+    },
+    '4': {
+      title: 'Análise · CSC · Maio',
+      insights: [
+        {tag:'g', text:'Despesas administrativas caem para R$115.899,97 (76,0% da receita bruta) — mínimo do semestre até aqui'},
+        {tag:'g', text:'EBITDA de +R$20.105,69 (+13,2%) — 2º melhor resultado do semestre até aqui, atrás só de março'},
+        {tag:'g', text:'Saldo Final de +R$15.967,03 — 2º melhor do semestre até aqui'},
+        {tag:'r', text:'Receita bruta cai para R$152.418,88 (−10,2% vs. abril)'},
+        {tag:'a', text:'Rescisões de R$9.481,04 (Edenilza, Emylle, Gabriele) — segue padrão de desligamentos do trimestre'},
+        {tag:'a', text:'Material de Expediente em R$2.290,22 — maior valor do semestre até aqui (duas notas Maskate)'},
+      ],
+      recs: [
+        {t:'Usar maio como 2ª referência de equilíbrio operacional, atrás só de março.', d:'Despesa administrativa no mínimo do semestre com EBITDA de R$20,1k — mesmo padrão de controle de custo de março, mesmo com receita menor.'},
+      ]
+    },
+    '5': {
+      title: 'Análise · CSC · Junho',
+      insights: [
+        {tag:'g', text:'Receita bruta estabiliza em R$153.977,76 (+0,9% vs. maio), interrompendo a queda de maio'},
+        {tag:'r', text:'Simples Nacional Parcelamento de R$7.629,50 — maior parcela do semestre'},
+        {tag:'a', text:'Rescisões de R$14.841,19 (Andressa, Guilherme, Neide, Paula) — 2º maior valor do semestre, atrás só de abril'},
+        {tag:'a', text:'Assessoria Contábil em R$7.049,61 — maior desde janeiro (JF Contabilidade + Taynã)'},
+        {tag:'a', text:'Tarifas Bancárias de −R$157,40 — maior valor do semestre nessa linha'},
+        {tag:'g', text:'EBITDA de +R$15.909,80 (+10,3%) e Saldo Final de +R$8.280,30 — sexto mês seguido no positivo'},
+      ],
+      recs: [
+        {t:'Fechar o semestre com o saldo positivo consolidado como resultado do CSC.', d:'6 meses seguidos de saldo final positivo, mesmo com rescisões recorrentes em 4 dos 6 meses. Usar esse histórico para sustentar a manutenção do rateio atual entre as unidades.'},
       ]
     }
   }
@@ -2510,10 +2556,13 @@ function buildEbitda(s) {
     const notas = [
       'Janeiro: EBITDA de +R$23,2k (+13,4%) — resultado sólido, mas Simples Nacional (R$21,6k) consome quase tudo',
       'Fevereiro: EBITDA de +R$3,6k (+2,1%) — rescisões de R$33,7k pressionaram as despesas',
-      'Março: melhor EBITDA do trimestre — +R$31,1k (+18,1%) com despesas no mínimo após desligamentos'
+      'Março: melhor EBITDA do semestre até aqui — +R$30,9k (+18,0%) com despesas no mínimo após desligamentos',
+      'Abril: EBITDA de +R$12,2k (+7,2%) — rescisões de R$22,7k (maior valor do semestre) pressionaram, mas resultado seguiu positivo',
+      'Maio: EBITDA de +R$20,1k (+13,2%) — 2º melhor do semestre até aqui, despesas administrativas no mínimo',
+      'Junho: EBITDA de +R$15,9k (+10,3%) — sexto mês seguido no positivo, Simples Nacional Parcelamento no maior valor do semestre'
     ];
     document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'CSC com EBITDA positivo nos 3 meses — fevereiro fraco por rescisões (R$33,7k), março é o melhor resultado'
+      ? 'CSC com EBITDA positivo nos 6 meses do semestre — março é o melhor resultado até aqui, fevereiro o mais fraco por rescisões (R$33,7k)'
       : notas[s];
   } else if (empresa === 'ja') {
     const notas = [
@@ -3083,6 +3132,14 @@ const GAMMA_URLS_MES = {
     3: 'https://gamma.app/docs/sf8se8itadqvg7h', // Abril (recriado - removida linguagem de investigação/duplicidade)
     4: 'https://gamma.app/docs/nbsysq16yvx8817', // Maio (recriado - removida linguagem de investigação/duplicidade)
     5: 'https://gamma.app/docs/3ztpzcf5rib0m53'  // Junho
+  },
+  csc: {
+    0: 'https://gamma.app/docs/2o7r22oy28hv6sk', // Janeiro
+    1: 'https://gamma.app/docs/xgf8jimv4meum8r', // Fevereiro
+    2: 'https://gamma.app/docs/1nj0emgf5d3i04h', // Março (individualizado — EBITDA/Saldo corrigidos após ajuste do sinal do Internet)
+    3: 'https://gamma.app/docs/fle6byo3pdk5wx0', // Abril
+    4: 'https://gamma.app/docs/wnqrvit8j1oce1u', // Maio
+    5: 'https://gamma.app/docs/jouip2irn8014lu'  // Junho
   }
 };
 function abrirGamma() {
