@@ -374,7 +374,8 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260916132719"/>
+  <meta name="app-build" content="20260921170342"/>
+
 </head>
 <body>
 
@@ -1772,118 +1773,127 @@ const AJA = {
 // ─────────────────────────────────────────────────────────────────────────────
 const JA = {
   nome: 'J.A Comercial de Pneus Ltda',
-  periodo: 'Janeiro–Março 2026',
-  meses: ['Jan','Fev','Mar'],
-  recBruta:  [405110,307200,439238],
-  recLiq:    [344119,244383,389011],
-  margem:    [34269,10789,65157],
-  saldo:     [-12599,-54393,20276],
-  cmvOTR:    [0,0,0],
-  cmvCarga:  [0,0,0],
-  cmvTotal:  [76.91,76.40,73.96],
-  margemPct: [8.46,3.51,14.83],
-  recLiqWF:  [344119,244383,389011],
-  cmvWF:     [-309820,-233594,-323854],
-  margemWF:  [34269,10789,65157],
-  despComWF: [0,0,0],
-  despAdmWF: [-35637,-38033,-41721],
-  resOpWF:   [-1338,-27244,23436],
-  ebitdaVals:[-1338,-27244,23436],
-  ebitdaPct: [-0.33,-8.87,5.34],
+  periodo: 'Janeiro–Junho 2026',
+  meses: ['Jan','Fev','Mar','Abr','Mai','Jun'],
+  recBruta:  [405110.35,307200.03,439238.03,509224.65,484314.16,361641.46],
+  recLiq:    [344118.60,244383.38,389010.93,447347.68,441629.98,308598.18],
+  margem:    [34268.57,10789.07,63596.04,92595.19,98259.78,41645.02],
+  saldo:     [-12598.57,-54393.11,18277.76,40582.02,30764.41,-7353.50],
+  cmvOTR:    [0,0,0,0,0,0],
+  cmvCarga:  [0,0,0,0,0,0],
+  cmvTotal:  [76.91,76.40,74.32,69.84,71.12,74.12],
+  margemPct: [8.46,3.51,14.48,18.18,20.29,11.52],
+  recLiqWF:  [344118.60,244383.38,389010.93,447347.68,441629.98,308598.18],
+  cmvWF:     [-309820.04,-233594.31,-325414.89,-354752.49,-343370.20,-266953.16],
+  margemWF:  [34268.57,10789.07,63596.04,92595.19,98259.78,41645.02],
+  despComWF: [0,0,0,0,0,0],
+  despAdmWF: [-35636.67,-38032.92,-41721.04,-44883.86,-40709.85,-40470.14],
+  resOpWF:   [-1338.10,-27243.85,21437.50,46757.09,56398.93,1151.39],
+  ebitdaVals:[-1338.10,-27243.85,21437.50,46757.09,56398.93,1151.39],
+  ebitdaPct: [-0.33,-8.87,4.88,9.18,11.65,0.32],
   fixData: {
-    '-1': { vals:[115391,0,41569,0], total:156960, gap:46716, label:'Somatório Jan–Mar' },
-     '0': { vals:[35637,0,11260,0], total:46897, gap:12599, label:'Janeiro' },
-     '1': { vals:[38033,0,27149,0], total:65182, gap:54393, label:'Fevereiro' },
-     '2': { vals:[41721,0,3160,0], total:44881, gap:-20276, label:'Março' },
+    '-1': { vals:[241454.48,0,81883.95,0], total:323338.43, gap:-15279.01, label:'Somatório Jan–Jun' },
+     '0': { vals:[35636.67,0,11260.47,0], total:46897.14, gap:12598.57, label:'Janeiro' },
+     '1': { vals:[38032.92,0,27149.26,0], total:65182.18, gap:54393.11, label:'Fevereiro' },
+     '2': { vals:[41721.04,0,3159.74,0], total:44880.78, gap:-18277.76, label:'Março' },
+     '3': { vals:[44883.86,0,6175.07,0], total:51058.93, gap:-40582.02, label:'Abril' },
+     '4': { vals:[40709.85,0,25634.52,0], total:66344.37, gap:-30764.41, label:'Maio' },
+     '5': { vals:[40470.14,0,8504.89,0], total:48975.03, gap:7353.50, label:'Junho' },
   },
   comments: {
     5:  {'Jan':'PÓ DE RASPA - 672,80'},
-    20: {'Jan':'38.700 KG','Mar':'42.630 KG'},
-    28: {'Jan':'Abécio Neto - 3.498,00','Fev':'ABECIO - 410,04\nEDMILSON - 2.606,64','Mar':'EDMILSON BATISTA - 613,83\nFABIO ALVES - 2.778,93'},
-    48: {'Jan':'ABECIO - 978,00','Fev':'ABECIO - 978,00','Mar':'ABECIO - 978,00'},
-    65: {'Fev':'REEMBOL SR JUNIOR - VIAGEM - 290,70'},
+    20: {'Jan':'38.700 KG','Mar':'42.630 KG','Abr':'48.690 KG','Mai':'46.061 KG','Jun':'29.537 KG'},
+    28: {'Jan':'Abécio Neto - 3.498,00','Fev':'ABECIO - 410,04\nEDMILSON - 2.606,64','Mar':'EDMILSON BATISTA - 613,83\nFABIO ALVES - 2.778,93','Mai':'IGLEI - 2.593,68'},
+    48: {'Jan':'ABECIO - 978,00','Fev':'ABECIO - 978,00','Mar':'ABECIO - 978,00','Abr':'ABECIO - 978,00'},
+    54: {'Mai':'SH BRASIL - 148,24\nISAUF - 42,00\nBEM MAIS - 397,03'},
+    65: {'Fev':'REEMBOL SR JUNIOR - VIAGEM - 290,70','Mai':'SR JUNIOR - 252,39'},
     88: {'Mar':'PARAFUSOS CRESPO - 1.300,00'},
-    104:{'Jan':'ADRINALDO ALMEIDA - 500,00\nECOTONO - 898,33\nNIT - 290,00','Fev':'ECOTONO - 898,24\nNIT - 175,00','Mar':'ECOTONO - 879,20\nNIT - 175,00'},
+    104:{'Jan':'ADRINALDO ALMEIDA - 500,00\nECOTONO - 898,33\nNIT - 290,00','Fev':'ECOTONO - 898,24\nNIT - 175,00','Mar':'ECOTONO - 879,20\nNIT - 175,00','Abr':'ECOTONO - 897,36\nNIT - 175,00','Mai':'PENSÃO ALIMENTÍCIA (TAISE SACRAMENTO) - 184,31\nECOTONO - 979,20\nCOOPERCEG - 68,43\nNIT - 175,00\nMORPLEN - 555,91','Jun':'CAIQUE CONSULTORIA - 334,90'},
     118:{'Fev':'ITAU - 9.121,75\nITAU - 9.121,75'},
-    120:{'Jan':'RETIRADA CARTÃO SR JUNIOR - 29,30','Fev':'RETIRADA - 8.844,33\nRETIRADA - 61,68','Mar':'RETIRADAS CARTÃO = 32,49+130,83+105,30'},
+    120:{'Jan':'RETIRADA CARTÃO SR JUNIOR - 29,30','Fev':'RETIRADA - 8.844,33\nRETIRADA - 61,68','Mar':'RETIRADAS CARTÃO = 32,49+130,83+105,30','Abr':'RETIRADA DE CARTÃO - 5.792,37','Mai':'RETIRADAS CARTÃO - 25.247,78','Jun':'RETIRADA CARTÃO SANTANDER - 5.853,66'},
   },
   dre: [
-    {g:true,  label:'RECEITA',                           v:[null,null,null]},
-    {         label:'Receita de Borracha',                v:[402850,305769,437875]},
-    {bold:true,label:'Total Receita Fábrica',             v:[402850,305769,437875]},
-    {         label:'Outras Receitas',                    v:[673,0,0], rowNum:5},
-    {         label:'Recuperação de Despesas',            v:[1588,1431,1363]},
-    {bold:true,label:'Receita de Vendas Bruta',           v:[405110,307200,439238], highlight:'blue'},
-    {neg:true,bold:true,label:'Impostos Totais',          v:[-60992,-62817,-50227]},
-    {neg:true, label:'  Impostos Serv/Prod JA',           v:[-28723,-21801,-31220]},
-    {neg:true, label:'  Encargos Sociais',                v:[-7436,-6881,-6616]},
-    {neg:true, label:'  ICMS Antecipação Parcial',        v:[-24833,-34134,-12391]},
-    {bold:true,label:'Receita de Vendas Líquida',         v:[344119,244383,389011], highlight:'blue'},
-    {g:true,  label:'CMV',                                v:[null,null,null]},
-    {neg:true,bold:true,label:'CMV Total',                v:[-309820,-233594,-323854]},
-    {neg:true, label:'  Borracha MDB',                    v:[-264855,-192674,-281201], rowNum:20},
-    {neg:true, label:'  Acelerador',                      v:[-780,0,0]},
-    {neg:true, label:'  Aluguel de Equipamentos',         v:[-1500,-1500,-1500]},
-    {neg:true, label:'  Bônus de Produção',               v:[-6987,-5202,-7922]},
-    {neg:true, label:'  Detergente',                      v:[-86,-86,-86]},
-    {neg:true, label:'  Energia',                         v:[-1218,-3463,-4746]},
-    {neg:true, label:'  Enxofre',                         v:[-93,-93,-93]},
-    {neg:true, label:'  Fretes CMV',                      v:[-500,0,0]},
-    {neg:true, label:'  Férias CMV',                      v:[-3498,-3017,-3393], rowNum:28},
-    {neg:true, label:'  FGTS CMV',                        v:[-1619,-1417,-1358]},
-    {neg:true, label:'  Gás Empilhadeira',                v:[-1479,-1564,-1070]},
-    {neg:true, label:'  Manutenção de Máquinas',          v:[-2800,0,-3389]},
-    {neg:true, label:'  Salários CMV',                    v:[-22052,-21757,-17295]},
-    {neg:true, label:'  Vale Transporte CMV',             v:[-2352,-2041,-2582]},
-    {neg:true, label:'  Custo Venda de Produto',          v:[-30,0,0]},
-    {bold:true,label:'Margem de Contribuição',            v:[34269,10789,65157], highlight:'green'},
-    {g:true,  label:'DESPESAS',                           v:[null,null,null]},
-    {neg:true,bold:true,label:'Despesas Administrativas', v:[-35637,-38033,-41721]},
-    {neg:true, label:'  Aluguel de Imóvel',               v:[-2333,-2333,-2333]},
-    {neg:true, label:'  Ajuda de Custo',                  v:[-978,-978,-978], rowNum:48},
-    {neg:true, label:'  Água e Esgoto',                   v:[-576,-642,-513]},
-    {neg:true, label:'  Assessoria Contábil',             v:[-2349,-2563,-2563]},
-    {neg:true, label:'  Assessoria Jurídica',             v:[-1142,-950,-1048]},
-    {neg:true, label:'  Assessoria Técnica',              v:[-1557,-1296,-1429]},
-    {neg:true, label:'  Assistência Médica',              v:[-346,-397,-389]},
-    {neg:true, label:'  Bombeiro TX',                     v:[0,-1131,0]},
-    {neg:true, label:'  Cestas Básicas',                  v:[-713,0,0]},
-    {neg:true, label:'  Consultoria Empresarial',         v:[-2387,-1987,-2191]},
-    {neg:true, label:'  Despesas com Viagens',            v:[0,-291,0], rowNum:65},
-    {neg:true, label:'  E.P.I',                           v:[-250,-150,-1580]},
-    {neg:true, label:'  Fardamento',                      v:[0,-1106,0]},
-    {neg:true, label:'  Fretes Adm.',                     v:[0,-300,0]},
-    {neg:true, label:'  IRPJ',                            v:[0,-78,0]},
-    {neg:true, label:'  Material Uso e Consumo',          v:[0,-1150,-1300], rowNum:88},
-    {neg:true, label:'  Pro Labore Sócios',               v:[-5190,-4320,-4764]},
-    {neg:true, label:'  Rateio CSC',                      v:[-14302,-11828,-12720]},
-    {neg:true, label:'  Reposição Fundo Fixo',            v:[-1703,-4755,-7528]},
-    {neg:true, label:'  Serviços de Terceiros',           v:[-1689,-1073,-1054], rowNum:104},
-    {neg:true, label:'  Tarifas Financeiras',             v:[-52,-661,-1191]},
-    {neg:true, label:'  Tarifas Financeiras DO IT',       v:[-69,-43,-138]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[-1338,-27244,23436], highlight:'red'},
-    {g:true,  label:'ABAIXO DO EBITDA',                   v:[null,null,null]},
-    {neg:true, label:'  Amortização de Empréstimos',      v:[0,-18243,0], rowNum:118},
-    {neg:true, label:'  Retiradas',                       v:[-29,-8906,-269], rowNum:120},
-    {neg:true, label:'  Simples Nacional Parcelamento',   v:[-11231,0,-2891]},
-    {bold:true,label:'Saldo Final',                       v:[-12599,-54393,20276], highlight:'red'},
+    {g:true,  label:'RECEITA',                           v:[null,null,null,null,null,null]},
+    {         label:'Receita de Borracha',                v:[402850,305769,437875,507919,482789.50,360176]},
+    {bold:true,label:'Total Receita Fábrica',             v:[402850,305769,437875,507919,482789.50,360176]},
+    {         label:'Outras Receitas',                    v:[672.80,0,0,0,0,0], rowNum:5},
+    {         label:'Recuperação de Despesas',            v:[1587.55,1431.03,1363.03,1305.65,1524.66,1465.46]},
+    {bold:true,label:'Receita de Vendas Bruta',           v:[405110.35,307200.03,439238.03,509224.65,484314.16,361641.46], highlight:'blue'},
+    {neg:true,bold:true,label:'Impostos Totais',          v:[-60991.75,-62816.65,-50227.10,-61876.97,-42684.18,-53043.28]},
+    {neg:true, label:'  Impostos Serv/Prod JA',           v:[-28723.21,-21801.33,-31220.49,-36214.62,-34422.89,-25680.55]},
+    {neg:true, label:'  Encargos Sociais',                v:[-7435.71,-6881.48,-6615.94,-6395.93,-8261.29,-8025.79]},
+    {neg:true, label:'  ICMS Antecipação Parcial',        v:[-24832.83,-34133.84,-12390.67,-19266.42,0,-19336.94]},
+    {bold:true,label:'Receita de Vendas Líquida',         v:[344118.60,244383.38,389010.93,447347.68,441629.98,308598.18], highlight:'blue'},
+    {g:true,  label:'CMV',                                v:[null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'CMV Total',                v:[-309820.04,-233594.31,-325414.89,-354752.49,-343370.20,-266953.16]},
+    {neg:true, label:'  Borracha MDB',                    v:[-264855,-192674,-281201,-318237.66,-301658.20,-226945.34], rowNum:20},
+    {neg:true, label:'  Acelerador',                      v:[-780.30,-780.30,-780.30,-780.30,-780.30,-780.30]},
+    {neg:true, label:'  Aluguel de Equipamentos',         v:[-1500,-1500,-1500,-1500,-1500,-1500]},
+    {neg:true, label:'  Bônus de Produção',               v:[-6987.17,-5202.34,-7921.66,-6717.42,-9878.36,-6667.29]},
+    {neg:true, label:'  Detergente',                      v:[-85.50,-85.50,-85.50,-85.50,-85.50,-85.50]},
+    {neg:true, label:'  Energia',                         v:[-1218.06,-3462.93,-4745.94,-2120,-1826.48,-2230.32]},
+    {neg:true, label:'  Enxofre',                         v:[-93,-93,-93,-93,-93,-93]},
+    {neg:true, label:'  Fretes CMV',                      v:[-500,0,0,0,0,0]},
+    {neg:true, label:'  Férias CMV',                      v:[-3498,-3016.68,-3392.76,0,-2593.68,0], rowNum:28},
+    {neg:true, label:'  FGTS CMV',                        v:[-1619.37,-1417.29,-1358.32,-1309.77,-1523.60,-1470.97]},
+    {neg:true, label:'  Gás Empilhadeira',                v:[-1479.13,-1564.04,-1070.12,-1453.50,-1472.02,-1927]},
+    {neg:true, label:'  Manutenção de Máquinas',          v:[-2800,0,-3389.04,-505.36,-849.39,0]},
+    {neg:true, label:'  Salários CMV',                    v:[-22052.09,-21756.81,-17295.01,-19475.74,-18960.39,-22452.80]},
+    {neg:true, label:'  Vale Transporte CMV',             v:[-2352.42,-2041.42,-2582.24,-2474.24,-2149.28,-2800.64]},
+    {neg:true, label:'  Custo Venda de Produto',          v:[-30,0,0,0,0,0]},
+    {bold:true,label:'Margem de Contribuição',            v:[34268.57,10789.07,63596.04,92595.19,98259.78,41645.02], highlight:'green'},
+    {g:true,  label:'DESPESAS',                           v:[null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'Despesas Administrativas', v:[-35636.67,-38032.92,-41721.04,-44883.86,-40709.85,-40470.14]},
+    {neg:true, label:'  Aluguel de Imóvel',               v:[-2333.33,-2333,-2333.33,-2333.33,-2333.33,-2333.33]},
+    {neg:true, label:'  Ajuda de Custo',                  v:[-978,-978,-978,-978,0,0], rowNum:48},
+    {neg:true, label:'  Água e Esgoto',                   v:[-575.98,-642.18,-512.63,-702.19,-671.37,-545.78]},
+    {neg:true, label:'  Assessoria Contábil',             v:[-2348.76,-2563.43,-2563.43,-2563.43,-2387.52,-2387.52]},
+    {neg:true, label:'  Assessoria Jurídica',             v:[-1141.75,-950.40,-1048.04,-1598.93,-1476.57,-1410.45]},
+    {neg:true, label:'  Assessoria Técnica',              v:[-1556.93,-1296.04,-1429.15,-1918.72,-1771.89,-1567.16]},
+    {neg:true, label:'  Assistência Médica',              v:[-345.78,-396.78,-389,-397.42,-587.27,-562.79], rowNum:54},
+    {neg:true, label:'  AS Advocacia',                    v:[0,0,0,0,-644.73,-1674.48]},
+    {neg:true, label:'  Asense Consultoria',              v:[0,0,0,0,-381.75,-349.93]},
+    {neg:true, label:'  Perfil Gestão',                   v:[0,0,0,0,-671.02,-1674.48]},
+    {neg:true, label:'  Bombeiro TX',                     v:[0,-1131.20,0,0,0,0]},
+    {neg:true, label:'  Cestas Básicas',                  v:[-713.43,0,0,0,0,0]},
+    {neg:true, label:'  Consultoria Empresarial',         v:[-2387.29,-1987.27,-2191.37,-2942.04,-2716.89,-2402.99]},
+    {neg:true, label:'  Despesas com Viagens',            v:[0,-290.70,0,0,-252.39,0], rowNum:65},
+    {neg:true, label:'  E.P.I',                           v:[-250,-150,-1580,-150,-500,-320]},
+    {neg:true, label:'  Fretes Adm.',                     v:[0,-300,0,0,0,0]},
+    {neg:true, label:'  IRPJ',                            v:[0,-77.99,0,0,0,0]},
+    {neg:true, label:'  Material Uso e Consumo',          v:[0,-1150,-1300,0,-225.48,0], rowNum:88},
+    {neg:true, label:'  Pro Labore Sócios',               v:[-5190,-4320,-4764,-6396,-5906,-5224]},
+    {neg:true, label:'  Rateio CSC',                      v:[-14301.59,-11828.42,-12720.42,-17065.86,-13964.32,-12453.35]},
+    {neg:true, label:'  Reposição Fundo Fixo',            v:[-1703.30,-4754.54,-7528.12,-5778.88,-4186.75,-5917.12]},
+    {neg:true, label:'  Serviços de Terceiros',           v:[-1688.83,-1073.24,-1054.20,-897.36,-1862.85,-1592.45], rowNum:104},
+    {neg:true, label:'  Tarifas Financeiras',             v:[-52.35,-660.82,-1191.12,-1059.13,-84.14,-41.73]},
+    {neg:true, label:'  Tarifas Financeiras DO IT',       v:[-69.35,-42.91,-138.23,-102.58,-85.58,-12.58]},
+    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[-1338.10,-27243.85,21875.00,47711.32,57549.93,1174.88], highlight:'red'},
+    {neg:true, label:'  Participação do Gestor (2%)',     v:[0,0,-437.50,-954.23,-1151.00,-23.50]},
+    {bold:true,label:'EBITDA após Participação',          v:[-1338.10,-27243.85,21437.50,46757.09,56398.93,1151.39], highlight:'red'},
+    {g:true,  label:'ABAIXO DO EBITDA',                   v:[null,null,null,null,null,null]},
+    {neg:true, label:'  Amortização de Empréstimos',      v:[0,-18243.25,0,0,0,0], rowNum:118},
+    {neg:true, label:'  Retiradas',                       v:[-29.19,-8906.01,-268.62,-5792.37,-25247.78,-5853.66], rowNum:120},
+    {neg:true, label:'  Simples Nacional Parcelamento',   v:[-11231.28,0,-2891.12,-382.70,-386.74,-2651.23]},
+    {bold:true,label:'Saldo Final',                       v:[-12598.57,-54393.11,18277.76,40582.02,30764.41,-7353.50], highlight:'red'},
   ],
   insights: {
     '-1': {
-      title: 'Análise · J.A · Visão Geral Jan–Mar',
+      title: 'Análise · J.A · Visão Geral Jan–Jun',
       insights: [
-        {tag:'r', text:'Borracha MDB representa ~85% do CMV — concentração extrema de custo em um único insumo'},
-        {tag:'r', text:'Fevereiro crítico: saldo de −R$54.393 puxado por queda de receita (−24%) e amortização de R$18,2k'},
-        {tag:'r', text:'CMV Total alto em todos os meses: 77% → 76% → 74% — margem bruta muito apertada'},
-        {tag:'a', text:'Rateio CSC entre R$11,8k e R$14,3k/mês — custo relevante para operação de porte reduzido'},
-        {tag:'a', text:'Reposição de Fundo Fixo cresceu de R$1,7k (jan) para R$7,5k (mar) — investigar causa'},
-        {tag:'g', text:'Março: único mês com saldo positivo (+R$20.276) e EBITDA de +5,3%'},
-        {tag:'g', text:'CMV Total em queda: 76,9% → 76,4% → 74,0% — tendência de melhora da margem'},
-        {tag:'g', text:'Produção cresceu: 38.700 kg (jan) → 42.630 kg (mar) de Borracha MDB'},
+        {tag:'r', text:'Borracha MDB representa entre 82% e 87% do CMV em todos os meses — concentração extrema de custo em um único insumo'},
+        {tag:'r', text:'Junho reverteu para saldo negativo (−R$7.354) mesmo com EBITDA positivo — Retiradas (R$5,9k) e Simples Nacional (R$2,7k) consumiram todo o resultado operacional do mês'},
+        {tag:'r', text:'Retiradas de sócios oscilam sem padrão: de R$268 (mar) a R$25.248 (mai) — maior volatilidade entre as linhas abaixo do EBITDA'},
+        {tag:'a', text:'Rateio CSC entre R$11,8k e R$17,1k/mês — custo relevante e crescente para operação de porte reduzido'},
+        {tag:'a', text:'Três novas linhas de assessoria (AS Advocacia, Asense Consultoria, Perfil Gestão) somaram R$1,7k em maio e R$3,7k em junho — custo administrativo adicional a partir do meio do semestre'},
+        {tag:'g', text:'Maio foi o melhor mês do semestre até aqui: EBITDA de +R$56.399 (+11,65%) e margem de contribuição de R$98.260 (20,29% da receita bruta)'},
+        {tag:'g', text:'Quatro dos seis meses fecharam com EBITDA positivo (mar a jun) — inversão da trajetória negativa de jan/fev'},
+        {tag:'g', text:'CMV Total em melhora estrutural: de 76,9% (jan) para a faixa de 70%–71% em abr/mai — ganho real de margem bruta'},
       ],
       recs: [
-        {t:'Monitorar o preço da Borracha MDB mensalmente — é o principal alavancador de margem.', d:'Em março, 86,8% do CMV foi Borracha MDB (R$281k). Uma variação de 5% no preço impacta ~R$14k no resultado. Negociar contratos de fornecimento com preço fixo reduz a volatilidade.'},
-        {t:'Estabilizar receita acima de R$400k como patamar mínimo.', d:'Em fevereiro, com R$307k, o EBITDA despencou para −R$27,2k. Em março com R$439k, foi +R$23,4k. O volume de produção (e preço da borracha) precisa ser sustentado.'},
+        {t:'Monitorar o preço da Borracha MDB mensalmente — é o principal alavancador de margem.', d:'Em todos os meses, a Borracha MDB responde por 82%–87% do CMV. Uma variação de 5% no preço impacta entre R$11k e R$16k no resultado, dependendo do volume do mês. Negociar contratos de fornecimento com preço fixo reduz a volatilidade.'},
+        {t:'Vincular as retiradas de sócios ao caixa gerado no próprio mês.', d:'Maio teve EBITDA de +R$56,4k mas retirada de R$25,2k no mesmo mês — mais de 44% do resultado operacional. Junho, com EBITDA de apenas +R$1,2k, ainda teve retirada de R$5,9k, o que sozinho já supera o resultado do mês e explica o saldo final negativo.'},
+        {t:'Usar maio como benchmark operacional do semestre.', d:'Receita de R$484k, margem de 20,29% e EBITDA de 11,65% — a melhor combinação do período até aqui. Mapear o que sustentou esse resultado (volume de produção, preço da borracha, despesas administrativas controladas) para tentar replicar nos meses seguintes.'},
       ]
     },
     '0': {
@@ -1917,14 +1927,60 @@ const JA = {
     '2': {
       title: 'Análise · J.A · Março',
       insights: [
-        {tag:'g', text:'Único mês com saldo positivo: +R$20.276 — maior produção (42.630 kg) e receita de R$439k'},
-        {tag:'g', text:'Melhor EBITDA do trimestre: +R$23.436 (+5,3%) — margem de contribuição de R$65,2k'},
-        {tag:'g', text:'CMV Total caiu para 74,0% — menor do trimestre, borracha controlada'},
-        {tag:'a', text:'Reposição de Fundo Fixo de R$7.528 — maior do trimestre, investigar destino'},
+        {tag:'g', text:'Único mês com saldo positivo até aqui: +R$18.278 — maior produção (42.630 kg) e receita de R$439k'},
+        {tag:'g', text:'Melhor EBITDA do trimestre até aqui: +R$21.438 (+4,9%) já após participação do gestor (2% = R$438) — resultado bruto antes da participação foi +R$21.875'},
+        {tag:'g', text:'Margem de contribuição de R$63,6k — a maior do trimestre até aqui'},
+        {tag:'g', text:'CMV Total caiu para 74,3% — menor do trimestre até aqui, borracha controlada'},
+        {tag:'a', text:'Reposição de Fundo Fixo de R$7.528 — maior valor do trimestre até aqui'},
       ],
       recs: [
-        {t:'Usar março como benchmark de produção — 42.630 kg como meta mínima.', d:'Com esse volume, a receita supera R$430k e o EBITDA vai a +5%. Investigar o que garantiu o volume de março e replicar.'},
-        {t:'Manter Simples Nacional parcelado em patamares menores.', d:'R$2.891 em março vs. R$11.231 em janeiro. Com o novo cronograma, março fechou positivo. Manter essa distribuição em abril.'},
+        {t:'Usar março como benchmark de produção — 42.630 kg como meta mínima.', d:'Com esse volume, a receita supera R$430k e o EBITDA fica positivo. Mapear o que garantiu o volume de março para tentar replicar nos meses seguintes.'},
+        {t:'Manter Simples Nacional parcelado em patamares menores.', d:'R$2.891 em março vs. R$11.231 em janeiro. Com o novo cronograma, março fechou positivo. Manter essa distribuição nos meses seguintes.'},
+      ]
+    },
+    '3': {
+      title: 'Análise · J.A · Abril',
+      insights: [
+        {tag:'g', text:'Segundo mês consecutivo de saldo positivo: +R$40.582 — maior receita bruta do semestre até aqui (R$509.225)'},
+        {tag:'g', text:'EBITDA de +R$46.757 (+9,18%) já após participação do gestor (2% = R$954) — resultado bruto antes da participação foi +R$47.711'},
+        {tag:'g', text:'CMV Total caiu para 69,84% — menor do semestre até aqui, ganho de margem sobre março'},
+        {tag:'a', text:'Retirada de sócios de R$5.792 — primeiro mês com retirada relevante desde fevereiro'},
+        {tag:'a', text:'Rateio CSC subiu para R$17.066 — maior valor do semestre até aqui, acompanhando o crescimento de receita'},
+        {tag:'r', text:'Amortização de Empréstimos zerada — ITAU liquidado em fevereiro, sem repetição em abril'},
+      ],
+      recs: [
+        {t:'Consolidar o patamar de receita acima de R$500k.', d:'Abril confirmou que, com volume de produção alto, a margem de contribuição supera R$90k. Sustentar esse nível de produção é o principal driver do resultado positivo.'},
+        {t:'Vincular a retirada de sócios ao caixa remanescente após o Simples Nacional.', d:'R$5.792 em abril, mês com EBITDA de +R$46,8k, não compromete o saldo — mas o critério precisa ficar claro antes de meses com resultado mais fraco.'},
+      ]
+    },
+    '4': {
+      title: 'Análise · J.A · Maio',
+      insights: [
+        {tag:'g', text:'Melhor EBITDA do semestre até aqui: +R$56.399 (+11,65%) já após participação do gestor (2% = R$1.151) — resultado bruto antes da participação foi +R$57.550'},
+        {tag:'g', text:'Melhor margem de contribuição do semestre até aqui: R$98.260 (20,29% da receita bruta)'},
+        {tag:'r', text:'Retirada de sócios de R$25.248 — maior valor do semestre até aqui, consome 44% do EBITDA do mês'},
+        {tag:'a', text:'Três novas linhas de assessoria administrativa (AS Advocacia, Asense Consultoria, Perfil Gestão) somaram R$1.698 — primeiro mês com esse custo'},
+        {tag:'a', text:'CMV Total em 71,12% — leve alta vs. abril, mas ainda no melhor patamar do semestre até aqui'},
+        {tag:'g', text:'Saldo final de +R$30.764 — terceiro mês consecutivo positivo, mesmo após a retirada elevada'},
+      ],
+      recs: [
+        {t:'Usar maio como benchmark operacional do semestre.', d:'Combinação de receita de R$484k, margem de 20,29% e EBITDA de 11,65% é a melhor do período até aqui. Mapear o que sustentou esse patamar de produção e despesas administrativas controladas.'},
+        {t:'Formalizar um limite de retirada como % do EBITDA do mês.', d:'R$25.248 em um único mês é um valor que, se recorrente, pode comprometer meses de EBITDA mais baixo como ocorreu em junho.'},
+      ]
+    },
+    '5': {
+      title: 'Análise · J.A · Junho',
+      insights: [
+        {tag:'r', text:'Saldo voltou a ficar negativo: −R$7.354 — quebra a sequência de três meses positivos (mar/abr/mai)'},
+        {tag:'r', text:'EBITDA caiu para +R$1.151 (+0,32%) — menor resultado operacional desde março, mesmo com receita de R$361.641'},
+        {tag:'r', text:'Retirada de sócios (R$5.854) + Simples Nacional (R$2.651) = R$8.505 abaixo do EBITDA, superando o resultado operacional do mês'},
+        {tag:'a', text:'CMV Total subiu para 74,12% — pior patamar desde março, pressionando a margem'},
+        {tag:'a', text:'Assessoria administrativa (AS Advocacia, Asense Consultoria, Perfil Gestão) somou R$3.699 — maior valor do semestre nessas linhas'},
+        {tag:'a', text:'Receita bruta de R$361.641 — menor volume de produção do semestre até aqui'},
+      ],
+      recs: [
+        {t:'Reduzir ou postergar retiradas em meses de EBITDA baixo.', d:'Junho teve EBITDA de apenas R$1.151 e retirada de R$5.854 — sozinha, a retirada já supera o resultado operacional e é a principal causa do saldo negativo do mês.'},
+        {t:'Investigar a queda de volume de produção em junho.', d:'Receita de R$361,6k é a menor do semestre. Entender se foi sazonalidade, redução de demanda ou disponibilidade de insumo (borracha) ajuda a evitar repetição do padrão em meses futuros.'},
       ]
     }
   }
@@ -2568,10 +2624,10 @@ function buildEbitda(s) {
     const notas = [
       'Janeiro: EBITDA de −R$1.338 (−0,3%) — praticamente no zero operacional, mas Simples Nacional (R$11,2k) puxa o saldo para −R$12,6k',
       'Fevereiro: pior resultado do período até aqui — EBITDA de −R$27,2k (−8,9%) com receita 24% menor e amortização ITAU (R$18,2k)',
-      'Março: melhor EBITDA do trimestre — +R$23,4k (+5,3%) com 42.630 kg de borracha produzida e receita de R$439k'
+      'Março: melhor EBITDA do trimestre até aqui — +R$21,4k (+4,9%) já após participação do gestor, com 42.630 kg de borracha produzida e receita de R$439k'
     ];
     document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'Jan quase neutro, Fev crítico (−R$27,2k), Mar positivo (+R$23,4k) — resultado totalmente dependente do volume de produção'
+      ? 'Jan quase neutro, Fev crítico (−R$27,2k), Mar positivo (+R$21,4k) — resultado totalmente dependente do volume de produção'
       : notas[s];
   } else {
     const notas = [
@@ -3140,6 +3196,14 @@ const GAMMA_URLS_MES = {
     3: 'https://gamma.app/docs/fle6byo3pdk5wx0', // Abril
     4: 'https://gamma.app/docs/wnqrvit8j1oce1u', // Maio
     5: 'https://gamma.app/docs/jouip2irn8014lu'  // Junho
+  },
+  ja: {
+    0: 'https://gamma.app/docs/9lwp42rm7idu3tq', // Janeiro
+    1: 'https://gamma.app/docs/i1d4q0qyp6eb9uv', // Fevereiro
+    2: 'https://gamma.app/docs/z8m4danopspzanf', // Março (recriado — CMV/EBITDA/Saldo corrigidos + Participação do Gestor)
+    3: 'https://gamma.app/docs/txx8ksjq1ewbfc1', // Abril
+    4: 'https://gamma.app/docs/c73mfrdypnghhwm', // Maio
+    5: 'https://gamma.app/docs/tto7krwtrgbzrlp'  // Junho
   }
 };
 function abrirGamma() {
