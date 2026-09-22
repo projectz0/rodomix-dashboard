@@ -367,14 +367,13 @@ body{margin:0;padding:0;}
   @page{size:landscape;margin:10mm;}
 }
 </style>
-  <link rel="manifest" href="manifest.json"/>
-  <meta name="theme-color" content="#141210"/>
-  <link rel="icon" href="icons/icon-192.png"/>
-  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="Rodomix DRE"/>
-  <meta name="app-build" content="20260922095900"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f9e72">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rodomix DRE">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="app-build" content="20260922120301">
 
 </head>
 <body>
@@ -1990,193 +1989,194 @@ const JA = {
 // ─────────────────────────────────────────────────────────────────────────────
 const RDX = {
   nome: 'Rodomix Renovadora de Pneus Ltda',
-  periodo: 'Janeiro–Março 2026',
-  meses: ['Jan','Fev','Mar'],
-  recBruta:  [894203,1061421,1207900],
-  recLiq:    [709367,840003,975284],
-  margem:    [155255,230189,286629],
-  saldo:     [-253175,-225825,-136727],
-  cmvOTR:    [55.71,51.29,48.60],
-  cmvCarga:  [70.33,67.40,74.92],
-  cmvTotal:  [61.96,57.45,56.93],
-  margemPct: [17.36,21.69,23.81],
-  recLiqWF:  [709367,840003,975284],
-  cmvWF:     [-554082,-609784,-687712],
-  margemWF:  [155255,230189,286629],
-  despComWF: [-119468,-135067,-157635],
-  despAdmWF: [-117332,-126671,-124977],
-  resOpWF:   [-81545,-31550,4017],
-  ebitdaVals:[-81545,-31550,4017],
-  ebitdaPct: [-9.12,-2.97,0.33],
+  periodo: 'Janeiro–Junho 2026',
+  meses: ['Jan','Fev','Mar','Abr','Mai','Jun'],
+  recBruta:  [894203.03,1061421.40,1207900.35,1040477.46,1129833.82,947787.79],
+  recLiq:    [709367.15,840002.93,975283.73,870528.37,937295.57,770538.97],
+  margem:    [155255.07,230188.60,286628.89,237511.01,284800.47,245263.11],
+  saldo:     [-253175.32,-225825.09,-140172.26,-251166.15,-206270.21,-236422.84],
+  cmvOTR:    [55.71,51.29,48.60,52.19,48.03,48.91],
+  cmvCarga:  [70.33,67.40,74.92,73.51,81.19,68.93],
+  cmvTotal:  [61.96,57.45,56.93,59.95,57.22,54.90],
+  margemPct: [17.36,21.69,23.73,22.83,25.21,25.88],
+  recLiqWF:  [709367.15,840002.93,975283.73,870528.37,937295.57,770538.97],
+  cmvWF:     [-554082.08,-609784.33,-687711.84,-623797.86,-646485.10,-520373.86],
+  margemWF:  [155255.07,230188.60,286628.89,237511.01,284800.47,245263.11],
+  despComWF: [-119468.25,-135067.20,-157634.91,-158544.69,-140302.59,-116017.38],
+  despAdmWF: [-117331.76,-126671.45,-128422.16,-119490.91,-113002.30,-136509.21],
+  resOpWF:   [-81544.94,-31550.05,571.82,-40524.59,31495.58,-7263.48],
+  ebitdaVals:[-81544.94,-31550.05,571.82,-40524.59,31495.58,-7263.48],
+  ebitdaPct: [-9.12,-2.97,0.05,-3.89,2.79,-0.77],
   fixData: {
-    '-1': { vals:[368980,412170,506650,0], total:1287800, gap:615727, label:'Somatório Jan–Mar' },
-     '0': { vals:[117332,119468,171631,0], total:408431, gap:253175, label:'Janeiro' },
-     '1': { vals:[126671,135067,194275,0], total:456013, gap:225825, label:'Fevereiro' },
-     '2': { vals:[124977,157635,140744,0], total:423356, gap:136727, label:'Março' },
+    '-1': { vals:[741427.79,827035.02,1184216.21,0], total:2752679.02, gap:1313031.87, label:'Somatório Jan–Jun' },
+     '0': { vals:[117331.76,119468.25,171630.38,0], total:408430.39, gap:253175.32, label:'Janeiro' },
+     '1': { vals:[126671.45,135067.20,194275.04,0], total:456013.69, gap:225825.09, label:'Fevereiro' },
+     '2': { vals:[128422.16,157634.91,140744.08,0], total:426801.15, gap:140172.26, label:'Março' },
+     '3': { vals:[119490.91,158544.69,210641.56,0], total:488677.16, gap:251166.15, label:'Abril' },
+     '4': { vals:[113002.30,140302.59,237765.79,0], total:491070.68, gap:206270.21, label:'Maio' },
+     '5': { vals:[136509.21,116017.38,229159.36,0], total:481685.95, gap:236422.84, label:'Junho' },
   },
   comments: {
     3:  {'Fev':'DESCONTO = 1.943,01','Mar':'DESCONTO - 3.675,55'},
-    6:  {'Jan':'PÓ DE RASPA - 7.120,00','Fev':'PÓ DE RASPA','Mar':'PNEU REFORMADO 900X20'},
+    6:  {'Jan':'PÓ DE RASPA - 7.120,00','Fev':'PÓ DE RASPA','Mar':'PNEU REFORMADO 900X20','Mai':'PNEUS E PÓ DE RASPA'},
     8:  {'Fev':'DESCONTO - 1.350,24','Mar':'DESCONTO - 1.829,24'},
     18: {'Jan':'Serviço - 210.706,00 x 17,53% = 36.936,76\nProduto - 43.020 x 7,13% = 3.067,32','Fev':'Serviço - 223.865,04 x 17,53% = 36.243,54\nProduto - 10.676,40 x 7,13% = 761,22','Mar':'Serviço - 201.066,04 x 17,53% = 35.246,87\nProduto - 125.598 x 7,13% = 8.955,13'},
     19: {'Jan':'Serviço - 359.040,20 x 14,25% = 51.163,22\nProduto - 190.417,90 x 7,35% = 13.995,71','Fev':'Serviço - 382.112,20 x 14,25% = 54.450,98\nProduto - 239.966,69 x 7,35% = 17.637,55','Mar':'Serviço - 418.607,10 x 14,25% = 59.651,51\nProduto - 111.332,99 x 7,35% = 8.182,97'},
-    31: {'Jan':'239 PNEUS - 11.967 KG','Fev':'291 PNEUS - 15.778 KG','Mar':'423 PNEUS - 20.110 KG'},
-    37: {'Fev':'MARCOS - 2.918,84','Mar':'MARCOS OLIVEIRA - 179,40'},
-    40: {'Mar':'26.445,31 / 185 M'},
+    31: {'Jan':'239 PNEUS - 11.967 KG','Fev':'291 PNEUS - 15.778 KG','Mar':'423 PNEUS - 20.110 KG','Abr':'423 PNEUS - 20.110 KG','Mai':'306 PNEUS - 15.887 KG','Jun':'395 PNEUS - 19.705 KG'},
+    37: {'Fev':'MARCOS - 2.918,84','Mar':'MARCOS OLIVEIRA - 179,40','Abr':'MARCOS OLIVEIRA - 179,40','Mai':'LUCAS BISPO - 2.513,40','Jun':'WILLIAMS - 2.823,59'},
+    40: {'Mar':'26.445,31 / 185 M','Abr':'26.445,31 / 185 M','Mai':'30.675,62 / 212 M','Jun':'162 M - TOTAL 27.825,16'},
     46: {'Fev':'NAILTON - 2.553,00'},
-    53: {'Jan':'Jadilson - 1.200,00','Fev':'Jadilson - 1.200,00','Mar':'Jadilson - 1.200,00'},
-    54: {'Jan':'552 PNEUS - 266,24 POR BANDA','Fev':'693 PNEUS - 257,82 POR BANDA','Mar':'625 PNEUS - 262,16 POR BANDA'},
-    60: {'Fev':'EDSON - 2.217,60\nEDVAN - 2.532,00','Mar':'ANTONIO GOMES - 3.526,93\nCHRISTIANO FAGUNDES - 2.974,47\nCLAUDIO APARECIDO - 3.289,36\nEDSON LIMA - 246,40\nEDVAN ARAUJO - 281,33\nJEIDISON SOUZA - 3.485,47\nJORGE DOS SANTOS - 2.464,00\nMARTINHO DE LIMA - 2.896,27'},
+    53: {'Jan':'Jadilson - 1.200,00','Fev':'Jadilson - 1.200,00','Mar':'Jadilson - 1.200,00','Abr':'Jadilson - 1.200,00'},
+    54: {'Jan':'552 PNEUS - 266,24 POR BANDA','Fev':'693 PNEUS - 257,82 POR BANDA','Mar':'625 PNEUS - 262,16 POR BANDA','Abr':'625 PNEUS - 262,16 POR BANDA','Mai':'609 PNEUS - 250,69 POR BANDA','Jun':'455 PNEUS - 246,19 POR BANDA'},
+    60: {'Fev':'EDSON - 2.217,60\nEDVAN - 2.532,00','Mar':'ANTONIO GOMES - 3.526,93\nCHRISTIANO FAGUNDES - 2.974,47\nCLAUDIO APARECIDO - 3.289,36\nEDSON LIMA - 246,40\nEDVAN ARAUJO - 281,33\nJEIDISON SOUZA - 3.485,47\nJORGE DOS SANTOS - 2.464,00\nMARTINHO DE LIMA - 2.896,27','Abr':'ANTONIO GOMES - 3.526,93\nCHRISTIANO FAGUNDES - 2.974,47\nCLAUDIO APARECIDO - 3.289,36\nEDSON LIMA - 246,40\nEDVAN ARAUJO - 281,33\nJEIDISON SOUZA - 3.485,47\nJORGE DOS SANTOS - 2.464,00\nMARTINHO DE LIMA - 2.896,27','Mai':'JADILSON - 3.471,64\nPAULO HENRIQUE - 3.516,67','Jun':'THARCISIO - 3.657,92'},
     68: {'Jan':'André Cruz - 10.996,59'},
-    70: {'Jan':'Roberto - 400,00\nSidnei e Regi - 300,00','Fev':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00','Mar':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00'},
+    70: {'Jan':'Roberto - 400,00\nSidnei e Regi - 300,00','Fev':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00','Mar':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00','Abr':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00','Mai':'ROBERTO - 400,00\nSIDNEI E REGI - 300,00','Jun':'ROBERTO - 400,00\nREGI E SID - 300,00'},
     73: {'Jan':'PÓ DE RASPA'},
-    84: {'Jan':'Luis Henrique - 2.730,00\nFaviano - 1.120,00\nClaudio - 1.760,00\nVivaldo - 2.341,99\nEdiline - 642,70\nIsrael - 2.610,00','Fev':'PASCOAL - 260,00\nEDIVALDO - 4.390,00\nEDILENE - 260,00\nLUIS HENRIQUE - 2.310,00\nFAVIANO - 40,00\nVIVALDO - 1.676,98\nCLAUDIO - 2.630,00\nISRAEL - 2.690,00','Mar':'LUIS HENRIQUE - 3.685,00\nVIVALDO - 2.845,44\nCLAUDIO - 930,00\nISRAEL - 4.210,00\nPEDRO HENRIQUE - 260,00\nFAVIANO - 2.755,00\nPASCOAL - 130,00\nEDILENE - 550,00'},
-    86: {'Jan':'D. SANTOS NOGUEIRA - 9.021,00\nSTARLINK - 315,00\nVARIADOS - 10.914,60\nAVANTE PNEUS - 370,00','Fev':'MARVIBA - 5.719,89\nVARIADO - RESTANTE','Mar':'STARLINK - 630,00\nD SANTOS - 4.245,42\nADERBAL - 885,00\nCEDEP, BRAVO, MARVIBA, MERCADO LIVRE, ETC'},
-    89: {'Fev':'FAVIANO - 3.086,41','Mar':'FAVIANO NASCIMENTO - 328,60'},
-    92: {'Mar':'TELELISTA.NET - 134,47'},
+    84: {'Jan':'Luis Henrique - 2.730,00\nFaviano - 1.120,00\nClaudio - 1.760,00\nVivaldo - 2.341,99\nEdiline - 642,70\nIsrael - 2.610,00','Fev':'PASCOAL - 260,00\nEDIVALDO - 4.390,00\nEDILENE - 260,00\nLUIS HENRIQUE - 2.310,00\nFAVIANO - 40,00\nVIVALDO - 1.676,98\nCLAUDIO - 2.630,00\nISRAEL - 2.690,00','Mar':'LUIS HENRIQUE - 3.685,00\nVIVALDO - 2.845,44\nCLAUDIO - 930,00\nISRAEL - 4.210,00\nPEDRO HENRIQUE - 260,00\nFAVIANO - 2.755,00\nPASCOAL - 130,00\nEDILENE - 550,00','Abr':'LUIS HENRIQUE - 3.685,00\nVIVALDO - 2.845,44\nCLAUDIO - 930,00\nISRAEL - 4.210,00\nPEDRO HENRIQUE - 260,00\nFAVIANO - 2.755,00\nPASCOAL - 130,00\nEDILENE - 550,00','Mai':'LUIS HENRIQUE - 2.020,00\nFAVIANO - 925,00\nCLAUDIO - 1.955,00\nISRAEL - 1.800,00\nEDILENE - 1.143,68\nEVALDO - 2.420,00\nVIVALDO - 1.730,00\nVANDO - 210,00\nJOAO EVANGELISTA - 313,99','Jun':'LUIS HENRIQUE - 1.975,00\nFAVIANO - 850,00\nCLAUDIO - 2.785,00\nISRAEL - 2.130,00\nVANDO - 390,00\nEDVALDO - 1.280,00\nVIVALDO - 2.644,89\nJANAINA - 280,00'},
+    86: {'Jan':'D. SANTOS NOGUEIRA - 9.021,00\nSTARLINK - 315,00\nVARIADOS - 10.914,60\nAVANTE PNEUS - 370,00','Fev':'MARVIBA - 5.719,89\nVARIADO - RESTANTE','Mar':'STARLINK - 630,00\nD SANTOS - 4.245,42\nADERBAL - 885,00\nCEDEP, BRAVO, MARVIBA, MERCADO LIVRE, ETC','Abr':'STARLINK - 630,00\nD SANTOS - 4.245,42\nADERBAL - 885,00\nCEDEP, BRAVO, MARVIBA, MERCADO LIVRE, AUTOMAIS, STARTE DIESEL, GOMMA, ALVARO, ETC'},
+    89: {'Fev':'FAVIANO - 3.086,41','Mar':'FAVIANO NASCIMENTO - 328,60','Abr':'FAVIANO NASCIMENTO - 328,60','Jun':'EDVALDO - 2.796,47'},
+    92: {'Mar':'TELELISTA.NET - 134,47','Abr':'TELELISTA.NET - 134,47','Mai':'HOSTGATOR - 415,87'},
     97: {'Jan':'Ajuda de custo - Denise 300,00'},
-    99: {'Jan':'Israel - 500,00','Fev':'Israel - 500,00','Mar':'Israel - 500,00'},
-    107:{'Jan':'TEAM APARELHOS MEDI - 1.596,00','Fev':'JGK GUINCHOS - 1.300,00','Mar':'TEAM TECNICA - 1.584,00'},
-    116:{'Fev':'BEM MAIS - 1.452,48\nISAUF - 84,00'},
+    99: {'Jan':'Israel - 500,00','Fev':'Israel - 500,00','Mar':'Israel - 500,00','Abr':'Israel - 500,00','Mai':'Israel - 500,00','Jun':'Israel - 500,00'},
+    107:{'Jan':'TEAM APARELHOS MEDI - 1.596,00','Fev':'JGK GUINCHOS - 1.300,00','Mar':'TEAM TECNICA - 1.584,00','Abr':'TEAM TECNICA - 1.584,00'},
+    116:{'Fev':'BEM MAIS - 1.452,48\nISAUF - 84,00','Jun':'ODONTO SYSTEM - 16,94\nSH BRASIL - 131,13\nISAUF - 42,00\nBEM MAIS - 1.362,42'},
     128:{'Fev':'DAJE N54402 - 270,22\nDAJE N54402 - 287,10'},
     146:{'Fev':'RAONIR - 700,00\nADV - 2.653,88'},
-    150:{'Jan':'VARIADOS - 1.914,74','Fev':'VARIADOS - 1.307,00','Mar':'PARAFUSOS CRESPO - 1.300,00\nMASKATE, MERCADO LIVRE, BARTOFIL ATACADÃO'},
+    150:{'Jan':'VARIADOS - 1.914,74','Fev':'VARIADOS - 1.307,00','Mar':'PARAFUSOS CRESPO - 1.300,00\nMASKATE, MERCADO LIVRE, BARTOFIL ATACADÃO','Abr':'PARAFUSOS CRESPO - 1.300,00\nMASKATE, MERCADO LIVRE, BARTOFIL ATACADÃO','Mai':'GRAFICA E BRINDES - 500,00'},
     155:{'Mar':'DENISE - 3.504,00'},
-    166:{'Jan':'Vigia - 900,00\nManutenção de ar - 850,00\nCONSULTORIA TRIBUTARIA (CAIQUE) - 5.000,00\nSustentare - 85,91\nEcotono - 1.505,90\nTecnogreen - 1.155,05\nPR Tecnologia - 1.573,84\nADM Vital - 1.551,36\nEliane Silva - 180,00\nSoftPlan - 499,99','Fev':'KESLI (GESSO) - 1.800,00\nDIARISTA - 720,00\nMANU AR COND - 970,00\nASENSE - 5.600,00\nJANAINA - 140,00\nSUSTENTARE - 146,09\nPR TECNOLO - 1.502,70\nCAIQUE SOARES - 5.000,00\nECOTONO - 1.531,40','Mar':'CAIQUE SOARES - 5.000,00\nDIARISTA - 420,00\nVIGIA - 1.200,00\nSUSTENTARE - 114,40\nECOTONO - 1.539,02\nTECNOGREEN - 1.155,05\nSOFTPLAN - 541,62\nNOVA FIGUEIREDO ADVOCACIA - 8.823,52'},
-    168:{'Jan':'MULTA PERMANENCIA ACEITÃO - 1.290,00','Mar':'TAXAS DIVERSAS - DAJES, PROTESTOS'},
+    166:{'Jan':'Vigia - 900,00\nManutenção de ar - 850,00\nCONSULTORIA TRIBUTARIA (CAIQUE) - 5.000,00\nSustentare - 85,91\nEcotono - 1.505,90\nTecnogreen - 1.155,05\nPR Tecnologia - 1.573,84\nADM Vital - 1.551,36\nEliane Silva - 180,00\nSoftPlan - 499,99','Fev':'KESLI (GESSO) - 1.800,00\nDIARISTA - 720,00\nMANU AR COND - 970,00\nASENSE - 5.600,00\nJANAINA - 140,00\nSUSTENTARE - 146,09\nPR TECNOLO - 1.502,70\nCAIQUE SOARES - 5.000,00\nECOTONO - 1.531,40','Mar':'CAIQUE SOARES - 5.000,00\nDIARISTA - 420,00\nVIGIA - 1.200,00\nSUSTENTARE - 114,40\nECOTONO - 1.539,02\nTECNOGREEN - 1.155,05\nSOFTPLAN - 541,62\nNOVA FIGUEIREDO ADVOCACIA - 8.823,52','Abr':'DIARISTA - 420,00\nVIGIA - 1.200,00\nSUSTENTARE - 114,40\nECOTONO - 1.539,02\nTECNOGREEN - 1.155,05\nSOFTPLAN - 541,62\nNOVA FIGUEIREDO ADVOCACIA - 8.823,52','Mai':'DIARISTA - 840,00\nVIGIA - 600,00','Jun':'CONSULTORIA CAIQUE - 1.435,90\nVIGIA - 600,00'},
+    168:{'Jan':'MULTA PERMANENCIA ACEITÃO - 1.290,00','Mar':'TAXAS DIVERSAS - DAJES, PROTESTOS','Abr':'TAXAS DIVERSAS - DAJES, PROTESTOS','Mai':'DAJES - 208,90\nDAJES - 236,46\nTLL - 393,53'},
     180:{'Fev':'ITAU - 14.294,83\nEMPRÉSTIMO E&J - 6.000,00','Mar':'ITAU - 6.899,16'},
-    181:{'Jan':'ISRAEL - 26.700,00\nMARCUS VINICIUS - 18.000,00\nCUNHA - 12.500,00 (ELIENE)','Fev':'ISRAEL - 23.400,00\nJOAO EVANGELISTA - 12.000,00\nELIENE - 12.500,00\nISRAEL - 3.000,00\nMARCUS VINICIUS - 9.000,00','Mar':'ISRAEL - 10.200,00\nELIENE - 12.500,00\nMARCUS VINI - 9.000,00\nISRAEL - 3.000,00'},
-    182:{'Jan':'Pedreiro - 27.343,00\nALUGUEL - 5.000,00 (TRUCK CENTER)\nMAQ E EQUIP - 5.000,00\nVEICULOS - 3.774,27\nACELOR - 1.485,26\nMAQ E EQUIP - 1.128,97\nINSTALAÇÕES - 36.782,22','Fev':'MARCIO PEDREIRO - 52.695,00\nMAQ E EQUIP - 5.000,00 (ELIENE)\nMAQ E EQUIP - 747,63\nINSTALAÇÕES - 20.784,66\nALUGUEL TRUCK CENTER - 5.000,00\nINSTALAÇÕES - 984,31\nRAIMUNDO (MOINHO E CILINDRO) - 8.000,00\nVEICULOS - 3.774,27','Mar':'VEICULOS - 3.774,27\nALUGUEL TRUCK CENTER - 5.000,00\nALUGUEL DE EQUIP - 1.640,00\nFRETES TRUCK - 24.531,81\nHIPERFERRO - 1.595,30\nPEDREIRO - 50.620,00\nMAQ E EQUIP - 1.659,62\nINSTALAÇÕES - 13.162,42'},
-    183:{'Jan':'RETIRADAS\n* 5.632,77\n* 5.000,00\n* 79,49\n* 406,33\nSTARLINK - 149,99'},
+    181:{'Jan':'ISRAEL - 26.700,00\nMARCUS VINICIUS - 18.000,00\nCUNHA - 12.500,00 (ELIENE)','Fev':'ISRAEL - 23.400,00\nJOAO EVANGELISTA - 12.000,00\nELIENE - 12.500,00\nISRAEL - 3.000,00\nMARCUS VINICIUS - 9.000,00','Mar':'ISRAEL - 10.200,00\nELIENE - 12.500,00\nMARCUS VINI - 9.000,00\nISRAEL - 3.000,00','Abr':'ISRAEL - 10.200,00\nELIENE - 12.500,00\nMARCUS VINI - 9.000,00\nISRAEL - 3.000,00','Mai':'ISRAEL - 10.200,00\nELIENE - 12.500,00\nMARCOS VINICIUS - 9.000,00\nISRAEL - 3.000,00','Jun':'SR JUNIOR - 7.500,00\nMARCOS VIN - 9.000,00\nSR JUNIOR - 18.000,00\nELIENE - 12.500,00\nISRAEL - 13.200,00'},
+    182:{'Jan':'Pedreiro - 27.343,00\nALUGUEL - 5.000,00 (TRUCK CENTER)\nMAQ E EQUIP - 5.000,00\nVEICULOS - 3.774,27\nACELOR - 1.485,26\nMAQ E EQUIP - 1.128,97\nINSTALAÇÕES - 36.782,22','Fev':'MARCIO PEDREIRO - 52.695,00\nMAQ E EQUIP - 5.000,00 (ELIENE)\nMAQ E EQUIP - 747,63\nINSTALAÇÕES - 20.784,66\nALUGUEL TRUCK CENTER - 5.000,00\nINSTALAÇÕES - 984,31\nRAIMUNDO (MOINHO E CILINDRO) - 8.000,00\nVEICULOS - 3.774,27','Mar':'VEICULOS - 3.774,27\nALUGUEL TRUCK CENTER - 5.000,00\nALUGUEL DE EQUIP - 1.640,00\nFRETES TRUCK - 24.531,81\nHIPERFERRO - 1.595,30\nPEDREIRO - 50.620,00\nMAQ E EQUIP - 1.659,62\nINSTALAÇÕES - 13.162,42','Abr':'VEICULOS - 3.774,27\nALUGUEL TRUCK CENTER - 5.000,00\nALUGUEL DE EQUIP - 1.640,00\nFRETES TRUCK - 24.531,81\nHIPERFERRO - 1.595,30\nPEDREIRO - 50.620,00\nMAQ E EQUIP - 1.659,62\nINSTALAÇÕES - 13.162,42','Mai':'PEDREIRO - 40.912,00\nALUGUEL TRUCK CENTER - 5.000,00\nALUGUEL DE EQUIP - 1.300,00\nELIENE - 23.000,00\nINSTALAÇÕES - 19.203,22\nVEICULOS (ITAU) - 9.237,72','Jun':'MARCIO PEDREIRO - 26.413,00'},
+    183:{'Jan':'RETIRADAS\n* 5.632,77\n* 5.000,00\n* 79,49\n* 406,33\nSTARLINK - 149,99','Mai':'STARLINK (SR JUNIOR) - 315,00','Jun':'RETIRADA CSC - 46.218,86\nSTARLINK (SR JUNIOR) - 315,00'},
   },
   dre: [
-    {g:true,  label:'RECEITA',                            v:[null,null,null]},
-    {         label:'Receita Recapagem OTR',               v:[433606,569617,736605], rowNum:3},
-    {         label:'Receita Duplagem OTR',                v:[13649,26088,35239]},
-    {         label:'Receita Conserto OTR',                v:[20810,24890,30430]},
-    {         label:'Receita Produto OTR',                 v:[7120,3044,1250], rowNum:6},
-    {bold:true,label:'Total Receita OTR',                  v:[475185,623639,803524]},
-    {         label:'Receita Recapagem Carga',             v:[401475,418182,386112], rowNum:8},
-    {         label:'Receita Conserto Carga',              v:[9956,11992,10571]},
-    {bold:true,label:'Total Receita Carga',                v:[411431,430174,396683]},
-    {         label:'Recuperação de Despesas',             v:[7588,7609,7693]},
-    {bold:true,label:'Receita de Vendas Bruta',            v:[894203,1061421,1207900], highlight:'blue'},
-    {neg:true,bold:true,label:'Impostos Totais',           v:[-184836,-221418,-232617]},
-    {neg:true, label:'  Impostos Serv/Prod JA',            v:[-40004,-40005,-44202], rowNum:18},
-    {neg:true, label:'  Impostos Serv/Prod Rodomix',       v:[-65159,-72089,-67834], rowNum:19},
-    {neg:true, label:'  Encargos Sociais',                 v:[-33774,-33761,-33570]},
-    {neg:true, label:'  ICMS Antecipação Parcial',         v:[-45899,-75564,-87010]},
-    {bold:true,label:'Receita de Vendas Líquida',          v:[709367,840003,975284], highlight:'blue'},
-    {g:true,  label:'CMV',                                 v:[null,null,null]},
-    {neg:true,bold:true,label:'CMV Total',                 v:[-554082,-609784,-687712]},
-    {neg:true,bold:true,label:'  CMV OTR Total',           v:[-264724,-319839,-390532]},
-    {neg:true, label:'    Borracha MDB',                   v:[-143604,-189336,-241320], rowNum:31},
-    {neg:true, label:'    Bônus de Produção OTR',          v:[-5475,-5250,-8285]},
-    {neg:true, label:'    Energia OTR',                    v:[-22633,-23716,-18779]},
-    {neg:true, label:'    Fretes OTR',                     v:[-4918,-951,-1390]},
-    {neg:true, label:'    Férias OTR',                     v:[0,-2919,-179], rowNum:37},
-    {neg:true, label:'    FGTS OTR',                       v:[-2065,-1927,-1755]},
-    {neg:true, label:'    Lenha OTR',                      v:[-10336,-16279,-17658], rowNum:40},
-    {neg:true, label:'    Manchão OTR',                    v:[-7051,-7032,-8174]},
-    {neg:true, label:'    Materiais Secundários OTR',      v:[-33280,-34071,-53980]},
-    {neg:true, label:'    Manutenção Máquinas OTR',        v:[-4040,-8496,-11353]},
-    {neg:true, label:'    Rescisões OTR',                  v:[0,-2553,0], rowNum:46},
-    {neg:true, label:'    Salários OTR',                   v:[-28045,-24694,-24009], rowNum:70},
-    {neg:true, label:'    Vale Transporte OTR',            v:[-3277,-2615,-3652]},
-    {neg:true,bold:true,label:'  CMV Carga Total',         v:[-289358,-289945,-297180]},
-    {neg:true, label:'    Bandas',                         v:[-146968,-164747,-163851], rowNum:54},
-    {neg:true, label:'    Ajuda de Custo Carga',           v:[-1250,-1250,-1250], rowNum:53},
-    {neg:true, label:'    Bônus de Produção Carga',        v:[-5553,-6721,-7901]},
-    {neg:true, label:'    Energia Carga',                  v:[-19894,-16440,-9346]},
-    {neg:true, label:'    Fretes Carga',                   v:[-4323,-659,-692]},
-    {neg:true, label:'    Férias Carga',                   v:[0,-4750,-19164], rowNum:60},
-    {neg:true, label:'    FGTS Carga',                     v:[-3262,-3335,-3519]},
-    {neg:true, label:'    Lenha Carga',                    v:[-9086,-11285,-8788]},
-    {neg:true, label:'    Manchão Carga',                  v:[-6198,-4875,-4068]},
-    {neg:true, label:'    Materiais Secundários Carga',    v:[-29253,-23618,-26865]},
-    {neg:true, label:'    Manutenção Máquinas Carga',      v:[-3551,-5889,-5650]},
-    {neg:true, label:'    Rescisões Carga',                v:[-10997,0,0], rowNum:68},
-    {neg:true, label:'    Salários Carga',                 v:[-43677,-41996,-39758]},
-    {neg:true, label:'    Vale Transporte Carga',          v:[-5348,-4381,-6329]},
-    {neg:true, label:'  Custo Venda de Produto',           v:[-30,-30,-943], rowNum:73},
-    {bold:true,label:'Margem de Contribuição',             v:[155255,230189,286629], highlight:'green'},
-    {g:true,  label:'DESPESAS',                            v:[null,null,null]},
-    {neg:true,bold:true,label:'Despesas Comerciais',       v:[-119468,-135067,-157635]},
-    {neg:true, label:'  Bônus de Produção Com.',           v:[-549,-238,-432]},
-    {neg:true, label:'  Combustíveis',                     v:[-31625,-31916,-32642]},
-    {neg:true, label:'  Comissão de Vendedores',           v:[-28933,-35559,-44020]},
-    {neg:true, label:'  Despesas com Viagens',             v:[-11205,-14297,-18215], rowNum:84},
-    {neg:true, label:'  Despesas com Veículos',            v:[-20703,-22668,-33765], rowNum:86},
-    {neg:true, label:'  FGTS Comercial',                   v:[-1466,-1669,-1762]},
-    {neg:true, label:'  Férias Comercial',                 v:[0,-3086,-329], rowNum:89},
-    {neg:true, label:'  Pedágio',                          v:[-2551,-2909,-2577]},
-    {neg:true, label:'  Propagandas e Publicidade',        v:[0,0,-134], rowNum:92},
-    {neg:true, label:'  Salários Comercial',               v:[-20063,-20744,-21253], rowNum:97},
-    {neg:true, label:'  Serviços de Terceiros Com.',       v:[-500,-500,-500], rowNum:99},
-    {neg:true, label:'  Vale Transporte Com.',             v:[-1874,-1480,-2005]},
-    {neg:true,bold:true,label:'Despesas Administrativas',  v:[-117332,-126671,-124977]},
-    {neg:true, label:'  Aluguel de Imóvel',                v:[-3757,-3157,-3157]},
-    {neg:true, label:'  Aluguel de Equipamentos',          v:[-1596,-1300,-1584], rowNum:107},
-    {neg:true, label:'  Água e Esgoto',                    v:[-576,-513,-513]},
-    {neg:true, label:'  Assessoria Contábil',              v:[-3745,-4087,-4087]},
-    {neg:true, label:'  Assessoria Jurídica',              v:[-2606,-3244,-3188]},
-    {neg:true, label:'  Assessoria Técnica',               v:[-3553,-4423,-4347]},
-    {neg:true, label:'  A S Advocacia',                    v:[0,-2251,0]},
-    {neg:true, label:'  Assessoria Perfil Gestão',         v:[0,-2343,0]},
-    {neg:true, label:'  Assistência Médica',               v:[-1493,-1536,1389], rowNum:116},
-    {neg:true, label:'  Comissão de Cobrança',             v:[-572,-243,-119]},
-    {neg:true, label:'  Confraternização',                 v:[-605,0,0]},
-    {neg:true, label:'  Consultoria Empresarial',          v:[-5449,-6783,-6665]},
-    {neg:true, label:'  Despesas de Cartório',             v:[0,-557,-73], rowNum:128},
-    {neg:true, label:'  E.P.I',                            v:[-1358,-1797,-2039]},
-    {neg:true, label:'  FGTS Administrativo',              v:[-736,-720,-505]},
-    {neg:true, label:'  Fardamento',                       v:[0,-78,-78]},
-    {neg:true, label:'  IRPJ',                             v:[-409,0,-1714]},
-    {neg:true, label:'  Manutenção Rede/Software',         v:[-3287,-3354,-3757], rowNum:146},
-    {neg:true, label:'  Manutenção de Máquinas',           v:[-1251,0,0]},
-    {neg:true, label:'  Manutenção Instalações',           v:[-983,-266,-92]},
-    {neg:true, label:'  Material Uso e Consumo',           v:[-1915,-1307,-3599], rowNum:150},
-    {neg:true, label:'  Manutenção de Equipamentos',       v:[-2523,-307,-958]},
-    {neg:true, label:'  Material de Limpeza',              v:[-1155,-758,-1128]},
-    {neg:true, label:'  Rateio CSC',                       v:[-32641,-40371,-38688]},
-    {neg:true, label:'  Reposição Fundo Fixo',             v:[-3406,-618,0]},
-    {neg:true, label:'  Rescisões Adm.',                   v:[0,0,-3504], rowNum:155},
-    {neg:true, label:'  Pro Labore Sócios',                v:[-11845,-14745,-14489]},
-    {neg:true, label:'  Salários Administrativo',          v:[-8729,-9528,-6658]},
-    {neg:true, label:'  Segurança Patrimonial',            v:[-1706,-1706,-1706]},
-    {neg:true, label:'  Serviços de Terceiros Adm.',       v:[-13302,-17635,-20220], rowNum:166},
-    {neg:true, label:'  Taxas Diversas',                   v:[-1290,0,-310], rowNum:168},
-    {neg:true, label:'  Tarifas Financeiras',              v:[-5442,-1295,-1552]},
-    {neg:true, label:'  Tarifas Financeiras DO IT',        v:[-573,-799,-1036]},
-    {neg:true, label:'  Vale Transporte Adm.',             v:[-831,-950,-605]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',     v:[-81545,-31550,4017], highlight:'red'},
-    {g:true,  label:'ABAIXO DO EBITDA',                    v:[null,null,null]},
-    {neg:true, label:'  Amortização de Empréstimos',       v:[0,-20295,-6899], rowNum:180},
-    {neg:true, label:'  Juros de Empréstimos',             v:[-57200,-59900,-34700], rowNum:181},
-    {neg:true, label:'  Investimentos',                    v:[-80514,-96986,-87472], rowNum:182},
-    {neg:true, label:'  Retiradas',                        v:[-11269,-311,0], rowNum:183},
-    {neg:true, label:'  Simples Nacional Parcelamento',    v:[-22648,-16783,-11673]},
-    {bold:true,label:'Saldo Final',                        v:[-253175,-225825,-136727], highlight:'red'},
+    {g:true,  label:'RECEITA',                            v:[null,null,null,null,null,null]},
+    {         label:'Receita Recapagem OTR',               v:[433605.75,569616.99,736605.45,564489.00,724692.00,572822.00], rowNum:3},
+    {         label:'Receita Duplagem OTR',                v:[13649.00,26088.00,35239.00,35462.00,22452.00,23339.00]},
+    {         label:'Receita Conserto OTR',                v:[20810.00,24890.00,30430.00,33274.00,49755.00,41566.00]},
+    {         label:'Receita Produto OTR',                 v:[7120.00,3044.00,1250.00,11983.20,8650.00,7802.00], rowNum:6},
+    {bold:true,label:'Total Receita OTR',                  v:[475184.75,623638.99,803524.45,645208.20,805549.00,645529.00]},
+    {         label:'Receita Recapagem Carga',             v:[401474.75,418181.76,386111.76,379365.00,309285.00,289303.00], rowNum:8},
+    {         label:'Receita Conserto Carga',              v:[9956.00,11992.00,10571.00,11140.00,10424.00,7560.00]},
+    {bold:true,label:'Total Receita Carga',                v:[411430.75,430173.76,396682.76,390505.00,319709.00,296863.00]},
+    {         label:'Recuperação de Despesas',             v:[7587.53,7608.65,7693.14,7362.31,7363.72,7294.79]},
+    {bold:true,label:'Receita de Vendas Bruta',            v:[894203.03,1061421.40,1207900.35,1040477.46,1129833.82,947787.79], highlight:'blue'},
+    {neg:true,bold:true,label:'Impostos Totais',           v:[-184835.88,-221418.47,-232616.62,-169949.09,-192538.25,-177248.82]},
+    {neg:true, label:'  Impostos Serv/Prod JA',            v:[-40004.08,-40004.76,-44202.00,-43709.54,-50332.75,-56764.33], rowNum:18},
+    {neg:true, label:'  Impostos Serv/Prod Rodomix',       v:[-65158.93,-72088.53,-67834.48,-56673.38,-72161.73,-67735.09], rowNum:19},
+    {neg:true, label:'  Encargos Sociais',                 v:[-33774.18,-33760.56,-33570.07,-32852.67,-33270.91,-32946.90]},
+    {neg:true, label:'  ICMS Antecipação Parcial',         v:[-45898.69,-75564.62,-87010.07,-36713.50,-36772.86,-19802.50]},
+    {bold:true,label:'Receita de Vendas Líquida',          v:[709367.15,840002.93,975283.73,870528.37,937295.57,770538.97], highlight:'blue'},
+    {g:true,  label:'CMV',                                 v:[null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'CMV Total',                 v:[-554082.08,-609784.33,-687711.84,-623797.86,-646485.10,-520373.86]},
+    {neg:true,bold:true,label:'  CMV OTR Total',           v:[-264723.89,-319839.20,-390532.15,-336741.35,-386924.70,-315752.60]},
+    {neg:true, label:'    Borracha MDB',                   v:[-143604.00,-189336.00,-241320.00,-190644.00,-236460.00,-189744.00], rowNum:31},
+    {neg:true, label:'    Bônus de Produção OTR',          v:[-5475.00,-5250.00,-8285.00,-6188.00,-7635.00,-6030.00]},
+    {neg:true, label:'    Energia OTR',                    v:[-22632.86,-23715.83,-18778.82,-25353.50,-21815.11,-15617.25]},
+    {neg:true, label:'    Fretes OTR',                     v:[-4918.04,-951.27,-1389.63,-1557.04,-1308.55,-1567.20]},
+    {neg:true, label:'    Férias OTR',                     v:[0,-2918.84,-179.40,-2513.40,-2823.59,-9719.60], rowNum:37},
+    {neg:true, label:'    FGTS OTR',                       v:[-2064.84,-1927.07,-1754.61,-1903.02,-1953.78,-2009.77]},
+    {neg:true, label:'    Lenha OTR',                      v:[-10336.39,-16279.47,-17657.53,-18972.87,-19839.34,-16023.54], rowNum:40},
+    {neg:true, label:'    Manchão OTR',                    v:[-7051.42,-7032.35,-8174.32,-8440.15,-9328.59,-6473.26]},
+    {neg:true, label:'    Materiais Secundários OTR',      v:[-33279.61,-34071.12,-53979.81,-38765.26,-48019.73,-33411.20]},
+    {neg:true, label:'    Manutenção Máquinas OTR',        v:[-4039.50,-8495.73,-11353.00,-16060.73,-10341.00,-5314.88]},
+    {neg:true, label:'    Rescisões OTR',                  v:[0,-2552.92,0,0,0,0], rowNum:46},
+    {neg:true, label:'    Salários OTR',                   v:[-28045.34,-24694.04,-24008.51,-23041.47,-24180.50,-26238.76], rowNum:70},
+    {neg:true, label:'    Vale Transporte OTR',            v:[-3276.89,-2614.56,-3651.51,-3301.91,-3219.51,-3603.14]},
+    {neg:true,bold:true,label:'  CMV Carga Total',         v:[-289358.19,-289945.13,-297179.69,-287056.51,-259560.40,-204621.26]},
+    {neg:true, label:'    Bandas',                         v:[-146967.98,-164746.96,-163850.82,-152674.16,-112018.67,-98535.44], rowNum:54},
+    {neg:true, label:'    Ajuda de Custo Carga',           v:[-1250.00,-1250.00,-1250.00,-1250.00,-1250.00,-1250.00], rowNum:53},
+    {neg:true, label:'    Bônus de Produção Carga',        v:[-5552.50,-6721.00,-7900.50,-5761.00,-6692.00,-6216.50]},
+    {neg:true, label:'    Energia Carga',                  v:[-19894.14,-16439.64,-9345.82,-15638.42,-8781.12,-7268.52]},
+    {neg:true, label:'    Fretes Carga',                   v:[-4322.94,-659.41,-691.59,-960.40,-526.72,-729.40]},
+    {neg:true, label:'    Férias Carga',                   v:[0,-4749.60,-19164.23,-6988.31,-3657.95,-3456.52], rowNum:60},
+    {neg:true, label:'    FGTS Carga',                     v:[-3262.05,-3334.67,-3518.63,-3263.14,-2707.02,-2769.71]},
+    {neg:true, label:'    Lenha Carga',                    v:[-9085.63,-11284.82,-8787.78,-11702.75,-7985.82,-7457.61]},
+    {neg:true, label:'    Manchão Carga',                  v:[-6198.14,-4874.78,-4068.19,-5206.01,-3754.99,-4487.22]},
+    {neg:true, label:'    Materiais Secundários Carga',    v:[-29252.54,-23617.88,-26864.59,-23910.99,-19329.12,-15550.21]},
+    {neg:true, label:'    Manutenção Máquinas Carga',      v:[-3550.71,-5889.17,-5650.15,-9906.50,-4162.51,-2473.63]},
+    {neg:true, label:'    Rescisões Carga',                v:[-10996.59,0,0,0,-47406.92,-9473.53], rowNum:68},
+    {neg:true, label:'    Salários Carga',                 v:[-43676.70,-41996.32,-39758.22,-43449.87,-36424.98,-39913.83]},
+    {neg:true, label:'    Vale Transporte Carga',          v:[-5348.27,-4380.88,-6329.18,-6344.96,-4862.58,-5039.14]},
+    {neg:true, label:'  Custo Venda de Produto',           v:[-30.00,-30.00,-943.00,-9219.50,-6010.00,-4902.00], rowNum:73},
+    {bold:true,label:'Margem de Contribuição',             v:[155255.07,230188.60,286628.89,237511.01,284800.47,245263.11], highlight:'green'},
+    {g:true,  label:'DESPESAS',                            v:[null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'Despesas Comerciais',       v:[-119468.25,-135067.20,-157634.91,-158544.69,-140302.59,-116017.38]},
+    {neg:true, label:'  Bônus de Produção Com.',           v:[-548.72,-238.00,-432.00,-280.00,0,-720.00]},
+    {neg:true, label:'  Combustíveis',                     v:[-31624.50,-31916.43,-32641.83,-38006.74,-48191.68,-32791.52]},
+    {neg:true, label:'  Comissão de Vendedores',           v:[-28933.25,-35558.95,-44020.29,-34564.74,-38947.53,-31384.10]},
+    {neg:true, label:'  Despesas com Viagens',             v:[-11204.69,-14296.98,-18215.44,-12517.67,-12334.89,-11726.97], rowNum:84},
+    {neg:true, label:'  Despesas com Veículos',            v:[-20702.94,-22667.99,-33764.96,-41524.72,-10090.51,-1989.84], rowNum:86},
+    {neg:true, label:'  FGTS Comercial',                   v:[-1466.35,-1669.11,-1762.44,-1878.60,-1738.93,-2047.27]},
+    {neg:true, label:'  Férias Comercial',                 v:[0,-3086.41,-328.60,0,-2796.47,-9544.19], rowNum:89},
+    {neg:true, label:'  Pedágio',                          v:[-2550.99,-2909.39,-2576.55,-1920.08,-1085.10,-1867.30]},
+    {neg:true, label:'  Propagandas e Publicidade',        v:[0,0,-134.47,-550.34,-134.47,0], rowNum:92},
+    {neg:true, label:'  Salários Comercial',               v:[-20062.66,-20743.71,-21253.16,-24344.94,-22424.50,-21673.81], rowNum:97},
+    {neg:true, label:'  Serviços de Terceiros Com.',       v:[-500.00,-500.00,-500.00,-500.00,-500.00,-500.00], rowNum:99},
+    {neg:true, label:'  Vale Transporte Com.',             v:[-1874.15,-1480.23,-2005.17,-2456.86,-2058.51,-1772.38]},
+    {neg:true,bold:true,label:'Despesas Administrativas',  v:[-117331.76,-126671.45,-128422.16,-119490.91,-113002.30,-136509.21]},
+    {neg:true, label:'  Aluguel de Imóvel',                v:[-3756.67,-3157.00,-3156.67,-3156.67,-3366.67,-3366.67]},
+    {neg:true, label:'  Aluguel de Equipamentos',          v:[-1596.00,-1300.00,-1584.00,-1584.00,-1596.00,-1596.00], rowNum:107},
+    {neg:true, label:'  Água e Esgoto',                    v:[-575.97,-512.63,-512.63,-702.18,-671.37,-545.78]},
+    {neg:true, label:'  Assessoria Contábil',              v:[-3745.00,-4087.29,-4087.29,-4087.29,-4007.15,-4007.15]},
+    {neg:true, label:'  Assessoria Jurídica',              v:[-2605.84,-3243.84,-3187.51,-3196.21,-3374.05,-3664.38]},
+    {neg:true, label:'  Assessoria Técnica',               v:[-3553.42,-4423.42,-4346.61,-3835.45,-4048.86,-4071.54]},
+    {neg:true, label:'  A S Advocacia',                    v:[0,-2251.40,0,0,-1473.24,-4350.35]},
+    {neg:true, label:'  Assessoria Perfil Gestão',         v:[0,-2343.21,0,0,-1533.31,-4350.35]},
+    {neg:true, label:'  Assistência Médica',               v:[-1492.93,-1536.48,-2055.91,-1976.23,-1552.49,-2284.60], rowNum:118},
+    {neg:true, label:'  Comissão de Cobrança',             v:[-571.60,-242.71,-118.93,-242.48,-360.96,-210.60]},
+    {neg:true, label:'  Confraternização',                 v:[-605.00,0,0,0,0,0]},
+    {neg:true, label:'  Consultoria Empresarial',          v:[-5448.58,-6782.58,-6664.80,-5881.03,-6208.25,-6243.02]},
+    {neg:true, label:'  Despesas de Cartório',             v:[0,-557.32,-72.50,-83.56,-123.92,0], rowNum:128},
+    {neg:true, label:'  E.P.I',                            v:[-1358.14,-1797.42,-2038.74,-1405.91,-1190.33,-682.54]},
+    {neg:true, label:'  FGTS Administrativo',              v:[-735.68,-720.21,-504.60,-504.60,-504.60,-504.60]},
+    {neg:true, label:'  Fardamento',                       v:[0,-77.75,-77.75,-3637.50,-3637.50,0]},
+    {neg:true, label:'  IRPJ',                             v:[-409.16,0,-1714.25,-979.18,0,-253.47]},
+    {neg:true, label:'  Manutenção Rede/Software',         v:[-3287.32,-3353.88,-3756.52,-3261.72,-3277.08,-3261.72], rowNum:146},
+    {neg:true, label:'  Manutenção de Máquinas',           v:[-1250.72,0,0,0,0,0]},
+    {neg:true, label:'  Manutenção Instalações',           v:[-982.58,-265.87,-91.73,0,0,0]},
+    {neg:true, label:'  Material Uso e Consumo',           v:[-1914.74,-1306.95,-3598.63,-1599.41,-51.04,0], rowNum:150},
+    {neg:true, label:'  Manutenção de Equipamentos',       v:[-2523.46,-307.21,-958.09,-3805.04,-2875.94,-2149.46]},
+    {neg:true, label:'  Material de Limpeza',              v:[-1155.25,-757.81,-1128.05,0,0,0]},
+    {neg:true, label:'  Rateio CSC',                       v:[-32641.01,-40370.63,-38687.77,-34114.05,-31909.21,-32354.13]},
+    {neg:true, label:'  Reposição Fundo Fixo',             v:[-3405.61,-618.10,0,0,0,0]},
+    {neg:true, label:'  Rescisões Adm.',                   v:[0,0,-3503.63,0,0,0], rowNum:155},
+    {neg:true, label:'  Pro Labore Sócios',                v:[-11845.00,-14745.00,-14489.00,-12785.00,-13496.00,-13572.00]},
+    {neg:true, label:'  Salários Administrativo',          v:[-8728.68,-9527.82,-6657.60,-6747.60,-6307.60,-6484.30]},
+    {neg:true, label:'  Segurança Patrimonial',            v:[-1705.51,-1705.52,-1705.52,-1705.63,-1776.15,-1776.15]},
+    {neg:true, label:'  Serviços de Terceiros Adm.',       v:[-13302.05,-17635.27,-20219.72,-20920.70,-13280.86,-14125.26], rowNum:166},
+    {neg:true, label:'  Taxas Diversas',                   v:[-1290.00,0,-310.33,-838.89,-37.00,-19580.88], rowNum:168},
+    {neg:true, label:'  Tarifas Financeiras',              v:[-5442.47,-1295.26,-1551.97,-1022.70,-1523.82,-667.53]},
+    {neg:true, label:'  Tarifas Financeiras DO IT',        v:[-572.57,-798.87,-1036.01,-855.67,-561.76,-362.56]},
+    {neg:true, label:'  Vale Transporte Adm.',             v:[-830.80,-950.00,-605.40,-562.20,-507.14,-550.34]},
+    {bold:true,label:'Resultado Operacional (EBITDA)',     v:[-81544.94,-31550.05,571.82,-40524.59,31495.58,-7263.48], highlight:'red'},
+    {g:true,  label:'ABAIXO DO EBITDA',                    v:[null,null,null,null,null,null]},
+    {neg:true, label:'  Amortização de Empréstimos',       v:[0,-20294.83,-6899.16,0,0,0], rowNum:180},
+    {neg:true, label:'  Juros de Empréstimos',             v:[-57200.00,-59900.00,-34700.00,-34700.00,-60200.00,-67700.00], rowNum:181},
+    {neg:true, label:'  Investimentos',                    v:[-80513.72,-96985.87,-87471.87,-158542.97,-113403.63,-79098.62], rowNum:182},
+    {neg:true, label:'  Retiradas',                        v:[-11268.88,-310.88,0,-315.00,-56533.86,-74681.30], rowNum:183},
+    {neg:true, label:'  Simples Nacional Parcelamento',    v:[-22647.78,-16783.46,-11673.05,-17083.59,-7628.30,-7679.44]},
+    {bold:true,label:'Saldo Final',                        v:[-253175.32,-225825.09,-140172.26,-251166.15,-206270.21,-236422.84], highlight:'red'},
   ],
   insights: {
     '-1': {
-      title: 'Análise · Rodomix · Visão Geral Jan–Mar',
+      title: 'Análise · Rodomix · Visão Geral Jan–Jun',
       insights: [
-        {tag:'r', text:'Saldo final negativo nos 3 meses — déficit acumulado de ~R$ 615,7 mil'},
-        {tag:'r', text:'Juros de empréstimos (~R$50k/mês) + Investimentos (~R$88k/mês) + Amortizações consomem todo o EBITDA operacional'},
-        {tag:'r', text:'CMV Carga elevado e instável: 70,3% → 67,4% → 74,9% — férias concentradas em março pioram o índice'},
-        {tag:'a', text:'Despesas com Veículos de R$33,8k em março (+49% vs. fev) — distribuídas entre manutenção, rastreamento (Starlink) e fornecedores de frota, já detalhadas nos comentários'},
-        {tag:'a', text:'Rateio CSC oscila entre R$32,6k e R$40,4k — variação proporcional ao crescimento de receita da Rodomix no trimestre'},
-        {tag:'g', text:'Maior receita bruta do grupo: R$894k → R$1,06M → R$1,21M — crescimento de +35% no trimestre'},
-        {tag:'g', text:'EBITDA virou positivo em março (+R$4.017 / +0,33%) — trajetória de recuperação operacional'},
-        {tag:'g', text:'CMV OTR caindo consistentemente: 55,7% → 51,3% → 48,6% — ganho real de eficiência produtiva'},
+        {tag:'r', text:'EBITDA negativo em 4 dos 6 meses do semestre — só março (+R$572) e maio (+R$31,5k) fecharam positivos, e mesmo assim o acumulado do semestre é −R$128,8k'},
+        {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$1,31 milhão'},
+        {tag:'r', text:'Juros + Investimentos + Retiradas somaram R$1,18 milhão no semestre — mais que o dobro do déficit final, ou seja, é o item que mais pesa no caixa'},
+        {tag:'a', text:'CMV Carga oscila fortemente mês a mês (67,4% a 81,2%) — movido por férias e rescisões concentradas em meses específicos, não por ineficiência estrutural constante'},
+        {tag:'a', text:'Despesas com Veículos e Investimentos tiveram picos isolados em meses diferentes (abril: veículos R$41,5k; abril/maio: investimentos R$158,5k e R$113,4k) — sem padrão recorrente definido'},
+        {tag:'g', text:'Receita bruta do semestre soma R$6,28 milhões, com média mensal acima de R$1M a partir de fevereiro'},
+        {tag:'g', text:'CMV OTR em trajetória de melhora estrutural: caiu de 55,7% em janeiro para a faixa de 48%–49% a partir de março'},
       ],
       recs: [
-        {t:'Endereçar urgentemente a carga financeira (juros + investimentos ~R$140k/mês).', d:'Com EBITDA chegando a zero, esse é o único bloqueio para o saldo positivo. Renegociar taxas e avaliar quais investimentos podem ser adiados tem impacto imediato no caixa.'},
-        {t:'Investigar e normalizar o CMV Carga — meta abaixo de 70%.', d:'Férias acumuladas (R$19,2k) distorceram março para 74,9%. Sem esse custo não recorrente, seria ~70%. Prioridade: controlar bandas (R$164k) e materiais secundários.'},
-        {t:'Despesas com Veículos de março documentadas nos comentários.', d:'R$33,8k = D. Santos R$4,2k, Starlink R$630, Aderbal R$885, CEDEP/Bravo/Marviba e outros. Custos distribuídos entre manutenção, rastreamento e fornecedores de frota.'},
-        {t:'Manter a trajetória de melhora do CMV OTR.', d:'De 55,7% em jan para 48,6% em mar é redução de 7pp — expressiva. Mapear as decisões (lenha, borracha, materiais) e transformar em padrão operacional.'},
-        {t:'Revisar investimentos mensais (~R$88k/mês) e priorizar o essencial.', d:'Obras do Truck Center concentradas em fevereiro/março. Avaliar cronograma e impacto de caixa vs. retorno esperado.'},
+        {t:'Tratar a carga financeira e de investimentos como prioridade nº 1 de caixa.', d:'Juros + Investimentos + Retiradas somaram R$1,18 milhão no semestre — mais que o dobro do déficit final do saldo (R$1,31 milhão). É o que decide se o resultado operacional (quando positivo) se converte em saldo positivo.'},
+        {t:'Padronizar o calendário de férias e rescisões do setor Carga ao longo do ano.', d:'Os picos de CMV Carga (mar 74,9%, mai 81,2%) coincidem com meses de férias/rescisões concentradas. Distribuir esses eventos ao longo do ano reduz a volatilidade do indicador.'},
+        {t:'Não tratar meses isolados com EBITDA positivo (março, maio) como recuperação consolidada.', d:'Nenhum dos dois meses positivos se repetiu no mês seguinte. Sustentar CMV OTR na faixa de 48%–49% e CMV Carga abaixo de 70% de forma consistente é o que vai indicar uma melhora real.'},
+        {t:'Manter a trajetória de melhora do CMV OTR como padrão operacional.', d:'De 55,7% em janeiro para a faixa de 48%–49% a partir de março é uma redução estrutural relevante. Mapear as decisões (lenha, borracha, materiais) que sustentaram essa queda.'},
       ]
     },
     '0': {
@@ -2212,10 +2212,10 @@ const RDX = {
     '2': {
       title: 'Análise · Rodomix · Março',
       insights: [
-        {tag:'g', text:'Primeiro EBITDA positivo da unidade: +R$4.017 (+0,33%) — marco operacional relevante'},
-        {tag:'g', text:'Melhor receita bruta do trimestre até aqui: R$1.207.900 (+13,8% vs. fev)'},
+        {tag:'g', text:'Primeiro EBITDA positivo da unidade: +R$572 (+0,05%) — resultado ainda simbólico, mas rompe a sequência negativa'},
+        {tag:'g', text:'Maior receita bruta do trimestre até aqui: R$1.207.900 (+13,8% vs. fev)'},
         {tag:'g', text:'CMV OTR na mínima do trimestre até aqui: 48,6% — borracha, lenha e materiais bem controlados'},
-        {tag:'g', text:'Saldo final melhorou para −R$136.727 — redução de 46% vs. janeiro'},
+        {tag:'g', text:'Saldo final melhorou para −R$140.172 — redução de 45% vs. janeiro'},
         {tag:'r', text:'CMV Carga piorou para 74,9% — férias acumuladas de 8 colaboradores (R$19,2k) concentradas em março'},
         {tag:'a', text:'Despesas com Veículos: R$33,8k (+49% vs. fev) — D. Santos, Starlink, Aderbal e outros'},
         {tag:'a', text:'Serviços de Terceiros Adm. R$20,2k: inclui Nova Figueiredo Advocacia (R$8,8k) — custo expressivo'},
@@ -2223,7 +2223,54 @@ const RDX = {
       recs: [
         {t:'Distribuir gozo de férias do setor Carga ao longo do ano.', d:'8 colaboradores com férias concentradas em março geraram R$19,2k de custo extra — o principal responsável pelo CMV Carga de 74,9%. Planejar calendário de férias para evitar concentração.'},
         {t:'Acompanhar a recorrência das Despesas com Veículos.', d:'R$33,8k em março: D. Santos (R$4,2k), Starlink (R$630), Aderbal (R$885) + frota variada — já detalhado nos comentários da planilha. Observar se o patamar de R$30k+/mês se mantém nos próximos meses ou foi pontual.'},
-        {t:'Consolidar o EBITDA positivo em abril — meta: acima de R$1,1M de receita.', d:'Com receita de R$1,2M e sem as distorções de março (férias concentradas), o EBITDA pode superar R$30k. Manter CMV OTR abaixo de 50% e CMV Carga abaixo de 70%.'},
+        {t:'Não tratar o EBITDA de março como ponto de virada — é resultado ainda muito próximo de zero.', d:'+R$572 é estatisticamente insignificante frente a uma receita de R$1,2M. Sustentar CMV OTR abaixo de 50% e CMV Carga abaixo de 70% nos próximos meses é o que vai definir se a melhora é real ou pontual.'},
+      ]
+    },
+    '3': {
+      title: 'Análise · Rodomix · Abril',
+      insights: [
+        {tag:'r', text:'EBITDA volta a ficar fortemente negativo: −R$40.525 (−3,89%) — reverte o resultado próximo de zero de março'},
+        {tag:'r', text:'Despesas com Veículos disparam para R$41.525 — a maior do semestre até aqui, com Starlink, D. Santos, Aderbal e frota variada'},
+        {tag:'r', text:'Investimentos de R$158.543 — o maior valor do semestre até aqui: pedreiro R$50,6k + fretes do Truck Center R$24,5k + instalações R$13,2k'},
+        {tag:'a', text:'CMV OTR piora para 52,2% — depois de ter caído a 48,6% em março'},
+        {tag:'a', text:'CMV Carga em 73,5% — ainda pressionado pela estrutura de custos do setor Carga'},
+        {tag:'g', text:'Receita bruta segue acima de R$1M: R$1.040.477'},
+        {tag:'g', text:'Despesas Administrativas estáveis em R$119.491 — dentro do patamar dos meses anteriores'},
+      ],
+      recs: [
+        {t:'Acompanhar se o pico de Despesas com Veículos de abril se repete.', d:'R$41,5k é o maior valor do semestre até aqui — Starlink, D. Santos, Aderbal e demais fornecedores de frota, já detalhados nos comentários da planilha. Definir um teto mensal ajuda a identificar desvios.'},
+        {t:'Fasear os investimentos do Truck Center ao longo dos próximos meses.', d:'R$158,5k num único mês consome toda a margem de contribuição gerada. Avaliar se parte das obras (pedreiro, instalações) pode ser distribuída em parcelas menores sem atrasar a entrega.'},
+        {t:'Recuperar o CMV OTR para a faixa abaixo de 50%.', d:'A piora para 52,2% interrompe a trajetória de queda que vinha de janeiro. Mapear se foi custo pontual (borracha, lenha) ou mudança de patamar.'},
+      ]
+    },
+    '4': {
+      title: 'Análise · Rodomix · Maio',
+      insights: [
+        {tag:'g', text:'EBITDA positivo de R$31.496 (+2,79%) — o maior resultado operacional do semestre até aqui'},
+        {tag:'g', text:'CMV OTR na mínima do semestre até aqui: 48,03%'},
+        {tag:'r', text:'CMV Carga dispara para 81,2% — rescisões do setor Carga somam R$47.407 no mês, o maior valor do semestre até aqui'},
+        {tag:'r', text:'Retiradas de R$56.534 — inclui R$23.000 ligados a obras do Truck Center, o maior valor de retiradas do semestre até aqui'},
+        {tag:'a', text:'Despesas Administrativas na mínima do semestre até aqui: R$113.002'},
+        {tag:'a', text:'Investimentos continuam altos: R$113.404, com pedreiro R$40,9k concentrando boa parte'},
+      ],
+      recs: [
+        {t:'Não considerar as rescisões concentradas do setor Carga em maio como padrão recorrente.', d:'R$47,4k em rescisões num único mês distorce o CMV Carga para 81,2%. Ao planejar os próximos meses, tratar como evento pontual e não como novo patamar de custo.'},
+        {t:'Formalizar critério de retiradas de sócios vinculado à geração de caixa do mês.', d:'R$56,5k em retiradas, com parte ligada a obras, é o maior valor do semestre até aqui. Sem um critério claro, retiradas pontuais podem comprometer meses com EBITDA positivo como este.'},
+      ]
+    },
+    '5': {
+      title: 'Análise · Rodomix · Junho',
+      insights: [
+        {tag:'r', text:'EBITDA volta ao negativo: −R$7.263 (−0,77%) — depois do resultado positivo de maio'},
+        {tag:'r', text:'Despesas Administrativas no maior valor do semestre até aqui: R$136.509 — Taxas Diversas (R$19,6k, incluindo IPTU/TFF de R$5,5k) e reforço em A S Advocacia + Acessoria Perfil Gestão (R$4,35k cada) concentram o aumento'},
+        {tag:'r', text:'Retiradas de R$74.681 — a maior do semestre até aqui, incluindo R$46.219 de retirada associada à CSC'},
+        {tag:'a', text:'CMV Carga melhora para 68,9%, mas Bandas continua sendo a maior parte do custo Carga'},
+        {tag:'g', text:'CMV OTR em 48,9% — próximo da mínima do semestre'},
+        {tag:'g', text:'Despesas Comerciais na mínima do semestre até aqui: R$116.017'},
+      ],
+      recs: [
+        {t:'Tratar a Taxa Diversas de junho como não recorrente ao projetar o próximo trimestre.', d:'O IPTU/TFF (R$5,5k) é um tributo anual que não se repete mensalmente. Sem ele, as Despesas Administrativas de junho ficariam próximas da média do semestre, não no topo.'},
+        {t:'Formalizar um cronograma de retiradas e distribuições (sócios e CSC) alinhado à geração de caixa.', d:'R$74,7k em retiradas num mês de EBITDA negativo repete o padrão de maio (R$56,5k) — sem critério claro, essas saídas pressionam o saldo final independentemente do resultado operacional.'},
       ]
     }
   }
@@ -3155,6 +3202,14 @@ const GAMMA_URLS = {
 // Apresentações individualizadas por mês (preenchido empresa por empresa conforme forem divididas).
 // Chave = índice do mês (0=Jan,1=Fev,2=Mar...), valor = link do Gamma daquele mês.
 const GAMMA_URLS_MES = {
+  rdx: {
+    0: 'https://gamma.app/docs/0tktu14sf44pddz', // Janeiro
+    1: 'https://gamma.app/docs/7k788m25vuerybe', // Fevereiro
+    2: 'https://gamma.app/docs/urnz52ngi2rmv1i', // Março
+    3: 'https://gamma.app/docs/jbxndc710xspa8e', // Abril
+    4: 'https://gamma.app/docs/522fpls37bpc9rd', // Maio
+    5: 'https://gamma.app/docs/n9h5gaehe9junto', // Junho
+  },
   aja: {
     0: 'https://gamma.app/docs/054y43tzzr51b04', // Janeiro
     1: 'https://gamma.app/docs/0npopwcowtnrh7s', // Fevereiro (recriado - EBITDA corrigido)
@@ -3512,37 +3567,26 @@ window.addEventListener('resize', syncSidebarBrand);
 
 syncGammaBtn();
 </script>
+
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function (err) {
-      console.warn('Falha ao registrar service worker:', err);
-    });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
   });
 }
-(function () {
-  var metaTag = document.querySelector('meta[name="app-build"]');
-  var CUR_BUILD = metaTag ? metaTag.content : '';
-  var checking = false;
-  function checkForUpdate() {
-    if (checking) return;
-    checking = true;
-    fetch('index.html?_=' + Date.now(), { cache: 'no-store' })
-      .then(function (r) { return r.text(); })
-      .then(function (html) {
-        var m = html.match(/<meta name="app-build" content="([^"]*)"/);
-        if (m && m[1] && m[1] !== CUR_BUILD) {
-          location.reload();
-        }
-      })
-      .catch(function () {})
-      .finally(function () { checking = false; });
+(function checkUpdate(){
+  const CURRENT_BUILD = "20260922120301";
+  async function poll(){
+    try {
+      const res = await fetch('index.html?_=' + Date.now(), {cache:'no-store'});
+      const text = await res.text();
+      const m = text.match(/app-build" content="(\d+)"/);
+      if (m && m[1] !== CURRENT_BUILD) {
+        console.log('Nova versão disponível:', m[1]);
+      }
+    } catch(e) {}
   }
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible') checkForUpdate();
-  });
-  window.addEventListener('focus', checkForUpdate);
-  checkForUpdate();
+  setInterval(poll, 60000);
 })();
 </script>
 </body>
