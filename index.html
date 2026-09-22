@@ -367,13 +367,13 @@ body{margin:0;padding:0;}
   @page{size:landscape;margin:10mm;}
 }
 </style>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0f9e72">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Rodomix DRE">
-<link rel="apple-touch-icon" href="icon-192.png">
-<meta name="app-build" content="20260922120301">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f9e72">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="app-build" content="20260922123209">
 
 </head>
 <body>
@@ -1255,154 +1255,158 @@ const AMC = {
 // ─────────────────────────────────────────────────────────────────────────────
 const CAN = {
   nome: 'Candeias Renovadora de Pneus Ltda',
-  periodo: 'Janeiro–Junho 2026',
-  meses: ['Jan','Fev','Mar','Abr','Mai','Jun'],
-  recBruta:  [712667,737450,725832,731745,688655,699639],
-  recLiq:    [557714,575516,569353,569068,531504,549199],
-  margem:    [155448,165490,167915,127158,147152,151073],
-  saldo:     [11610,16014,11645,-32806,-5256,-6410],
-  cmvOTR:    [0,0,0,0,0,0],
-  cmvCarga:  [56.65,55.79,55.19,60.62,56.05,57.18],
-  cmvTotal:  [56.65,55.79,55.19,60.62,56.05,57.18],
-  margemPct: [21.81,22.44,23.13,17.38,21.37,21.59],
-  recLiqWF:  [557714,575516,569353,569068,531504,549199],
-  cmvWF:     [-402266,-410026,-401438,-441910,-384352,-398127],
-  margemWF:  [155448,165490,167915,127158,147152,151073],
-  despComWF: [-59289,-68814,-68107,-75634,-74716,-75200],
-  despAdmWF: [-78279,-75592,-81725,-83963,-77115,-82196],
-  resOpWF:   [17880,21084,18082,-32439,-4679,-6324],
-  ebitdaVals:[17880,21084,18082,-32439,-4679,-6324],
-  ebitdaPct: [2.51,2.86,2.49,-4.43,-0.68,-0.90],
+  periodo: 'Janeiro–Agosto 2026',
+  meses: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago'],
+  recBruta:  [712667,737450,725832,731745,688655,699639,864736.75,712749.19],
+  recLiq:    [557714,575516,569353,569068,531504,549199,695336.64,552519.12],
+  margem:    [155448,165490,167915,127158,147152,151073,198735.89,151576.14],
+  saldo:     [11610,16014,11645,-32806,-5256,-6410,22438.45,-12503.59],
+  cmvOTR:    [0,0,0,0,0,0,0,0],
+  cmvCarga:  [56.65,55.79,55.19,60.62,56.05,57.18,57.65,56.51],
+  cmvTotal:  [56.65,55.79,55.19,60.62,56.05,57.18,57.65,56.51],
+  margemPct: [21.81,22.44,23.13,17.38,21.37,21.59,22.98,21.27],
+  recLiqWF:  [557714,575516,569353,569068,531504,549199,695336.64,552519.12],
+  cmvWF:     [-402266,-410026,-401438,-441910,-384352,-398127,-496600.75,-400942.98],
+  margemWF:  [155448,165490,167915,127158,147152,151073,198735.89,151576.14],
+  despComWF: [-59289,-68814,-68107,-75634,-74716,-75200,-81871.71,-77557.33],
+  despAdmWF: [-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-85909.44],
+  resOpWF:   [17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63],
+  ebitdaVals:[17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63],
+  ebitdaPct: [2.51,2.86,2.49,-4.43,-0.68,-0.90,2.77,-1.67],
   fixData: {
-    '-1': { vals:[478870,421760,18808,0], total:919438, gap:5203, label:'Somatório Jan–Jun' },
+    '-1': { vals:[657692.21,581189.04,20933.92,0], total:1259815.17, gap:-4731.86, label:'Somatório Jan–Ago' },
      '0': { vals:[78279,59289,6270,0], total:143838, gap:-11610, label:'Janeiro' },
      '1': { vals:[75592,68814,5070,0], total:149476, gap:-16014, label:'Fevereiro' },
      '2': { vals:[81725,68107,6437,0], total:156269, gap:-11645, label:'Março' },
      '3': { vals:[83963,75634,368,0], total:159964, gap:32806, label:'Abril' },
      '4': { vals:[77115,74716,577,0], total:152408, gap:5256, label:'Maio' },
      '5': { vals:[82196,75200,86,0], total:157482, gap:6410, label:'Junho' },
+     '6': { vals:[92912.77,81871.71,1512.96,0], total:176297.44, gap:-22438.45, label:'Julho' },
+     '7': { vals:[85909.44,77557.33,612.96,0], total:164079.73, gap:12503.59, label:'Agosto' },
   },
   comments: {
     13:  {'Fev':'ANTECI - 14.353,63\nNORMAL - 4.211,08','Mar':'ANTECIPAÇÃO','Abr':'ANTECIPAÇÃO - 20.452','Mai':'ANTECIPAÇÃO - 20.452','Jun':'ICMS NORMAL - 188,00'},
-    21:  {'Jan':'943 PNEUS\n296,11 POR BANDA','Fev':'1.014 PNEUS\n280,34 POR BANDA','Mar':'973 PNEUS\n279,11 POR BANDA','Abr':'1085 PNEUS\n289,74 POR BANDA','Mai':'926 PNEUS\n283,19 POR BANDA','Jun':'886 PNEUS\n300,72 POR BANDA'},
-    26:  {'Fev':'FRETE - TRANSNIZIO - 250 + 1.122,77 = 1.373,00','Abr':'BRASPRESS - 199,29\nM2S - 145,97\nTRANSNIZIO - 129,31','Mai':'BRASPRESS - 247,30\nTRANSNIZIO - 196,45','Jun':'FRETES - M2S - 645,01\nFRETES - TRANSNIZIO - 161,71'},
-    33:  {'Fev':'MERCADO LIVRE - 25,88\nSO MANGUEIRAS - 372,00\nUSIJATO - 5.236,00','Mar':'RENILSON BORGES - 3.000 + 2.300\n(MANUTENÇÃO DE MAQUINAS)','Abr':'MERCADO LIVRE - 42,51\nGAZIN - 68,99\nMERCADO LIVRE - 54,52','Mai':'MARVIBA - 650,00\nMERCADOPAGO - 42,51\nGAZIN - 68,99\nMERCADO LIVRE - 54,52\nMERCADO PAGO - 31,53\nRENILSON (TROCA DE PEDAL DE MAQUINA) - 400,00','Jun':'JAILTON PEREIRA - AUTOCLAVE, ETC - 2.450,00\nRENILSON - 430,00\nAUTOCLAVE (FRANCISCA) - 2.279,00\nMANUT BALANCEADORA (CALOS REGIO) - 2.290,00\nMERCADOPAGO - 42,51 (VALVULA)'},
-    35:  {'Mar':'DIEGO SANTOS - 5.527,12\nEVERTON LOPES - 3.243,29\nOTAVIO DOS SANTOS - 3.732,78','Abr':'RESCISÃO AVULSA - 488,89 - FABRICIO COSTA\nFABRICIO - 2.089,23'},
-    45:  {'Jan':'Dilmara e Lucimar - 1.500,00','Fev':'Dilmara e Lucimar - 1.500,00','Mar':'Dilmara e Lucimar - 1.500,00','Abr':'Dilmara e Lucimar - 1.500,00','Mai':'Dilmara e Lucimar - 1.500,00','Jun':'Dilmara e Lucimar - 1.500,00'},
-    51:  {'Fev':'EDMILSON - 594,00'},
-    53:  {'Fev':'ALVARIO RIOS - 130,00\nEDMILSON NEVES - 1.066,67\nITABUNA PNEUS - 430,00\nMERCADO LIVRE (PNEUS) - 202,13','Abr':'ALVARO RIOS - 132,72\nGOMMA DISTR - 389,14\nMERCADOLIVRE - 202,13\nRS TRANSPORTES - 4.760,00\nSTARLINK - 235,52','Mai':'ADRIANO - 1.112,00 (LUBRIF, TROCA DE OLEO RPR 5F84)\nALVARO RIOS - 130,00\nEDMILSON NEVES - 751,98 (JEEP COMPASS PKS9626)\nEDMILSON NEVES - 751,98\n(JEEP COMPASS PKS9626)','Jun':'ADRIANO PEREIRA - 2.176,00\nADRIANO PEREIRA - 450,00\nALVARO RIOS - 130,00\nEDMILSON NEVES - 751,98\nMERCADO LIVRE - 202,13'},
+    21:  {'Jan':'943 PNEUS\n296,11 POR BANDA','Fev':'1.014 PNEUS\n280,34 POR BANDA','Mar':'973 PNEUS\n279,11 POR BANDA','Abr':'1085 PNEUS\n289,74 POR BANDA','Mai':'926 PNEUS\n283,19 POR BANDA','Jun':'886 PNEUS\n300,72 POR BANDA','Jul':'1.126 PNEUS\n299,19 POR BANDA','Ago':'886 PNEUS\n288,07 POR BANDA'},
+    26:  {'Fev':'FRETE - TRANSNIZIO - 250 + 1.122,77 = 1.373,00','Abr':'BRASPRESS - 199,29\nM2S - 145,97\nTRANSNIZIO - 129,31','Mai':'BRASPRESS - 247,30\nTRANSNIZIO - 196,45','Jun':'FRETES - M2S - 645,01\nFRETES - TRANSNIZIO - 161,71','Jul':'BRASPRESS - 249,84','Ago':'TRANSNIZIO - 432,36'},
+    33:  {'Fev':'MERCADO LIVRE - 25,88\nSO MANGUEIRAS - 372,00\nUSIJATO - 5.236,00','Mar':'RENILSON BORGES - 3.000 + 2.300\n(MANUTENÇÃO DE MAQUINAS)','Abr':'MERCADO LIVRE - 42,51\nGAZIN - 68,99\nMERCADO LIVRE - 54,52','Mai':'MARVIBA - 650,00\nMERCADOPAGO - 42,51\nGAZIN - 68,99\nMERCADO LIVRE - 54,52\nMERCADO PAGO - 31,53\nRENILSON (TROCA DE PEDAL DE MAQUINA) - 400,00','Jun':'JAILTON PEREIRA - AUTOCLAVE, ETC - 2.450,00\nRENILSON - 430,00\nAUTOCLAVE (FRANCISCA) - 2.279,00\nMANUT BALANCEADORA (CALOS REGIO) - 2.290,00\nMERCADOPAGO - 42,51 (VALVULA)','Jul':'RODOZACA (SERV DE SOLDA) - 450,00\nB&P EXTINTORES - 1.766,50\nCEDEP - 728,00\nMERCADO PAGO - 42,51\nMERCADO PAGO - 127,93\nMERCADO LIVRE - 53,40\nTECNOBOR - 170,40\nMARVIBA - 5.000,00','Ago':'MARVIBA - 2.619,50\nMARVIBA - 1.100,00\nMERCADO PAGO (DESTALONADOR DE PNEUS) - 102,09\nMERCADO PAGO (DESTALONADOR DE PNEUS) - 133,30\nFILTRO DE AR P/ BOMBA - 137,00\nMARVIBA - 2.619,50\nMERCADO PAGO (VALVULA DE SEGURANÇA) - 42,51\nMERCADO PAGO - 127,93\nMERCADO LIVRE (FILTRO P/ COMPRESSORA) - 53,40\nMERCADO PAGO (DESTALONADOR DE PNEUS) - 25,53\nRENILSON - 1.600,00 (MANUT DE MAQ)'},
+    35:  {'Mar':'DIEGO SANTOS - 5.527,12\nEVERTON LOPES - 3.243,29\nOTAVIO DOS SANTOS - 3.732,78','Abr':'RESCISÃO AVULSA - 488,89 - FABRICIO COSTA\nFABRICIO - 2.089,23','Ago':'JEFFERSON SILVA - 10.018,00\nWESLEY SANTANA - 3.077,75'},
+    45:  {'Jan':'Dilmara e Lucimar - 1.500,00','Fev':'Dilmara e Lucimar - 1.500,00','Mar':'Dilmara e Lucimar - 1.500,00','Abr':'Dilmara e Lucimar - 1.500,00','Mai':'Dilmara e Lucimar - 1.500,00','Jun':'Dilmara e Lucimar - 1.500,00','Jul':'Dilmara e Lucimar - 1.500,00','Ago':'Dilmara e Lucimar - 1.500,00'},
+    51:  {'Fev':'EDMILSON - 594,00','Ago':'ANTONIO ONASSIS - 110,00'},
+    53:  {'Fev':'ALVARIO RIOS - 130,00\nEDMILSON NEVES - 1.066,67\nITABUNA PNEUS - 430,00\nMERCADO LIVRE (PNEUS) - 202,13','Abr':'ALVARO RIOS - 132,72\nGOMMA DISTR - 389,14\nMERCADOLIVRE - 202,13\nRS TRANSPORTES - 4.760,00\nSTARLINK - 235,52','Mai':'ADRIANO - 1.112,00 (LUBRIF, TROCA DE OLEO RPR 5F84)\nALVARO RIOS - 130,00\nEDMILSON NEVES - 751,98 (JEEP COMPASS PKS9626)\nEDMILSON NEVES - 751,98\n(JEEP COMPASS PKS9626)','Jun':'ADRIANO PEREIRA - 2.176,00\nADRIANO PEREIRA - 450,00\nALVARO RIOS - 130,00\nEDMILSON NEVES - 751,98\nMERCADO LIVRE - 202,13','Jul':'ALVARO - 130,00\nEDMILSON - 751,98\nMACHADO AUTO PEÇAS - 950,00\nMERCADO LIVRE - 202,13\nRS TRANSPORTES - 3.760,00','Ago':'ALVARO - 130,00\nEDMILSON - 751,98\nMERCADO LIVRE - 202,13\nRS TRANSPORTES - 1.870,00'},
     61:  {'Abr':'PEDÁGIO - 1.096,30','Mai':'PEDÁGIO'},
-    66:  {'Jan':'EDMILSON - 17.000,00','Fev':'EDMILSON - 17.000,00','Mar':'EDMILSON - 17.000,00','Abr':'EDMILSON - 17.000,00','Mai':'EDMILSON - 17.000,00','Jun':'EDMILSON - 17.000,00'},
+    66:  {'Jan':'EDMILSON - 17.000,00','Fev':'EDMILSON - 17.000,00','Mar':'EDMILSON - 17.000,00','Abr':'EDMILSON - 17.000,00','Mai':'EDMILSON - 17.000,00','Jun':'EDMILSON - 17.000,00','Jul':'EDMILSON - 17.000,00','Ago':'EDMILSON - 17.000,00'},
     74:  {'Jun':'ALUGUEL DE EQUIPAMENTOS - 1.300,00'},
-    95:  {'Abr':'AUDITOR - 275,42\nREDE G ALIMENTAÇÃO - 96,50 (SR JUNIOR)','Mai':'ANTONIO (AUDITOR) - 702,00\nANTONIO (AUDITOR) - 219,40'},
+    95:  {'Abr':'AUDITOR - 275,42\nREDE G ALIMENTAÇÃO - 96,50 (SR JUNIOR)','Mai':'ANTONIO (AUDITOR) - 702,00\nANTONIO (AUDITOR) - 219,40','Jul':'ECOTONO - 130,00','Ago':'ECOTONO - 130,00'},
     100: {'Abr':'ALANE - 1.654,00\nL ANSELMO - 313,00','Mai':'ALANE RODRIGUES - 1.654,00'},
-    111: {'Jan':'RAONIR - 700,00\nMULTISYS - 1.950,00','Fev':'RAONIR - 700,00\nMULTISYS - 1.950,00','Abr':'RAONIR - 700,00\nMULTISYS - 1.950,00','Mai':'RAONIR - 700,00\nMULTISYS - 1.950,00','Jun':'RAONIR - 700,00\nMULTISYS - 2.000,49'},
-    113: {'Mar':'ELDER BULHOES - 676,45\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 111,00','Abr':'AT MATERIAIS = 388,13\nAT MATERIAIS - 1.576,22\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 111,00','Mai':'AR MATERIAIS - 1.964,35\nPALMAS LUZ - 930,80\nMANUNT TELHADO - 600,00','Jun':'ANTONIO CARLOS - SERV GERAIS (ROÇAMENTO) 450,00\nRENILSON - CABOS, SEPRAÇÃO DE CIRCUITOS - 1.295,00'},
+    111: {'Jan':'RAONIR - 700,00\nMULTISYS - 1.950,00','Fev':'RAONIR - 700,00\nMULTISYS - 1.950,00','Abr':'RAONIR - 700,00\nMULTISYS - 1.950,00','Mai':'RAONIR - 700,00\nMULTISYS - 1.950,00','Jun':'RAONIR - 700,00\nMULTISYS - 2.000,49','Jul':'RAONNI - 700,00\nBERGER E BERGER - 1.950,00','Ago':'RAONNI - 700,00\nBERGER E BERGER - 1.950,00'},
+    113: {'Mar':'ELDER BULHOES - 676,45\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 111,00','Abr':'AT MATERIAIS = 388,13\nAT MATERIAIS - 1.576,22\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 111,00','Mai':'AR MATERIAIS - 1.964,35\nPALMAS LUZ - 930,80\nMANUNT TELHADO - 600,00','Jun':'ANTONIO CARLOS - SERV GERAIS (ROÇAMENTO) 450,00\nRENILSON - CABOS, SEPRAÇÃO DE CIRCUITOS - 1.295,00','Jul':'A T MATERIAS - 1.576,22\nA T MATERIAS - 1.576,22\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 125,56\nPALMAS LUZ - 339,84','Ago':'A T MATERIAS - 1.576,22\nMERCADO LIVRE - 69,00\nPALMAS LUZ - 125,56\nPALMAS LUZ - 339,84\nANTONIO CARLOS - 640,00 (PINTURA)\nANTONIO CARLOS - 800,00 (PINTURA)\nANTONIO CARLOS - 640,00 (PINTURA)\nANTONIO CARLOS - 800,00 (PINTURA)\nANTONIO CARLOS - 300,00 (ROÇADEIRA)\nJAILTON - 350,00 (SOLDAS)\nANTONIO CARLOS - 640,00 (PINTURA)'},
     115: {'Mar':'ELDER BULHOES - 1.485,00 (MATERIAIS MISTOS)'},
-    116: {'Fev':'PR TECONOLOGIA - 1.427,62','Mar':'MERCADO LIVRE - 25,88\nELDER BULHOES - 1.156,90\nPR TECNO - 543,44'},
+    116: {'Fev':'PR TECONOLOGIA - 1.427,62','Mar':'MERCADO LIVRE - 25,88\nELDER BULHOES - 1.156,90\nPR TECNO - 543,44','Jul':'MERCADO LIVRE - 25,88\nPNEU MACIÇO - 31,53','Ago':'MERCADO LIVRE - 25,88'},
     120: {'Jan':'Maria Geiza - 4.307,73'},
-    131: {'Jan':'Ecotono - 978,20\nEcotono - 194,74\nSafe Check - 155,00','Fev':'ELETRICISTA - RENILSON BORGES - 1.400,00\n3A GRAFICA - 700,00\nECOTONO - 192,80\nECOTONO - 988,10','Mar':'SERVIÇO DE DRENAGEM, LIPEZA ROÇADEIRA - 900,00\nSOLDADOR - 600,00\nANTONIO CARLOS (LIMPEZA DE FULHIGEM PREDIAL) - 400,00\nCARLA ALEXANDRA - 80,00 (LIMPEZA)\nECOTONO - 120,00\nECOTONO - 998,00\nEDMAR BISPO - 800,00 + 2.200,00 (TUBULAÇÃO DE BICO TRUCK CENTER)\nMARIA EDLEUZA (LIMPEZA DIÁRIA) - 230,00\nTAIANE BRANDÃO (ASSISTENCIA TECNICA) - 2.66,52','Abr':'ROBERTO SANTOS - 1.500,00(LIMPEZA DO TETO)\nRENILSON - 1.600,00 (TOMADAS, LUMINARIAS, ETC)\nECOTONO - 130,00 (DESPESA DE VIAGEM)\nECOTONO - 120,00 (DESPESA DE VIAGEM)\nECOTONO - 999,71\nLOCAÇÃO DE ANDAIMES - 1.500,00\nPR TECNOLOGIA - 501,62(RECARGA DE CARTUCHOS-IMPRESSORA)\nINSTALAÇÃO DE CAMERA - 400,00\nDEDETIZAÇÃO - 1.700,00','Mai':'ECOTONO - 998,08\nPROGREDIR (TAXA DE ESTAGIO) - 90,00\nSAFE CHECK (CERTIFICADO) - 203,00\nANTONIO (SERV GERAIS) - 750,00\nANTONIO (SERV GERAIS) - 750,00\nANTONIO (SERV GERAIS) - 750,00\nRENILSON (MANUT GERAIS) - 1.300,00\nPR TECNOLOGIA- 823,06','Jun':'ECOTONO - 1.007,90\nECOTONO - 130,00\nPROGREDIR - TAXA DE ESTAGIO - 90,00\nCONSULTORIA CAIQUE - 648,32'},
+    131: {'Jan':'Ecotono - 978,20\nEcotono - 194,74\nSafe Check - 155,00','Fev':'ELETRICISTA - RENILSON BORGES - 1.400,00\n3A GRAFICA - 700,00\nECOTONO - 192,80\nECOTONO - 988,10','Mar':'SERVIÇO DE DRENAGEM, LIPEZA ROÇADEIRA - 900,00\nSOLDADOR - 600,00\nANTONIO CARLOS (LIMPEZA DE FULHIGEM PREDIAL) - 400,00\nCARLA ALEXANDRA - 80,00 (LIMPEZA)\nECOTONO - 120,00\nECOTONO - 998,00\nEDMAR BISPO - 800,00 + 2.200,00 (TUBULAÇÃO DE BICO TRUCK CENTER)\nMARIA EDLEUZA (LIMPEZA DIÁRIA) - 230,00\nTAIANE BRANDÃO (ASSISTENCIA TECNICA) - 2.66,52','Abr':'ROBERTO SANTOS - 1.500,00(LIMPEZA DO TETO)\nRENILSON - 1.600,00 (TOMADAS, LUMINARIAS, ETC)\nECOTONO - 130,00 (DESPESA DE VIAGEM)\nECOTONO - 120,00 (DESPESA DE VIAGEM)\nECOTONO - 999,71\nLOCAÇÃO DE ANDAIMES - 1.500,00\nPR TECNOLOGIA - 501,62(RECARGA DE CARTUCHOS-IMPRESSORA)\nINSTALAÇÃO DE CAMERA - 400,00\nDEDETIZAÇÃO - 1.700,00','Mai':'ECOTONO - 998,08\nPROGREDIR (TAXA DE ESTAGIO) - 90,00\nSAFE CHECK (CERTIFICADO) - 203,00\nANTONIO (SERV GERAIS) - 750,00\nANTONIO (SERV GERAIS) - 750,00\nANTONIO (SERV GERAIS) - 750,00\nRENILSON (MANUT GERAIS) - 1.300,00\nPR TECNOLOGIA- 823,06','Jun':'ECOTONO - 1.007,90\nECOTONO - 130,00\nPROGREDIR - TAXA DE ESTAGIO - 90,00\nCONSULTORIA CAIQUE - 648,32','Jul':'PR TECNOLOGIA - 788,86\nRENILSON - 700,00 (ELETRICA)\nANTONIO - 640,00 (PINTURA)\nRENILSON - 1.020,00 (ELETRICA)\nANTONIO - 640,00 (PINTURA)\nECOTONO - 1.017,80\nPROGREDIR - 90,00\nCONSULTORIA CAIQUE - 668,29','Ago':'ECOTONO - 1.017,80\nPROGREDIR - 90,00\nPR TECNOLOGIA - 909,56\nCAIQUE CONSULTORIA - 869,04'},
     133: {'Fev':'ESTADO DA BAHIA - 287,10','Mai':'TAXA DE CARTORIO - RODOMIX 37,00'},
-    145: {'Jan':'Jailton - 1.200,00 (solda do telhado, confecção de grade)\nBazmaq - 5.070,00','Fev':'BAZMAQ - 5.070,00','Mar':'BAZMAQ - 5.070,00\nELDER BULHOES - 467,00 (LAVADORA)\nERIC ALMEIDA - 900,00 (CONDENSADORA)','Abr':'SUPORTE PARA TABLETS - 156,00\nCOMPRA DO LEITOR DO CODIGO DE BARRAS -180,00\nMERCDO PAGO - 31,53 (COMPRA DE PNEUS PARA CARRINHO DA PRODUÇÃO)','Mai':'COMPRAS DE IMPRESSORA, MONITOR, CPU','Jun':'COMPRA DE TABLETS - 54,52\nCOMPRA DE PNEU - 31,53'},
+    145: {'Jan':'Jailton - 1.200,00 (solda do telhado, confecção de grade)\nBazmaq - 5.070,00','Fev':'BAZMAQ - 5.070,00','Mar':'BAZMAQ - 5.070,00\nELDER BULHOES - 467,00 (LAVADORA)\nERIC ALMEIDA - 900,00 (CONDENSADORA)','Abr':'SUPORTE PARA TABLETS - 156,00\nCOMPRA DO LEITOR DO CODIGO DE BARRAS -180,00\nMERCDO PAGO - 31,53 (COMPRA DE PNEUS PARA CARRINHO DA PRODUÇÃO)','Mai':'COMPRAS DE IMPRESSORA, MONITOR, CPU','Jun':'COMPRA DE TABLETS - 54,52\nCOMPRA DE PNEU - 31,53','Jul':'IMPRESSORA - 134,90\nMONITOR - 50,04\nTECL E MOUSE - 18,74\nCPU - 152,37\nMONITOR E NOBREAKS - 133,40\nGAZIN (BEBEDOURO) - 68,99\nTABLET - 54,52\nPOLTRONA - 900,00','Ago':'IMPRESSORA - 134,90\nMONITOR - 50,04\nTECL E MOUSE - 18,74\nCPU - 152,37\nMONITOR E NOBREAKS - 133,40\nGAZIN (BEBEDOURO) - 68,99\nTABLET - 54,52'},
   },
   dre: [
-    {g:true,  label:'RECEITA',                           v:[null,null,null,null,null,null]},
-    {         label:'Receita Recapagem Carga',            v:[380766,383888,355721,421007,420186,431294]},
-    {         label:'Receita de Serviço',                 v:[329380,351049,367415,307964,265599,265022]},
-    {bold:true,label:'Total Receita Carga',               v:[710146,734937,723136,728970,685785,696316]},
-    {         label:'Recuperação de Despesas',            v:[2521,2514,2696,2774,2870,3323]},
-    {bold:true,label:'Receita de Vendas Bruta',           v:[712667,737450,725832,731745,688655,699639], highlight:'blue'},
-    {neg:true,bold:true,label:'Impostos Totais',          v:[-154954,-161934,-156479,-162677,-157151,-150439]},
-    {neg:true, label:'  PIS/COFINS/CSLL/IRPJ',           v:[-124489,-128834,-126766,-127789,-120218,-122064]},
-    {neg:true, label:'  Encargos Sociais Candeias',       v:[-14231,-14535,-14935,-14436,-15335,-17390]},
-    {neg:true, label:'  ICMS Antecipação Parcial',        v:[-16234,-18565,-14778,-20452,-21598,-10985], rowNum:13},
-    {bold:true,label:'Receita de Vendas Líquida',         v:[557714,575516,569353,569068,531504,549199], highlight:'blue'},
-    {g:true,  label:'CMV',                                v:[null,null,null,null,null,null]},
-    {neg:true,bold:true,label:'CMV Carga Total',          v:[-402266,-410026,-401438,-441910,-384352,-398127]},
-    {neg:true, label:'  Bandas',                          v:[-279234,-284265,-271578,-314371,-262238,-266443], rowNum:21},
-    {neg:true, label:'  Bônus de Produção',               v:[-7053,-7943,-7571,-8976,-8719,-8221]},
-    {neg:true, label:'  Energia',                         v:[-22867,-21834,-20570,-24199,-22109,-21692]},
-    {neg:true, label:'  Fretes',                          v:[0,-1373,-834,-475,-444,-807], rowNum:26},
-    {neg:true, label:'  FGTS',                            v:[-2669,-2908,-2471,-2594,-2732,-3030]},
-    {neg:true, label:'  Manchão',                         v:[-5571,-5667,-6507,-9610,-8855,-9331]},
-    {neg:true, label:'  Materiais Secundários',           v:[-32478,-29751,-28359,-30368,-27373,-28403]},
-    {neg:true, label:'  Manutenção Máquinas',             v:[-961,-5634,-5300,-166,-1248,-7492], rowNum:33},
-    {neg:true, label:'  Rescisões',                       v:[0,0,-12503,-2578,0,0], rowNum:35},
-    {neg:true, label:'  Refeições e Lanches CMV',         v:[-7774,-6647,-7383,-7038,-7337,-7613]},
-    {neg:true, label:'  Salários CMV',                    v:[-39189,-40368,-34320,-36483,-38436,-40051]},
-    {neg:true, label:'  Vale Transporte CMV',             v:[-4470,-3638,-4042,-5052,-4860,-5045]},
-    {bold:true,label:'Margem de Contribuição',            v:[155448,165490,167915,127158,147152,151073], highlight:'green'},
-    {g:true,  label:'DESPESAS',                           v:[null,null,null,null,null,null]},
-    {neg:true,bold:true,label:'Despesas Comerciais',      v:[-59289,-68814,-68107,-75634,-74716,-75200]},
-    {neg:true, label:'  Ajuda de Custo',                  v:[-1500,-1500,-1500,-1500,-1500,-1500], rowNum:45},
-    {neg:true, label:'  Bônus Produção Coletadores',      v:[-1563,-1527,-1832,-2080,-2110,-2100]},
-    {neg:true, label:'  Combustíveis',                    v:[-10836,-14860,-10207,-13128,-14427,-13891]},
-    {neg:true, label:'  Comissão de Vendedores',          v:[-22275,-28168,-31619,-32754,-30045,-30605]},
-    {neg:true, label:'  Despesas com Viagens',            v:[0,-594,0,0,0,0], rowNum:51},
-    {neg:true, label:'  Despesas com Veículos',           v:[-1197,-1829,-2453,-5484,-3942,-3710], rowNum:53},
-    {neg:true, label:'  FGTS Comercial',                  v:[-151,-151,-151,-151,-151,-302]},
-    {neg:true, label:'  Pedágio',                         v:[-1489,0,0,-1096,-1966,-1301], rowNum:61},
-    {neg:true, label:'  Refeições e Lanches Com.',        v:[-483,-391,-506,-460,-460,-920]},
-    {neg:true, label:'  Salários Comercial',              v:[-1890,-1890,-1890,-1890,-3024,-3780]},
-    {neg:true, label:'  Serviços de Terceiros',           v:[-17000,-17000,-17000,-17000,-17000,-17000], rowNum:66},
-    {neg:true, label:'  Seguros de Veículos',             v:[-864,-864,-864,0,0,0]},
-    {neg:true, label:'  Vale Transporte Com.',            v:[-40,-40,-85,-91,-91,-91]},
-    {neg:true,bold:true,label:'Despesas Administrativas', v:[-78279,-75592,-81725,-83963,-77115,-82196]},
-    {neg:true, label:'  Aluguel de Imóvel',               v:[-10000,-10000,-10000,-10000,-10000,-10000]},
-    {neg:true, label:'  Aluguel de Equipamentos',         v:[0,0,0,0,0,-1300], rowNum:74},
-    {neg:true, label:'  Água e Esgoto',                   v:[-125,-125,-125,-128,-125,-125]},
-    {neg:true, label:'  Assessoria Contábil',             v:[-1000,-1070,-1070,-1958,-1070,-1070]},
-    {neg:true, label:'  Assessoria Jurídica',             v:[-2080,-2286,-1886,-2297,-2097,-2730]},
-    {neg:true, label:'  Assessoria Técnica',              v:[-2836,-3118,-2752,-2756,-2517,-3034]},
-    {neg:true, label:'  Assistência Médica',              v:[-607,-326,-310,-155,-835,-301]},
-    {neg:true, label:'  AS Advocacia',                    v:[0,0,0,0,-916,-3242]},
-    {neg:true, label:'  Asense Consultoria',              v:[0,0,0,0,-542,-677]},
-    {neg:true, label:'  Perfil Gestão',                   v:[0,0,0,0,-953,-3242]},
-    {neg:true, label:'  Comissão de Cobrança',            v:[-264,-181,-356,-174,-52,0]},
-    {neg:true, label:'  Consultoria Empresarial',         v:[-4349,-4780,-3943,-4226,-3859,-4652]},
-    {neg:true, label:'  Despesas com Viagens Adm.',       v:[0,0,0,-275,-921,0], rowNum:95},
-    {neg:true, label:'  E.P.I / Fardamentos',             v:[0,0,0,-1967,-1654,0], rowNum:100},
-    {neg:true, label:'  FGTS Administrativo',             v:[-130,-130,-306,-306,-306,-306]},
-    {neg:true, label:'  Internet',                        v:[-505,-505,-505,-622,-505,-505]},
-    {neg:true, label:'  IPVA',                            v:[-5280,0,0,0,0,0]},
-    {neg:true, label:'  IRPJ',                            v:[-84,0,0,0,0,0]},
-    {neg:true, label:'  Material de Expediente',          v:[0,0,0,-319,0,0]},
-    {neg:true, label:'  Manutenção Rede/Software',        v:[-2650,-2650,-2650,-2650,-2650,-2700], rowNum:111},
-    {neg:true, label:'  Manutenção Instalações',          v:[-180,-180,-856,-2144,-3495,-1742], rowNum:113},
-    {neg:true, label:'  Material Uso e Consumo',          v:[0,0,-1485,-345,0,0], rowNum:115},
-    {neg:true, label:'  Manutenção Equipamentos',         v:[0,-1428,-1726,-26,0,0], rowNum:116},
-    {neg:true, label:'  Rateio CSC',                      v:[-26052,-28454,-22889,-24516,-19836,-24108]},
-    {neg:true, label:'  Reposição Fundo Fixo',            v:[-4323,-3937,-10630,-6057,-5285,-3980]},
-    {neg:true, label:'  Rescisões Adm.',                  v:[-4308,0,0,0,0,0], rowNum:120},
-    {neg:true, label:'  Refeições e Lanches Adm.',        v:[-506,-391,-1012,-897,-920,-920]},
-    {neg:true, label:'  Pro Labore Sócios',               v:[-9454,-10392,-8572,-9188,-8390,-10113]},
-    {neg:true, label:'  Salários Administrativo',         v:[-1621,-1621,-3821,-3821,-3821,-4621]},
-    {neg:true, label:'  Serviços de Terceiros Adm.',      v:[-1328,-3281,-6248,-8451,-5664,-1876], rowNum:131},
-    {neg:true, label:'  Taxas Diversas',                  v:[0,-287,0,0,-37,0], rowNum:133},
-    {neg:true, label:'  Tarifas DO IT',                   v:[-502,-395,-417,-515,-434,-518]},
-    {neg:true, label:'  Vale Transporte Adm.',            v:[-96,-53,-167,-169,-230,-434]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[17880,21084,18082,-32439,-4679,-6324], highlight:'red'},
-    {g:true,  label:'ABAIXO DO EBITDA',                   v:[null,null,null,null,null,null]},
-    {neg:true, label:'  Investimentos',                   v:[-6270,-5070,-6437,-368,-577,-86], rowNum:145},
-    {bold:true,label:'Saldo Final',                       v:[11610,16014,11645,-32806,-5256,-6410], highlight:'red'},
+    {g:true,  label:'RECEITA',                           v:[null,null,null,null,null,null,null,null]},
+    {         label:'Receita Recapagem Carga',            v:[380766,383888,355721,421007,420186,431294,455629.57,384904.86]},
+    {         label:'Receita de Serviço',                 v:[329380,351049,367415,307964,265599,265022,405809,324566]},
+    {bold:true,label:'Total Receita Carga',               v:[710146,734937,723136,728970,685785,696316,861438.57,709470.86]},
+    {         label:'Recuperação de Despesas',            v:[2521,2514,2696,2774,2870,3323,3298.18,3278.33]},
+    {bold:true,label:'Receita de Vendas Bruta',           v:[712667,737450,725832,731745,688655,699639,864736.75,712749.19], highlight:'blue'},
+    {neg:true,bold:true,label:'Impostos Totais',          v:[-154954,-161934,-156479,-162677,-157151,-150439,-169400.11,-160230.07]},
+    {neg:true, label:'  PIS/COFINS/CSLL/IRPJ',           v:[-124489,-128834,-126766,-127789,-120218,-122064,-151010.18,-124370.24]},
+    {neg:true, label:'  Encargos Sociais Candeias',       v:[-14231,-14535,-14935,-14436,-15335,-17390,-18181,-18109.89]},
+    {neg:true, label:'  ICMS Antecipação Parcial',        v:[-16234,-18565,-14778,-20452,-21598,-10985,-208.93,-17749.94], rowNum:13},
+    {bold:true,label:'Receita de Vendas Líquida',         v:[557714,575516,569353,569068,531504,549199,695336.64,552519.12], highlight:'blue'},
+    {g:true,  label:'CMV',                                v:[null,null,null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'CMV Carga Total',          v:[-402266,-410026,-401438,-441910,-384352,-398127,-496600.75,-400942.98]},
+    {neg:true, label:'  Bandas',                          v:[-279234,-284265,-271578,-314371,-262238,-266443,-336896.5,-255380.85], rowNum:21},
+    {neg:true, label:'  Bônus de Produção',               v:[-7053,-7943,-7571,-8976,-8719,-8221,-12564.14,-10266.33]},
+    {neg:true, label:'  Energia',                         v:[-22867,-21834,-20570,-24199,-22109,-21692,-27457.24,-19980.52]},
+    {neg:true, label:'  Fretes',                          v:[0,-1373,-834,-475,-444,-807,-249.84,-432.36], rowNum:26},
+    {neg:true, label:'  FGTS',                            v:[-2669,-2908,-2471,-2594,-2732,-3030,-3000.64,-2679.36]},
+    {neg:true, label:'  Manchão',                         v:[-5571,-5667,-6507,-9610,-8855,-9331,-12103.68,-10399.71]},
+    {neg:true, label:'  Materiais Secundários',           v:[-32478,-29751,-28359,-30368,-27373,-28403,-42194.42,-33801.08]},
+    {neg:true, label:'  Manutenção Máquinas',             v:[-961,-5634,-5300,-166,-1248,-7492,-8338.74,-8560.76], rowNum:33},
+    {neg:true, label:'  Rescisões',                       v:[0,0,-12503,-2578,0,0,0,-13095.6], rowNum:35},
+    {neg:true, label:'  Refeições e Lanches CMV',         v:[-7774,-6647,-7383,-7038,-7337,-7613,-8303,-6463]},
+    {neg:true, label:'  Salários CMV',                    v:[-39189,-40368,-34320,-36483,-38436,-40051,-39819.18,-35861.64]},
+    {neg:true, label:'  Vale Transporte CMV',             v:[-4470,-3638,-4042,-5052,-4860,-5045,-5673.37,-4021.77]},
+    {bold:true,label:'Margem de Contribuição',            v:[155448,165490,167915,127158,147152,151073,198735.89,151576.14], highlight:'green'},
+    {g:true,  label:'DESPESAS',                           v:[null,null,null,null,null,null,null,null]},
+    {neg:true,bold:true,label:'Despesas Comerciais',      v:[-59289,-68814,-68107,-75634,-74716,-75200,-81871.71,-77557.33]},
+    {neg:true, label:'  Ajuda de Custo',                  v:[-1500,-1500,-1500,-1500,-1500,-1500,-1500,-1500], rowNum:45},
+    {neg:true, label:'  Bônus Produção Coletadores',      v:[-1563,-1527,-1832,-2080,-2110,-2100,-2652,-2216]},
+    {neg:true, label:'  Combustíveis',                    v:[-10836,-14860,-10207,-13128,-14427,-13891,-12600.19,-16127.19]},
+    {neg:true, label:'  Comissão de Vendedores',          v:[-22275,-28168,-31619,-32754,-30045,-30605,-35894.11,-30383.23]},
+    {neg:true, label:'  Despesas com Viagens',            v:[0,-594,0,0,0,0,0,-110], rowNum:51},
+    {neg:true, label:'  Despesas com Veículos',           v:[-1197,-1829,-2453,-5484,-3942,-3710,-5794.11,-2954.11], rowNum:53},
+    {neg:true, label:'  FGTS Comercial',                  v:[-151,-151,-151,-151,-151,-302,-302.4,-302.4]},
+    {neg:true, label:'  Pedágio',                         v:[-1489,0,0,-1096,-1966,-1301,-1225.9,-2230.4], rowNum:61},
+    {neg:true, label:'  Refeições e Lanches Com.',        v:[-483,-391,-506,-460,-460,-920,-1012,-874]},
+    {neg:true, label:'  Salários Comercial',              v:[-1890,-1890,-1890,-1890,-3024,-3780,-3780,-3780]},
+    {neg:true, label:'  Serviços de Terceiros',           v:[-17000,-17000,-17000,-17000,-17000,-17000,-17000,-17000], rowNum:66},
+    {neg:true, label:'  Seguros de Veículos',             v:[-864,-864,-864,0,0,0,0,0]},
+    {neg:true, label:'  Vale Transporte Com.',            v:[-40,-40,-85,-91,-91,-91,-111,-80]},
+    {neg:true,bold:true,label:'Despesas Administrativas', v:[-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-85909.44]},
+    {neg:true, label:'  Aluguel de Imóvel',               v:[-10000,-10000,-10000,-10000,-10000,-10000,-10000,-10000]},
+    {neg:true, label:'  Aluguel de Equipamentos',         v:[0,0,0,0,0,-1300,0,0], rowNum:74},
+    {neg:true, label:'  Taxa de Bombeiros',               v:[0,0,0,0,0,0,-732.99,0]},
+    {neg:true, label:'  Água e Esgoto',                   v:[-125,-125,-125,-128,-125,-125,-125.46,-129.94]},
+    {neg:true, label:'  Assessoria Contábil',             v:[-1000,-1070,-1070,-1958,-1070,-1070,-1070,-1070]},
+    {neg:true, label:'  Assessoria Jurídica',             v:[-2080,-2286,-1886,-2297,-2097,-2730,-2523.81,-2346.41]},
+    {neg:true, label:'  Assessoria Técnica',              v:[-2836,-3118,-2752,-2756,-2517,-3034,-2804.23,-2607.12]},
+    {neg:true, label:'  Assistência Médica',              v:[-607,-326,-310,-155,-835,-301,-49,0]},
+    {neg:true, label:'  AS Advocacia',                    v:[0,0,0,0,-916,-3242,-3341.43,-4345.21]},
+    {neg:true, label:'  Asense Consultoria',              v:[0,0,0,0,-542,-677,-698.29,-908.05]},
+    {neg:true, label:'  Perfil Gestão',                   v:[0,0,0,0,-953,-3242,-3341.43,-4345.21]},
+    {neg:true, label:'  Comissão de Cobrança',            v:[-264,-181,-356,-174,-52,0,-171.44,0]},
+    {neg:true, label:'  Consultoria Empresarial',         v:[-4349,-4780,-3943,-4226,-3859,-4652,-5047.62,-4692.82]},
+    {neg:true, label:'  Despesas com Viagens Adm.',       v:[0,0,0,-275,-921,0,-130,-130], rowNum:95},
+    {neg:true, label:'  E.P.I / Fardamentos',             v:[0,0,0,-1967,-1654,0,0,0], rowNum:100},
+    {neg:true, label:'  FGTS Administrativo',             v:[-130,-130,-306,-306,-306,-306,-305.68,-305.68]},
+    {neg:true, label:'  Internet',                        v:[-505,-505,-505,-622,-505,-505,-269.9,-269.9]},
+    {neg:true, label:'  IPTU/TFF',                        v:[0,0,0,0,0,0,-4380.14,-2080.04]},
+    {neg:true, label:'  IPVA',                            v:[-5280,0,0,0,0,0,-2733.19,0]},
+    {neg:true, label:'  IRPJ',                            v:[-84,0,0,0,0,0,0,0]},
+    {neg:true, label:'  Material de Expediente',          v:[0,0,0,-319,0,0,0,0]},
+    {neg:true, label:'  Manutenção Rede/Software',        v:[-2650,-2650,-2650,-2650,-2650,-2700,-2650,-2650], rowNum:111},
+    {neg:true, label:'  Manutenção Instalações',          v:[-180,-180,-856,-2144,-3495,-1742,-3686.84,-6280.62], rowNum:113},
+    {neg:true, label:'  Material Uso e Consumo',          v:[0,0,-1485,-345,0,0,0,0], rowNum:115},
+    {neg:true, label:'  Manutenção Equipamentos',         v:[0,-1428,-1726,-26,0,0,-57.41,-25.88], rowNum:116},
+    {neg:true, label:'  Rateio CSC',                      v:[-26052,-28454,-22889,-24516,-19836,-24108,-21619.48,-20342.9]},
+    {neg:true, label:'  Reposição Fundo Fixo',            v:[-4323,-3937,-10630,-6057,-5285,-3980,-5729.44,-5698.59]},
+    {neg:true, label:'  Rescisões Adm.',                  v:[-4308,0,0,0,0,0,0,0], rowNum:120},
+    {neg:true, label:'  Refeições e Lanches Adm.',        v:[-506,-391,-1012,-897,-920,-920,-1012,-736]},
+    {neg:true, label:'  Pro Labore Sócios',               v:[-9454,-10392,-8572,-9188,-8390,-10113,-9347,-8690]},
+    {neg:true, label:'  Salários Administrativo',         v:[-1621,-1621,-3821,-3821,-3821,-4621,-4621,-4621]},
+    {neg:true, label:'  Serviços de Terceiros Adm.',      v:[-1328,-3281,-6248,-8451,-5664,-1876,-5564.95,-2886.4], rowNum:131},
+    {neg:true, label:'  Taxas Diversas',                  v:[0,-287,0,0,-37,0,0,0], rowNum:133},
+    {neg:true, label:'  Tarifas DO IT',                   v:[-502,-395,-417,-515,-434,-518,-456.1,-477.13]},
+    {neg:true, label:'  Vale Transporte Adm.',            v:[-96,-53,-167,-169,-230,-434,-443.94,-270.54]},
+    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63], highlight:'red'},
+    {g:true,  label:'ABAIXO DO EBITDA',                   v:[null,null,null,null,null,null,null,null]},
+    {neg:true, label:'  Investimentos',                   v:[-6270,-5070,-6437,-368,-577,-86,-1512.96,-612.96], rowNum:145},
+    {bold:true,label:'Saldo Final',                       v:[11610,16014,11645,-32806,-5256,-6410,22438.45,-12503.59], highlight:'red'},
   ],
   insights: {
     '-1': {
-      title: 'Análise · Candeias · Visão Geral Jan–Jun',
+      title: 'Análise · Candeias · Visão Geral Jan–Ago',
       insights: [
-        {tag:'r', text:'Saldo final virou negativo em abril, maio e junho — reverteu completamente o superávit do 1º trimestre (+R$39,3k) para um déficit acumulado de ~R$5,2k no semestre'},
-        {tag:'r', text:'Abril foi o ponto de virada: EBITDA de −R$32.439 (−4,4%) é o pior do semestre, com CMV Carga disparando para 60,6% (o maior dos 6 meses) e Serviços de Terceiros Adm. no pico do semestre — parte ligada à recuperação do incêndio que atingiu a reformadora no final de março'},
-        {tag:'g', text:'Maio recuperou fortemente: EBITDA voltou a −R$4.679, CMV Carga caiu para 56,0% — quase o nível do 1º trimestre'},
-        {tag:'r', text:'Junho não confirmou a recuperação: EBITDA piorou de novo para −R$6.324, puxado por Despesas Administrativas em alta (R$82,2k, 2º maior do semestre)'},
-        {tag:'a', text:'3 novas consultorias/assessorias administrativas surgiram a partir de maio — AS Advocacia, Asense Consultoria e Perfil Gestão — somando R$2,4k em maio e R$7,2k em junho'},
-        {tag:'g', text:'Margem de contribuição segue saudável apesar da reversão: entre 17,4% (abril, pior) e 23,1% (março, melhor)'},
-        {tag:'a', text:'Rateio CSC oscila entre R$19,8k e R$28,5k/mês — variação proporcional à receita, dentro do esperado'},
+        {tag:'g', text:'Saldo final acumulado volta ao positivo: +R$4.731,86 em 8 meses, revertendo o déficit de −R$5.203 acumulado até junho — puxado pelo forte resultado de julho (+R$22.438)'},
+        {tag:'g', text:'Julho foi o melhor EBITDA do período até aqui: +R$23.951 (+2,8%), superando o recorde anterior de fevereiro (+R$21.084)'},
+        {tag:'r', text:'Agosto voltou ao negativo: EBITDA de −R$11.891 (−1,7%) — pior resultado desde abril (−R$32.439), pressionado por rescisões no CMV de R$13.096 (Jefferson Silva e Wesley Santana)'},
+        {tag:'a', text:'Despesas Administrativas de julho (R$92.913) são as maiores do período até aqui — impulsionadas por dois itens que não apareciam antes no ano: IPTU/TFF (R$4.380) e Taxa de Bombeiros (R$733)'},
+        {tag:'a', text:'AS Advocacia e Perfil Gestão sobem mês a mês desde maio: R$916/953 (mai) → R$3.242 cada (jun) → R$3.341 cada (jul) → R$4.345 cada (ago) — já é a maior linha de consultoria administrativa do ano'},
+        {tag:'a', text:'Comissão de cobrança de agosto ainda não foi lançada na planilha — está pendente de envio pela área responsável'},
+        {tag:'g', text:'CMV Carga segue instável entre 55,2% (março, melhor até aqui) e 60,6% (abril, pior até aqui), com julho e agosto em 57,7% e 56,5%'},
       ],
       recs: [
-        {t:'Entender por que a recuperação de maio não se sustentou em junho.', d:'CMV Carga caiu de 60,6% (abril) para 56,0% (maio), mas voltou a subir para 57,2% em junho, e as despesas administrativas voltaram a crescer. Mapear se é sazonalidade ou uma mudança estrutural de custos.'},
-        {t:'Acompanhar a evolução das 3 novas consultorias iniciadas em maio.', d:'AS Advocacia, Asense Consultoria e Perfil Gestão não existiam nos lançamentos até abril e já somam R$7,2k em junho. Confirmado que o valor é vinculado ao faturamento — ainda não está definido se é um percentual fixo ou negociado por período. Acompanhar se o custo escala proporcionalmente à receita nos próximos meses.'},
-        {t:'Revisitar Candeias como benchmark do grupo.', d:'A unidade era a única referência positiva constante do grupo no 1º trimestre. Com 3 meses seguidos de déficit, vale reavaliar se ainda deve ser usada como modelo enquanto a causa da reversão não for esclarecida.'},
-        {t:'Monitorar se a Manutenção de Máquinas de junho é pontual ou recorrente.', d:'R$7.492 (autoclave + balanceadora) é o maior valor do semestre — gasto já realizado e documentado nos comentários, fora do padrão mensal. Acompanhar se volta ao patamar normal em julho ou se indica necessidade de manutenção preventiva mais frequente.'},
+        {t:'Atualizar agosto quando a comissão de cobrança for enviada.', d:'O valor está pendente e ainda não impacta o resultado de agosto no dashboard. Historicamente fica entre R$52 e R$356/mês — baixo impacto no total, mas deve ser incluído para fechar o mês corretamente.'},
+        {t:'Acompanhar a trajetória de AS Advocacia e Perfil Gestão.', d:'Passou de R$916 em maio para R$4.345 em agosto — mais que quadruplicou em 4 meses. Confirmar se o valor é percentual fixo sobre faturamento e mapear o impacto esperado para os próximos meses.'},
+        {t:'Usar julho como referência de patamar saudável de EBITDA.', d:'+R$23.951 foi o melhor resultado do ano até aqui, com receita de R$864,7k. Entender o que sustentou esse patamar pode ajudar a recuperar o resultado de agosto.'},
+        {t:'Monitorar se a rescisão de R$13.096 em agosto foi pontual.', d:'Jefferson Silva (R$10.018) e Wesley Santana (R$3.078) foram desligados em agosto. Verificar necessidade de reposição de equipe e impacto no CMV dos próximos meses.'},
       ]
     },
     '0': {
@@ -1503,6 +1507,41 @@ const CAN = {
         {t:'Fechar o semestre com plano de ação para reverter o déficit acumulado.', d:'3 meses seguidos de saldo negativo (abr/mai/jun) consumiram todo o superávit do 1º trimestre. Definir meta de EBITDA positivo para julho como prioridade.'},
         {t:'Monitorar se a Manutenção de Máquinas de R$7.492 volta ao patamar normal em julho.', d:'Autoclave e balanceadora concentraram o custo em junho — gasto pontual fora do padrão mensal, já realizado. Se se repetir, considerar manutenção preventiva programada para evitar novos picos.'},
         {t:'Monitorar a trajetória instável do CMV Carga.', d:'60,6% (abr) → 56,0% (mai) → 57,2% (jun) — sem uma tendência clara. Padronizar o acompanhamento mensal para identificar o que causa essa oscilação.'},
+      ]
+    },
+    '6': {
+      title: 'Análise · Candeias · Julho',
+      insights: [
+        {tag:'g', text:'Melhor EBITDA do período até aqui: +R$23.951 (+2,8%) — supera o recorde anterior de fevereiro (+R$21.084)'},
+        {tag:'g', text:'Saldo final de +R$22.438 reverte de uma vez o déficit acumulado de −R$5.203 que vinha se formando desde abril'},
+        {tag:'g', text:'Receita bruta de R$864.737 é a maior do período até aqui — +23,6% vs. junho'},
+        {tag:'r', text:'Despesas Administrativas de R$92.913 são as maiores do período até aqui — dois itens novos no ano: IPTU/TFF (R$4.380) e Taxa de Bombeiros (R$733)'},
+        {tag:'r', text:'Despesas Comerciais de R$81.872 também são as maiores do período até aqui, puxadas por Comissão de Vendedores em R$35.894 (recorde do ano) e Despesas com Veículos em R$5.794 (RS Transportes R$3.760 + Machado Auto Peças R$950)'},
+        {tag:'a', text:'Manutenção de Máquinas atinge novo recorde do ano: R$8.339, superando o pico de junho (R$7.492) — Marviba concentrou R$5.000 do total'},
+        {tag:'a', text:'AS Advocacia e Perfil Gestão sobem para R$3.341 cada (vs. R$3.242 em junho) — 3º mês seguido de alta desde que começaram em maio'},
+      ],
+      recs: [
+        {t:'Usar julho como referência de patamar saudável para os próximos meses.', d:'Receita de R$864,7k e EBITDA de R$23.951 mostram que a unidade opera com folga quando o volume está acima de R$800k. Mapear o que impulsionou esse volume de vendas.'},
+        {t:'Monitorar se a Manutenção de Máquinas em R$8.339 é um novo patamar ou gasto pontual.', d:'É o maior valor do ano, superando o pico de junho (R$7.492), com Marviba concentrando R$5.000. Acompanhar se o gasto normaliza em agosto.'},
+        {t:'Acompanhar o crescimento de AS Advocacia e Perfil Gestão.', d:'R$3.341 cada em julho — 3º mês seguido de alta desde que começaram em maio (R$916/953). Confirmar se o valor é vinculado ao faturamento.'},
+      ]
+    },
+    '7': {
+      title: 'Análise · Candeias · Agosto',
+      insights: [
+        {tag:'r', text:'EBITDA voltou ao negativo: −R$11.891 (−1,7%), revertendo o resultado positivo de julho (+R$23.951)'},
+        {tag:'r', text:'Saldo final de −R$12.504 — pior resultado desde abril (−R$32.806)'},
+        {tag:'r', text:'Rescisões no CMV de R$13.096 (Jefferson Silva R$10.018 + Wesley Santana R$3.078) — maior valor de rescisão do ano e o principal fator do resultado negativo do mês'},
+        {tag:'g', text:'CMV Carga melhorou para 56,5% (vs. 57,7% em julho), mesmo com o impacto da rescisão'},
+        {tag:'g', text:'Despesas Comerciais caíram para R$77.557 (vs. R$81.872 em julho)'},
+        {tag:'r', text:'AS Advocacia e Perfil Gestão atingem novo recorde: R$4.345 cada (R$8,7k no total) — 4º mês seguido de alta desde maio'},
+        {tag:'a', text:'Manutenção de Instalações em R$6.281 — maior valor do ano, concentrado em pintura e roçadeira (Antonio Carlos)'},
+        {tag:'a', text:'Comissão de cobrança de agosto ainda não foi lançada — pendente de envio; o valor de julho (R$171) segue como última referência disponível'},
+      ],
+      recs: [
+        {t:'Definir se as rescisões de agosto (R$13.096) exigem reposição de equipe.', d:'Impacto direto de R$13k no CMV do mês. Entender se há necessidade de contratação para não afetar a produção nos próximos meses.'},
+        {t:'Atualizar o resultado de agosto quando a comissão de cobrança for lançada.', d:'O valor está pendente de envio. Mesmo pequeno historicamente (R$52 a R$356/mês), deve ser incluído para fechar o mês corretamente.'},
+        {t:'Acompanhar o novo recorde de AS Advocacia e Perfil Gestão (R$4.345 cada).', d:'Já somam R$8,7k/mês, mais que o triplo do valor inicial de maio. Confirmar a lógica de reajuste vinculada ao faturamento.'},
       ]
     }
   }
@@ -3224,7 +3263,9 @@ const GAMMA_URLS_MES = {
     2: 'https://gamma.app/docs/uwts8reqy0lx4pd', // Março (corrigido)
     3: 'https://gamma.app/docs/fsyjyhinuyve9zm', // Abril
     4: 'https://gamma.app/docs/ioh4nq823ugc7ds', // Maio
-    5: 'https://gamma.app/docs/tlgb17wngubjmxn'  // Junho
+    5: 'https://gamma.app/docs/tlgb17wngubjmxn', // Junho
+    6: 'https://gamma.app/docs/7f2htjj3gvjn793', // Julho
+    // 7: Agosto — pendente (comissão de cobrança ainda não lançada)
   },
   esm: {
     0: 'https://gamma.app/docs/8vg2l9ng20dtisz', // Janeiro
@@ -3568,26 +3609,25 @@ window.addEventListener('resize', syncSidebarBrand);
 syncGammaBtn();
 </script>
 
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(()=>{});
-  });
-}
-(function checkUpdate(){
-  const CURRENT_BUILD = "20260922120301";
-  async function poll(){
-    try {
-      const res = await fetch('index.html?_=' + Date.now(), {cache:'no-store'});
-      const text = await res.text();
-      const m = text.match(/app-build" content="(\d+)"/);
-      if (m && m[1] !== CURRENT_BUILD) {
-        console.log('Nova versão disponível:', m[1]);
-      }
-    } catch(e) {}
+  <script>
+  if (('serviceWorker' in navigator)) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    });
   }
-  setInterval(poll, 60000);
-})();
-</script>
+  (function(){
+    const CURRENT_BUILD = document.querySelector('meta[name="app-build"]').content;
+    setInterval(async () => {
+      try {
+        const res = await fetch('index.html?_=' + Date.now(), {cache:'no-store'});
+        const text = await res.text();
+        const match = text.match(/<meta name="app-build" content="([^"]+)"/);
+        if (match && match[1] !== CURRENT_BUILD) {
+          console.log('Nova versão disponível:', match[1]);
+        }
+      } catch(e) {}
+    }, 60000);
+  })();
+  </script>
 </body>
 </html>
