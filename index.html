@@ -373,7 +373,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20260922123209">
+  <meta name="app-build" content="20260922135108">
 
 </head>
 <body>
@@ -1260,7 +1260,7 @@ const CAN = {
   recBruta:  [712667,737450,725832,731745,688655,699639,864736.75,712749.19],
   recLiq:    [557714,575516,569353,569068,531504,549199,695336.64,552519.12],
   margem:    [155448,165490,167915,127158,147152,151073,198735.89,151576.14],
-  saldo:     [11610,16014,11645,-32806,-5256,-6410,22438.45,-12503.59],
+  saldo:     [11610,16014,11645,-32806,-5256,-6410,22438.45,-12964.94],
   cmvOTR:    [0,0,0,0,0,0,0,0],
   cmvCarga:  [56.65,55.79,55.19,60.62,56.05,57.18,57.65,56.51],
   cmvTotal:  [56.65,55.79,55.19,60.62,56.05,57.18,57.65,56.51],
@@ -1269,12 +1269,12 @@ const CAN = {
   cmvWF:     [-402266,-410026,-401438,-441910,-384352,-398127,-496600.75,-400942.98],
   margemWF:  [155448,165490,167915,127158,147152,151073,198735.89,151576.14],
   despComWF: [-59289,-68814,-68107,-75634,-74716,-75200,-81871.71,-77557.33],
-  despAdmWF: [-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-85909.44],
-  resOpWF:   [17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63],
-  ebitdaVals:[17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63],
-  ebitdaPct: [2.51,2.86,2.49,-4.43,-0.68,-0.90,2.77,-1.67],
+  despAdmWF: [-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-86370.79],
+  resOpWF:   [17880,21084,18082,-32439,-4679,-6324,23951.41,-12351.98],
+  ebitdaVals:[17880,21084,18082,-32439,-4679,-6324,23951.41,-12351.98],
+  ebitdaPct: [2.51,2.86,2.49,-4.43,-0.68,-0.90,2.77,-1.73],
   fixData: {
-    '-1': { vals:[657692.21,581189.04,20933.92,0], total:1259815.17, gap:-4731.86, label:'Somatório Jan–Ago' },
+    '-1': { vals:[658153.56,581189.04,20933.92,0], total:1260276.52, gap:-4270.51, label:'Somatório Jan–Ago' },
      '0': { vals:[78279,59289,6270,0], total:143838, gap:-11610, label:'Janeiro' },
      '1': { vals:[75592,68814,5070,0], total:149476, gap:-16014, label:'Fevereiro' },
      '2': { vals:[81725,68107,6437,0], total:156269, gap:-11645, label:'Março' },
@@ -1282,7 +1282,7 @@ const CAN = {
      '4': { vals:[77115,74716,577,0], total:152408, gap:5256, label:'Maio' },
      '5': { vals:[82196,75200,86,0], total:157482, gap:6410, label:'Junho' },
      '6': { vals:[92912.77,81871.71,1512.96,0], total:176297.44, gap:-22438.45, label:'Julho' },
-     '7': { vals:[85909.44,77557.33,612.96,0], total:164079.73, gap:12503.59, label:'Agosto' },
+     '7': { vals:[86370.79,77557.33,612.96,0], total:164541.08, gap:12964.94, label:'Agosto' },
   },
   comments: {
     13:  {'Fev':'ANTECI - 14.353,63\nNORMAL - 4.211,08','Mar':'ANTECIPAÇÃO','Abr':'ANTECIPAÇÃO - 20.452','Mai':'ANTECIPAÇÃO - 20.452','Jun':'ICMS NORMAL - 188,00'},
@@ -1349,7 +1349,7 @@ const CAN = {
     {neg:true, label:'  Serviços de Terceiros',           v:[-17000,-17000,-17000,-17000,-17000,-17000,-17000,-17000], rowNum:66},
     {neg:true, label:'  Seguros de Veículos',             v:[-864,-864,-864,0,0,0,0,0]},
     {neg:true, label:'  Vale Transporte Com.',            v:[-40,-40,-85,-91,-91,-91,-111,-80]},
-    {neg:true,bold:true,label:'Despesas Administrativas', v:[-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-85909.44]},
+    {neg:true,bold:true,label:'Despesas Administrativas', v:[-78279,-75592,-81725,-83963,-77115,-82196,-92912.77,-86370.79]},
     {neg:true, label:'  Aluguel de Imóvel',               v:[-10000,-10000,-10000,-10000,-10000,-10000,-10000,-10000]},
     {neg:true, label:'  Aluguel de Equipamentos',         v:[0,0,0,0,0,-1300,0,0], rowNum:74},
     {neg:true, label:'  Taxa de Bombeiros',               v:[0,0,0,0,0,0,-732.99,0]},
@@ -1361,7 +1361,7 @@ const CAN = {
     {neg:true, label:'  AS Advocacia',                    v:[0,0,0,0,-916,-3242,-3341.43,-4345.21]},
     {neg:true, label:'  Asense Consultoria',              v:[0,0,0,0,-542,-677,-698.29,-908.05]},
     {neg:true, label:'  Perfil Gestão',                   v:[0,0,0,0,-953,-3242,-3341.43,-4345.21]},
-    {neg:true, label:'  Comissão de Cobrança',            v:[-264,-181,-356,-174,-52,0,-171.44,0]},
+    {neg:true, label:'  Comissão de Cobrança',            v:[-264,-181,-356,-174,-52,0,-171.44,-461.35]},
     {neg:true, label:'  Consultoria Empresarial',         v:[-4349,-4780,-3943,-4226,-3859,-4652,-5047.62,-4692.82]},
     {neg:true, label:'  Despesas com Viagens Adm.',       v:[0,0,0,-275,-921,0,-130,-130], rowNum:95},
     {neg:true, label:'  E.P.I / Fardamentos',             v:[0,0,0,-1967,-1654,0,0,0], rowNum:100},
@@ -1385,28 +1385,28 @@ const CAN = {
     {neg:true, label:'  Taxas Diversas',                  v:[0,-287,0,0,-37,0,0,0], rowNum:133},
     {neg:true, label:'  Tarifas DO IT',                   v:[-502,-395,-417,-515,-434,-518,-456.1,-477.13]},
     {neg:true, label:'  Vale Transporte Adm.',            v:[-96,-53,-167,-169,-230,-434,-443.94,-270.54]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[17880,21084,18082,-32439,-4679,-6324,23951.41,-11890.63], highlight:'red'},
+    {bold:true,label:'Resultado Operacional (EBITDA)',    v:[17880,21084,18082,-32439,-4679,-6324,23951.41,-12351.98], highlight:'red'},
     {g:true,  label:'ABAIXO DO EBITDA',                   v:[null,null,null,null,null,null,null,null]},
     {neg:true, label:'  Investimentos',                   v:[-6270,-5070,-6437,-368,-577,-86,-1512.96,-612.96], rowNum:145},
-    {bold:true,label:'Saldo Final',                       v:[11610,16014,11645,-32806,-5256,-6410,22438.45,-12503.59], highlight:'red'},
+    {bold:true,label:'Saldo Final',                       v:[11610,16014,11645,-32806,-5256,-6410,22438.45,-12964.94], highlight:'red'},
   ],
   insights: {
     '-1': {
       title: 'Análise · Candeias · Visão Geral Jan–Ago',
       insights: [
-        {tag:'g', text:'Saldo final acumulado volta ao positivo: +R$4.731,86 em 8 meses, revertendo o déficit de −R$5.203 acumulado até junho — puxado pelo forte resultado de julho (+R$22.438)'},
+        {tag:'g', text:'Saldo final acumulado segue positivo: +R$4.270,51 em 8 meses, mesmo após o resultado negativo de agosto — puxado pelo forte resultado de julho (+R$22.438)'},
         {tag:'g', text:'Julho foi o melhor EBITDA do período até aqui: +R$23.951 (+2,8%), superando o recorde anterior de fevereiro (+R$21.084)'},
-        {tag:'r', text:'Agosto voltou ao negativo: EBITDA de −R$11.891 (−1,7%) — pior resultado desde abril (−R$32.439), pressionado por rescisões no CMV de R$13.096 (Jefferson Silva e Wesley Santana)'},
+        {tag:'r', text:'Agosto voltou ao negativo: EBITDA de −R$12.352 (−1,7%) — pior resultado desde abril (−R$32.439), pressionado por rescisões no CMV de R$13.096 (Jefferson Silva e Wesley Santana)'},
         {tag:'a', text:'Despesas Administrativas de julho (R$92.913) são as maiores do período até aqui — impulsionadas por dois itens que não apareciam antes no ano: IPTU/TFF (R$4.380) e Taxa de Bombeiros (R$733)'},
         {tag:'a', text:'AS Advocacia e Perfil Gestão sobem mês a mês desde maio: R$916/953 (mai) → R$3.242 cada (jun) → R$3.341 cada (jul) → R$4.345 cada (ago) — já é a maior linha de consultoria administrativa do ano'},
-        {tag:'a', text:'Comissão de cobrança de agosto ainda não foi lançada na planilha — está pendente de envio pela área responsável'},
+        {tag:'a', text:'Comissão de cobrança dobrou de julho (R$171) para agosto (R$461) — maior valor do ano'},
         {tag:'g', text:'CMV Carga segue instável entre 55,2% (março, melhor até aqui) e 60,6% (abril, pior até aqui), com julho e agosto em 57,7% e 56,5%'},
       ],
       recs: [
-        {t:'Atualizar agosto quando a comissão de cobrança for enviada.', d:'O valor está pendente e ainda não impacta o resultado de agosto no dashboard. Historicamente fica entre R$52 e R$356/mês — baixo impacto no total, mas deve ser incluído para fechar o mês corretamente.'},
         {t:'Acompanhar a trajetória de AS Advocacia e Perfil Gestão.', d:'Passou de R$916 em maio para R$4.345 em agosto — mais que quadruplicou em 4 meses. Confirmar se o valor é percentual fixo sobre faturamento e mapear o impacto esperado para os próximos meses.'},
         {t:'Usar julho como referência de patamar saudável de EBITDA.', d:'+R$23.951 foi o melhor resultado do ano até aqui, com receita de R$864,7k. Entender o que sustentou esse patamar pode ajudar a recuperar o resultado de agosto.'},
         {t:'Monitorar se a rescisão de R$13.096 em agosto foi pontual.', d:'Jefferson Silva (R$10.018) e Wesley Santana (R$3.078) foram desligados em agosto. Verificar necessidade de reposição de equipe e impacto no CMV dos próximos meses.'},
+        {t:'Acompanhar a comissão de cobrança nos próximos meses.', d:'Dobrou de julho (R$171) para agosto (R$461), o maior valor do ano. Verificar se reflete maior volume de cobrança ou mudança na régua de comissionamento.'},
       ]
     },
     '0': {
@@ -1529,19 +1529,19 @@ const CAN = {
     '7': {
       title: 'Análise · Candeias · Agosto',
       insights: [
-        {tag:'r', text:'EBITDA voltou ao negativo: −R$11.891 (−1,7%), revertendo o resultado positivo de julho (+R$23.951)'},
-        {tag:'r', text:'Saldo final de −R$12.504 — pior resultado desde abril (−R$32.806)'},
+        {tag:'r', text:'EBITDA voltou ao negativo: −R$12.352 (−1,7%), revertendo o resultado positivo de julho (+R$23.951)'},
+        {tag:'r', text:'Saldo final de −R$12.965 — pior resultado desde abril (−R$32.806)'},
         {tag:'r', text:'Rescisões no CMV de R$13.096 (Jefferson Silva R$10.018 + Wesley Santana R$3.078) — maior valor de rescisão do ano e o principal fator do resultado negativo do mês'},
         {tag:'g', text:'CMV Carga melhorou para 56,5% (vs. 57,7% em julho), mesmo com o impacto da rescisão'},
         {tag:'g', text:'Despesas Comerciais caíram para R$77.557 (vs. R$81.872 em julho)'},
         {tag:'r', text:'AS Advocacia e Perfil Gestão atingem novo recorde: R$4.345 cada (R$8,7k no total) — 4º mês seguido de alta desde maio'},
         {tag:'a', text:'Manutenção de Instalações em R$6.281 — maior valor do ano, concentrado em pintura e roçadeira (Antonio Carlos)'},
-        {tag:'a', text:'Comissão de cobrança de agosto ainda não foi lançada — pendente de envio; o valor de julho (R$171) segue como última referência disponível'},
+        {tag:'a', text:'Comissão de cobrança de agosto em R$461 — mais que o dobro do valor de julho (R$171)'},
       ],
       recs: [
         {t:'Definir se as rescisões de agosto (R$13.096) exigem reposição de equipe.', d:'Impacto direto de R$13k no CMV do mês. Entender se há necessidade de contratação para não afetar a produção nos próximos meses.'},
-        {t:'Atualizar o resultado de agosto quando a comissão de cobrança for lançada.', d:'O valor está pendente de envio. Mesmo pequeno historicamente (R$52 a R$356/mês), deve ser incluído para fechar o mês corretamente.'},
         {t:'Acompanhar o novo recorde de AS Advocacia e Perfil Gestão (R$4.345 cada).', d:'Já somam R$8,7k/mês, mais que o triplo do valor inicial de maio. Confirmar a lógica de reajuste vinculada ao faturamento.'},
+        {t:'Monitorar a comissão de cobrança nos próximos meses.', d:'R$461 em agosto é o maior valor do ano, mais que o dobro de julho (R$171). Verificar se reflete maior volume de cobrança ou mudança na régua de comissionamento.'},
       ]
     }
   }
@@ -3265,7 +3265,7 @@ const GAMMA_URLS_MES = {
     4: 'https://gamma.app/docs/ioh4nq823ugc7ds', // Maio
     5: 'https://gamma.app/docs/tlgb17wngubjmxn', // Junho
     6: 'https://gamma.app/docs/7f2htjj3gvjn793', // Julho
-    // 7: Agosto — pendente (comissão de cobrança ainda não lançada)
+    7: 'https://gamma.app/docs/km8bp68sqay6b42', // Agosto
   },
   esm: {
     0: 'https://gamma.app/docs/8vg2l9ng20dtisz', // Janeiro
