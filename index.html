@@ -373,7 +373,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20260928122606">
+  <meta name="app-build" content="20261021095522">
 
 </head>
 <body>
@@ -973,30 +973,30 @@ const AMC = {
   meses: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago'],
   recBruta:  [511830,434449,587500,400545,581661,444965,548105,683796],
   recLiq:    [390413,328899,443851,296725,425620,330613,408622,518888],
-  margem:    [150830,113665,183024,84016,156968,112971,152934,215430],
-  saldo:     [-98341,-34907,7440,-142342,-90333,-73962,-66052,-72939],
-  cmvOTR:    [45.17,58.27,49.00,67.04,62.33,54.30,43.89,44.45],
-  cmvCarga:  [51.94,51.12,46.61,55.14,47.13,50.01,50.65,48.44],
-  cmvTotal:  [46.78,49.53,44.40,53.01,46.19,48.85,46.65,44.38],
-  margemPct: [29.47,26.16,31.15,20.98,26.99,25.39,27.90,31.51],
+  margem:    [150830,113665,183024,84016,156968,112971,143783,203874],
+  saldo:     [-98341,-34907,7440,-142342,-90333,-73962,-75202,-84495],
+  cmvOTR:    [45.17,58.27,49.00,67.04,62.33,54.30,45.64,46.23],
+  cmvCarga:  [51.94,51.12,46.61,55.14,47.13,50.01,52.39,50.22],
+  cmvTotal:  [46.78,49.53,44.40,53.01,46.19,48.85,48.32,46.07],
+  margemPct: [29.47,26.16,31.15,20.98,26.99,25.39,26.23,29.82],
   recLiqWF:  [390413,328899,443851,296725,425620,330613,408622,518888],
-  cmvWF:     [-239458,-215203,-260827,-212345,-268652,-217375,-255689,-303458],
-  margemWF:  [150830,113665,183024,84016,156968,112971,152934,215430],
+  cmvWF:     [-239458,-215203,-260827,-212345,-268652,-217375,-264839,-315014],
+  margemWF:  [150830,113665,183024,84016,156968,112971,143783,203874],
   despComWF: [-63043,-48092,-54495,-73589,-56876,-50760,-80084,-99153],
   despAdmWF: [-119151,-95428,-108033,-104786,-115819,-108307,-112505,-127640],
-  resOpWF:   [-31364,-29855,20087,-94359,-15727,-46096,-39655,-11364],
-  ebitdaVals:[-31364,-29855,20087,-94359,-15727,-46096,-39655,-11364],
-  ebitdaPct: [-6.13,-6.87,3.42,-23.56,-2.70,-10.36,-7.23,-1.66],
+  resOpWF:   [-31364,-29855,20087,-94359,-15727,-46096,-48805,-22920],
+  ebitdaVals:[-31364,-29855,20087,-94359,-15727,-46096,-48805,-22920],
+  ebitdaPct: [-6.13,-6.87,3.42,-23.56,-2.70,-10.36,-8.90,-3.35],
   fixData: {
-    '-1': { vals:[891669,526092,296632,0], total:1714393, gap:571436, label:'Somatório Jan–Ago' },
+    '-1': { vals:[891669,526092,296632,0], total:1714393, gap:592142, label:'Somatório Jan–Ago' },
      '0': { vals:[119151,63043,60408,0], total:242602, gap:98341, label:'Janeiro' },
      '1': { vals:[95428,48092,4554,0], total:148074, gap:34907, label:'Fevereiro' },
      '2': { vals:[108033,54495,12149,0], total:174677, gap:-7440, label:'Março' },
      '3': { vals:[104786,73589,47983,0], total:226358, gap:142342, label:'Abril' },
      '4': { vals:[115819,56876,74606,0], total:247301, gap:90333, label:'Maio' },
      '5': { vals:[108307,50760,27866,0], total:186933, gap:73962, label:'Junho' },
-     '6': { vals:[112505,80084,18171,0], total:210760, gap:66052, label:'Julho' },
-     '7': { vals:[127640,99153,50895,0], total:277688, gap:72939, label:'Agosto' },
+     '6': { vals:[112505,80084,18171,0], total:210760, gap:75202, label:'Julho' },
+     '7': { vals:[127640,99153,50895,0], total:277688, gap:84495, label:'Agosto' },
   },
   comments: {
     11: {'Fev':'PÓ DE RASPA - 5.336,00'},
@@ -1044,11 +1044,11 @@ const AMC = {
     {neg:true, label:'  ICMS Antecipação Parcial',       v:[-15462,-14196,-24228,-18307,-34440,-16455,-20938,-24403], rowNum:19},
     {bold:true,label:'Receita de Vendas Líquida',        v:[390413,328899,443851,296725,425620,330613,408622,518888], highlight:'blue'},
     {g:true,  label:'CMV',                               v:[null,null,null,null,null,null,null,null]},
-    {neg:true,bold:true,label:'CMV Total',               v:[-239458,-215203,-260827,-212345,-268652,-217375,-255689,-303458]},
-    {neg:true,bold:true,label:'  CMV OTR Total',         v:[-93206,-59012,-68193,-65012,-45921,-58486,-63370,-126358]},
+    {neg:true,bold:true,label:'CMV Total',               v:[-239458,-215203,-260827,-212345,-268652,-217375,-264839,-315014]},
+    {neg:true,bold:true,label:'  CMV OTR Total',         v:[-93206,-59012,-68193,-65012,-45921,-58486,-65895,-131409]},
     {neg:true, label:'    Borracha MDB',                 v:[-48276,-21504,-23304,-25356,-19020,-24972,-21685,-58896], rowNum:27},
-    {neg:true, label:'    Manchão OTR',                  v:[-1337,-1375,-1909,-1590,-928,-1206,-1488,-2826]},
-    {neg:true, label:'    Materiais Secundários OTR',    v:[-12586,-6502,-6482,-6645,-4038,-6365,-6125,-12029]},
+    {neg:true, label:'    Manchão OTR',                  v:[-1337,-1375,-1909,-1590,-928,-1206,-1756,-3448]},
+    {neg:true, label:'    Materiais Secundários OTR',    v:[-12586,-6502,-6482,-6645,-4038,-6365,-8382,-16457]},
     {neg:true, label:'    Bônus de Produção OTR',        v:[-1930,-3025,-4550,-2065,-1645,-3640,-5320,-5750]},
     {neg:true, label:'    Energia OTR',                  v:[-3643,-2494,-2795,-4129,-1334,-1603,-1695,-3720]},
     {neg:true, label:'    Fretes OTR',                   v:[-264,-219,-64,-319,-53,-36,-304,-1504]},
@@ -1058,10 +1058,10 @@ const AMC = {
     {neg:true, label:'    Manutenção Máquinas OTR',      v:[-1089,-661,-1188,-1082,-656,-920,-1929,-4883]},
     {neg:true, label:'    Salários OTR',                 v:[-10662,-11831,-13891,-12095,-12095,-12095,-12095,-12178]},
     {neg:true, label:'    Vale Transporte OTR',          v:[-619,-402,-1151,-1244,-287,-1164,-1324,-1164]},
-    {neg:true,bold:true,label:'  CMV Carga Total',       v:[-146253,-156191,-192634,-147333,-222731,-158889,-192319,-177100]},
+    {neg:true,bold:true,label:'  CMV Carga Total',       v:[-146253,-156191,-192634,-147333,-222731,-158889,-198944,-183606]},
     {neg:true, label:'    Banda',                        v:[-87342,-94803,-128639,-83044,-147687,-99274,-121142,-120105], rowNum:53},
-    {neg:true, label:'    Manchão Carga',                v:[-1824,-4149,-5669,-4298,-5948,-3561,-3904,-3641]},
-    {neg:true, label:'    Materiais Secundários Carga',  v:[-17168,-19620,-19250,-17966,-25871,-18792,-16066,-15497]},
+    {neg:true, label:'    Manchão Carga',                v:[-1824,-4149,-5669,-4298,-5948,-3561,-4607,-4442]},
+    {neg:true, label:'    Materiais Secundários Carga',  v:[-17168,-19620,-19250,-17966,-25871,-18792,-21988,-21202]},
     {neg:true, label:'    Bônus de Produção Carga',      v:[-3163,-3163,-4190,-4060,-4570,-3900,-4240,-3750]},
     {neg:true, label:'    Energia Carga',                v:[-4969,-7527,-8301,-11165,-8550,-4732,-4447,-4793]},
     {neg:true, label:'    Fretes Carga',                 v:[-361,-660,-191,-863,-337,-107,-797,-1938]},
@@ -1072,7 +1072,7 @@ const AMC = {
     {neg:true, label:'    Rescisões Carga',              v:[-4111,0,0,0,0,0,-15989,0], rowNum:70},
     {neg:true, label:'    Vale Transporte Carga',        v:[-1591,-1411,-1816,-2559,-2432,-2732,-2345,-2085]},
     {neg:true, label:'  Custo Venda de Produto',         v:[-124,-30,0,-364,0,-267,0,0]},
-    {bold:true,label:'Margem de Contribuição',           v:[150830,113665,183024,84016,156968,112971,152934,215430], highlight:'green'},
+    {bold:true,label:'Margem de Contribuição',           v:[150830,113665,183024,84016,156968,112971,143783,203874], highlight:'green'},
     {g:true,  label:'DESPESAS',                          v:[null,null,null,null,null,null,null,null]},
     {neg:true,bold:true,label:'Despesas Comerciais',     v:[-63043,-48092,-54495,-73589,-56876,-50760,-80084,-99153]},
     {neg:true, label:'  Combustíveis',                   v:[-16773,-18869,-18073,-36549,-19226,-19076,-23139,-29171]},
@@ -1125,33 +1125,34 @@ const AMC = {
     {neg:true, label:'  Tarifas DO IT',                  v:[-222,-243,-303,-284,-245,-214,-305,-464]},
     {neg:true, label:'  Telefonia',                      v:[0,-15,-118,-126,0,0,-49,-49]},
     {neg:true, label:'  Vale Transporte Adm.',           v:[-632,-662,-971,-1436,-1013,-1063,-1801,-1708]},
-    {bold:true,label:'Resultado Operacional (EBITDA)',   v:[-31364,-29855,20497,-94359,-15727,-46096,-39655,-11364], highlight:'red'},
+    {bold:true,label:'Resultado Operacional (EBITDA)',   v:[-31364,-29855,20497,-94359,-15727,-46096,-48805,-22920], highlight:'red'},
     {neg:true, label:'  Participação do Gestor (2%)',    v:[0,0,-410,0,0,0,0,0]},
-    {bold:true,label:'EBITDA após Participação',         v:[-31364,-29855,20087,-94359,-15727,-46096,-39655,-11364], highlight:'red'},
+    {bold:true,label:'EBITDA após Participação',         v:[-31364,-29855,20087,-94359,-15727,-46096,-48805,-22920], highlight:'red'},
     {g:true,  label:'ABAIXO DO EBITDA',                  v:[null,null,null,null,null,null,null,null]},
     {neg:true, label:'  Juros e Multas Bancárias',       v:[0,0,0,0,0,0,0,0]},
     {neg:true, label:'  Despesas Título Descontado',     v:[0,0,0,0,0,0,0,0]},
     {neg:true, label:'  Investimentos',                  v:[-60408,-4554,-12149,-47983,-74606,-27866,-18171,-50895], rowNum:174},
     {neg:true, label:'  Retiradas',                      v:[-6569,0,0,0,0,0,-8225,-10680], rowNum:175},
     {neg:true, label:'  Simples Nacional Parcelamento',  v:[0,-499,-499,0,0,0,0,0]},
-    {bold:true,label:'Saldo Final',                      v:[-98341,-34907,7440,-142342,-90333,-73962,-66052,-72939], highlight:'red'},
+    {bold:true,label:'Saldo Final',                      v:[-98341,-34907,7440,-142342,-90333,-73962,-75202,-84495], highlight:'red'},
   ],
   insights: {
     '-1': {
       title: 'Análise · AMC/Rodoeste · Visão Geral Jan–Ago',
       insights: [
-        {tag:'r', text:'Saldo final negativo em 7 dos 8 meses — só março foi positivo. Déficit acumulado de ~R$ 571,4 mil no período até aqui'},
+        {tag:'r', text:'Saldo final negativo em 7 dos 8 meses — só março foi positivo. Déficit acumulado de ~R$ 592,1 mil no período até aqui'},
         {tag:'r', text:'Abril segue como o pior mês do período em quase tudo: receita bruta mínima (R$400,5k), CMV Total máximo (53,01%), margem mínima (20,98%), EBITDA mínimo (−R$94,4k) e saldo mínimo (−R$142,3k)'},
-        {tag:'g', text:'Agosto foi o mês operacionalmente mais forte do período até aqui: CMV Total de 44,38% e margem de contribuição de 31,51% — os dois melhores números do período, superando março por margem mínima'},
-        {tag:'g', text:'Julho teve o melhor CMV OTR do período até aqui: 43,89%, superando até janeiro (45,17%)'},
-        {tag:'r', text:'Mesmo com CMV e margem fortes, Despesas Administrativas (R$127,6k) e Despesas Comerciais (R$99,2k) de agosto são as maiores do período até aqui'},
+        {tag:'g', text:'Março segue como referência do período até aqui: melhor CMV Total (44,40%), melhor margem de contribuição (31,15%) e único mês com EBITDA e saldo final positivos'},
+        {tag:'g', text:'Agosto teve a maior receita bruta do período até aqui (R$683,8k), com o 2º melhor CMV Total (46,07%) e a 2ª melhor margem (29,82%)'},
+        {tag:'r', text:'Julho teve o 2º pior EBITDA do período até aqui (−R$48,8k), pressionado por CMV Carga de 52,39% e R$16,0k de rescisões em Carga'},
+        {tag:'r', text:'Despesas Administrativas (R$127,6k) e Despesas Comerciais (R$99,2k) de agosto são as maiores do período até aqui'},
         {tag:'a', text:'Investimentos oscilam forte: R$18,2k (jul, o mais baixo desde fevereiro) → R$50,9k (ago, puxado pela obra do Truck Center). Maio segue como o pico do período (R$74,6k)'},
-        {tag:'a', text:'Margem de contribuição variando entre 21% e 31,5% no período até aqui — ainda a mais alta entre as unidades do grupo até aqui'},
+        {tag:'a', text:'Margem de contribuição variando entre 21% e 31,2% no período até aqui'},
       ],
       recs: [
         {t:'Mapear o salto de Despesas Administrativas e Comerciais em agosto.', d:'Ambas atingiram o maior valor do período até aqui (R$127,6k e R$99,2k). Entender se é sazonal ou reflete crescimento estrutural de custo acompanhando o crescimento de receita.'},
-        {t:'Usar agosto como referência operacional de CMV e margem.', d:'44,38% de CMV Total e 31,51% de margem são os melhores números do período. Resolver o lado das despesas fixas antes de tentar repetir o patamar de receita.'},
-        {t:'Revisar o calendário e a necessidade dos grandes investimentos.', d:'R$60,4k (jan), R$74,6k (mai) e R$50,9k (ago) são os maiores do período — mais da metade do déficit acumulado. Avaliar se dá para escalonar melhor ao longo do ano.'},
+        {t:'Usar março como referência de CMV e margem.', d:'44,40% de CMV Total e 31,15% de margem são os melhores números do período. Agosto chegou perto com receita 16% maior — falta resolver o lado das despesas fixas.'},
+        {t:'Revisar o calendário e a necessidade dos grandes investimentos.', d:'Os investimentos somam R$296,6k no período — cerca de metade do déficit acumulado. Avaliar se dá para escalonar melhor ao longo do ano.'},
         {t:'Converter o resultado positivo de março em padrão, não em exceção.', d:'Foi o único mês com EBITDA e saldo final positivos. Receita forte + CMV eficiente + despesas controladas é a combinação a perseguir nos próximos meses.'},
       ]
     },
@@ -1256,32 +1257,34 @@ const AMC = {
     '6': {
       title: 'Análise · AMC/Rodoeste · Julho',
       insights: [
-        {tag:'g', text:'CMV OTR de 43,89% é o melhor do período até aqui, superando até janeiro (45,17%)'},
-        {tag:'a', text:'EBITDA de −R$39.655 (−7,23%) segue negativo, mas melhor que abril e maio'},
+        {tag:'r', text:'EBITDA de −R$48.805 (−8,90%) — 2º pior do período até aqui, melhor apenas que abril'},
+        {tag:'r', text:'CMV Carga de 52,39% — 2º pior do período até aqui (atrás só de abril, 55,14%), com R$15.989 de rescisões em Carga no mês'},
+        {tag:'g', text:'CMV OTR de 45,64% — 2º melhor do período até aqui, atrás só de janeiro (45,17%)'},
         {tag:'g', text:'Investimento de R$18.171 é o menor desde fevereiro — trégua na obra do Truck Center'},
         {tag:'a', text:'Despesas Comerciais subiram para R$80.084 — maior valor desde abril (R$73.589)'},
+        {tag:'a', text:'Saldo final de −R$75.202, com retiradas de R$8.225 no mês'},
       ],
       recs: [
-        {t:'Usar o CMV OTR de julho (43,89%) como novo patamar de referência.', d:'Melhor resultado do período até aqui no segmento OTR. Documentar o que mudou para sustentar a tendência.'},
-        {t:'Entender a pausa nos investimentos.', d:'R$18,1k é o menor valor desde fevereiro. Confirmar se é trégua temporária antes de retomar a obra do Truck Center.'},
+        {t:'Isolar o efeito das rescisões no CMV Carga.', d:'Sem os R$16,0k de rescisões, o CMV Carga ficaria em ~48,2%, dentro do padrão do período.'},
+        {t:'Sustentar o CMV OTR de julho.', d:'45,64% fica perto do melhor resultado do ano. Documentar o que funcionou para repetir.'},
+        {t:'Entender a pausa nos investimentos.', d:'R$18,2k é o menor valor desde fevereiro. Confirmar se é trégua temporária antes de retomar a obra do Truck Center.'},
         {t:'Monitorar despesas comerciais em alta.', d:'R$80k é o maior valor desde abril. Mapear se está ligado ao crescimento de receita ou é aumento de custo fixo.'},
       ]
     },
     '7': {
       title: 'Análise · AMC/Rodoeste · Agosto',
       insights: [
-        {tag:'g', text:'Melhor CMV Total do período até aqui: 44,38%, superando março (44,40%) por margem mínima'},
-        {tag:'g', text:'Melhor margem de contribuição do período até aqui: 31,51%, superando março (31,15%)'},
-        {tag:'g', text:'Melhor EBITDA entre os meses negativos: −R$11.364 (−1,66%) — bem acima da média do período'},
         {tag:'g', text:'Receita bruta de R$683.796 é a maior do período até aqui (+24,8% vs. julho)'},
+        {tag:'g', text:'CMV Total de 46,07% e margem de contribuição de 29,82% — 2º melhores do período até aqui, atrás só de março'},
+        {tag:'g', text:'EBITDA de −R$22.920 (−3,35%) — 2º melhor entre os meses negativos (atrás de maio) e acima da média do período (~−R$33,6k)'},
         {tag:'r', text:'Despesas Administrativas de R$127.640 são as maiores do período até aqui — Rateio CSC, Pro Labore Sócios e Aluguel de Equipamentos puxaram a alta'},
         {tag:'a', text:'Investimento voltou a R$50.895, puxado pela obra do Truck Center (compressor, mão de obra, mineração, pintura)'},
-        {tag:'r', text:'Saldo final de −R$72.939 é pior que julho mesmo com EBITDA melhor — efeito direto do salto nos investimentos'},
+        {tag:'r', text:'Saldo final de −R$84.495 é pior que julho mesmo com EBITDA melhor — efeito do salto nos investimentos somado a R$10.680 de retiradas'},
       ],
       recs: [
         {t:'Mapear o salto de Despesas Administrativas para R$127.640.', d:'Maior valor do período até aqui, com Rateio CSC subindo 43% vs. julho (R$19.499), Pro Labore Sócios em R$8.330 e Aluguel de Equipamentos em R$4.800 (GF Transportes).'},
         {t:'Avaliar se o ritmo de investimento no Truck Center é sustentável.', d:'R$50,9k em agosto e R$74,6k em maio somam mais de R$125k em dois meses, pressionando o saldo mesmo com o EBITDA melhorando.'},
-        {t:'Usar agosto como referência operacional.', d:'CMV Total e margem de contribuição são os melhores do período até aqui. Resolver o lado das despesas administrativas e investimentos para consolidar o resultado.'},
+        {t:'Aproximar o CMV do patamar de março.', d:'Com a receita de agosto, cada 1pp de CMV vale ~R$6,8k/mês. Chegar aos 44,40% de março somaria ~R$11,4k ao resultado.'},
       ]
     }
   }
@@ -3315,12 +3318,12 @@ const GAMMA_URLS_MES = {
   amc: {
     0: 'https://gamma.app/docs/99eqmnv1qt9pn5d', // Janeiro (recriado - Serviços de Terceiros corrigido)
     1: 'https://gamma.app/docs/bvh4qyhd7y6psll', // Fevereiro (recriado - Serviços de Terceiros corrigido)
-    2: 'https://gamma.app/docs/evsaywf1ednyp70', // Março (recriado - dados atualizados)
+    2: 'https://gamma.app/docs/beszpqswuy91vmf', // Março (template padrão)
     3: 'https://gamma.app/docs/sf8se8itadqvg7h', // Abril (recriado - removida linguagem de investigação/duplicidade)
     4: 'https://gamma.app/docs/nbsysq16yvx8817', // Maio (recriado - removida linguagem de investigação/duplicidade)
     5: 'https://gamma.app/docs/v3llh7vyel7rbe9', // Junho (recriado - Serviços de Terceiros corrigido)
-    6: 'https://gamma.app/docs/gmbgqixch821jhx', // Julho
-    7: 'https://gamma.app/docs/twec7djvgv30jjq'  // Agosto
+    6: 'https://gamma.app/docs/kzxxfd6j379nzwn', // Julho (template padrão - CMV corrigido)
+    7: 'https://gamma.app/docs/z8ml3zzzy8oaknp'  // Agosto (template padrão - CMV corrigido)
   },
   csc: {
     0: 'https://gamma.app/docs/2o7r22oy28hv6sk', // Janeiro
