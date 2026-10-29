@@ -373,7 +373,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261021141310">
+  <meta name="app-build" content="20261029163607">
 
 </head>
 <body>
@@ -3163,7 +3163,7 @@ function renderDRE(s) {
 
     // Check for comment on this row (Candeias only, when a specific month is selected)
     const comments = D().comments;
-    const mesLabelsShort = ['Jan','Fev','Mar','Abr','Mai','Jun'];
+    const mesLabelsShort = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
     const mesSel = mesLabelsShort[s];
     const rowNum = row.rowNum;
     const hasCmt = s !== -1 && rowNum && comments && comments[rowNum] && comments[rowNum][mesSel];
