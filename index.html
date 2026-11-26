@@ -247,7 +247,8 @@ body{margin:0;padding:0;}
   display:none;position:absolute;left:0;right:0;top:100%;z-index:300;
   background:#fff;border:1.5px solid var(--blue);border-top:1px solid rgba(0,0,0,.08);
   border-radius:0 0 12px 12px;box-shadow:0 8px 20px rgba(0,0,0,.1);
-  max-height:280px;overflow-y:auto;overscroll-behavior:contain;
+  max-height:min(280px,42vh);overflow-y:auto;overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;touch-action:pan-y;
 }
 .apres-dropdown.open .apres-dropdown-list{display:block;}
 .apres-dropdown-item{
@@ -276,7 +277,14 @@ body{margin:0;padding:0;}
 
 .apres-frame-wrap{display:none;margin-top:24px;text-align:left;}
 .apres-frame-wrap.open{display:block;}
-.apres-frame-bar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px;}
+.apres-frame-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.apres-frame-acoes{display:flex;gap:8px;margin-left:auto;}
+.apres-nav-mes{display:flex;align-items:center;gap:8px;}
+.btn-apres-mes{font-size:13px;font-weight:700;padding:8px 14px;border-radius:8px;border:1px solid var(--blue);background:#f0f6fd;color:var(--blue);cursor:pointer;}
+.btn-apres-mes:disabled{opacity:.35;cursor:default;}
+.apres-mes-atual{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text2);min-width:92px;text-align:center;}
+.apres-frame-wrap.expanded .btn-apres-mes{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);color:#fff;}
+.apres-frame-wrap.expanded .apres-mes-atual{color:#fff;}
 .btn-apres-fullscreen,.btn-apres-close{font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;}
 .btn-apres-fullscreen:hover,.btn-apres-close:hover{border-color:var(--blue);color:var(--blue);}
 .apres-frame{width:100%;height:70vh;border:1px solid var(--border2);border-radius:12px;background:#f5f5f2;display:block;}
@@ -373,7 +381,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126093833">
+  <meta name="app-build" content="20261126101851">
 
 </head>
 <body>
@@ -582,8 +590,15 @@ body{margin:0;padding:0;}
 
         <div class="apres-frame-wrap" id="apresFrameWrap">
           <div class="apres-frame-bar">
-            <button class="btn-apres-fullscreen" id="btnApresFullscreenToggle" onclick="toggleApresFullscreen()">&#9974; Tela cheia</button>
-            <button class="btn-apres-close" onclick="toggleGammaApres()">&#10005; Fechar</button>
+            <div class="apres-nav-mes" id="apresNavMes">
+              <button class="btn-apres-mes" id="btnApresPrev" onclick="navApresMes(-1)">&#8249; Anterior</button>
+              <span class="apres-mes-atual" id="apresMesAtual"></span>
+              <button class="btn-apres-mes" id="btnApresNext" onclick="navApresMes(1)">Próximo &#8250;</button>
+            </div>
+            <div class="apres-frame-acoes">
+              <button class="btn-apres-fullscreen" id="btnApresFullscreenToggle" onclick="toggleApresFullscreen()">&#9974; Tela cheia</button>
+              <button class="btn-apres-close" onclick="toggleGammaApres()">&#10005; Fechar</button>
+            </div>
           </div>
           <iframe id="apresFrame" class="apres-frame" src="" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -3606,6 +3621,7 @@ function toggleApresDropdown(which) {
   var willOpen = !el.classList.contains('open');
   if (otherEl) otherEl.classList.remove('open');
   el.classList.toggle('open', willOpen);
+  if (willOpen) { var lst = el.querySelector('.apres-dropdown-list'); if (lst) setTimeout(function(){ var r = lst.getBoundingClientRect(); var folga = 90; if (r.bottom > innerHeight - folga) window.scrollBy({top: r.bottom - innerHeight + folga, behavior:'smooth'}); }, 30); }
 }
 
 function closeAllApresDropdowns() {
@@ -3661,7 +3677,7 @@ function buildApresMesBar() {
   if (completa && apresMes === -1) apresMes = 0;
   var itens = completa ? [] : [{label:'Visão Geral', m:-1}];
   itens = itens.concat(
-    d.meses.map((m,i) => ({label:m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m, m:i}))
+    d.meses.map((m,i) => ({label:({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m, m:i}))
   );
   itens.forEach(function(item) {
     var el = document.createElement('div');
@@ -3672,8 +3688,8 @@ function buildApresMesBar() {
       apresMes = item.m;
       if (label) label.textContent = item.label;
       closeAllApresDropdowns();
-      closeApresFrame();
       atualizarApresNote();
+      abrirApresFrame();
     });
     list.appendChild(el);
   });
@@ -3705,13 +3721,61 @@ function toggleGammaApres() {
     closeApresFrame();
     return;
   }
+  abrirApresFrame();
+}
+
+var MES_NOME = {Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'};
+
+function apresMesesDisponiveis() {
+  var m = GAMMA_URLS_MES[apresEmpresa];
+  if (!m) return [];
+  return Object.keys(m).map(Number).filter(function(k){ return !!m[k]; }).sort(function(a,b){ return a-b; });
+}
+
+function atualizarNavMes() {
+  var nav = document.getElementById('apresNavMes');
+  if (!nav) return;
+  var meses = apresMesesDisponiveis();
+  var pos = meses.indexOf(apresMes);
+  if (apresMes === -1 || pos === -1) { nav.style.visibility = 'hidden'; return; }
+  nav.style.visibility = 'visible';
+  var prevEmp = empresa; empresa = apresEmpresa; var d = D(); empresa = prevEmp;
+  document.getElementById('apresMesAtual').textContent = MES_NOME[d.meses[apresMes]] || '';
+  document.getElementById('btnApresPrev').disabled = pos <= 0;
+  document.getElementById('btnApresNext').disabled = pos >= meses.length - 1;
+}
+
+function abrirApresFrame() {
+  var frameWrap = document.getElementById('apresFrameWrap');
+  var iframe = document.getElementById('apresFrame');
+  var btn = document.getElementById('btnApresToggle');
+  var wrap = document.getElementById('apresWrap');
+  if (!frameWrap || !iframe) return;
   var url = (GAMMA_URLS_MES[apresEmpresa] && GAMMA_URLS_MES[apresEmpresa][apresMes]) || GAMMA_URLS[apresEmpresa];
   if (!url) { alert('Apresentação não disponível para esta empresa.'); return; }
+  var jaAberto = frameWrap.classList.contains('open');
   iframe.src = gammaEmbedUrl(url);
   frameWrap.classList.add('open');
   if (wrap) wrap.classList.add('wide');
-  btn.innerHTML = '&#10005; Ocultar Apresentação';
-  frameWrap.scrollIntoView({behavior:'smooth', block:'start'});
+  if (btn) btn.innerHTML = '&#10005; Ocultar Apresentação';
+  atualizarNavMes();
+  if (!jaAberto && !frameWrap.classList.contains('expanded')) frameWrap.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function navApresMes(passo) {
+  var meses = apresMesesDisponiveis();
+  var pos = meses.indexOf(apresMes);
+  if (pos === -1) return;
+  var novo = pos + passo;
+  if (novo < 0 || novo >= meses.length) return;
+  apresMes = meses[novo];
+  var prevEmp = empresa; empresa = apresEmpresa; var d = D(); empresa = prevEmp;
+  var nome = MES_NOME[d.meses[apresMes]] || d.meses[apresMes];
+  var label = document.getElementById('apresMesLabel');
+  if (label) label.textContent = nome;
+  document.querySelectorAll('#apresMesList .apres-dropdown-item').forEach(function(it){ it.classList.toggle('active', it.textContent === nome); });
+  atualizarApresNote();
+  abrirApresFrame();
 }
 
 var apresFrameHomeParent = null;
@@ -3791,7 +3855,7 @@ function buildDreMesBar() {
   if (!bar) return;
   bar.innerHTML = '';
   [{label:'Todos os Meses', m:-1}].concat(
-    d.meses.map((m,i) => ({label:m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m, m:i}))
+    d.meses.map((m,i) => ({label:({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m, m:i}))
   ).forEach(function(item) {
     var btn = document.createElement('button');
     btn.className = 'mbtn' + (item.m === dreSel ? ' active' : '');
