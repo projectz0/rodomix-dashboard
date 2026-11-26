@@ -414,7 +414,7 @@ body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidd
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126161221">
+  <meta name="app-build" content="20261126161506">
 
 </head>
 <body>
@@ -2924,85 +2924,37 @@ function buildEbitda(s) {
         y2:{position:'right',ticks:{color:'#c07a00',font:{size:11},callback:v=>v.toFixed(1)+'%'},grid:{drawOnChartArea:false},border:{color:GC}}}}
   });
 
-  // nota dinâmica
-  if (empresa === 'esm') {
-    const notas = [
-      'Janeiro: EBITDA de −R$66,7k (−8,7%) — melhor do período até aqui, mas despesas fixas já superam a margem gerada',
-      'Fevereiro: EBITDA de −R$106,8k (−19,4%) — 2º pior do período até aqui, reflexo direto da queda de receita de 28%',
-      'Março: pior EBITDA absoluto do período até aqui: −R$133,6k (−18,8%) — CMV elevado somado a despesas rígidas',
-      'Abril: EBITDA de −R$78,0k (−10,4%) — 2º melhor do período até aqui, recuperação consistente vs. meses anteriores',
-      'Maio: EBITDA de −R$96,0k (−12,1%) — 3º pior do período até aqui; despesas comerciais e juros dispararam e neutralizaram parte da receita recorde',
-      'Junho: EBITDA de −R$122,8k (−18,6%) — 2º pior do período até aqui; mas o Saldo Final foi o que mais piorou, puxado pela disparada dos Juros de Empréstimos'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'EBITDA negativo em todos os 6 meses — janeiro (−R$66,7k / −8,7%) é o melhor resultado até aqui; março (−R$133,6k / −18,8%) é o pior até aqui'
-      : notas[s];
-  } else if (empresa === 'amc') {
-    const notas = [
-      'Janeiro: EBITDA de −R$31,4k (−6,1%) — saldo de −R$98,3k pressionado pelo investimento de R$60,4k',
-      'Fevereiro: EBITDA de −R$29,9k (−6,9%) — receita OTR cai 51%, despesas adm. no menor nível do período até aqui',
-      'Março: único EBITDA positivo do período até aqui — +R$20,1k (+3,4%) após participação do gestor',
-      'Abril: pior EBITDA do período até aqui — −R$95,6k (−23,9%), com CMV OTR de 68,3%',
-      'Maio: EBITDA de −R$16,0k (−2,8%) — 2º melhor resultado do período até aqui, com receita de R$581,7k',
-      'Junho: EBITDA de −R$47,3k (−10,6%) — receita recua 23,5% vs. maio',
-      'Julho: EBITDA de −R$50,1k (−9,1%) — 2º pior do período até aqui, com R$16,0k de rescisões no CMV Carga',
-      'Agosto: EBITDA de −R$21,2k (−3,1%) — maior receita do período até aqui (R$683,8k), com despesas fixas também no maior nível'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'EBITDA positivo só em março (+R$20,1k); abril é o pior do período até aqui (−R$95,6k) — média de −R$33,9k/mês'
-      : notas[s];
-  } else if (empresa === 'can') {
-    const notas = [
-      'Janeiro: EBITDA de +R$17,9k (+2,5%) — única unidade do grupo com resultado operacional positivo no mês',
-      'Fevereiro: melhor EBITDA do período até aqui — +R$21,1k (+2,9%), com receita no pico e CMV em queda',
-      'Março: EBITDA positivo pelo 3º mês consecutivo — +R$18,1k (+2,5%), com Materiais Secundários confirmados em R$28,4k',
-      'Abril: primeiro EBITDA negativo do ano — −R$32,4k (−4,4%), com CMV Carga disparando para 60,6%',
-      'Maio: forte recuperação — EBITDA de −R$4,7k (−0,7%), CMV Carga caiu para 56,0%, quase o nível do 1º trimestre',
-      'Junho: recuperação não se sustentou — EBITDA de −R$6,3k (−0,9%), despesas administrativas voltaram a subir'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'EBITDA positivo nos 3 primeiros meses, negativo em abril, maio e junho — reversão completa do padrão do 1º trimestre'
-      : notas[s];
-  } else if (empresa === 'rdx') {
-    const notas = [
-      'Janeiro: EBITDA de −R$81,5k (−9,1%) — alta carga de CMV Carga (70,3%) e despesas comerciais elevadas',
-      'Fevereiro: EBITDA de −R$31,6k (−3,0%) — melhora de 61% vs. janeiro com receita em alta',
-      'Março: primeiro EBITDA positivo: +R$3,7k (+0,3%) — receita de R$1,2M e CMV OTR em mínima de 48,7%'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'EBITDA evoluiu de −R$81,5k para +R$3,7k em março — trajetória de melhora consistente'
-      : notas[s];
-  } else if (empresa === 'csc') {
-    const notas = [
-      'Janeiro: EBITDA de +R$23,2k (+13,4%) — resultado sólido, mas Simples Nacional (R$21,6k) consome quase tudo',
-      'Fevereiro: EBITDA de +R$3,6k (+2,1%) — rescisões de R$33,7k pressionaram as despesas',
-      'Março: melhor EBITDA do semestre até aqui — +R$30,9k (+18,0%) com despesas no mínimo após desligamentos',
-      'Abril: EBITDA de +R$12,2k (+7,2%) — rescisões de R$22,7k (maior valor do semestre) pressionaram, mas resultado seguiu positivo',
-      'Maio: EBITDA de +R$20,1k (+13,2%) — 2º melhor do semestre até aqui, despesas administrativas no mínimo',
-      'Junho: EBITDA de +R$15,9k (+10,3%) — sexto mês seguido no positivo, Simples Nacional Parcelamento no maior valor do semestre'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'CSC com EBITDA positivo nos 6 meses do semestre — março é o melhor resultado até aqui, fevereiro o mais fraco por rescisões (R$33,7k)'
-      : notas[s];
-  } else if (empresa === 'ja') {
-    const notas = [
-      'Janeiro: EBITDA de −R$1.338 (−0,3%) — praticamente no zero operacional, mas Simples Nacional (R$11,2k) puxa o saldo para −R$12,6k',
-      'Fevereiro: pior resultado do período até aqui — EBITDA de −R$27,2k (−8,9%) com receita 24% menor e amortização ITAU (R$18,2k)',
-      'Março: melhor EBITDA do trimestre até aqui — +R$21,4k (+4,9%) já após participação do gestor, com 42.630 kg de borracha produzida e receita de R$439k'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'Jan quase neutro, Fev crítico (−R$27,2k), Mar positivo (+R$21,4k) — resultado totalmente dependente do volume de produção'
-      : notas[s];
-  } else {
-    const notas = [
-      'Janeiro: EBITDA de +R$1.430 (+0,28%) — levemente positivo após correção da Energia (devolução de crédito em fev)',
-      'Fevereiro: pior EBITDA do período até aqui — −R$2,3k (−0,49%), receita menor e rescisões no CMV',
-      'Março: melhor EBITDA do trimestre — +R$15,8k (+2,7%), com receita no pico de R$576k'
-    ];
-    document.getElementById('ebitdaNote').textContent = s===-1
-      ? 'Jan e Mar com EBITDA positivo — Fev negativo (−R$2,3k). Energia de fev (R$342) é devolução de crédito, não consumo real'
-      : notas[s];
+  // nota dinâmica (gerada a partir dos dados)
+  document.getElementById('ebitdaNote').textContent = notaEbitda(d, s);
+}
+
+function notaEbitda(d, s) {
+  const NOMES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const v = d.ebitdaVals || [], p = d.ebitdaPct || [];
+  const n = Math.min(v.length, (d.meses||[]).length);
+  if (!n) return '';
+  const k = x => (x<0?'−':'+') + 'R$' + (Math.abs(x)/1000).toFixed(1).replace('.',',') + 'k';
+  const pc = x => (x<0?'−':'+') + Math.abs(x).toFixed(1).replace('.',',') + '%';
+  if (s === -1) {
+    const pos = v.slice(0,n).filter(x=>x>0).length;
+    let iB=0, iW=0; for (let i=1;i<n;i++){ if(v[i]>v[iB]) iB=i; if(v[i]<v[iW]) iW=i; }
+    const media = v.slice(0,n).reduce((a,b)=>a+b,0)/n;
+    const cab = pos===n ? 'EBITDA positivo em todos os '+n+' meses'
+              : pos===0 ? 'EBITDA negativo em todos os '+n+' meses'
+              : 'EBITDA positivo em '+pos+' de '+n+' meses';
+    return cab+' — melhor: '+NOMES[iB].toLowerCase()+' ('+k(v[iB])+'); pior: '+NOMES[iW].toLowerCase()+' ('+k(v[iW])+'); média de '+k(media)+'/mês';
   }
+  if (s >= n) return '';
+  let txt = NOMES[s]+': EBITDA de '+k(v[s])+(p[s]!=null?' ('+pc(p[s])+')':'');
+  if (s === 0) return txt+' — primeiro fechamento do ano';
+  const rank = v.slice(0,s+1).filter(x=>x>v[s]).length + 1;
+  const pos = rank===1 ? 'o melhor do período até aqui'
+            : rank===s+1 ? 'o pior do período até aqui'
+            : rank <= (s+1)/2 ? 'o '+rank+'º melhor de '+(s+1)+' meses até aqui'
+            : 'o '+(s+2-rank)+'º pior de '+(s+1)+' meses até aqui';
+  const dv = v[s]-v[s-1];
+  const var_ = (dv>=0?'melhora de ':'piora de ')+'R$'+(Math.abs(dv)/1000).toFixed(1).replace('.',',')+'k vs. '+NOMES[s-1].toLowerCase();
+  return txt+' — '+pos+'; '+var_;
 }
 
 function buildWF(s) {
