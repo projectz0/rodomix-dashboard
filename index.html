@@ -315,7 +315,17 @@ body{margin:0;padding:0;}
 .modo-btn.active{background:#fff;color:#1a72d4;box-shadow:0 1px 4px rgba(0,0,0,.1);}
 .resumida-wrap{margin-bottom:24px;}
 .resumida-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
-.resumida-info{font-size:12.5px;color:var(--text3);}
+.resumida-info{font-size:12.5px;color:var(--text3);flex:1;min-width:160px;}
+.resumida-nav{display:flex;align-items:center;gap:8px;}
+.btn-slide{width:40px;height:36px;border-radius:8px;border:1px solid #1a72d4;background:#f0f6fd;color:#1a72d4;font-size:22px;font-weight:700;line-height:1;cursor:pointer;}
+.btn-slide:active{background:#dbeafe;}
+.resumida-pg{font-size:13px;font-weight:700;color:var(--text2);min-width:44px;text-align:center;}
+.resumida-wrap.expanded .btn-slide{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);color:#fff;}
+.resumida-wrap.expanded .resumida-pg{color:#fff;}
+.resumida-wrap.expanded .resumida-bar{flex-shrink:0;}
+body.resumida-full .wrap{z-index:auto!important;}
+body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidden;}
+.resumida-wrap.expanded{z-index:100000;}
 .btn-resumida{font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;border:1px solid var(--border2);background:#fff;color:var(--text2);cursor:pointer;}
 .btn-resumida:hover{border-color:#1a72d4;color:#1a72d4;}
 .resumida-frame{width:100%;aspect-ratio:16/9;max-height:82vh;border:1px solid var(--border2);border-radius:12px;background:#0B1120;display:block;}
@@ -394,7 +404,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126144309">
+  <meta name="app-build" content="20261126144849">
 
 </head>
 <body>
@@ -488,6 +498,11 @@ body{margin:0;padding:0;}
   <!-- ANÁLISE RESUMIDA (slides) -->
   <div id="analiseResumida" class="resumida-wrap" style="display:none">
     <div class="resumida-bar">
+      <div class="resumida-nav" id="resumidaNav">
+        <button class="btn-slide" onclick="passarSlide(-1)" aria-label="Slide anterior">&#8249;</button>
+        <span class="resumida-pg" id="resumidaPg">1 / 5</span>
+        <button class="btn-slide" onclick="passarSlide(1)" aria-label="Próximo slide">&#8250;</button>
+      </div>
       <span class="resumida-info" id="resumidaInfo"></span>
       <button class="btn-resumida" id="btnResumidaFull" onclick="toggleResumidaFull()">&#9974; Tela cheia</button>
     </div>
@@ -3473,13 +3488,47 @@ function atualizarResumida() {
   if (frame.getAttribute('src') !== src) frame.src = src;
   info.textContent = txt;
 }
+var resumidaHome = null, resumidaNext = null;
 function toggleResumidaFull() {
   var w = document.getElementById('analiseResumida'), b = document.getElementById('btnResumidaFull');
   var on = !w.classList.contains('expanded');
+  // sem mover o iframe (mover recarrega o slide): só neutraliza o z-index da área da aba
+  document.body.classList.toggle('resumida-full', on);
   w.classList.toggle('expanded', on);
   document.body.style.overflow = on ? 'hidden' : '';
   b.innerHTML = on ? '&#10005; Sair da tela cheia' : '&#9974; Tela cheia';
+  setTimeout(atualizarPgSlide, 150);
 }
+function slideDoc() {
+  try { var f = document.getElementById('resumidaFrame'); return f && f.contentDocument && f.contentDocument.querySelector('.slide') ? f.contentDocument : null; } catch(e) { return null; }
+}
+function passarSlide(dir) {
+  var doc = slideDoc();
+  if (!doc) return;
+  doc.dispatchEvent(new KeyboardEvent('keydown', {key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true}));
+  setTimeout(atualizarPgSlide, 50);
+}
+function atualizarPgSlide() {
+  var nav = document.getElementById('resumidaNav'), pg = document.getElementById('resumidaPg');
+  var doc = slideDoc();
+  if (!doc) { nav.style.display = 'none'; return; }
+  nav.style.display = '';
+  var p = doc.getElementById('pg');
+  pg.textContent = p ? p.textContent : '';
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var f = document.getElementById('resumidaFrame');
+  if (f) f.addEventListener('load', function(){
+    atualizarPgSlide();
+    var doc = slideDoc();
+    if (doc) { doc.addEventListener('keydown', function(){ setTimeout(atualizarPgSlide, 30); }); doc.addEventListener('click', function(){ setTimeout(atualizarPgSlide, 30); }); doc.addEventListener('touchend', function(){ setTimeout(atualizarPgSlide, 30); }); }
+  });
+});
+document.addEventListener('keydown', function(e){
+  if (modoAnalise !== 'resumida') return;
+  if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { if (slideDoc()) { e.preventDefault(); passarSlide(e.key === 'ArrowRight' ? 1 : -1); } }
+});
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { var w = document.getElementById('analiseResumida'); if (w && w.classList.contains('expanded')) toggleResumidaFull(); } });
 
 function renderAll() {
