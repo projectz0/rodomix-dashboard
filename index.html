@@ -381,7 +381,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126101851">
+  <meta name="app-build" content="20261126102039">
 
 </head>
 <body>
@@ -2764,7 +2764,7 @@ function buildFilterBar() {
   const meses = D().meses;
   const btns = [
     {label:'Visão Geral', m:-1},
-    ...meses.map((m,i) => ({label:m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m, m:i}))
+    ...meses.map((m,i) => ({label:(({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m), m:i}))
   ];
   btns.forEach(b => {
     const btn = document.createElement('button');
@@ -2963,7 +2963,7 @@ function buildWF(s) {
     eb  = d.resOpWF[s];
     sf  = d.saldo[s];
     const ml = d.meses[s];
-    periodoLabel = ml==='Jan'?'Janeiro':ml==='Fev'?'Fevereiro':ml==='Mar'?'Março':ml==='Abr'?'Abril':ml==='Mai'?'Maio':ml==='Jun'?'Junho':ml;
+    periodoLabel = (({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[ml]||ml);
   }
 
   const isCsc = empresa === 'csc';
@@ -3093,7 +3093,7 @@ function buildFix(s) {
 // ─────────────────────────────────────────────────────────────────────────────
 function updateKPIs(s) {
   const d = D();
-  const labels = d.meses.map(m => m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m);
+  const labels = d.meses.map(m => (({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m));
   const prev = d.meses.map((_,i)=>i===0?null:i-1);
   const delta = (arr,i) => {
     const p = prev[i];
@@ -3152,7 +3152,7 @@ function renderDRE(s) {
   const d = D();
   const nMeses = d.meses.length;
   const isMobile = window.innerWidth <= 768;
-  const mesLabels = d.meses.map(m=>m==='Jan'?'Janeiro':m==='Fev'?'Fevereiro':m==='Mar'?'Março':m==='Abr'?'Abril':m==='Mai'?'Maio':m==='Jun'?'Junho':m);
+  const mesLabels = d.meses.map(m=>(({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m));
 
   document.getElementById('dreTitle').textContent = 'DRE Completa — ' + d.nome + (s===-1?' · Todos os Meses':' · '+mesLabels[s]);
 
