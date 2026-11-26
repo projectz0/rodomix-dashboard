@@ -381,7 +381,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126140536">
+  <meta name="app-build" content="20261126141358">
 
 </head>
 <body>
@@ -2062,6 +2062,7 @@ const JA = {
     {neg:true, label:'  Despesas com Viagens',            v:[0,-290.70,0,0,-252.39,0], rowNum:65},
     {neg:true, label:'  E.P.I',                           v:[-250,-150,-1580,-150,-500,-320]},
     {neg:true, label:'  Fretes Adm.',                     v:[0,-300,0,0,0,0]},
+    {neg:true, label:'  Fardamento',                      v:[0,-1106.00,0,0,0,0]},
     {neg:true, label:'  IRPJ',                            v:[0,-77.99,0,0,0,0]},
     {neg:true, label:'  Material Uso e Consumo',          v:[0,-1150,-1300,0,-225.48,0], rowNum:88},
     {neg:true, label:'  Pro Labore Sócios',               v:[-5190,-4320,-4764,-6396,-5906,-5224]},
@@ -2083,18 +2084,18 @@ const JA = {
     '-1': {
       title: 'Análise · J.A · Visão Geral Jan–Jun',
       insights: [
-        {tag:'r', text:'Borracha MDB representa entre 82% e 87% do CMV em todos os meses — concentração extrema de custo em um único insumo'},
+        {tag:'r', text:'Borracha MDB representa entre 82% e 90% do CMV em todos os meses — concentração extrema de custo em um único insumo'},
         {tag:'r', text:'Junho reverteu para saldo negativo (−R$7.354) mesmo com EBITDA positivo — Retiradas (R$5,9k) e Simples Nacional (R$2,7k) consumiram todo o resultado operacional do mês'},
-        {tag:'r', text:'Retiradas de sócios oscilam sem padrão: de R$268 (mar) a R$25.248 (mai) — maior volatilidade entre as linhas abaixo do EBITDA'},
-        {tag:'a', text:'Rateio CSC entre R$11,8k e R$17,1k/mês — custo relevante e crescente para operação de porte reduzido'},
+        {tag:'r', text:'Retiradas de sócios oscilam sem padrão: de R$29 (jan) a R$25.248 (mai) — maior volatilidade entre as linhas abaixo do EBITDA'},
+        {tag:'a', text:'Rateio CSC oscila entre R$11,8k e R$17,1k/mês — custo relevante para uma operação de porte reduzido'},
         {tag:'a', text:'Três novas linhas de assessoria (AS Advocacia, Asense Consultoria, Perfil Gestão) somaram R$1,7k em maio e R$3,7k em junho — custo administrativo adicional a partir do meio do semestre'},
-        {tag:'g', text:'Maio foi o melhor mês do semestre até aqui: EBITDA de +R$56.399 (+11,65%) e margem de contribuição de R$98.260 (20,29% da receita bruta)'},
+        {tag:'g', text:'Maio foi o melhor mês do período até aqui: EBITDA de +R$56.399 (+11,65%) e margem de contribuição de R$98.260 (20,29% da receita bruta)'},
         {tag:'g', text:'Quatro dos seis meses fecharam com EBITDA positivo (mar a jun) — inversão da trajetória negativa de jan/fev'},
-        {tag:'g', text:'CMV Total em melhora estrutural: de 76,9% (jan) para a faixa de 70%–71% em abr/mai — ganho real de margem bruta'},
+        {tag:'g', text:'CMV Total caiu de 76,9% (jan) para 69,8%–71,1% em abr/mai; junho voltou a 74,1%'},
       ],
       recs: [
         {t:'Vincular as retiradas de sócios ao caixa gerado no próprio mês.', d:'Maio teve EBITDA de +R$56,4k mas retirada de R$25,2k no mesmo mês — mais de 44% do resultado operacional. Junho, com EBITDA de apenas +R$1,2k, ainda teve retirada de R$5,9k, o que sozinho já supera o resultado do mês e explica o saldo final negativo.'},
-        {t:'Usar maio como benchmark operacional do semestre.', d:'Receita de R$484k, margem de 20,29% e EBITDA de 11,65% — a melhor combinação do período até aqui. Mapear o que sustentou esse resultado (volume de produção, despesas administrativas controladas) para tentar replicar nos meses seguintes.'},
+        {t:'Usar maio como benchmark operacional.', d:'Receita de R$484k, margem de 20,29% e EBITDA de 11,65% — a melhor combinação do período até aqui. Mapear o que sustentou esse resultado (volume de produção, despesas administrativas controladas) para tentar replicar nos meses seguintes.'},
       ]
     },
     '0': {
@@ -2102,9 +2103,9 @@ const JA = {
       insights: [
         {tag:'a', text:'EBITDA de −R$1.338 (−0,3%) — praticamente no zero, mas Simples Nacional (R$11,2k) faz o saldo fechar em −R$12,6k'},
         {tag:'a', text:'CMV Total em 76,9% — Borracha MDB de R$264,9k representa 85,5% do CMV'},
-        {tag:'g', text:'Receita bruta de R$405.110 — R$10,47/kg, mesmo com volume total menor'},
-        {tag:'g', text:'Energia baixa (R$1.218) vs. fevereiro — verificar se é medição ou consumo real'},
-        {tag:'r', text:'Saldo de −R$12.599 — todo o buraco é o Simples Nacional parcelado (R$11,2k) + retirada (R$29)'},
+        {tag:'g', text:'Receita bruta de R$405.110 — R$10,47 por kg vendido (38.700 kg)'},
+        {tag:'g', text:'Energia de R$1.218 — o menor valor do período até aqui (fev: R$3.463)'},
+        {tag:'r', text:'Saldo de −R$12.599 — o Simples Nacional parcelado (R$11,2k) responde por 89% do déficit do mês'},
       ],
       recs: [
         {t:'Renegociar o Simples Nacional parcelado para meses com maior geração de caixa.', d:'R$11,2k consome todo o EBITDA em janeiro. Fevereiro não tem parcela — redistribuir reduziria a volatilidade do saldo.'},
@@ -2121,18 +2122,18 @@ const JA = {
         {tag:'a', text:'CMV de 76,4% — Borracha MDB de R$192,7k ainda domina (82,5% do CMV)'},
       ],
       recs: [
-        {t:'Investigar a causa da queda de receita em fevereiro.', d:'R$307k vs. R$405k em janeiro = queda de R$98k. Verificar se foi problema de produção, demanda reduzida, ou questão de estoque de insumos.'},
+        {t:'Mapear a causa da queda de receita em fevereiro.', d:'R$307k vs. R$405k em janeiro = queda de R$98k. Entender se veio de produção, demanda ou disponibilidade de insumos.'},
         {t:'Controlar retiradas nos meses negativos.', d:'R$8.906 em retiradas com EBITDA de −R$27k é insustentável. Política de retiradas vinculada ao caixa disponível.'},
       ]
     },
     '2': {
       title: 'Análise · J.A · Março',
       insights: [
-        {tag:'g', text:'Único mês com saldo positivo até aqui: +R$18.278 — maior produção (42.630 kg) e receita de R$439k'},
-        {tag:'g', text:'Melhor EBITDA do trimestre até aqui: +R$21.438 (+4,9%) já após participação do gestor (2% = R$438) — resultado bruto antes da participação foi +R$21.875'},
-        {tag:'g', text:'Margem de contribuição de R$63,6k — a maior do trimestre até aqui'},
-        {tag:'g', text:'CMV Total caiu para 74,3% — menor do trimestre até aqui, borracha controlada'},
-        {tag:'a', text:'Reposição de Fundo Fixo de R$7.528 — maior valor do trimestre até aqui'},
+        {tag:'g', text:'Primeiro saldo positivo do período até aqui: +R$18.278 — maior produção (42.630 kg) e receita de R$439k'},
+        {tag:'g', text:'Melhor EBITDA do período até aqui: +R$21.438 (+4,9%) já após participação do gestor (2% = R$438) — resultado bruto antes da participação foi +R$21.875'},
+        {tag:'g', text:'Margem de contribuição de R$63,6k — a maior do período até aqui'},
+        {tag:'g', text:'CMV Total caiu para 74,3% — o menor do período até aqui, borracha controlada'},
+        {tag:'a', text:'Reposição de Fundo Fixo de R$7.528 — maior valor do período até aqui'},
       ],
       recs: [
         {t:'Usar março como benchmark de produção — 42.630 kg como meta mínima.', d:'Com esse volume, a receita supera R$430k e o EBITDA fica positivo. Mapear o que garantiu o volume de março para tentar replicar nos meses seguintes.'},
@@ -2142,12 +2143,12 @@ const JA = {
     '3': {
       title: 'Análise · J.A · Abril',
       insights: [
-        {tag:'g', text:'Segundo mês consecutivo de saldo positivo: +R$40.582 — maior receita bruta do semestre até aqui (R$509.225)'},
+        {tag:'g', text:'Segundo mês consecutivo de saldo positivo: +R$40.582 — maior receita bruta do período até aqui (R$509.225)'},
         {tag:'g', text:'EBITDA de +R$46.757 (+9,18%) já após participação do gestor (2% = R$954) — resultado bruto antes da participação foi +R$47.711'},
-        {tag:'g', text:'CMV Total caiu para 69,84% — menor do semestre até aqui, ganho de margem sobre março'},
+        {tag:'g', text:'CMV Total caiu para 69,84% — menor do período até aqui, ganho de margem sobre março'},
         {tag:'a', text:'Retirada de sócios de R$5.792 — primeiro mês com retirada relevante desde fevereiro'},
-        {tag:'a', text:'Rateio CSC subiu para R$17.066 — maior valor do semestre até aqui, acompanhando o crescimento de receita'},
-        {tag:'r', text:'Amortização de Empréstimos zerada — ITAU liquidado em fevereiro, sem repetição em abril'},
+        {tag:'a', text:'Rateio CSC subiu para R$17.066 — maior valor do período até aqui, acompanhando o crescimento de receita'},
+        {tag:'g', text:'Sem amortização de empréstimos desde fevereiro (ITAU, R$18,2k em fev)'},
       ],
       recs: [
         {t:'Consolidar o patamar de receita acima de R$500k.', d:'Abril confirmou que, com volume de produção alto, a margem de contribuição supera R$90k. Sustentar esse nível de produção é o principal driver do resultado positivo.'},
@@ -2157,31 +2158,31 @@ const JA = {
     '4': {
       title: 'Análise · J.A · Maio',
       insights: [
-        {tag:'g', text:'Melhor EBITDA do semestre até aqui: +R$56.399 (+11,65%) já após participação do gestor (2% = R$1.151) — resultado bruto antes da participação foi +R$57.550'},
-        {tag:'g', text:'Melhor margem de contribuição do semestre até aqui: R$98.260 (20,29% da receita bruta)'},
-        {tag:'r', text:'Retirada de sócios de R$25.248 — maior valor do semestre até aqui, consome 44% do EBITDA do mês'},
+        {tag:'g', text:'Melhor EBITDA do período até aqui: +R$56.399 (+11,65%) já após participação do gestor (2% = R$1.151) — resultado bruto antes da participação foi +R$57.550'},
+        {tag:'g', text:'Melhor margem de contribuição do período até aqui: R$98.260 (20,29% da receita bruta)'},
+        {tag:'r', text:'Retirada de sócios de R$25.248 — maior valor do período até aqui, consome 44% do EBITDA do mês'},
         {tag:'a', text:'Três novas linhas de assessoria administrativa (AS Advocacia, Asense Consultoria, Perfil Gestão) somaram R$1.698 — primeiro mês com esse custo'},
-        {tag:'a', text:'CMV Total em 71,12% — leve alta vs. abril, mas ainda no melhor patamar do semestre até aqui'},
+        {tag:'a', text:'CMV Total em 71,12% — leve alta vs. abril, o 2º menor do período até aqui'},
         {tag:'g', text:'Saldo final de +R$30.764 — terceiro mês consecutivo positivo, mesmo após a retirada elevada'},
       ],
       recs: [
-        {t:'Usar maio como benchmark operacional do semestre.', d:'Combinação de receita de R$484k, margem de 20,29% e EBITDA de 11,65% é a melhor do período até aqui. Mapear o que sustentou esse patamar de produção e despesas administrativas controladas.'},
-        {t:'Formalizar um limite de retirada como % do EBITDA do mês.', d:'R$25.248 em um único mês é um valor que, se recorrente, pode comprometer meses de EBITDA mais baixo como ocorreu em junho.'},
+        {t:'Usar maio como benchmark operacional.', d:'Combinação de receita de R$484k, margem de 20,29% e EBITDA de 11,65% é a melhor do período até aqui. Mapear o que sustentou esse patamar de produção e despesas administrativas controladas.'},
+        {t:'Formalizar um limite de retirada como % do EBITDA do mês.', d:'R$25.248 em um único mês é um valor que, se recorrente, pode comprometer meses de EBITDA mais baixo.'},
       ]
     },
     '5': {
       title: 'Análise · J.A · Junho',
       insights: [
         {tag:'r', text:'Saldo voltou a ficar negativo: −R$7.354 — quebra a sequência de três meses positivos (mar/abr/mai)'},
-        {tag:'r', text:'EBITDA caiu para +R$1.151 (+0,32%) — menor resultado operacional desde março, mesmo com receita de R$361.641'},
+        {tag:'r', text:'EBITDA caiu para +R$1.151 (+0,32%) — o menor resultado operacional desde fevereiro'},
         {tag:'r', text:'Retirada de sócios (R$5.854) + Simples Nacional (R$2.651) = R$8.505 abaixo do EBITDA, superando o resultado operacional do mês'},
         {tag:'a', text:'CMV Total subiu para 74,12% — pior patamar desde março, pressionando a margem'},
-        {tag:'a', text:'Assessoria administrativa (AS Advocacia, Asense Consultoria, Perfil Gestão) somou R$3.699 — maior valor do semestre nessas linhas'},
-        {tag:'a', text:'Receita bruta de R$361.641 — menor volume de produção do semestre até aqui'},
+        {tag:'a', text:'Assessoria administrativa (AS Advocacia, Asense Consultoria, Perfil Gestão) somou R$3.699 — maior valor do período até aqui nessas linhas'},
+        {tag:'a', text:'Receita bruta de R$361.641 (−25% vs. maio), com 29.537 kg vendidos contra 46.061 kg em maio'},
       ],
       recs: [
         {t:'Reduzir ou postergar retiradas em meses de EBITDA baixo.', d:'Junho teve EBITDA de apenas R$1.151 e retirada de R$5.854 — sozinha, a retirada já supera o resultado operacional e é a principal causa do saldo negativo do mês.'},
-        {t:'Investigar a queda de volume de produção em junho.', d:'Receita de R$361,6k é a menor do semestre. Entender se foi sazonalidade, redução de demanda ou disponibilidade de insumo (borracha) ajuda a evitar repetição do padrão em meses futuros.'},
+        {t:'Mapear a queda de volume de produção em junho.', d:'Receita de R$361,6k (−25% vs. maio), com 29.537 kg contra 46.061 kg. Entender se foi sazonalidade, demanda ou disponibilidade de borracha ajuda a evitar a repetição.'},
       ]
     }
   }
@@ -3534,12 +3535,12 @@ const GAMMA_URLS_MES = {
     7: 'slide_csc_2026-08.html', // Agosto
   },
   ja: {
-    0: 'https://gamma.app/docs/9lwp42rm7idu3tq', // Janeiro
-    1: 'https://gamma.app/docs/i1d4q0qyp6eb9uv', // Fevereiro
-    2: 'https://gamma.app/docs/z8m4danopspzanf', // Março (recriado — CMV/EBITDA/Saldo corrigidos + Participação do Gestor)
-    3: 'https://gamma.app/docs/txx8ksjq1ewbfc1', // Abril
-    4: 'https://gamma.app/docs/c73mfrdypnghhwm', // Maio
-    5: 'https://gamma.app/docs/tto7krwtrgbzrlp'  // Junho
+    0: 'slide_ja_2026-01.html', // Janeiro
+    1: 'slide_ja_2026-02.html', // Fevereiro
+    2: 'slide_ja_2026-03.html', // Março
+    3: 'slide_ja_2026-04.html', // Abril
+    4: 'slide_ja_2026-05.html', // Maio
+    5: 'slide_ja_2026-06.html', // Junho
   }
 };
 function abrirGamma() {
