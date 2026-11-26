@@ -321,6 +321,7 @@ body{margin:0;padding:0;}
 @media print{#seletoresGlobais{display:none!important;}}
 .modo-analise{display:inline-flex;gap:4px;background:#ecebe7;border-radius:12px;padding:4px;margin:4px 0 22px;}
 .modo-btn{border:0;background:transparent;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:700;color:var(--text2);cursor:pointer;}
+.mbtn.sem-slide{opacity:.35;cursor:not-allowed;}
 .modo-btn.active{background:#fff;color:#1a72d4;box-shadow:0 1px 4px rgba(0,0,0,.1);}
 .resumida-wrap{margin-bottom:24px;}
 .resumida-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
@@ -413,7 +414,7 @@ body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidd
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126152842">
+  <meta name="app-build" content="20261126153208">
 
 </head>
 <body>
@@ -2831,6 +2832,7 @@ function buildFilterBar() {
     btn.dataset.m = b.m;
     btn.textContent = b.label;
     btn.addEventListener('click', () => {
+      if (btn.classList.contains('sem-slide')) return;
       sel = parseInt(btn.dataset.m);
       dreSel = sel;
       document.querySelectorAll('#filterBar .mbtn').forEach(x => x.classList.remove('active'));
@@ -3485,11 +3487,28 @@ function setModoAnalise(m) {
   document.querySelectorAll('.modo-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.modo === m); });
   document.getElementById('analiseCompleta').style.display = m === 'completa' ? '' : 'none';
   document.getElementById('analiseResumida').style.display = m === 'resumida' ? '' : 'none';
-  if (m === 'completa') { var fr = document.getElementById('resumidaFrame'); if (fr) fr.src = ''; renderAll(); }
+  if (m === 'completa') { var fr = document.getElementById('resumidaFrame'); if (fr) fr.src = ''; ajustarBarraModo(); renderAll(); }
   else atualizarResumida();
+}
+function mesesComSlide() {
+  var mapa = (typeof GAMMA_URLS_MES !== 'undefined' && GAMMA_URLS_MES[empresa]) || {};
+  return Object.keys(mapa).map(Number).filter(function(k){ return !!mapa[k]; }).sort(function(a,b){ return a-b; });
+}
+// Na análise resumida (aba Painel): esconde "Acumulado", apaga meses sem slide e garante um mês com slide marcado
+function ajustarBarraModo() {
+  var resumida = modoAnalise === 'resumida' && abaAtiva() === 'visao-geral';
+  var meses = mesesComSlide();
+  if (resumida && meses.length && meses.indexOf(sel) === -1) { sel = meses[meses.length-1]; dreSel = sel; }
+  document.querySelectorAll('#filterBar .mbtn').forEach(function(b){
+    var m = parseInt(b.dataset.m);
+    b.style.display = (resumida && m === -1) ? 'none' : '';
+    b.classList.toggle('sem-slide', resumida && m !== -1 && meses.length > 0 && meses.indexOf(m) === -1);
+    b.classList.toggle('active', m === sel);
+  });
 }
 function atualizarResumida() {
   if (modoAnalise !== 'resumida') return;
+  ajustarBarraModo();
   var frame = document.getElementById('resumidaFrame');
   var info = document.getElementById('resumidaInfo');
   var d = D();
@@ -3707,6 +3726,7 @@ function switchTab(tab) {
   document.querySelectorAll('.bottom-nav-item').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
   document.querySelectorAll('.aba-btn').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
   if (tab === 'dre') { dreEmpresa = empresa; dreSel = sel; buildDreMesBar(); empresa = dreEmpresa; renderDRE(dreSel); }
+  ajustarBarraModo();
   if (tab === 'visao-geral') { renderAll(); }
   if (tab === 'apresentacao') { buildApresEmpresaList(); buildApresMesBar(); }
   updateTopbar(tab);
