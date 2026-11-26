@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSC · Análise Financeira Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#f5f5f2;--card:#fff;--tx:#141210;--t2:#4a4845;--t3:#9a9890;--g:#0f9e72;--r:#d94020;--b:#1a72d4;--a:#c07a00;--o:#ff5a1f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#2a2826;font-family:'DM Sans',system-ui,sans-serif;color:var(--tx)}
+.deck{position:fixed;inset:0;overflow:hidden}.stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:0 0}
+.slide{display:none;width:1600px;height:900px;background:var(--bg);padding:52px 64px;position:relative;overflow:hidden;font-size:23px}
+.slide.active{display:flex;flex-direction:column}
+h1,h2,.kv,.big,.g1,.g2,.num{font-family:'Syne',sans-serif}
+.eyebrow{font-size:.72em;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);font-weight:700;margin-bottom:.4em}
+.hd{margin-bottom:1.1em}.hd h2{font-size:1.9em;font-weight:800;letter-spacing:-.02em}
+.cover{flex-direction:row!important;padding:0}
+.cl{flex:1.25;padding:70px 80px;display:flex;flex-direction:column;justify-content:center}
+.brand{display:flex;align-items:center;gap:.7em;margin-bottom:auto}
+.bars{display:flex;gap:.22em;align-items:flex-end;height:2.2em}.bars i{width:.45em;background:var(--o);border-radius:.2em}.bars i:nth-child(1){height:55%}.bars i:nth-child(2){height:100%}.bars i:nth-child(3){height:75%}
+.g1{font-size:1.5em;font-weight:800;line-height:.9}.g2{font-size:1.5em;font-weight:800;color:var(--o);line-height:.95}
+.cl h1{font-size:3.6em;font-weight:800;letter-spacing:-.03em;line-height:1;margin:.15em 0 .3em}
+.sub{font-size:1.25em;color:var(--t2)}.rule{width:4em;height:.25em;background:var(--g);border-radius:.2em;margin-top:1.2em;margin-bottom:auto}
+.cr{flex:1;background:linear-gradient(150deg,#0f9e72 0%,#0b7a58 55%,#14532d 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.cr::before{content:'';position:absolute;width:70%;aspect-ratio:1;border-radius:50%;border:.15em solid rgba(255,255,255,.18);top:-15%;right:-20%}
+.big{font-size:5.2em;font-weight:800;line-height:.9;letter-spacing:-.04em}.yr{font-size:2em;opacity:.8;font-weight:600}
+.pill{margin-top:1.4em;background:rgba(255,255,255,.16);padding:.5em 1.2em;border-radius:2em;font-weight:700}
+.kwrap{flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:1em;min-height:0}.grid9{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:.6em}
+
+
+
+.card{background:var(--card);border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:.9em 1.2em}
+.wfc{flex:1;display:flex;flex-direction:column;min-height:0}.ct{font-size:.75em;font-weight:700;color:var(--t2);margin-bottom:.3em}
+.wf{width:100%;flex:1;min-height:0}.wf .ax{stroke:#d8d6d0}.wf .cn{stroke:#b8b5ae;stroke-dasharray:4 4}
+.wf .lb{font:700 22px 'DM Sans',sans-serif;fill:#141210;text-anchor:middle}.wf .xl{font:500 19px 'DM Sans',sans-serif;fill:#6a6862;text-anchor:middle}
+.boxes{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:22px;min-height:0}
+.box{background:var(--card);border-radius:12px;padding:26px 30px;display:flex;flex-direction:column;justify-content:center;border-left:.3em solid #ccc;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.box.g{border-left-color:var(--g)}.box.r{border-left-color:var(--r)}.box.a{border-left-color:var(--a)}
+.bt{font-weight:700;font-size:1.25em;margin-bottom:.35em;display:flex;gap:.45em}.box p{font-size:1.02em;color:var(--t2);line-height:1.45}
+.recs{flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.rec{display:flex;gap:28px;align-items:center;background:var(--card);border-radius:14px;padding:40px 44px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.num{flex:0 0 2.6em;height:2.6em;border-radius:.6em;background:#e8f1fb;color:var(--b);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1em}
+.rt{font-weight:700;font-size:1.5em;margin-bottom:.3em}.rec p{color:var(--t2);font-size:1.15em;line-height:1.45}
+.aside{margin-top:24px;font-size:1.05em!important;background:#fff7ed;border-left:.3em solid var(--o);padding:.9em 1.2em;border-radius:10px;font-size:.92em;color:#7a3e12}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(20,18,16,.75);color:#fff;padding:6px 10px;border-radius:30px;font:500 13px 'DM Sans',sans-serif;z-index:9}
+.nav button{background:none;border:0;color:#fff;font-size:22px;width:30px;cursor:pointer}
+@media print{@page{size:1600px 900px;margin:0}html,body{background:#fff}.deck{position:static;overflow:visible}.stage{position:static;transform:none!important}.slide{display:flex!important;width:1600px;height:900px;font-size:23px;page-break-after:always}.cover{display:flex!important;flex-direction:row}.nav{display:none}}
+
+
+.kwrap{gap:26px}.grid9{gap:16px}
+.kpi{background:var(--card);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:18px 22px;display:flex;flex-direction:column;justify-content:center;border-left:6px solid #1a72d4;min-width:0}
+.kpi.g{border-left-color:var(--g)}.kpi.r{border-left-color:var(--r)}.kpi.a{border-left-color:var(--a)}
+.kn{order:1;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a877f;margin-bottom:8px}
+.kv{order:2;font-family:'DM Sans',sans-serif!important;font-size:34px;font-weight:700;letter-spacing:-.02em;color:#141210;white-space:nowrap;line-height:1.05}
+.kpi.g .kv{color:#0b7a58}.kpi.r .kv{color:#c0381b}.kpi.a .kv{color:#9a6200}
+.kd{order:3;font-size:14px;color:#8a877f;margin-top:8px;line-height:1.3}
+.slide{padding-bottom:64px}
+.nav{bottom:12px;left:auto;right:16px;transform:none;opacity:.25;transition:opacity .3s}.nav:hover,.nav.show{opacity:1}
+
+.tag{font-size:15px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:6px;margin-right:4px}.box.g .tag{background:#e3f5ee;color:#0b7a58}.box.r .tag{background:#fde8e2;color:#c0381b}.box.a .tag{background:#fdf1dc;color:#9a6200}
+.boxes.many{grid-template-columns:1fr 1fr}.boxes.many .box{padding:18px 26px}.boxes.many .box p{font-size:20px}</style></head><body><div class="deck"><div class="stage" id="stage">
+<section class="slide cover active"><div class="cl">
+<div class="brand"><div class="bars"><i></i><i></i><i></i></div><div><div class="g1">Grupo</div><div class="g2">Rodomix</div></div></div>
+<div class="eyebrow">Relatório mensal · DRE gerencial</div><h1>Análise Financeira</h1>
+<div class="sub">CSC Serviços Compartilhados · Junho 2026</div><div class="rule"></div></div>
+<div class="cr"><div class="big">Jun</div><div class="yr">2026</div><div class="pill">Saldo final +R$ 8,3k</div></div></section>
+<section class="slide"><div class="hd"><div class="eyebrow">CSC · Junho 2026</div><h2>Visão Geral com KPIs</h2></div>
+<div class="kwrap"><div class="grid9"><div class="kpi "><div class="kv">R$ 154,0k</div><div class="kn">Receita Bruta</div><div class="kd">+1,0% vs. maio</div></div><div class="kpi "><div class="kv">R$ 137,5k</div><div class="kn">Receita Líquida</div><div class="kd">89,3% da receita bruta</div></div><div class="kpi "><div class="kv">R$ 119,2k</div><div class="kn">Receita de Serviço</div><div class="kd">+0,8% vs. maio</div></div><div class="kpi "><div class="kv">R$ 16,4k</div><div class="kn">Impostos</div><div class="kd">10,7% da receita bruta</div></div><div class="kpi "><div class="kv">R$ 121,6k</div><div class="kn">Despesas Administrativas</div><div class="kd">79,0% da receita bruta</div></div><div class="kpi "><div class="kv">R$ 75,3k</div><div class="kn">Salários</div><div class="kd">61,9% das despesas adm.</div></div><div class="kpi r"><div class="kv">R$ 15,1k</div><div class="kn">Férias + Rescisão</div><div class="kd">12,4% das despesas adm.</div></div><div class="kpi g"><div class="kv">10,33%</div><div class="kn">EBITDA</div><div class="kd">+R$ 15.909,80</div></div><div class="kpi g"><div class="kv">+R$ 8,3k</div><div class="kn">Saldo Final</div><div class="kd">Resultado do mês</div></div></div><div class="card wfc"><div class="ct">Da receita ao saldo final (R$ mil)</div><svg viewBox="0 0 720 660" class="wf"><line x1="10" x2="710" y1="580.0" y2="580.0" class="ax"/><rect x="28.0" y="40.0" width="64.0" height="540.0" rx="5" fill="#1a72d4"/><text x="60.0" y="32.0" class="lb">154,0k</text><text x="60.0" y="620" class="xl"><tspan x="60.0">Receita</tspan><tspan x="60.0" dy="22">Bruta</tspan></text><line x1="92.0" x2="128.0" y1="40.0" y2="40.0" class="cn"/><rect x="128.0" y="40.0" width="64.0" height="57.7" rx="5" fill="#d94020"/><text x="160.0" y="32.0" class="lb">−16,4k</text><text x="160.0" y="620" class="xl"><tspan x="160.0">Impostos</tspan></text><line x1="192.0" x2="228.0" y1="97.7" y2="97.7" class="cn"/><rect x="228.0" y="97.7" width="64.0" height="482.3" rx="5" fill="#1a72d4"/><text x="260.0" y="89.7" class="lb">137,5k</text><text x="260.0" y="620" class="xl"><tspan x="260.0">Receita</tspan><tspan x="260.0" dy="22">Líquida</tspan></text><line x1="292.0" x2="328.0" y1="97.7" y2="97.7" class="cn"/><rect x="328.0" y="97.7" width="64.0" height="426.5" rx="5" fill="#d94020"/><text x="360.0" y="89.7" class="lb">−121,6k</text><text x="360.0" y="620" class="xl"><tspan x="360.0">Desp.</tspan><tspan x="360.0" dy="22">Adm.</tspan></text><line x1="392.0" x2="428.0" y1="524.2" y2="524.2" class="cn"/><rect x="428.0" y="524.2" width="64.0" height="55.8" rx="5" fill="#0f9e72"/><text x="460.0" y="516.2" class="lb">15,9k</text><text x="460.0" y="620" class="xl"><tspan x="460.0">EBITDA</tspan></text><line x1="492.0" x2="528.0" y1="524.2" y2="524.2" class="cn"/><rect x="528.0" y="524.2" width="64.0" height="26.8" rx="5" fill="#d94020"/><text x="560.0" y="516.2" class="lb">−7,6k</text><text x="560.0" y="620" class="xl"><tspan x="560.0">Simples</tspan><tspan x="560.0" dy="22">Parc.</tspan></text><line x1="592.0" x2="628.0" y1="551.0" y2="551.0" class="cn"/><rect x="628.0" y="551.0" width="64.0" height="29.0" rx="5" fill="#0f9e72"/><text x="660.0" y="543.0" class="lb">8,3k</text><text x="660.0" y="620" class="xl"><tspan x="660.0">Saldo</tspan><tspan x="660.0" dy="22">Final</tspan></text></svg></div></div></section>
+<section class="slide"><div class="hd"><div class="eyebrow">CSC · Junho 2026</div><h2>Destaques e Pontos de Atenção</h2></div><div class="boxes"><div class="box g"><div class="bt"><span class="tag">POSITIVO</span></div><p>Receita bruta estabiliza em R$153.977,76 (+0,9% vs. maio), interrompendo a queda de maio</p></div><div class="box r"><div class="bt"><span class="tag">CRÍTICO</span></div><p>Simples Nacional Parcelamento de R$7.629,50 — maior parcela do semestre</p></div><div class="box a"><div class="bt"><span class="tag">ATENÇÃO</span></div><p>Rescisões de R$14.841,19 (Andressa, Guilherme, Neide, Paula) — 2º maior valor do semestre, atrás só de abril</p></div><div class="box a"><div class="bt"><span class="tag">ATENÇÃO</span></div><p>Assessoria Contábil em R$7.049,61 — maior desde janeiro (JF Contabilidade + Taynã)</p></div><div class="box a"><div class="bt"><span class="tag">ATENÇÃO</span></div><p>Tarifas Bancárias de −R$157,40 — maior valor do semestre nessa linha</p></div><div class="box g"><div class="bt"><span class="tag">POSITIVO</span></div><p>EBITDA de +R$15.909,80 (+10,3%) e Saldo Final de +R$8.280,30 — sexto mês seguido no positivo</p></div></div></section>
+<section class="slide"><div class="hd"><div class="eyebrow">CSC · Junho 2026</div><h2>Recomendações Prioritárias</h2></div><div class="recs"><div class="rec"><div class="num">1</div><div><div class="rt">Fechar o semestre com o saldo positivo consolidado como resultado do CSC</div><p>6 meses seguidos de saldo final positivo, mesmo com rescisões recorrentes em 4 dos 6 meses. Usar esse histórico para sustentar a manutenção do rateio atual entre as unidades.</p></div></div></div></section>
+</div></div>
+<div class="nav"><button id="pv" aria-label="Anterior">‹</button><span id="pg">1 / 4</span><button id="nx" aria-label="Próximo">›</button></div>
+<script>const S=[...document.querySelectorAll('.slide')];let i=0;const st=document.getElementById('stage');function fit(){const k=Math.min(innerWidth/1600,innerHeight/900);st.style.transform='scale('+k+') translate(-50%,-50%)';}addEventListener('resize',fit);fit();
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('active',k===i));document.getElementById('pg').textContent=(i+1)+' / '+S.length;}
+document.getElementById('pv').addEventListener('click',()=>go(i-1));document.getElementById('nx').addEventListener('click',()=>go(i+1));
+const nv=document.querySelector('.nav');let tm;addEventListener('mousemove',()=>{nv.classList.add('show');clearTimeout(tm);tm=setTimeout(()=>nv.classList.remove('show'),1800);});
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))go(i+1);if(['ArrowLeft','PageUp'].includes(e.key))go(i-1);});
+let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX);document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(i+(dx<0?1:-1));x0=null;});</script></body></html>
