@@ -373,7 +373,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126092321">
+  <meta name="app-build" content="20261126093603">
 
 </head>
 <body>
@@ -2487,6 +2487,7 @@ const CSC = {
   resOpWF:   [23226.55,3637.22,30869.53,12238.68,20105.69,15909.80,9694.71,24541.63],
   ebitdaVals:[23226.55,3637.22,30869.53,12238.68,20105.69,15909.80,9694.71,24541.63],
   ebitdaPct: [13.35,2.09,18.02,7.21,13.19,10.33,6.35,16.04],
+  fixLabels: ['Desp. Admin.','Desp. Comercial','Simples Nacional (parc.)','Juros Emprést.'],
   fixData: {
     '-1': {
       title: 'Análise · CSC · Visão Geral Jan–Ago',
@@ -3046,7 +3047,7 @@ function buildFix(s) {
     );
   charts.fix = new Chart(document.getElementById('fixChart'), {
     type:'bar',
-    data:{labels:['Desp. Admin.','Desp. Comercial','Investimentos','Juros Emprést.'],
+    data:{labels:(D().fixLabels||['Desp. Admin.','Desp. Comercial','Investimentos','Juros Emprést.']),
       datasets:[{data:fd.vals, backgroundColor:['#d94020','#e08060','#1a72d488','#1a72d444'], borderRadius:5}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+fmtFull(c.parsed.x)}}},
