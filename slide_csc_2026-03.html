@@ -70,6 +70,38 @@ section.cover{padding:0;flex-direction:row;background:var(--bg)}
 .insights .tag{font-size:24px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
 .insights .next .tag{color:var(--green-dk)}
 
+/* Destaques e pontos de atenção */
+.hl{display:grid;grid-template-columns:3fr 2fr;gap:32px;margin-top:48px;flex:1;min-height:0}
+.hl .card{display:flex;flex-direction:column;gap:24px;padding:40px 44px}
+.hl .item{flex:1;justify-content:center}
+.hl .head{display:flex;align-items:center;gap:14px;font-size:24px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.hl .dot{width:14px;height:14px;border-radius:50%}
+.hl .pos .head{color:var(--green-dk)}.hl .pos .dot{background:var(--green)}
+.hl .att .head{color:#B45309}.hl .att .dot{background:#F59E0B}
+.hl .att{background:#FFFBEB}
+.hl .item{display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--line);padding-top:20px}
+.hl .att .item{border-top-color:#FDE68A}
+.hl .item .val{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:var(--navy);line-height:1.1}
+.hl .item .txt{font-size:24px;color:var(--ink);line-height:1.35}
+.hl .item .txt b{color:var(--navy)}
+
+/* Recomendações */
+.rec{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;margin-top:48px;flex:1;min-height:0}
+.rec.two{grid-template-columns:1fr 1fr}
+.rec .main{background:var(--navy);display:flex;flex-direction:column;justify-content:space-between;padding:48px}
+.rec .badge{width:72px;height:72px;border-radius:18px;background:var(--green);display:flex;align-items:center;justify-content:center}
+.rec .badge p{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--navy)}
+.rec .main h3{font-size:44px;line-height:1.15;color:#F8FAFC;margin-top:32px}
+.rec.two .main h3{font-size:40px}
+.rec .main .why{font-size:28px;color:#CBD5E1;margin-top:24px;line-height:1.4}
+.rec .facts{display:flex;flex-direction:column;gap:20px}
+.rec .facts .card{display:flex;justify-content:space-between;align-items:center;padding:28px 36px;flex:1}
+.rec .facts .num{font-size:56px}
+.rec .facts .delta{text-align:right}
+.next-band{margin-top:28px;display:flex;align-items:center;gap:24px;background:var(--accent-soft);border-radius:16px;padding:24px 32px}
+.next-band .tag{font-size:24px;font-weight:700;color:var(--green-dk);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
+.next-band .txt{font-size:28px;color:var(--navy);font-weight:600}
+
 section.slide{width:1920px;height:1080px;display:none;overflow:hidden;padding:96px 128px 104px}section.slide.cover{padding:0}.title{font-size:52px}.chart,.chart svg{min-height:0}.kpis .num{font-size:60px}section.slide.active{display:flex}
 .nav{position:fixed;bottom:12px;right:12px;opacity:.55;display:flex;align-items:center;gap:10px;background:rgba(15,23,42,.8);color:#fff;padding:6px 12px;border-radius:30px;font:500 13px Inter,sans-serif;z-index:9}
 .nav button{background:none;border:0;color:#fff;font-size:22px;width:30px;cursor:pointer}
@@ -78,8 +110,10 @@ section.slide{width:1920px;height:1080px;display:none;overflow:hidden;padding:96
 <section class="slide cover active"><div class="cl"><div class="brand"><div class="bars"><div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div></div><div><p class="g1">Grupo</p><p class="g2">Rodomix</p></div></div><div class="spacer"></div><p class="eyebrow">Relatório mensal · DRE gerencial</p><h1>Análise Financeira</h1><p class="sub">CSC Serviços Compartilhados · Março 2026</p><div class="rule"></div><div class="spacer"></div><p class="foot">Controladoria · Comparativo vs. fevereiro/2026</p></div><div class="cr"><div class="ring r1"></div><div class="ring r2"></div><p class="big">Mar</p><p class="yr">2026</p><div class="pills"><p class="pill">Saldo final +R$ 26,8k</p><p class="pill">EBITDA 18,0% da receita</p></div></div></section>
 <section class="slide"><p class="kicker">Resumo executivo · Março 2026</p><h2 class="title">Despesa cai 19% e o saldo final chega a R$ 26,8k</h2><div class="grid4"><div class="card "><p class="label">Receita Bruta</p><p class="num">R$ 171,3k</p><p class="delta down">−1,8% vs. fevereiro</p></div><div class="card "><p class="label">Despesas Administrativas</p><p class="num">R$ 121,9k</p><p class="delta up">−19,3% vs. fevereiro</p></div><div class="card hero"><p class="label">EBITDA</p><p class="num">R$ 30,9k</p><p class="delta up">18,0% da receita · +R$ 27,2k vs. fevereiro</p></div><div class="card "><p class="label">Saldo Final</p><p class="num">+R$ 26,8k</p><p class="delta up">+R$ 23,2k vs. fevereiro</p></div></div></section>
 <section class="slide"><p class="kicker">CSC · Março 2026</p><h2 class="title">Melhor mês do ano: EBITDA de 18% com folha no novo patamar</h2><div class="kpis"><div class="card "><p class="label">Receita Bruta</p><p class="num">R$ 171,3k</p><p class="delta down">−1,8% vs. fevereiro</p></div><div class="card "><p class="label">Despesas Administrativas</p><p class="num">R$ 121,9k</p><p class="delta up">−19,3% vs. fevereiro</p></div><div class="card "><p class="label">EBITDA</p><p class="num">R$ 30,9k</p><p class="delta up">+R$ 27,2k vs. fevereiro</p></div></div><div class="card chart"><p class="label">EBITDA mensal 2026 (R$ mil)</p><svg viewBox="0 0 1600 300" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="262" x2="1600" y2="262" stroke="#E2E8F0" stroke-width="2"/><g font-family="Inter, sans-serif" font-size="24" fill="#64748B" text-anchor="middle"><rect x="52" y="89" width="96" height="173" rx="8" fill="#CBD5E1"/><text x="100" y="77">23,2</text><text x="100" y="294">Jan</text><rect x="252" y="235" width="96" height="27" rx="8" fill="#CBD5E1"/><text x="300" y="223">3,6</text><text x="300" y="294">Fev</text><rect x="452" y="32" width="96" height="230" rx="8" fill="#10B981"/><text x="500" y="20" font-weight="700" fill="#047857">30,9</text><text x="500" y="294" font-weight="700" fill="#047857">Mar</text></g></svg></div><div class="insights"><p><span class="tag">Insight</span>Salários em R$ 73,5k após os desligamentos de jan/fev.</p><p><span class="tag">Atenção</span>Férias concentradas somam R$ 10,4k no mês.</p><p class="next"><span class="tag">Próximo passo</span>Usar março como referência de custo e escalonar as férias.</p></div></section>
+<section class="slide"><p class="kicker">Análise · CSC · Março 2026</p><h2 class="title">O que explica o resultado de março</h2><div class="hl"><div class="card pos"><p class="head"><span class="dot"></span>Destaques</p><div class="item"><p class="val">R$ 30,9k · 18,0%</p><p class="txt"><b>EBITDA</b> e saldo final de +R$ 26,8k: o melhor mês do ano.</p></div><div class="item"><p class="val">R$ 121,9k</p><p class="txt"><b>Despesas administrativas</b> — queda de 19% vs. fevereiro.</p></div><div class="item"><p class="val">R$ 73,5k</p><p class="txt"><b>Salários</b> — novo patamar após os desligamentos de jan/fev.</p></div></div><div class="card att"><p class="head"><span class="dot"></span>Pontos de atenção</p><div class="item"><p class="val">R$ 10,4k</p><p class="txt"><b>Férias concentradas</b> em 4 colaboradores no mesmo mês.</p></div><div class="item"><p class="val">R$ 4,0k</p><p class="txt"><b>Parcelamento do Simples</b> — impacto menor e controlado.</p></div><div class="item"><p class="val">~R$ 1,4k/mês</p><p class="txt"><b>Serviços de terceiros</b> recorrentes e estáveis.</p></div></div></div></section>
+<section class="slide"><p class="kicker">Recomendações · CSC · Março 2026</p><h2 class="title">Março é a referência de custo do CSC</h2><div class="rec two"><div class="card main"><div class="badge"><p>1</p></div><div><h3>Usar março como referência de custo operacional</h3><p class="why">Despesa de R$ 121,9k com EBITDA de R$ 30,9k: o equilíbrio buscado para o CSC.</p></div></div><div class="card main"><div class="badge"><p>2</p></div><div><h3>Escalonar as férias para evitar picos de custo</h3><p class="why">4 colaboradores de férias em março somaram R$ 10,4k; é o principal custo variável da folha.</p></div></div></div><div class="next-band"><p class="tag">Próximo passo</p><p class="txt">Usar março como referência de custo e escalonar as férias.</p></div></section>
 </div></div>
-<div class="nav"><button id="pv" aria-label="Anterior">‹</button><span id="pg">1 / 3</span><button id="nx" aria-label="Próximo">›</button></div>
+<div class="nav"><button id="pv" aria-label="Anterior">‹</button><span id="pg">1 / 5</span><button id="nx" aria-label="Próximo">›</button></div>
 <script>
 const S=[...document.querySelectorAll('.slide')];let i=0;const st=document.getElementById('stage');function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='scale('+s+') translate(-50%,-50%)';}addEventListener('resize',fit);fit();
 function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('active',k===i));document.getElementById('pg').textContent=(i+1)+' / '+S.length;}
