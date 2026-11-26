@@ -373,7 +373,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126093603">
+  <meta name="app-build" content="20261126093833">
 
 </head>
 <body>
@@ -2487,7 +2487,6 @@ const CSC = {
   resOpWF:   [23226.55,3637.22,30869.53,12238.68,20105.69,15909.80,9694.71,24541.63],
   ebitdaVals:[23226.55,3637.22,30869.53,12238.68,20105.69,15909.80,9694.71,24541.63],
   ebitdaPct: [13.35,2.09,18.02,7.21,13.19,10.33,6.35,16.04],
-  fixLabels: ['Desp. Admin.','Desp. Comercial','Simples Nacional (parc.)','Juros Emprést.'],
   fixData: {
     '-1': {
       title: 'Análise · CSC · Visão Geral Jan–Ago',
@@ -3034,21 +3033,39 @@ function buildMC(s) {
 function buildFix(s) {
   destroyChart('fix');
   const key = String(s);
-  const fd = D().fixData[key];
+  const d = D();
+  const fd = d.fixData[key];
   document.getElementById('fixTitle').textContent = 'Estrutura de Custos Fixos — ' + fd.label;
   const isGeral = key === '-1';
-  const isSurplus = fd.gap < 0;
+  const idx = isGeral ? d.meses.map((_,k)=>k) : [s];
+  const soma = a => idx.reduce((t,k)=>t+(+a[k]||0),0);
+  const temValor = a => a.some(v => +v);
+  const NOMES = {'Simples Nacional Parcelamento':'Simples Nacional (parc.)','Amortização de Empréstimos':'Amortização Emprést.','Juros de Empréstimos':'Juros Emprést.','Juros e Multas Bancárias':'Juros e Multas Banc.','Despesas Título Descontado':'Desp. Título Descont.','Juros Bancários / Delmonte':'Juros Banc. / Delmonte'};
+  const barras = [['Desp. Admin.', -soma(d.despAdmWF)]];
+  if (temValor(d.despComWF)) barras.push(['Desp. Comercial', -soma(d.despComWF)]);
+  const ib = d.dre.findIndex(r => r.g && /ABAIXO/.test(r.label));
+  if (ib >= 0) d.dre.slice(ib+1).forEach(r => {
+    if (r.g || r.bold || !temValor(r.v)) return;
+    const nome = r.label.trim();
+    barras.push([NOMES[nome] || nome, -soma(r.v)]);
+  });
+  const total = barras.reduce((t,b)=>t+b[1],0);
+  const gap = -soma(d.saldo);
+  const isSurplus = gap < 0;
   document.getElementById('fixNote').textContent =
     (isGeral ? 'Somatório do período — saídas fixas/recorrentes: ~R$ ' : 'Total de saídas fixas/recorrentes: ~R$ ') +
-    Math.round(fd.total/1000) + 'k · ' +
+    Math.round(total/1000) + 'k · ' +
     (isSurplus
-      ? (isGeral ? 'Superávit acumulado: ~R$ ' : 'Superávit gerado: ~R$ ') + Math.round(Math.abs(fd.gap)/1000) + 'k'
-      : (isGeral ? 'Déficit acumulado: ~R$ ' : 'Gap para equilíbrio: ~R$ ') + Math.round(fd.gap/1000) + 'k'
+      ? (isGeral ? 'Superávit acumulado: ~R$ ' : 'Superávit gerado: ~R$ ') + Math.round(Math.abs(gap)/1000) + 'k'
+      : (isGeral ? 'Déficit acumulado: ~R$ ' : 'Gap para equilíbrio: ~R$ ') + Math.round(gap/1000) + 'k'
     );
+  const cw = document.getElementById('fixChart').parentNode;
+  if (cw) cw.style.height = Math.max(170, 40 * barras.length + 40) + 'px';
+  const cores = ['#d94020','#e08060','#1a72d4','#1a72d4bb','#c07a00','#7a5af0','#8a877f','#1a72d466','#1a72d444'];
   charts.fix = new Chart(document.getElementById('fixChart'), {
     type:'bar',
-    data:{labels:(D().fixLabels||['Desp. Admin.','Desp. Comercial','Investimentos','Juros Emprést.']),
-      datasets:[{data:fd.vals, backgroundColor:['#d94020','#e08060','#1a72d488','#1a72d444'], borderRadius:5}]},
+    data:{labels:barras.map(b=>b[0]),
+      datasets:[{data:barras.map(b=>b[1]), backgroundColor:barras.map((_,k)=>cores[k%cores.length]), borderRadius:5}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+fmtFull(c.parsed.x)}}},
       scales:{x:{ticks:{color:TC,font:{size:11},callback:v=>'R$'+Math.round(v/1000)+'k'},grid:{color:GC},border:{color:GC}},
