@@ -381,7 +381,7 @@ body{margin:0;padding:0;}
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126102039">
+  <meta name="app-build" content="20261126140536">
 
 </head>
 <body>
@@ -2336,6 +2336,8 @@ const RDX = {
     {neg:true, label:'  E.P.I',                            v:[-1358.14,-1797.42,-2038.74,-1405.91,-1190.33,-682.54]},
     {neg:true, label:'  FGTS Administrativo',              v:[-735.68,-720.21,-504.60,-504.60,-504.60,-504.60]},
     {neg:true, label:'  Fardamento',                       v:[0,-77.75,-77.75,-3637.50,-3637.50,0]},
+    {neg:true, label:'  IPTU/TFF',                         v:[0,0,0,0,0,-5493.83]},
+    {neg:true, label:'  IPVA',                             v:[0,0,0,0,-3750.00,0]},
     {neg:true, label:'  IRPJ',                             v:[-409.16,0,-1714.25,-979.18,0,-253.47]},
     {neg:true, label:'  Manutenção Rede/Software',         v:[-3287.32,-3353.88,-3756.52,-3261.72,-3277.08,-3261.72], rowNum:146},
     {neg:true, label:'  Manutenção de Máquinas',           v:[-1250.72,0,0,0,0,0]},
@@ -2349,7 +2351,9 @@ const RDX = {
     {neg:true, label:'  Pro Labore Sócios',                v:[-11845.00,-14745.00,-14489.00,-12785.00,-13496.00,-13572.00]},
     {neg:true, label:'  Salários Administrativo',          v:[-8728.68,-9527.82,-6657.60,-6747.60,-6307.60,-6484.30]},
     {neg:true, label:'  Segurança Patrimonial',            v:[-1705.51,-1705.52,-1705.52,-1705.63,-1776.15,-1776.15]},
-    {neg:true, label:'  Serviços de Terceiros Adm.',       v:[-13302.05,-17635.27,-20219.72,-20920.70,-13280.86,-14125.26], rowNum:166},
+    {neg:true, label:'  Serviços de Terceiros Adm.',       v:[-8302.05,-7035.27,-15219.72,-15920.70,-10972.64,-12346.06], rowNum:166},
+    {neg:true, label:'  Acessoria Lessa (Caique)',         v:[-5000.00,-5000.00,-5000.00,-5000.00,-1435.90,-870.07]},
+    {neg:true, label:'  Asense Consultoria',               v:[0,-5600.00,0,0,-872.32,-909.13]},
     {neg:true, label:'  Taxas Diversas',                   v:[-1290.00,0,-310.33,-838.89,-37.00,-19580.88], rowNum:168},
     {neg:true, label:'  Tarifas Financeiras',              v:[-5442.47,-1295.26,-1551.97,-1022.70,-1523.82,-667.53]},
     {neg:true, label:'  Tarifas Financeiras DO IT',        v:[-572.57,-798.87,-1036.01,-855.67,-561.76,-362.56]},
@@ -2369,17 +2373,17 @@ const RDX = {
       insights: [
         {tag:'r', text:'EBITDA negativo em 4 dos 6 meses do semestre — só março (+R$572) e maio (+R$31,5k) fecharam positivos, e mesmo assim o acumulado do semestre é −R$128,8k'},
         {tag:'r', text:'Saldo final negativo em todos os 6 meses — déficit acumulado de R$1,31 milhão'},
-        {tag:'r', text:'Juros + Investimentos + Retiradas somaram R$1,18 milhão no semestre — mais que o dobro do déficit final, ou seja, é o item que mais pesa no caixa'},
+        {tag:'r', text:'Juros, investimentos, retiradas, Simples (parcelamento) e amortização somaram R$1,18 milhão no semestre — cerca de 90% do déficit do período; é o que mais pesa no caixa'},
         {tag:'a', text:'CMV Carga oscila fortemente mês a mês (67,4% a 81,2%) — movido por férias e rescisões concentradas em meses específicos, não por ineficiência estrutural constante'},
         {tag:'a', text:'Despesas com Veículos e Investimentos tiveram picos isolados em meses diferentes (abril: veículos R$41,5k; abril/maio: investimentos R$158,5k e R$113,4k) — sem padrão recorrente definido'},
         {tag:'g', text:'Receita bruta do semestre soma R$6,28 milhões, com média mensal acima de R$1M a partir de fevereiro'},
-        {tag:'g', text:'CMV OTR em trajetória de melhora estrutural: caiu de 55,7% em janeiro para a faixa de 48%–49% a partir de março'},
+        {tag:'g', text:'CMV OTR em trajetória de melhora: caiu de 55,7% em janeiro para 48%–49% em março, maio e junho (abril: 52,2%)'},
       ],
       recs: [
-        {t:'Tratar a carga financeira e de investimentos como prioridade nº 1 de caixa.', d:'Juros + Investimentos + Retiradas somaram R$1,18 milhão no semestre — mais que o dobro do déficit final do saldo (R$1,31 milhão). É o que decide se o resultado operacional (quando positivo) se converte em saldo positivo.'},
+        {t:'Tratar a carga financeira e de investimentos como prioridade nº 1 de caixa.', d:'Juros, investimentos, retiradas, Simples (parcelamento) e amortização somaram R$1,18 milhão no semestre — cerca de 90% do déficit do período (R$1,31 milhão). É o que decide se o resultado operacional (quando positivo) se converte em saldo positivo.'},
         {t:'Padronizar o calendário de férias e rescisões do setor Carga ao longo do ano.', d:'Os picos de CMV Carga (mar 74,9%, mai 81,2%) coincidem com meses de férias/rescisões concentradas. Distribuir esses eventos ao longo do ano reduz a volatilidade do indicador.'},
         {t:'Não tratar meses isolados com EBITDA positivo (março, maio) como recuperação consolidada.', d:'Nenhum dos dois meses positivos se repetiu no mês seguinte. Sustentar CMV OTR na faixa de 48%–49% e CMV Carga abaixo de 70% de forma consistente é o que vai indicar uma melhora real.'},
-        {t:'Manter a trajetória de melhora do CMV OTR como padrão operacional.', d:'De 55,7% em janeiro para a faixa de 48%–49% a partir de março é uma redução estrutural relevante. Mapear as decisões (lenha, borracha, materiais) que sustentaram essa queda.'},
+        {t:'Manter a trajetória de melhora do CMV OTR como padrão operacional.', d:'De 55,7% em janeiro para 48%–49% em março, maio e junho é uma redução relevante — abril (52,2%) mostra que ainda não é estável. Mapear as decisões (lenha, borracha, materiais) que sustentaram essa queda.'},
       ]
     },
     '0': {
@@ -2388,7 +2392,7 @@ const RDX = {
         {tag:'r', text:'Saldo de −R$253.175 — juros (R$57,2k) + investimentos (R$80,5k) + retiradas (R$11,3k) = R$149k abaixo do EBITDA'},
         {tag:'r', text:'EBITDA de −R$81.545 (−9,1%) — margem de contribuição insuficiente para cobrir custos fixos + financeiros'},
         {tag:'r', text:'CMV Carga em 70,3% — Bandas (R$147k) e Rescisões (R$11k, André Cruz) elevam o custo'},
-        {tag:'a', text:'Serviços de Terceiros Adm. em R$13,3k — inclui consultoria tributária (Caique R$5k) e PR Tecnologia (R$1,5k)'},
+        {tag:'a', text:'Serviços de Terceiros Adm. em R$8,3k (inclui PR Tecnologia, R$1,5k) e consultoria tributária da Acessoria Lessa (Caique) em R$5,0k'},
         {tag:'g', text:'Maior Receita Bruta do grupo em janeiro: R$894.203 com OTR forte (R$475k)'},
         {tag:'g', text:'Margem de contribuição de 17,4% (R$155,3k) — base para crescimento nos meses seguintes'},
       ],
@@ -2400,7 +2404,7 @@ const RDX = {
     '1': {
       title: 'Análise · Rodomix · Fevereiro',
       insights: [
-        {tag:'g', text:'Receita bruta cresceu +18,7%: R$1.061.421 — superou R$1M pela primeira vez no trimestre'},
+        {tag:'g', text:'Receita bruta cresceu +18,7%: R$1.061.421 — superou R$1M pela primeira vez no período até aqui'},
         {tag:'g', text:'EBITDA melhorou de −R$81,5k para −R$31,6k (61% de redução) — melhora operacional expressiva'},
         {tag:'g', text:'CMV OTR caiu para 51,3% — ganho de eficiência com borracha e lenha mais controlados'},
         {tag:'a', text:'CMV Carga em 67,4% — melhora vs. jan, mas férias de Edson e Edvan (R$4.750) ainda pesam'},
@@ -2415,13 +2419,13 @@ const RDX = {
     '2': {
       title: 'Análise · Rodomix · Março',
       insights: [
-        {tag:'g', text:'Primeiro EBITDA positivo da unidade: +R$572 (+0,05%) — resultado ainda simbólico, mas rompe a sequência negativa'},
-        {tag:'g', text:'Maior receita bruta do trimestre até aqui: R$1.207.900 (+13,8% vs. fev)'},
-        {tag:'g', text:'CMV OTR na mínima do trimestre até aqui: 48,6% — borracha, lenha e materiais bem controlados'},
-        {tag:'g', text:'Saldo final melhorou para −R$140.172 — redução de 45% vs. janeiro'},
-        {tag:'r', text:'CMV Carga piorou para 74,9% — férias acumuladas de 8 colaboradores (R$19,2k) concentradas em março'},
+        {tag:'g', text:'Primeiro EBITDA positivo do período até aqui: +R$572 (+0,05%) — resultado ainda simbólico, mas rompe a sequência negativa'},
+        {tag:'g', text:'Maior receita bruta do período até aqui: R$1.207.900 (+13,8% vs. fev)'},
+        {tag:'g', text:'CMV OTR na mínima do período até aqui: 48,6% — borracha, lenha e materiais bem controlados'},
+        {tag:'g', text:'Saldo final de −R$140.172 — o melhor do período até aqui, redução de 45% vs. janeiro'},
+        {tag:'r', text:'CMV Carga piorou para 74,9% — o pior do período até aqui, com férias acumuladas de 8 colaboradores (R$19,2k) concentradas em março'},
         {tag:'a', text:'Despesas com Veículos: R$33,8k (+49% vs. fev) — D. Santos, Starlink, Aderbal e outros'},
-        {tag:'a', text:'Serviços de Terceiros Adm. R$20,2k: inclui Nova Figueiredo Advocacia (R$8,8k) — custo expressivo'},
+        {tag:'a', text:'Serviços de Terceiros Adm. em R$15,2k (inclui Nova Figueiredo Advocacia, R$8,8k), além de R$5,0k da Acessoria Lessa (Caique)'},
       ],
       recs: [
         {t:'Distribuir gozo de férias do setor Carga ao longo do ano.', d:'8 colaboradores com férias concentradas em março geraram R$19,2k de custo extra — o principal responsável pelo CMV Carga de 74,9%. Planejar calendário de férias para evitar concentração.'},
@@ -2433,15 +2437,15 @@ const RDX = {
       title: 'Análise · Rodomix · Abril',
       insights: [
         {tag:'r', text:'EBITDA volta a ficar fortemente negativo: −R$40.525 (−3,89%) — reverte o resultado próximo de zero de março'},
-        {tag:'r', text:'Despesas com Veículos disparam para R$41.525 — a maior do semestre até aqui, com Starlink, D. Santos, Aderbal e frota variada'},
-        {tag:'r', text:'Investimentos de R$158.543 — o maior valor do semestre até aqui: pedreiro R$50,6k + fretes do Truck Center R$24,5k + instalações R$13,2k'},
+        {tag:'r', text:'Despesas com Veículos disparam para R$41.525 — a maior do período até aqui, com Starlink, D. Santos, Aderbal e frota variada'},
+        {tag:'r', text:'Investimentos de R$158.543 — o maior valor do período até aqui: pedreiro R$50,6k + fretes do Truck Center R$24,5k + instalações R$13,2k'},
         {tag:'a', text:'CMV OTR piora para 52,2% — depois de ter caído a 48,6% em março'},
         {tag:'a', text:'CMV Carga em 73,5% — ainda pressionado pela estrutura de custos do setor Carga'},
         {tag:'g', text:'Receita bruta segue acima de R$1M: R$1.040.477'},
         {tag:'g', text:'Despesas Administrativas estáveis em R$119.491 — dentro do patamar dos meses anteriores'},
       ],
       recs: [
-        {t:'Acompanhar se o pico de Despesas com Veículos de abril se repete.', d:'R$41,5k é o maior valor do semestre até aqui — Starlink, D. Santos, Aderbal e demais fornecedores de frota, já detalhados nos comentários da planilha. Definir um teto mensal ajuda a identificar desvios.'},
+        {t:'Acompanhar se o pico de Despesas com Veículos de abril se repete.', d:'R$41,5k é o maior valor do período até aqui — Starlink, D. Santos, Aderbal e demais fornecedores de frota, já detalhados nos comentários da planilha. Definir um teto mensal ajuda a identificar desvios.'},
         {t:'Fasear os investimentos do Truck Center ao longo dos próximos meses.', d:'R$158,5k num único mês consome toda a margem de contribuição gerada. Avaliar se parte das obras (pedreiro, instalações) pode ser distribuída em parcelas menores sem atrasar a entrega.'},
         {t:'Recuperar o CMV OTR para a faixa abaixo de 50%.', d:'A piora para 52,2% interrompe a trajetória de queda que vinha de janeiro. Mapear se foi custo pontual (borracha, lenha) ou mudança de patamar.'},
       ]
@@ -2449,31 +2453,31 @@ const RDX = {
     '4': {
       title: 'Análise · Rodomix · Maio',
       insights: [
-        {tag:'g', text:'EBITDA positivo de R$31.496 (+2,79%) — o maior resultado operacional do semestre até aqui'},
-        {tag:'g', text:'CMV OTR na mínima do semestre até aqui: 48,03%'},
-        {tag:'r', text:'CMV Carga dispara para 81,2% — rescisões do setor Carga somam R$47.407 no mês, o maior valor do semestre até aqui'},
-        {tag:'r', text:'Retiradas de R$56.534 — inclui R$23.000 ligados a obras do Truck Center, o maior valor de retiradas do semestre até aqui'},
-        {tag:'a', text:'Despesas Administrativas na mínima do semestre até aqui: R$113.002'},
+        {tag:'g', text:'EBITDA positivo de R$31.496 (+2,79%) — o maior resultado operacional do período até aqui'},
+        {tag:'g', text:'CMV OTR na mínima do período até aqui: 48,03%'},
+        {tag:'r', text:'CMV Carga dispara para 81,2% — o pior do período até aqui; rescisões do setor Carga somam R$47.407 no mês, o maior valor do período até aqui'},
+        {tag:'r', text:'Retiradas de R$56.534 — inclui R$46.219 de retirada CSC, o maior valor de retiradas do período até aqui'},
+        {tag:'a', text:'Despesas Administrativas na mínima do período até aqui: R$113.002'},
         {tag:'a', text:'Investimentos continuam altos: R$113.404, com pedreiro R$40,9k concentrando boa parte'},
       ],
       recs: [
         {t:'Não considerar as rescisões concentradas do setor Carga em maio como padrão recorrente.', d:'R$47,4k em rescisões num único mês distorce o CMV Carga para 81,2%. Ao planejar os próximos meses, tratar como evento pontual e não como novo patamar de custo.'},
-        {t:'Formalizar critério de retiradas de sócios vinculado à geração de caixa do mês.', d:'R$56,5k em retiradas, com parte ligada a obras, é o maior valor do semestre até aqui. Sem um critério claro, retiradas pontuais podem comprometer meses com EBITDA positivo como este.'},
+        {t:'Formalizar critério de retiradas de sócios vinculado à geração de caixa do mês.', d:'R$56,5k em retiradas, sendo R$46,2k de retirada CSC, é o maior valor do período até aqui. Sem um critério claro, retiradas pontuais podem comprometer meses com EBITDA positivo como este.'},
       ]
     },
     '5': {
       title: 'Análise · Rodomix · Junho',
       insights: [
         {tag:'r', text:'EBITDA volta ao negativo: −R$7.263 (−0,77%) — depois do resultado positivo de maio'},
-        {tag:'r', text:'Despesas Administrativas no maior valor do semestre até aqui: R$136.509 — Taxas Diversas (R$19,6k, incluindo IPTU/TFF de R$5,5k) e reforço em A S Advocacia + Acessoria Perfil Gestão (R$4,35k cada) concentram o aumento'},
-        {tag:'r', text:'Retiradas de R$74.681 — a maior do semestre até aqui, incluindo R$46.219 de retirada associada à CSC'},
+        {tag:'r', text:'Despesas Administrativas no maior valor do período até aqui: R$136.509 — custas judiciais de processo cível (Taxas Diversas, R$19,6k), IPTU/TFF (R$5,5k) e reforço em A S Advocacia + Acessoria Perfil Gestão (R$4,35k cada) concentram o aumento'},
+        {tag:'r', text:'Retiradas de R$74.681 — a maior do período até aqui, incluindo R$74.336 de retirada CSC'},
         {tag:'a', text:'CMV Carga melhora para 68,9%, mas Bandas continua sendo a maior parte do custo Carga'},
-        {tag:'g', text:'CMV OTR em 48,9% — próximo da mínima do semestre'},
-        {tag:'g', text:'Despesas Comerciais na mínima do semestre até aqui: R$116.017'},
+        {tag:'g', text:'CMV OTR em 48,9% — próximo da mínima do período (48,03%, maio)'},
+        {tag:'g', text:'Despesas Comerciais na mínima do período até aqui: R$116.017'},
       ],
       recs: [
-        {t:'Tratar a Taxa Diversas de junho como não recorrente ao projetar o próximo trimestre.', d:'O IPTU/TFF (R$5,5k) é um tributo anual que não se repete mensalmente. Sem ele, as Despesas Administrativas de junho ficariam próximas da média do semestre, não no topo.'},
-        {t:'Formalizar um cronograma de retiradas e distribuições (sócios e CSC) alinhado à geração de caixa.', d:'R$74,7k em retiradas num mês de EBITDA negativo repete o padrão de maio (R$56,5k) — sem critério claro, essas saídas pressionam o saldo final independentemente do resultado operacional.'},
+        {t:'Tratar as custas judiciais e o IPTU/TFF de junho como não recorrentes.', d:'Custas judiciais de processo cível (R$19,5k) e IPTU/TFF (R$5,5k, tributo anual) somam R$25,0k. Sem eles, as Despesas Administrativas de junho ficariam em ~R$111,5k — o menor valor do período até aqui.'},
+        {t:'Formalizar um cronograma de retiradas e distribuições (sócios e CSC) alinhado à geração de caixa.', d:'R$74,7k em retiradas (R$74,3k de retirada CSC) num mês de EBITDA negativo repete o padrão de maio (R$56,5k) — sem critério claro, essas saídas pressionam o saldo final independentemente do resultado operacional.'},
       ]
     }
   }
@@ -3472,12 +3476,12 @@ const GAMMA_URLS = {
 // Chave = índice do mês (0=Jan,1=Fev,2=Mar...), valor = link do Gamma daquele mês.
 const GAMMA_URLS_MES = {
   rdx: {
-    0: 'https://gamma.app/docs/0tktu14sf44pddz', // Janeiro
-    1: 'https://gamma.app/docs/7k788m25vuerybe', // Fevereiro
-    2: 'https://gamma.app/docs/urnz52ngi2rmv1i', // Março
-    3: 'https://gamma.app/docs/jbxndc710xspa8e', // Abril
-    4: 'https://gamma.app/docs/522fpls37bpc9rd', // Maio
-    5: 'https://gamma.app/docs/n9h5gaehe9junto', // Junho
+    0: 'slide_rdx_2026-01.html', // Janeiro
+    1: 'slide_rdx_2026-02.html', // Fevereiro
+    2: 'slide_rdx_2026-03.html', // Março
+    3: 'slide_rdx_2026-04.html', // Abril
+    4: 'slide_rdx_2026-05.html', // Maio
+    5: 'slide_rdx_2026-06.html', // Junho
   },
   aja: {
     0: 'https://gamma.app/docs/054y43tzzr51b04', // Janeiro
