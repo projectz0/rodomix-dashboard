@@ -310,6 +310,15 @@ body{margin:0;padding:0;}
 
 /* Bottom nav */
 .bottom-nav{display:none;}
+.sidebar,.sidebar-backdrop,.hamburger,.bottom-nav,.bottom-nav-item{display:none!important;}
+.main-wrapper{margin-left:0!important;}
+.dre-tab-selectors{display:none!important;}
+.wrap.wrap-top{padding-bottom:0!important;}
+#tab-visao-geral>.wrap,#tab-dre>.wrap{padding-top:8px!important;}
+.abas-topo{display:inline-flex;gap:4px;background:#e6e4df;border-radius:14px;padding:5px;margin-bottom:22px;}
+.aba-btn{border:0;background:transparent;padding:11px 30px;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text2);cursor:pointer;letter-spacing:.02em;}
+.aba-btn.active{background:#141210;color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15);}
+@media print{#seletoresGlobais{display:none!important;}}
 .modo-analise{display:inline-flex;gap:4px;background:#ecebe7;border-radius:12px;padding:4px;margin:4px 0 22px;}
 .modo-btn{border:0;background:transparent;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:700;color:var(--text2);cursor:pointer;}
 .modo-btn.active{background:#fff;color:#1a72d4;box-shadow:0 1px 4px rgba(0,0,0,.1);}
@@ -404,7 +413,7 @@ body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidd
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Rodomix DRE">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="app-build" content="20261126144849">
+  <meta name="app-build" content="20261126145446">
 
 </head>
 <body>
@@ -462,10 +471,12 @@ body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidd
     </div>
   </div>
 
-  <!-- TAB 1: VISÃO GERAL -->
-  <div class="tab-panel active" id="tab-visao-geral">
-    <div class="wrap">
-
+  <!-- SELETORES GLOBAIS (valem para Painel e DRE) -->
+  <div class="wrap wrap-top" id="seletoresGlobais">
+  <div class="abas-topo">
+    <button class="aba-btn active" data-tab="visao-geral" onclick="switchTab('visao-geral')">Painel</button>
+    <button class="aba-btn" data-tab="dre" onclick="switchTab('dre')">DRE</button>
+  </div>
   <!-- EMPRESA FILTER -->
   <div class="empresa-section" style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;">
     <div>
@@ -488,6 +499,12 @@ body.resumida-full .bottom-nav,body.resumida-full .global-topbar{visibility:hidd
     <div class="filter-label">Selecionar período</div>
     <div class="filter-bar" id="filterBar"></div>
   </div>
+  </div>
+
+  <!-- TAB 1: PAINEL -->
+  <div class="tab-panel active" id="tab-visao-geral">
+    <div class="wrap">
+
 
   <!-- MODO DE ANÁLISE -->
   <div class="modo-analise">
@@ -2805,7 +2822,7 @@ function buildFilterBar() {
   bar.innerHTML = '';
   const meses = D().meses;
   const btns = [
-    {label:'Visão Geral', m:-1},
+    {label:'Acumulado', m:-1},
     ...meses.map((m,i) => ({label:(({Jan:'Janeiro',Fev:'Fevereiro',Mar:'Março',Abr:'Abril',Mai:'Maio',Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'})[m]||m), m:i}))
   ];
   btns.forEach(b => {
@@ -2815,9 +2832,10 @@ function buildFilterBar() {
     btn.textContent = b.label;
     btn.addEventListener('click', () => {
       sel = parseInt(btn.dataset.m);
-      document.querySelectorAll('.mbtn').forEach(x => x.classList.remove('active'));
+      dreSel = sel;
+      document.querySelectorAll('#filterBar .mbtn').forEach(x => x.classList.remove('active'));
       btn.classList.add('active');
-      renderAll();
+      if (abaAtiva() === 'dre') { empresa = dreEmpresa; renderDRE(dreSel); } else renderAll();
     });
     bar.appendChild(btn);
   });
@@ -3216,9 +3234,7 @@ function renderDRE(s) {
   tdDesc.addEventListener('click', function(){
     var inDreTab = document.getElementById('tab-dre').classList.contains('active');
     if (inDreTab) {
-      if (dreSel !== -1) { dreSel = -1; empresa = dreEmpresa;
-        document.querySelectorAll('#dre-mes-bar .mbtn').forEach(function(b,bi){ b.classList.toggle('active', bi===0); });
-        renderDRE(dreSel); updateTopbar('dre'); }
+      if (dreSel !== -1) { selecionarMesGlobal(-1); }
     } else {
       if(sel!==-1){ sel=-1; document.querySelectorAll('.mbtn').forEach(b=>b.classList.toggle('active',parseInt(b.dataset.m)===-1)); renderAll(); }
     }
@@ -3238,13 +3254,7 @@ function renderDRE(s) {
     th.addEventListener('click', (function(idx){ return function(){
       var inDreTab = document.getElementById('tab-dre').classList.contains('active');
       if (inDreTab) {
-        dreSel = idx;
-        empresa = dreEmpresa;
-        document.querySelectorAll('#dre-mes-bar .mbtn').forEach(function(b,bi){
-          b.classList.toggle('active', bi === idx+1);
-        });
-        renderDRE(dreSel);
-        updateTopbar('dre');
+        selecionarMesGlobal(idx);
       } else {
         toggleMonth(idx);
       }
@@ -3456,8 +3466,15 @@ function updateTopbar(tab) {
 // ─────────────────────────────────────────────────────────────────────────────
 // TOGGLE & RENDER
 // ─────────────────────────────────────────────────────────────────────────────
+function abaAtiva() { var t = document.getElementById('tab-dre'); return (t && t.classList.contains('active')) ? 'dre' : 'visao-geral'; }
+function selecionarMesGlobal(idx) {
+  sel = idx; dreSel = idx;
+  document.querySelectorAll('#filterBar .mbtn').forEach(function(b){ b.classList.toggle('active', parseInt(b.dataset.m) === idx); });
+  if (abaAtiva() === 'dre') { empresa = dreEmpresa; renderDRE(dreSel); updateTopbar('dre'); } else renderAll();
+}
 function toggleMonth(idx) {
   sel = sel===idx ? -1 : idx;
+  dreSel = sel;
   document.querySelectorAll('.mbtn').forEach(b=>b.classList.toggle('active',parseInt(b.dataset.m)===sel));
   renderAll();
 }
@@ -3481,7 +3498,7 @@ function atualizarResumida() {
   var meses = Object.keys(mapa).map(Number).filter(function(k){ return !!mapa[k]; }).sort(function(a,b){ return a-b; });
   var m = sel, url = null, txt = '';
   if (m !== -1 && mapa[m]) { url = mapa[m]; txt = 'Análise resumida · ' + (NOMES[d.meses[m]]||d.meses[m]); }
-  else if (m === -1 && meses.length) { m = meses[meses.length-1]; url = mapa[m]; txt = 'Visão Geral selecionada — mostrando o último mês disponível: ' + (NOMES[d.meses[m]]||d.meses[m]); }
+  else if (m === -1 && meses.length) { m = meses[meses.length-1]; url = mapa[m]; txt = 'Acumulado selecionado — mostrando o último mês disponível: ' + (NOMES[d.meses[m]]||d.meses[m]); }
   else if (GAMMA_URLS[empresa]) { url = GAMMA_URLS[empresa]; txt = 'Esta empresa ainda não tem slide deste mês — mostrando a apresentação geral'; }
   if (!url) { frame.src = ''; info.textContent = 'Análise resumida ainda não disponível para esta empresa.'; return; }
   var src = url.indexOf('gamma.app') >= 0 ? url.replace('/docs/','/embed/') : url;
@@ -3552,7 +3569,7 @@ function renderAll() {
 // ─────────────────────────────────────────────────────────────────────────────
 // EMPRESA SWITCH
 // ─────────────────────────────────────────────────────────────────────────────
-document.querySelectorAll('#tab-visao-geral .ebtn').forEach(btn => {
+document.querySelectorAll('#seletoresGlobais .ebtn').forEach(btn => {
   btn.addEventListener('click', () => {
     if(btn.classList.contains('disabled')) return;
     empresa = btn.dataset.e;
@@ -3568,11 +3585,12 @@ document.querySelectorAll('#tab-visao-geral .ebtn').forEach(btn => {
         delete _clickHandlers[id];
       }
     });
-    document.querySelectorAll('#tab-visao-geral .ebtn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('#seletoresGlobais .ebtn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     updateHeader();
     buildFilterBar();
-    renderAll();
+    dreEmpresa = empresa; dreSel = -1;
+    if (abaAtiva() === 'dre') { renderDRE(dreSel); updateTopbar('dre'); } else renderAll();
   });
 });
 // ─── APRESENTAÇÕES GAMMA ────────────────────────────────────────────
@@ -3687,7 +3705,9 @@ function switchTab(tab) {
   document.getElementById('tab-' + tab).classList.add('active');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
   document.querySelectorAll('.bottom-nav-item').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
-  if (tab === 'dre') { buildDreMesBar(); empresa = dreEmpresa; renderDRE(dreSel); }
+  document.querySelectorAll('.aba-btn').forEach(n => n.classList.toggle('active', n.dataset.tab === tab));
+  if (tab === 'dre') { dreEmpresa = empresa; dreSel = sel; buildDreMesBar(); empresa = dreEmpresa; renderDRE(dreSel); }
+  if (tab === 'visao-geral') { renderAll(); }
   if (tab === 'apresentacao') { buildApresEmpresaList(); buildApresMesBar(); }
   updateTopbar(tab);
   window.scrollTo(0, 0);
