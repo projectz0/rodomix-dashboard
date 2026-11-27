@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ESM/AMJU · Análise Financeira Janeiro 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:#0B1120}
+.deck{position:fixed;inset:0;overflow:hidden}.stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+:root{
+  --navy:#0F172A; --ink:#1E293B; --muted:#64748B; --line:#E2E8F0;
+  --bg:#F8FAFC; --card:#FFFFFF; --green:#10B981; --green-dk:#047857;
+  --red:#DC2626; --accent-soft:#ECFDF5;
+}
+section{padding:128px;background:var(--bg);font-family:'Inter',sans-serif;color:var(--ink);box-sizing:border-box;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;color:var(--navy)}
+p{margin:0;font-size:24px;line-height:1.4}
+
+/* Capa */
+section.cover{padding:0;flex-direction:row;background:var(--bg)}
+.cover .cl{flex:1.25;padding:112px 112px 104px 128px;display:flex;flex-direction:column}
+.cover .brand{display:flex;align-items:flex-end;gap:20px}
+.cover .bars{display:flex;gap:10px;align-items:flex-end;height:72px}
+.cover .bar{width:18px;background:#FF5A1F;border-radius:6px}
+.cover .bar.b1{height:40px}.cover .bar.b2{height:72px}.cover .bar.b3{height:54px}
+.cover .g1{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;line-height:0.95;color:var(--navy)}
+.cover .g2{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;line-height:0.95;color:#FF5A1F}
+.cover .spacer{flex:1}
+.cover .eyebrow{font-size:24px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.cover h1{font-size:120px;line-height:1;letter-spacing:-0.03em;color:var(--navy);font-weight:700;margin-top:16px}
+.cover .sub{font-size:36px;color:var(--ink);margin-top:28px}
+.cover .rule{width:120px;height:8px;border-radius:4px;background:var(--green);margin-top:40px}
+.cover .foot{font-size:24px;color:var(--muted);border-top:2px solid var(--line);padding-top:28px}
+.cover .cr{flex:1;position:relative;overflow:hidden;background:linear-gradient(150deg,#10B981 0%,#047857 48%,#0F172A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cover .ring{position:absolute;border-radius:50%;border:3px solid rgba(255,255,255,.18)}
+.cover .ring.r1{width:640px;height:640px;top:-200px;right:-240px}
+.cover .ring.r2{width:360px;height:360px;bottom:-140px;left:-120px;border-color:rgba(255,255,255,.10)}
+.cover .big{font-family:'Space Grotesk',sans-serif;font-size:240px;font-weight:700;line-height:0.9;letter-spacing:-0.04em;color:#F8FAFC}
+.cover .yr{font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:600;color:#D1FAE5;margin-top:8px}
+.cover .pills{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:56px}
+.cover .pill{font-size:28px;font-weight:600;color:#F8FAFC;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);padding:14px 32px;border-radius:40px}
+
+/* Títulos de slide */
+.kicker{font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.title{font-size:56px;line-height:1.1;font-weight:700;margin-top:12px}
+
+/* Cards */
+.card{background:var(--card);border-radius:20px;box-shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);padding:32px 36px;box-sizing:border-box}
+.card .label{font-size:24px;color:var(--muted);font-weight:500}
+.card .num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--navy);line-height:1.05}
+.card .delta{font-size:24px;font-weight:600}
+.card .delta.up{color:var(--green-dk)}
+.card .delta.down{color:var(--red)}
+.card .delta.flat{color:var(--muted)}
+.card .note{font-size:24px;color:var(--muted)}
+
+/* Resumo */
+.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:56px;flex:1}
+.grid4 .card{display:flex;flex-direction:column;justify-content:space-between}
+.grid4 .num{font-size:96px;margin:16px 0}
+.grid4 .card.hero{background:var(--navy)}
+.grid4 .card.hero .label,.grid4 .card.hero .note{color:#94A3B8}
+.grid4 .card.hero .num{color:#F8FAFC}
+.grid4 .card.hero .delta.up{color:var(--green)}
+
+/* Bento */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.kpis .card{padding:28px 32px}
+.kpis .num{font-size:64px;margin:8px 0 6px}
+.chart{margin-top:24px;flex:1;padding:24px 36px 16px;display:flex;flex-direction:column}
+.chart .label{margin-bottom:4px}
+.chart svg{width:100%;flex:1}
+.insights{margin-top:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:2px solid var(--line);padding-top:20px}
+.insights p{font-size:24px;color:var(--ink);line-height:1.3}
+.insights .tag{font-size:24px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.insights .next .tag{color:var(--green-dk)}
+
+/* Destaques e pontos de atenção */
+.hl{display:grid;grid-template-columns:3fr 2fr;gap:32px;margin-top:48px;flex:1;min-height:0}
+.hl .card{display:flex;flex-direction:column;gap:24px;padding:40px 44px}
+.hl .item{flex:1;justify-content:center}
+.hl .head{display:flex;align-items:center;gap:14px;font-size:24px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.hl .dot{width:14px;height:14px;border-radius:50%}
+.hl .pos .head{color:var(--green-dk)}.hl .pos .dot{background:var(--green)}
+.hl .att .head{color:#B45309}.hl .att .dot{background:#F59E0B}
+.hl .att{background:#FFFBEB}
+.hl .item{display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--line);padding-top:20px}
+.hl .att .item{border-top-color:#FDE68A}
+.hl .item .val{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:var(--navy);line-height:1.1}
+.hl .item .txt{font-size:24px;color:var(--ink);line-height:1.35}
+.hl .item .txt b{color:var(--navy)}
+
+/* Recomendações */
+.rec{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;margin-top:48px;flex:1;min-height:0}
+.rec.two{grid-template-columns:1fr 1fr}
+.rec .main{background:var(--navy);display:flex;flex-direction:column;justify-content:space-between;padding:48px}
+.rec .badge{width:72px;height:72px;border-radius:18px;background:var(--green);display:flex;align-items:center;justify-content:center}
+.rec .badge p{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--navy)}
+.rec .main h3{font-size:44px;line-height:1.15;color:#F8FAFC;margin-top:32px}
+.rec.two .main h3{font-size:40px}
+.rec .main .why{font-size:28px;color:#CBD5E1;margin-top:24px;line-height:1.4}
+.rec .facts{display:flex;flex-direction:column;gap:20px}
+.rec .facts .card{display:flex;justify-content:space-between;align-items:center;padding:28px 36px;flex:1}
+.rec .facts .num{font-size:56px}
+.rec .facts .delta{text-align:right}
+.next-band{margin-top:28px;display:flex;align-items:center;gap:24px;background:var(--accent-soft);border-radius:16px;padding:24px 32px}
+.next-band .tag{font-size:24px;font-weight:700;color:var(--green-dk);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
+.next-band .txt{font-size:28px;color:var(--navy);font-weight:600}
+
+section.slide{width:1920px;height:1080px;display:none;overflow:hidden;padding:96px 128px 104px}section.slide.cover{padding:0}.title{font-size:52px}.chart,.chart svg{min-height:0}.kpis .num{font-size:60px}section.slide.active{display:flex}
+.nav{position:fixed;bottom:12px;right:12px;opacity:.55;display:flex;align-items:center;gap:10px;background:rgba(15,23,42,.8);color:#fff;padding:6px 12px;border-radius:30px;font:500 13px Inter,sans-serif;z-index:9}
+.nav button{background:none;border:0;color:#fff;font-size:22px;width:30px;cursor:pointer}
+@media print{@page{size:1920px 1080px;margin:0}.deck{position:static}.stage{position:static;transform:none!important}section.slide{display:flex!important;page-break-after:always}.nav{display:none}}
+</style></head><body><div class="deck"><div class="stage" id="stage">
+<section class="slide cover active"><div class="cl"><div class="brand"><div class="bars"><div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div></div><div><p class="g1">Grupo</p><p class="g2">Rodomix</p></div></div><div class="spacer"></div><p class="eyebrow">Relatório mensal · DRE gerencial</p><h1>Análise Financeira</h1><p class="sub">ESM/AMJU Renovadora de Pneus · Janeiro 2026</p><div class="rule"></div><div class="spacer"></div><p class="foot">Controladoria · Primeiro fechamento de 2026</p></div><div class="cr"><div class="ring r1"></div><div class="ring r2"></div><p class="big">Jan</p><p class="yr">2026</p><div class="pills"><p class="pill">Saldo final −R$ 91,0k</p><p class="pill">EBITDA −8,7% da receita</p></div></div></section>
+<section class="slide"><p class="kicker">Resumo executivo · Janeiro 2026</p><h2 class="title">Margem de 17,7% contra R$ 202,0k de despesas fixas</h2><div class="grid4"><div class="card "><p class="label">Receita Bruta</p><p class="num">R$ 765,5k</p><p class="delta flat">1º mês do ano</p></div><div class="card "><p class="label">Margem de Contribuição</p><p class="num">R$ 135,3k</p><p class="delta flat">1º mês do ano</p></div><div class="card hero"><p class="label">EBITDA</p><p class="num">−R$ 66,7k</p><p class="delta down">−8,7% da receita · 1º mês do ano</p></div><div class="card "><p class="label">Saldo Final</p><p class="num">−R$ 91,0k</p><p class="delta flat">1º mês do ano</p></div></div></section>
+<section class="slide"><p class="kicker">ESM/AMJU · Janeiro 2026</p><h2 class="title">Receita de R$ 765,5k não cobre a estrutura fixa</h2><div class="kpis"><div class="card "><p class="label">Receita Bruta</p><p class="num">R$ 765,5k</p><p class="delta flat">1º mês do ano</p></div><div class="card "><p class="label">Margem de Contribuição</p><p class="num">R$ 135,3k</p><p class="delta flat">1º mês do ano</p></div><div class="card "><p class="label">EBITDA</p><p class="num">−R$ 66,7k</p><p class="delta flat">1º mês do ano</p></div></div><div class="card chart"><p class="label">EBITDA mensal 2026 (R$ mil)</p><svg viewBox="0 0 1600 300" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="128" x2="1600" y2="128" stroke="#CBD5E1" stroke-width="2"/><g font-family="Inter, sans-serif" font-size="24" fill="#64748B" text-anchor="middle"><rect x="52" y="128" width="96" height="100" rx="8" fill="#DC2626"/><text x="100" y="256" font-weight="700" fill="#B91C1C">-66,7</text><text x="100" y="294" font-weight="700" fill="#B91C1C">Jan</text></g></svg></div><div class="insights"><p><span class="tag">Insight</span>CMV OTR de 57,14% e margem de 17,68%.</p><p><span class="tag">Atenção</span>Despesas comerciais de 12,3% da receita.</p><p class="next"><span class="tag">Próximo passo</span>Manter a receita bruta acima de R$ 750k.</p></div></section>
+<section class="slide"><p class="kicker">Análise · ESM/AMJU · Janeiro 2026</p><h2 class="title">O que explica o resultado de janeiro</h2><div class="hl"><div class="card pos"><p class="head"><span class="dot"></span>Destaques</p><div class="item"><p class="val">R$ 765,5k</p><p class="txt"><b>Receita bruta</b> — OTR de R$ 386,3k e Carga de R$ 352,4k.</p></div><div class="item"><p class="val">17,68%</p><p class="txt"><b>Margem de contribuição</b> — com CMV OTR de 57,14%.</p></div></div><div class="card att"><p class="head"><span class="dot"></span>Pontos de atenção</p><div class="item"><p class="val">−R$ 66,7k · −8,7%</p><p class="txt"><b>EBITDA</b> — despesas fixas de R$ 202,0k superam a margem de R$ 135,3k.</p></div><div class="item"><p class="val">R$ 94,4k</p><p class="txt"><b>Despesas comerciais</b> — 12,3% da receita: comissões R$ 36,4k e combustíveis R$ 33,2k.</p></div><div class="item"><p class="val">−R$ 91,0k</p><p class="txt"><b>Saldo final</b> — juros R$ 4,5k, investimentos R$ 9,6k e retiradas R$ 7,7k.</p></div></div></div></section>
+<section class="slide"><p class="kicker">Recomendações · ESM/AMJU · Janeiro 2026</p><h2 class="title">Receita acima de R$ 750k é o patamar mínimo</h2><div class="rec two"><div class="card main"><div class="badge"><p>1</p></div><div><h3>Manter a receita bruta acima de R$ 750k</h3><p class="why">Com estrutura fixa de ~R$ 200k/mês, é o patamar mínimo para aproximar o EBITDA do equilíbrio.</p></div></div><div class="card main"><div class="badge"><p>2</p></div><div><h3>Revisar a estrutura de despesas comerciais</h3><p class="why">R$ 94,4k para R$ 765k de receita: avaliar o custo-benefício de cada linha.</p></div></div></div><div class="next-band"><p class="tag">Próximo passo</p><p class="txt">Manter a receita bruta acima de R$ 750k.</p></div></section>
+</div></div>
+<div class="nav"><button id="pv" aria-label="Anterior">‹</button><span id="pg">1 / 5</span><button id="nx" aria-label="Próximo">›</button></div>
+<script>
+const S=[...document.querySelectorAll('.slide')];let i=0;const st=document.getElementById('stage');function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='scale('+s+') translate(-50%,-50%)';}addEventListener('resize',fit);fit();
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('active',k===i));document.getElementById('pg').textContent=(i+1)+' / '+S.length;}
+document.getElementById('pv').addEventListener('click',()=>go(i-1));document.getElementById('nx').addEventListener('click',()=>go(i+1));
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))go(i+1);if(['ArrowLeft','PageUp'].includes(e.key))go(i-1);});
+let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX);document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(i+(dx<0?1:-1));x0=null;});
+</script></body></html>
